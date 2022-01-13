@@ -1,0 +1,43 @@
+.index {
+    .features {
+        &__container {
+            max-width: 117rem;
+        }
+
+        &__header {
+            margin-bottom: 9.6rem;
+        }
+
+
+        &__title,
+        &__text {
+            text-align: center;
+            margin-bottom: 2.4rem;
+        }
+
+        &__text {
+            opacity: 0.5;
+        }
+
+        &__list {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: calc(100% / 3);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin-bottom: 4.8rem;
+
+            p {
+                max-width: 22rem;
+                text-align: center;
+            }
+        }
+    }
+}

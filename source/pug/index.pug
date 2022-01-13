@@ -2,12 +2,18 @@ extends layouts/main-layout.pug
 
 block variables
   -
-    const title = "NK-store-layout-index"
+    const title = "Moscowine_site-layout"
     const desc = ""
     const keywords = ""
 
 block content
-    // include ./blocks/index-page/intro
+  .index
+    include ./sections/index/intro
+    include ./sections/index/search
+    include ./sections/index/features
+    include ./sections/index/map
+    include ./sections/index/app
+    include ./sections/index/subscribe
 
 block modals
   // include ./modals/menuModal

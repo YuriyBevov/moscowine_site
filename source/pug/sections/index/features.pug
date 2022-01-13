@@ -1,0 +1,47 @@
+-
+  const features_list = [
+    {
+      imgUrl: './assets/img/feature_1.png',
+      text: 'Сравнение цен в магазинах-партнёрах'
+    },
+
+    {
+      imgUrl: './assets/img/feature_2.png',
+      text: 'Гарантия скидки и выгодные предложения'
+    },
+
+    {
+      imgUrl: './assets/img/feature_3.png',
+      text: 'Актуальные остатки в&nbsp;магазинах партнёров'
+    },
+
+    {
+      imgUrl: './assets/img/feature_4.png',
+      text: 'Более 70 точек выдачи'
+    },
+
+    {
+      imgUrl: './assets/img/feature_5.png',
+      text: 'Опт и розница'
+    },
+
+    {
+      imgUrl: './assets/img/feature_6.png',
+      text: 'Консультация сомелье'
+    },
+  ]
+
+section.features
+  .cmn__wrapper
+    .features__container
+      .features__header
+        h2.cmn__title.cmn__title--main.features__title Поможем найти лучшую цену на любимый напиток
+        p.cmn__text.cmn__text--large.features__text Экономия до 50%
+        p.cmn__text.cmn__text--large.features__text Не тратьте время на походы в магазины и поиск лучшей цены
+        p.cmn__text.cmn__text--large.features__text Вина, которые вы не найдете в рознице
+
+      ul.features__list
+        each item in features_list
+          li.features__item
+            img(src=item.imgUrl width="128" height="128" alt=item.text)
+            p.cmn__text!= item.text

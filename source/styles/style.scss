@@ -5,24 +5,23 @@
 @import "global";
 @import "cmn";
 
-// plugins
-
+/*plugins*/
 @import "./plugins/swiper";
-// header
 
-@import "./common/header";
+/*components*/
 
-// nav
+/*header*/
+@import "./layouts/components/header";
+/*nav*/
+@import "./layouts/components/nav";
 
-@import "./common/nav";
+/*index*/
+@import "./sections/index/intro";
+@import "./sections/index/search";
+@import "./sections/index/features";
+@import "./sections/index/map";
+@import "./sections/index/app";
+@import "./sections/index/subscribe";
 
-// blocks
-
-
-//components
-
-/*cards*/
-
-//footer
-
-@import "./common/footer";
+/*footer*/
+@import "./layouts/components/footer";
