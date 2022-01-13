@@ -46,6 +46,10 @@
          font-size: 3.2rem;
          line-height: 3.8rem;
       }
+
+      &--white {
+         color: $white;
+      }
    }
 
    &__btn {
@@ -62,5 +66,10 @@
       border-radius: 4px;
       background-color: $purple;
       color: $white;
+
+      &--outlined {
+         background-color: transparent;
+         border: 1px solid rgba(255, 255, 255, 0.75);
+      }
    }
 }

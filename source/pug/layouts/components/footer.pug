@@ -1,5 +1,106 @@
+include ../../mixins/bottom_menu
+include ../../mixins/apps
+
+-
+  const about_list = [
+    {
+      text: 'О сервисе',
+      link: '#'
+    },
+    {
+      text: 'Пресс-центр',
+      link: '#'
+    },
+    {
+      text: 'Отзывы',
+      link: '#'
+    },
+    {
+      text: 'Контакты',
+      link: '#'
+    }
+  ]
+
+-
+  const client_list = [
+    {
+      text: 'Как это работает',
+      link: '#'
+    },
+    {
+      text: 'Доставка и оплата',
+      link: '#'
+    },
+    {
+      text: 'Возврат',
+      link: '#'
+    },
+    {
+      text: 'Вопросы и ответы',
+      link: '#'
+    }
+  ]
+
+-
+  const partner_list = [
+    {
+      text: 'Как подключиться',
+      link: '#'
+    },
+    {
+      text: 'Виды сотрудничества',
+      link: '#'
+    },
+    {
+      text: 'Тарифы',
+      link: '#'
+    },
+    {
+      text: 'Правила работы',
+      link: '#'
+    }
+  ]
+
+-
+  const investor_list = [
+    {
+      text: 'Информация',
+      link: '#'
+    },
+    {
+      text: 'Скачать презентацию',
+      link: '#'
+    }
+  ]
+
 footer.footer
   .cmn__wrapper
-    h2.cmn__title footer
+    .footer__container
+      .footer__top
+        a(href="index.html")
+          svg(width="180" height="28")
+            use(xlink:href="#icon-logo")
+      .footer__nav
+        .footer__nav-lists
+          +bottom_menu('bottom-menu footer__nav-item', 'О компании', about_list)
+          +bottom_menu('bottom-menu footer__nav-item', 'Клиентам', client_list)
+          +bottom_menu('bottom-menu footer__nav-item', 'Партнерам', partner_list)
+          +bottom_menu('bottom-menu footer__nav-item', 'Инвесторам', investor_list)
+
+        .footer__contacts
+          a(href="tel:88007077534").footer__contacts-link 8 800 707-75-34
+          span.cmn__text.footer__contacts-worktime c 10:00 до 19:00
+
+          button(type="button").cmn__btn.cmn__btn--outlined Заказать звонок
+      .footer__links  
+        .footer__social
+          include ../../components/social-list
+        .footer__apps
+          +apps('black')
+      .footer__bottom
+        span.cmn__text.footer__rights © Cheerz.ru, 2021
+
+        a(href="#").cmn__text.cmn__text--white Пользовательское соглашение
+        a(href="").cmn__text.cmn__text--white Условия приобритения
 
       
