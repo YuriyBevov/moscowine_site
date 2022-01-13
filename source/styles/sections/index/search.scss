@@ -1,0 +1,39 @@
+.index {
+    .search {
+        padding-bottom: 6.4rem;
+        &__container {
+            position: relative;
+            max-width: 98rem;
+            margin: 0 auto;
+            margin-top: -3rem;
+            padding: 3.2rem;
+            padding-bottom: 2.4rem;
+            border-radius: 4px;
+            background: $white;
+            box-shadow: 0px 10px 20px rgba(42, 52, 79, 0.1);
+            z-index: 10;
+        }
+
+        form {
+            a {
+                color: $purple;
+            }
+        }
+
+        &__field {
+            margin-bottom: 2.4rem;
+
+            input {
+                padding-right: 20rem;
+            }
+
+            svg {
+                opacity: .5;
+            }
+        }
+
+        &__advanced {
+            display: none; // temp
+        }
+    }
+}

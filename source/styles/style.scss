@@ -12,6 +12,8 @@
 @import "./components/bottom-menu";
 @import "./components/social";
 @import "./components/apps";
+@import "./components/search-fieldset";
+@import "./components/main-slider";
 
 /*header*/
 @import "./layouts/components/header";
@@ -24,7 +26,9 @@
 @import "./sections/index/features";
 @import "./sections/index/map";
 @import "./sections/index/app";
-@import "./sections/index/subscribe";
+
+/*common*/
+@import "./sections/common/subscribe";
 
 /*footer*/
 @import "./layouts/components/footer";

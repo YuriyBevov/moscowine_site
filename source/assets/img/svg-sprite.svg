@@ -121,7 +121,7 @@
 <path d="M20.9999 21L16.6499 16.65" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </symbol><symbol id="icon-slider-arr" viewBox="0 0 18 32">
-<path d="M16 2L2 16L16 30" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2 2L16 16L2 30" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol><symbol id="icon-trending-up" viewBox="0 0 16 16">
 <g opacity="0.3" clip-path="url(#clip0_2537_21276)">
 <path d="M15.3332 4L8.99984 10.3333L5.6665 7L0.666504 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

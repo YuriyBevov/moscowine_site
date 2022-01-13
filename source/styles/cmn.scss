@@ -4,19 +4,28 @@
    }
 
    &__title {
-        font-family: $f1_med;
-        font-weight: 500;
-        font-size: 3.6rem;
-        line-height: 4.3rem;
-        
-        color: $black-100;
+      font-family: $f1_med;
+      font-weight: 500;
+      font-size: 3.6rem;
+      line-height: 4.3rem;
+      
+      color: $black-100;
 
-        &--main {
+      &--main {
             font-family: $f1_bold;
             font-weight: 700;
             font-size: 5.6rem;
             line-height: 6.7rem;
-        }
+      }
+
+      &--med {
+         font-size: 3.6rem;
+         line-height: 4.3rem;
+      }
+
+      &--white {
+         color: $white;
+      }
    }
 
    &__text {
@@ -60,6 +69,7 @@
       font-weight: 600;
       font-size: 1.5rem;
       line-height: 2rem;
+      width: fit-content;
       padding: 1.4rem 2.4rem;
       
       border: 0;

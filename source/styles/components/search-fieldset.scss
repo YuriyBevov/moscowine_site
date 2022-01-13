@@ -1,0 +1,47 @@
+.search-fieldset {
+    position: relative;
+    padding: 0;
+    border: none;
+
+    input {
+        font-family: $f1_med;
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+        width: 100%;
+        height: 6.4rem;
+        padding: 2rem 1.6rem;
+        padding-right: 17rem;
+        border: 1px solid $grey-200;
+        border-radius: 4px;
+        backdrop-filter: blur(20px);
+
+        background-color: rgba(255, 255, 255, 0.95);
+        color: $black-100;
+
+        &::placeholder {
+            font-family: $f1_med;
+            font-size: 1.5rem;
+            line-height: 2.2rem;
+            color: $black-100;
+            opacity: .3;
+        }
+    }
+
+    &__container {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%);
+
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 1.8rem;
+        }
+
+        button {
+            min-width: 14.6rem;
+        }
+    }
+}

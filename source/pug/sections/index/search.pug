@@ -1,3 +1,10 @@
+include ../../mixins/search_fieldset
+
 section.search
   .cmn__wrapper
-    p search
+    .search__container
+      form(action="#")
+        +search_fieldset('search__field', 'Найти', 'Введите запрос для поиска или номер заказа...', true, '#icon-question')
+      .search__advanced
+        p тут будет расширенный поиск...
+      span.cmn__text Если не помните название напитка, попробуйте воспользоваться <a href="#">Расширенным поиском</a>

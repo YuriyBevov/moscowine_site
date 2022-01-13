@@ -1,0 +1,11 @@
+mixin search_fieldset(cl, buttonText, placeholder, isIconEnabled, iconName)
+  fieldset(class=cl).search-fieldset
+    input(type="text" placeholder= placeholder)
+    
+    .search-fieldset__container
+      if isIconEnabled
+        svg(width="20" height="20")
+          use(xlink:href=iconName)
+      button(type="submit").cmn__btn= buttonText
+
+

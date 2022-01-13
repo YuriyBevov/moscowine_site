@@ -1,0 +1,17 @@
+mixin main_slider(array)
+  .swiper.main-slider
+    .swiper-wrapper
+      each item in array
+        .swiper-slide(style="background-image: url('" + item.imgUrl + "')")
+          .main-slider__container
+            h2.cmn__title.cmn__title--white.cmn__title--med!= item.title
+            a(href=item.link).cmn__btn= item.linkText
+
+    .swiper-button-next.main-slider-button-next
+      svg(width="14" height="28")
+        use(xlink:href="#icon-slider-arr")
+    .swiper-button-prev.main-slider-button-prev
+      svg(width="14" height="28")
+        use(xlink:href="#icon-slider-arr")
+
+    .swiper-pagination.main-slider-pagination

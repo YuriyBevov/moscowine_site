@@ -133,7 +133,7 @@
 <path d="M20.9999 21L16.6499 16.65" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 </g>
 </symbol><symbol id="icon-slider-arr" viewBox="0 0 18 32">
-<path d="M16 2L2 16L16 30" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M2 2L16 16L2 30" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
 </symbol><symbol id="icon-trending-up" viewBox="0 0 16 16">
 <g opacity="0.3" clip-path="url(#clip0_2537_21276)">
 <path d="M15.3332 4L8.99984 10.3333L5.6665 7L0.666504 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -156,12 +156,51 @@
       <div class="index">
         <section class="intro">
           <div class="intro__wrapper">
-            <p>intro</p>
+                    <div class="swiper main-slider">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image: url('./assets/img/intro-slider_slide-1.jpg')">
+                          <div class="main-slider__container">
+                            <h2 class="cmn__title cmn__title--white cmn__title--med">Вина, которые вы не&nbsp;найдете&nbsp;в&nbsp;рознице</h2><a class="cmn__btn">Подобрать</a>
+                          </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url('./assets/img/intro-slider_slide-1.jpg')">
+                          <div class="main-slider__container">
+                            <h2 class="cmn__title cmn__title--white cmn__title--med">Вина, которые вы не&nbsp;найдете&nbsp;в&nbsp;рознице  asdfasdfasdfasdf</h2><a class="cmn__btn">Подобрать</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-button-next main-slider-button-next">
+                        <svg width="14" height="28">
+                          <use xlink:href="#icon-slider-arr"></use>
+                        </svg>
+                      </div>
+                      <div class="swiper-button-prev main-slider-button-prev">
+                        <svg width="14" height="28">
+                          <use xlink:href="#icon-slider-arr"></use>
+                        </svg>
+                      </div>
+                      <div class="swiper-pagination main-slider-pagination"></div>
+                    </div>
           </div>
         </section>
         <section class="search">
           <div class="cmn__wrapper">
-            <p>search</p>
+            <div class="search__container">
+              <form action="#">
+                        <fieldset class="search__field search-fieldset">
+                          <input type="text" placeholder="Введите запрос для поиска или номер заказа...">
+                          <div class="search-fieldset__container">
+                            <svg width="20" height="20">
+                              <use xlink:href="#icon-question"></use>
+                            </svg>
+                            <button class="cmn__btn" type="submit">Найти</button>
+                          </div>
+                        </fieldset>
+              </form>
+              <div class="search__advanced">
+                <p>тут будет расширенный поиск...</p>
+              </div><span class="cmn__text">Если не помните название напитка, попробуйте воспользоваться <a href="#">Расширенным поиском</a></span>
+            </div>
           </div>
         </section>
         <section class="features">
@@ -215,11 +254,12 @@
               </div>
               <div class="subscribe__form">
                 <form action="#">
-                  <!-- убрать в миксин-->
-                  <fieldset class="subscribe__mail">
-                    <input type="text" placeholder="Электронная почта">
-                    <button class="cmn__btn" type="submit">Подписаться</button>
-                  </fieldset>
+                          <fieldset class="subscribe__mail search-fieldset">
+                            <input type="text" placeholder="Электронная почта">
+                            <div class="search-fieldset__container">
+                              <button class="cmn__btn" type="submit">Подписаться</button>
+                            </div>
+                          </fieldset>
                   <fieldset class="subscribe__accept">
                     <input type="checkbox" id="subscribe_accept">
                     <label class="cmn__text cmn__text--small" for="subscribe_accept">Даю согласие на обработку персональных данных в соответствии с <a href="#"> пользовательским соглашением</a>.</label>
