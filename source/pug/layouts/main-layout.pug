@@ -1,0 +1,29 @@
+include ./head
+
+doctype html
+
+block variables
+  -
+    const title = "moscowine_site-layout"
+    const desc = ""
+    const keywords = ""
+
+html(lang="ru")
+  +head(title, desc, keywords)
+
+  body.cmn
+
+    div(style="display:none")
+      //include ../../assets/img/svg-sprite.svg
+
+    include ../blocks/common/header
+
+    main
+      block content
+
+    include ../blocks/common/footer
+
+    block modals
+
+    block scripts
+      script(src="./js/bundle.js")

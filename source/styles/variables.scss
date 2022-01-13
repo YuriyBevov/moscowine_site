@@ -1,0 +1,42 @@
+//fonts
+
+$f1_reg: 'Manrope-Regular';
+$f1_med: 'Manrope-Medium';
+$f1_semi: 'Manrope-SemiBold';
+$f1_bold: 'Manrope-Bold';
+
+// widths
+
+$w_xxl: 1920;
+$w_xl: 1440;
+$w_lg: 1140;
+$w_md: 768;
+$w_sm: 544;
+$w_xs: 320;
+
+$min_width: $w_xs  + 'px';
+$max-width: $w_xxl + 'px';
+
+// breakpoints
+
+$desktop_large   :  ($w_xxl - 1) + 'px';
+$desktop_small   :  ($w_xl - 1)  + 'px';
+$tablet_large    :  ($w_lg - 1)  + 'px';
+$tablet_small    :  ($w_md - 1)  + 'px';
+$mobile_large    :  ($w_md - 1)  + 'px';
+
+// colors
+
+$white: #ffffff;
+$black: #000000;
+
+$main-bg: $white;
+
+// transitions
+
+$main-transition: 0.3s ease;
+
+// retina
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

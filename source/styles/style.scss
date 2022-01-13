@@ -1,0 +1,28 @@
+@import "fonts";
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "global";
+@import "cmn";
+
+// plugins
+
+@import "./plugins/swiper";
+// header
+
+@import "./common/header";
+
+// nav
+
+@import "./common/nav";
+
+// blocks
+
+
+//components
+
+/*cards*/
+
+//footer
+
+@import "./common/footer";

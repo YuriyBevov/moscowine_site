@@ -1,0 +1,24 @@
+@mixin container() {
+    max-width: $max_width;
+    min-width: $min_width;
+    padding: 0 37rem;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    /*@media(max-width: $xl_w) {
+        padding: 0 12rem;
+    }
+
+    @media(max-width: $lg_w) {
+        padding: 0 6rem;
+    }
+
+    @media(max-width: $md_w) {
+        padding: 0 3rem;
+    }
+
+    @media(max-width: $sm_w) {
+        padding: 0 1rem;
+    } */
+}
