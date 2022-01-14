@@ -12438,18 +12438,40 @@ swiper_core__WEBPACK_IMPORTED_MODULE_0__.default.use([swiper_core__WEBPACK_IMPOR
 
 
 
+/* index-page/intro */
 let mainSlider = document.querySelector('.main-slider');
-console.log(mainSlider)
+
 mainSlider ?
 new swiper_core__WEBPACK_IMPORTED_MODULE_0__.default(mainSlider, {
     slidesPerView: 1,
-    modules: [swiper_core__WEBPACK_IMPORTED_MODULE_0__.Pagination],
+    spaceBetween: 20,
+    speed: 1500,
+    loop: true,
+    modules: [swiper_core__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper_core__WEBPACK_IMPORTED_MODULE_0__.Navigation],
     pagination: {
         el: ".main-slider-pagination",
     },
     navigation: {
         nextEl: ".main-slider-button-next",
         prevEl: ".main-slider-button-prev",
+    }
+}) : null
+
+/*index-page/features*/
+
+let regSlider = document.querySelector('.reg-slider');
+
+regSlider ?
+new swiper_core__WEBPACK_IMPORTED_MODULE_0__.default(regSlider, {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    freeMode: true,
+    //loop: true, 
+    modules: [swiper_core__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+
+    navigation: {
+        nextEl: ".reg-slider-button-next",
+        prevEl: ".reg-slider-button-prev",
     }
 }) : null
 

@@ -14,11 +14,15 @@
 @import "./components/apps";
 @import "./components/search-fieldset";
 @import "./components/main-slider";
+@import "./components/reg-slider";
+@import "./components/worktime";
 
 /*header*/
 @import "./layouts/components/header";
 /*nav*/
 @import "./layouts/components/nav";
+/*logo*/
+//@import "./layouts/components/logo";
 
 /*index*/
 @import "./sections/index/intro";

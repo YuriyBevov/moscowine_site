@@ -77,9 +77,7 @@ footer.footer
   .cmn__wrapper
     .footer__container
       .footer__top
-        a(href="index.html")
-          svg(width="180" height="28")
-            use(xlink:href="#icon-logo")
+        include ./logo
       .footer__nav
         .footer__nav-lists
           +bottom_menu('bottom-menu footer__nav-item', 'О компании', about_list)
@@ -87,11 +85,11 @@ footer.footer
           +bottom_menu('bottom-menu footer__nav-item', 'Партнерам', partner_list)
           +bottom_menu('bottom-menu footer__nav-item', 'Инвесторам', investor_list)
 
-        .footer__contacts
-          a(href="tel:88007077534").footer__contacts-link 8 800 707-75-34
-          span.cmn__text.footer__contacts-worktime c 10:00 до 19:00
-
+        .footer__contants
+          .footer__info
+            include ../../components/worktime
           button(type="button").cmn__btn.cmn__btn--outlined Заказать звонок
+
       .footer__links  
         .footer__social
           include ../../components/social-list

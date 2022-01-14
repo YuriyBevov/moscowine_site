@@ -1,3 +1,37 @@
 header.header
   .cmn__wrapper
-    p header
+    .header__top
+      .header__logo
+        include ./logo
+      .header__info
+        include ../../components/worktime
+      .header__nav
+        include ./nav
+    
+    .header__bottom
+      button(type="button").cmn__btn.header__btn Каталог
+
+      input(type="text" placeholder="Поиск").header__search
+
+      .header__menu
+        a(href="#")
+          svg(width="32" height="32")
+            use(xlink:href="#icon-chart")
+          span.cmn__text.cmn__text-small Сравнение
+        
+        a(href="#")
+          svg(width="32" height="32")
+            use(xlink:href="#icon-heart")
+          span.cmn__text.cmn__text-small Избранное
+
+        a(href="#")
+          svg(width="32" height="32")
+            use(xlink:href="#icon-cart")
+          span.cmn__text.cmn__text-small Корзина
+
+        a(href="#")
+          svg(width="32" height="32")
+            use(xlink:href="#icon-user")
+          span.cmn__text.cmn__text-small Войти
+
+

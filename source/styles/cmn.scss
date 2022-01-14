@@ -1,6 +1,7 @@
 .cmn {
    &__wrapper {
       @include container();
+      outline: 1px solid red;
    }
 
    &__title {

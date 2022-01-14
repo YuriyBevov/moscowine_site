@@ -1,3 +1,66 @@
+include ../../mixins/reg_slider
+
+-
+  const categoriesList = [
+      {
+          title: 'Красные вина до 1000₽',
+          imgUrl: './assets/img/cat_1.jpg'
+      },
+
+      {
+          title: 'Рекомендации команды Cheerz',
+          imgUrl: './assets/img/cat_2.jpg'
+      },
+
+      {
+          title: 'Элитные вина и коньяки',
+          imgUrl: './assets/img/cat_3.jpg'
+      },
+
+      {
+          title: 'Лучший выбор для семейного праздника',
+          imgUrl: './assets/img/cat_4.jpg'
+      },
+      {
+          title: 'Красные вина до 1000₽ Красные вина до 1000₽',
+          imgUrl: './assets/img/cat_1.jpg'
+      },
+
+      {
+          title: 'Рекомендации команды Cheerz Рекомендации команды Cheerz Рекомендации команды Cheerz',
+          imgUrl: './assets/img/cat_2.jpg'
+      },
+
+      {
+          title: 'Элитные вина и коньяки',
+          imgUrl: './assets/img/cat_3.jpg'
+      },
+
+      {
+          title: 'Лучший выбор для семейного праздника',
+          imgUrl: './assets/img/cat_4.jpg'
+      },
+      {
+          title: 'Красные вина до 1000₽ Красныевинадо1000₽Красные вина до 1000₽',
+          imgUrl: './assets/img/cat_1.jpg'
+      },
+
+      {
+          title: 'Рекомендации команды Cheerz',
+          imgUrl: './assets/img/cat_2.jpg'
+      },
+
+      {
+          title: 'Элитные вина и коньяки',
+          imgUrl: './assets/img/cat_3.jpg'
+      },
+
+      {
+          title: 'Лучший выбор для семейного праздника',
+          imgUrl: './assets/img/cat_4.jpg'
+      },
+  ]
+  
 -
   const features_list = [
     {
@@ -45,3 +108,5 @@ section.features
           li.features__item
             img(src=item.imgUrl width="128" height="128" alt=item.text)
             p.cmn__text!= item.text
+  
+  +reg_slider(categoriesList)

@@ -1,71 +1,69 @@
-.index {
-    .subscribe {
-        &__container {
+.subscribe {
+    &__container {
+        display: flex;
+        padding: 4.7rem 0;
+    }
+
+    &__content {
+        width: calc(50% - 1rem);
+        margin-right: auto;
+    }
+
+    &__title {
+        margin-bottom: 1.5rem;
+    }
+
+    &__form {
+        width: calc(50% - 1rem);
+
+        form {
             display: flex;
-            padding: 4.7rem 0;
+            flex-direction: column;
+
+            fieldset {
+                padding: 0;
+                border: none;
+            }
         }
+    }
 
-        &__content {
-            width: calc(50% - 1rem);
-            margin-right: auto;
-        }
+    &__mail {
+        margin-bottom: 2.1rem;
+    }
 
-        &__title {
-            margin-bottom: 1.5rem;
-        }
+    &__accept {
+        display: flex;
 
-        &__form {
-            width: calc(50% - 1rem);
+        label {
+            position: relative;
+            line-height: 1.8rem;
+            padding-left: 3.5rem;
+            cursor: pointer;
 
-            form {
-                display: flex;
-                flex-direction: column;
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "";
+                width: 2rem;
+                height: 2rem;
 
-                fieldset {
-                    padding: 0;
-                    border: none;
-                }
+                border: 1px solid $grey-200;
+                border-radius: 4px;
+                background: transparent;
+            }
+
+            a {
+                color: $purple;
             }
         }
 
-        &__mail {
-            margin-bottom: 2.1rem;
+        input:checked + label::before {
+            border-color: red;
         }
 
-        &__accept {
-            display: flex;
-
-            label {
-                position: relative;
-                line-height: 1.8rem;
-                padding-left: 3.5rem;
-                cursor: pointer;
-
-                &::before {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    content: "";
-                    width: 2rem;
-                    height: 2rem;
-
-                    border: 1px solid $grey-200;
-                    border-radius: 4px;
-                    background: transparent;
-                }
-
-                a {
-                    color: $purple;
-                }
-            }
-
-            input:checked + label::before {
-                border-color: red;
-            }
-
-            input {
-                display: none;
-            }
+        input {
+            display: none;
         }
     }
 }

@@ -1,3 +1,91 @@
 .header {
+    &__top {
+        display: flex;
+        // align-items: center;
+        outline: 1px solid red;
+        padding-top: 2.2rem;
+    }
 
+    &__logo {
+        margin-right: 4.7rem;
+    }
+
+    &__info {
+        margin-right: auto;
+        a {
+            font-size: 1.8rem;
+            line-height: 2.3rem;
+
+            color: $black-100;
+        }
+
+        span {
+            font-style: 1.2rem;
+            line-height: 1.8rem;
+
+            color: $black-100;
+            opacity: .5;
+        }
+    }
+
+    &__btn {
+        min-width: 17.3rem;
+        padding-left: 4.4rem;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        padding: 2rem 0 2.4rem;
+        outline: 1px solid red;
+
+        input {
+            flex-grow: 1;
+            
+            font-family: $f1_med;
+            font-size: 1.5rem;
+            line-height: 2.2rem;
+
+            min-height: 4rem;
+            margin: 0 3.2rem;
+            padding: .85rem 2rem .85rem 4.8rem;
+            border: 1px solid #B7B3C2;
+            border-radius: 4px;
+            backdrop-filter: blur(20px);
+
+            color: $black-100;
+            background: rgba(255, 255, 255, 0.95);
+
+            &::placeholder {
+                font-family: $f1_med;
+                font-size: 1.5rem;
+                line-height: 2.2rem;
+
+                color: $black-100;
+                opacity: .3;
+            }
+        }
+    }
+
+    &__menu {
+        display: flex;
+        align-items:center;
+        outline: 1px solid red;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 6.6rem;
+            outline: 1px solid red;
+            
+            svg {
+                fill: none;
+            }
+        }
+
+        a:not(:last-child) {
+            margin-right: 2.4rem;
+        }
+    }
 }

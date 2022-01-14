@@ -1,0 +1,13 @@
+mixin reg_slider(array)
+  .swiper.reg-slider
+    .swiper-wrapper
+      each item in array
+        .swiper-slide(style="background-image: url('" + item.imgUrl + "')")
+            h3.cmn__text.cmn__text--med.cmn__text--white= item.title
+
+    .swiper-button-next.reg-slider-button-next
+      svg(width="9" height="18")
+        use(xlink:href="#icon-slider-arr")
+    .swiper-button-prev.reg-slider-button-prev
+      svg(width="9" height="18")
+        use(xlink:href="#icon-slider-arr")

@@ -1,1 +1,29 @@
+-
+  const navList = [
+      {
+          text: 'Пункты выдачи',
+          link: '#'
+      },
+      {
+          text: 'Как это работает',
+          link: '#'
+      },
+      {
+          text: 'Зарабатывать с Cheerz',
+          link: '#'
+      },
+      {
+          text: 'Подключиться',
+          link: '#'
+      },
+      {
+          text: 'Онлайн сервисы',
+          link: '#'
+      }
+  ]
+
 nav.nav
+  ul.nav__list
+    each item in navList
+      li.nav__item
+        a(href=item.link).cmn__text.cmn__text--small.nav__link= item.text

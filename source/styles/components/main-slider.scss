@@ -6,11 +6,35 @@
         max-width: 98rem;
 
         margin: auto;
+        padding: 2rem 10rem;
     }
 
     &-button-next::after,
     &-button-prev::after {
         display: none;
+    }
+
+    &-button-next,
+    &-button-prev {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 4.8rem;
+        height: 4.8rem;
+
+        cursor: pointer;
+    }
+
+    &-button-next {
+        right: 3.2rem;
+    }
+
+    &-button-prev {
+        left: 3.2rem;
+        svg {
+            transform: rotate(180deg);
+        }
     }
 
     &-pagination {
@@ -33,6 +57,10 @@
 
     .swiper-slide {
         display: flex;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 4px;
 
         h2 {
             max-width: 62.5rem;

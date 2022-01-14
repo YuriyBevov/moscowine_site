@@ -7,23 +7,23 @@ $f1_bold: 'Manrope-Bold';
 
 // widths
 
-$w_xxl: 1920;
-$w_xl: 1440;
-$w_lg: 1140;
-$w_md: 768;
-$w_sm: 544;
-$w_xs: 320;
+$w_xxl: 1920px;
+$w_xl: 1440px;
+$w_lg: 1140px;
+$w_md: 768px;
+$w_sm: 544px;
+$w_xs: 320px;
 
-$min_width: $w_xs  + 'px';
-$max-width: $w_xxl + 'px';
+$min_width: $w_xs;
+$max-width: $w_xxl;
 
 // breakpoints
 
-$desktop_large   :  ($w_xxl - 1) + 'px';
-$desktop_small   :  ($w_xl - 1)  + 'px';
-$tablet_large    :  ($w_lg - 1)  + 'px';
-$tablet_small    :  ($w_md - 1)  + 'px';
-$mobile_large    :  ($w_md - 1)  + 'px';
+$desktop_large   :  $w_xxl;
+$desktop_small   :  $w_xl;
+$tablet_large    :  $w_lg;
+$tablet_small    :  $w_md;
+$mobile_large    :  $w_md;
 
 // colors
 
