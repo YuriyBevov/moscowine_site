@@ -1,0 +1,9 @@
+.map {
+    width: 100%;
+    height: 60rem;
+
+    #yandex-map {
+        height: inherit;
+        -webkit-filter: grayscale(100%);
+    }
+}

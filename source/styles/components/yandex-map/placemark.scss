@@ -1,0 +1,98 @@
+.placemark {
+    position: relative;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+
+    &-border {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 50%;
+        background-color: $purple;
+
+        opacity: 0.1;
+        transition: opacity $main-transition;
+    }
+
+    &-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 1.6rem;
+        height: 1.6rem;
+
+        border: 1px solid $white;
+        border-radius: 50%;
+        background-color: $purple;
+
+        &.count {
+            opacity: 0;
+        }
+    }
+
+    &.js-active {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        &-inner {
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+
+        .placemark-border {
+            opacity: 1;
+        }
+    }
+
+    &-multiple {
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+
+        &-border {
+            width: 100%;
+            height: 100%;
+    
+            border-radius: 50%;
+            background-color: $purple;
+    
+            opacity: 0.1;
+            transition: opacity $main-transition;
+        }
+
+        &-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            width: 2.8rem;
+            height: 2.8rem;
+    
+            border: 2px solid $white;
+            border-radius: 50%;
+            background-color: $purple;
+
+            .count {
+                opacity: 1;
+                font-family: $f1_bold;
+                font-size: 1.5rem;
+                line-height: 2rem;
+    
+                color: $white;
+            }
+        }
+    }
+}

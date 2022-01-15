@@ -9,29 +9,38 @@ header.header
         include ./nav
     
     .header__bottom
-      button(type="button").cmn__btn.header__btn Каталог
+      button(type="button").cmn__btn.header__btn
+        svg(width="16" height="16")
+            use(xlink:href="#icon-burger")
+        span Ассортимент
 
-      input(type="text" placeholder="Поиск").header__search
+      .header__search
+        label(for="header_search" aria-label="Поиск")
+          svg(width="24" height="24")
+            use(xlink:href="#icon-search")
+        input(type="text" id="header_search" placeholder="Поиск...")
 
       .header__menu
         a(href="#")
           svg(width="32" height="32")
             use(xlink:href="#icon-chart")
-          span.cmn__text.cmn__text-small Сравнение
+          span.cmn__text.cmn__text--small Сравнение
         
         a(href="#")
+          include ../../components/item-count-badge
+
           svg(width="32" height="32")
             use(xlink:href="#icon-heart")
-          span.cmn__text.cmn__text-small Избранное
+          span.cmn__text.cmn__text--small Избранное
 
         a(href="#")
+          include ../../components/item-count-badge
+
           svg(width="32" height="32")
             use(xlink:href="#icon-cart")
-          span.cmn__text.cmn__text-small Корзина
+          span.cmn__text.cmn__text--small Корзина
 
         a(href="#")
           svg(width="32" height="32")
             use(xlink:href="#icon-user")
-          span.cmn__text.cmn__text-small Войти
-
-
+          span.cmn__text.cmn__text--small Войти

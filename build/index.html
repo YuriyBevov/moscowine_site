@@ -8,6 +8,7 @@
     <meta name="keywords" content="">
     <title>Moscowine_site-layout</title>
     <link rel="stylesheet" href="./css/styles.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?56c6be8d-b5f9-45d5-8ffa-7fdb884fcf53&amp;lang=ru_RU" type="text/javascript"></script>
   </head>
   <body class="cmn">
     <div style="display:none"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
@@ -145,6 +146,10 @@
 <path d="M26.6668 28V25.3333C26.6668 23.9188 26.1049 22.5623 25.1047 21.5621C24.1045 20.5619 22.748 20 21.3335 20H10.6668C9.25234 20 7.89579 20.5619 6.89559 21.5621C5.8954 22.5623 5.3335 23.9188 5.3335 25.3333V28" stroke="#2C2B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M15.9998 14.6667C18.9454 14.6667 21.3332 12.2789 21.3332 9.33333C21.3332 6.38781 18.9454 4 15.9998 4C13.0543 4 10.6665 6.38781 10.6665 9.33333C10.6665 12.2789 13.0543 14.6667 15.9998 14.6667Z" stroke="#2C2B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 </g>
+</symbol><symbol id="icon-zoom-in" viewBox="0 0 14 14">
+<path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="black"></path>
+</symbol><symbol id="icon-zoom-out" viewBox="0 0 14 2">
+<path d="M14 2H0V0H14V2Z" fill="black"></path>
 </symbol></svg>
     </div>
     <header class="header">
@@ -167,21 +172,34 @@
           </div>
         </div>
         <div class="header__bottom">
-          <button class="cmn__btn header__btn" type="button">Каталог</button>
-          <input class="header__search" type="text" placeholder="Поиск">
+          <button class="cmn__btn header__btn" type="button">
+            <svg width="16" height="16">
+              <use xlink:href="#icon-burger"></use>
+            </svg><span>Ассортимент</span>
+          </button>
+          <div class="header__search">
+            <label for="header_search" aria-label="Поиск">
+              <svg width="24" height="24">
+                <use xlink:href="#icon-search"></use>
+              </svg>
+            </label>
+            <input type="text" id="header_search" placeholder="Поиск...">
+          </div>
           <div class="header__menu"><a href="#">
               <svg width="32" height="32">
                 <use xlink:href="#icon-chart"></use>
-              </svg><span class="cmn__text cmn__text-small">Сравнение</span></a><a href="#">
+              </svg><span class="cmn__text cmn__text--small">Сравнение</span></a><a href="#">
+              <div class="item-count-badge js-active"><span class="cmn__text cmn__text--small cmn__text--white">99</span></div>
               <svg width="32" height="32">
                 <use xlink:href="#icon-heart"></use>
-              </svg><span class="cmn__text cmn__text-small">Избранное</span></a><a href="#">
+              </svg><span class="cmn__text cmn__text--small">Избранное</span></a><a href="#">
+              <div class="item-count-badge js-active"><span class="cmn__text cmn__text--small cmn__text--white">99</span></div>
               <svg width="32" height="32">
                 <use xlink:href="#icon-cart"></use>
-              </svg><span class="cmn__text cmn__text-small">Корзина</span></a><a href="#">
+              </svg><span class="cmn__text cmn__text--small">Корзина</span></a><a href="#">
               <svg width="32" height="32">
                 <use xlink:href="#icon-user"></use>
-              </svg><span class="cmn__text cmn__text-small">Войти</span></a></div>
+              </svg><span class="cmn__text cmn__text--small">Войти</span></a></div>
         </div>
       </div>
     </header>
@@ -329,9 +347,8 @@
                   </div>
         </section>
         <section class="map">
-          <div class="cmn__wrapper">
-            <p>map</p>
-          </div>
+          <!--include ../../components/yandex-map/placemark-->
+          <div id="yandex-map"></div>
         </section>
         <section class="app">
           <div class="cmn__wrapper">

@@ -1,0 +1,26 @@
+.zoom-btns {
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.05));
+    background: transparent;
+    border-radius: 4px;
+    height: 8.1rem;
+}
+
+.zoom-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+
+    border: 0;
+    background-color: $white;
+
+    &-in {
+        border-radius: 4px 4px 0 0;
+        margin-bottom: 1px;
+    }
+
+    &-out {
+        border-radius: 0 0 4px 4px;
+    }
+}

@@ -49,6 +49,7 @@
   "license": "ISC",
   "homepage": "",
   "dependencies": {
+    "leaflet": "^1.7.1",
     "swiper": "^7.4.1"
   }
 }
