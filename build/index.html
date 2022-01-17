@@ -33,6 +33,11 @@
 <path d="M16 26.6667V5.33337" stroke="#2C2B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M8 26.6666V18.6666" stroke="#2C2B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 </g>
+</symbol><symbol id="icon-close" viewBox="0 0 16 16">
+<g opacity="0.3">
+<path d="M12 4L4 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M4 4L12 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</g>
 </symbol><symbol id="icon-dzen" viewBox="0 0 50 50">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M49.9999 25.2765V25.0003V24.725C38.9298 24.39 33.8675 24.1138 29.83 20.1703C25.8876 16.1336 25.6103 11.0715 25.2762 0.000976562H24.9999H24.7236C24.3896 11.0715 24.1123 16.1336 20.1698 20.1703C16.1323 24.1138 11.07 24.39 0 24.725V25.0003V25.2765C11.07 25.6114 16.1323 25.8877 20.1698 29.8303C24.1123 33.8679 24.3896 38.93 24.7236 50.0005H24.9999H25.2762C25.6103 38.93 25.8876 33.8679 29.83 29.8303C33.8675 25.8877 38.9298 25.6114 49.9999 25.2765Z" fill="#1E262E"></path>
 </symbol><symbol id="icon-fb" viewBox="0 0 19 35">
@@ -347,7 +352,18 @@
                   </div>
         </section>
         <section class="map">
-          <!--include ../../components/yandex-map/placemark-->
+          <div class="baloon">
+            <button class="close-btn" type="button" aria-label="закрыть">
+              <svg width="16" height="16">
+                <use xlink:href="#icon-close"> </use>
+              </svg>
+            </button>
+            <div class="baloon-header"><span class="cmn__text">Альто-Адидже</span><span class="cmn__text cmn__text--small district">м. Хорошево </span></div>
+            <div class="baloon-content"><span class="opentime">Открыто до 22:00</span><span class="min-order-price">Минимальный заказ от 3000₽</span></div>
+            <div class="baloon-footer">
+              <button class="cmn__btn cmn__btn--outlined" type="button">Ассортимент</button>
+            </div>
+          </div>
           <div id="yandex-map"></div>
         </section>
         <section class="app">
