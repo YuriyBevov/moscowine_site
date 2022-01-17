@@ -3,22 +3,23 @@ ymaps.ready(init);
 let data = {
     "type": "FeatureCollection",
     "features": [
-        {"type": "Feature", "id": 0, "geometry": {"type": "Point", "coordinates": [55.831903, 37.411961]}, "properties": {"balloonContentHeader": "<font size=3><b><a target='_blank' href='https://yandex.ru'>Здесь может быть ваша ссылка</a></b></font>", "balloonContentBody": "<p>Ваше имя: <input name='login'></p><p><em>Телефон в формате 2xxx-xxx:</em>  <input></p><p><input type='submit' value='Отправить'></p>", "balloonContentFooter": "<font size=1>Информация предоставлена: </font> <strong>этим балуном</strong>", "clusterCaption": "<strong><s>Еще</s> одна</strong> метка"}},
-
-        {
-            "type": "Feature", 
-            "id": 4, 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [55.651903, 37.411961]
-            }, 
-            /*"properties": {
-                "balloonContentHeader": "<font size=3><b><a target='_blank' href='https://yandex.ru'>Здесь может быть ваша ссылка</a></b></font>", 
-                "balloonContentBody": "<p>Ваше имя: <input name='login'></p><p><em>Телефон в формате 2xxx-xxx:</em>  <input></p><p><input type='submit' value='Отправить'></p>", 
-                "balloonContentFooter": "<font size=1>Информация предоставлена: </font> <strong>этим балуном</strong>", 
-                "clusterCaption": "<strong><s>Еще</s> одна</strong> метка", 
-                /*"hintContent": "<strong>Текст  <s>подсказки</s></strong>"*/
-            /*}*/
+        {"type": "Feature", "id": 0, "geometry": {"type": "Point", "coordinates": [55.831903, 37.411961]},
+            "properties": {
+                "balloonContentHeader": 
+                    "<div class='balloon-header'>"  +
+                        "<span class='cmn__text'> Альто-Адиже Альто-Адиже </span>" + 
+                        "<span class='cmn__text cmn__text--small district'> м. Хорошево </span>" +  
+                    "</div>", 
+                "balloonContentBody": 
+                    "<div class='balloon-content'>"  +
+                        "<span class='opentime'> Открыто до 22:00 </span>" + 
+                        "<span class='min-order-price'> Минимальный заказ от 7000₽ </span>" +  
+                    "</div>", 
+                "balloonContentFooter": 
+                    "<div class='balloon-footer'>" + 
+                        "<button type='button' class='cmn__btn cmn__btn--outlined'>Ассортимент</button>" +
+                    "</div>", 
+            }
         },
         
         {
@@ -28,13 +29,23 @@ let data = {
                 "type": "Point", 
                 "coordinates": [55.763338, 37.565466]
             }, 
-            /*"properties": {
-                "balloonContentHeader": "<font size=3><b><a target='_blank' href='https://yandex.ru'>Здесь может быть ваша ссылка</a></b></font>", 
-                "balloonContentBody": "<p>Ваше имя: <input name='login'></p><p><em>Телефон в формате 2xxx-xxx:</em>  <input></p><p><input type='submit' value='Отправить'></p>", 
-                "balloonContentFooter": "<font size=1>Информация предоставлена: </font> <strong>этим балуном</strong>", 
-                "clusterCaption": "<strong><s>Еще</s> одна</strong> метка", 
-                /*"hintContent": "<strong>Текст  <s>подсказки</s></strong>"*/
-            /*}*/
+
+            "properties": {
+                "balloonContentHeader": 
+                    "<div class='balloon-header'>"  +
+                        "<span class='cmn__text'> Альто-Адиже </span>" + 
+                        "<span class='cmn__text cmn__text--small district'> м. Хорошево </span>" +  
+                    "</div>", 
+                "balloonContentBody": 
+                    "<div class='balloon-content'>"  +
+                        "<span class='opentime'> Открыто до 22:00 </span>" + 
+                        "<span class='min-order-price'> Минимальный заказ от 3000₽ </span>" +  
+                    "</div>", 
+                "balloonContentFooter": 
+                    "<div class='balloon-footer'>" + 
+                        "<button type='button' class='cmn__btn cmn__btn--outlined'>Ассортимент</button>" +
+                    "</div>", 
+            }
         },
         
         {
@@ -45,12 +56,47 @@ let data = {
                 "coordinates": [55.763340, 37.575466]
             },
 
-            /*"properties": {
-                "balloonContentHeader": "<font size=3><b><a target='_blank' href='https://yandex.ru'>Здесь может быть ваша ссылка</a></b></font>", 
-                "balloonContentBody": "<p>Ваше имя: <input name='login'></p><p><em>Телефон в формате 2xxx-xxx:</em>  <input></p><p><input type='submit' value='Отправить'></p>", 
-                "balloonContentFooter": "<font size=1>Информация предоставлена: </font> <strong>этим балуном</strong>", 
-                "clusterCaption": "<strong><s>Еще</s> одна</strong> метка", 
-            },*/
+            "properties": {
+                "balloonContentHeader": 
+                    "<div class='balloon-header'>"  +
+                        "<span class='cmn__text'> Альто-Адиже </span>" + 
+                        "<span class='cmn__text cmn__text--small district'> м. Хорошево </span>" +  
+                    "</div>", 
+                "balloonContentBody": 
+                    "<div class='balloon-content'>"  +
+                        "<span class='opentime'> Открыто до 22:00 </span>" + 
+                        "<span class='min-order-price'> Минимальный заказ от 3000₽ </span>" +  
+                    "</div>", 
+                "balloonContentFooter": 
+                    "<div class='balloon-footer'>" + 
+                        "<button type='button' class='cmn__btn cmn__btn--outlined'>Ассортимент</button>" +
+                    "</div>", 
+            }
+        },
+
+        {
+            "type": "Feature", 
+            "id": 4, 
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [55.651903, 37.411961]
+            }, 
+            "properties": {
+                "balloonContentHeader": 
+                    "<div class='balloon-header'>"  +
+                        "<span class='cmn__text'> Альто-Адиже </span>" + 
+                        "<span class='cmn__text cmn__text--small district'> м. Хорошево </span>" +  
+                    "</div>", 
+                "balloonContentBody": 
+                    "<div class='balloon-content'>"  +
+                        "<span class='opentime'> Открыто до 22:00 </span>" + 
+                        "<span class='min-order-price'> Минимальный заказ от 3000₽ </span>" +  
+                    "</div>", 
+                "balloonContentFooter": 
+                    "<div class='balloon-footer'>" + 
+                        "<button type='button' class='cmn__btn cmn__btn--outlined'>Ассортимент</button>" +
+                    "</div>", 
+            }
         },
     ]
 }
@@ -64,7 +110,6 @@ function init(){
         zoom: 10,
         controls: [],
         behaviors: ['drag'],
-        
     }),    
     // оптимизация меток
     objectManager = new ymaps.ObjectManager({
@@ -74,7 +119,7 @@ function init(){
         gridSize: 64,
         // clusterDisableClickZoom: false,
         zoomMargin: 100,
-    });
+    });  
 
     // html-шаблон метки
     let customPlacemarkLayout = ymaps.templateLayoutFactory.createClass(
@@ -103,45 +148,22 @@ function init(){
                offset: [-23, -55]
             }
         ],
-
-        /*customItemContentLayout = ymaps.templateLayoutFactory.createClass(
-            '<div>test</div>'
-        )*/
     );
-
-    /*let myBalloonLayout = ymaps.templateLayoutFactory.createClass(
-        '<div>test</div>'
-    ); */
 
     // Метки
     objectManager.objects.options.set({
         iconLayout: customPlacemarkLayout,
         iconShape: {type: 'Circle', coordinates: [0, 0], radius: 50},
         hideIconOnBalloonOpen: false,
-
-        iconBalloonContentLayout: '<div>ЕУЫЕ</div>',
-        iconBalloonContentHeader: "<font size=3><b><a target='_blank' href='https://yandex.ru'>Здесь может быть ваша ссылка</a></b></font>"
-
-        //iconBaloonContentLayout: "properties": {"balloonContentHeader": "<font size=3><b><a target='_blank' href='https://yandex.ru'>Здесь может быть ваша ссылка</a></b></font>", "balloonContentBody": "<p>Ваше имя: <input name='login'></p><p><em>Телефон в формате 2xxx-xxx:</em>  <input></p><p><input type='submit' value='Отправить'></p>", "balloonContentFooter": "<font size=1>Информация предоставлена: </font> <strong>этим балуном</strong>", "clusterCaption": "<strong><s>Еще</s> одна</strong> метка"}
     });
 
     // Кластеры
     objectManager.clusters.options.set({
-        //clusterDisableClickZoom: true,
         clusterOpenBalloonOnClick: true,
-        //groupByCoordinates: true,
         clusterIcons: clusterIcons,
         clusterIconContentLayout: customClusterIconLayout,
         // В данном примере балун никогда не будет открываться в режиме панели.
         clusterBalloonPanelMaxMapArea: 0,
-
-        // clusterBalloonItemContentLayout: myBalloonLayout,
-        // Устанавливаем размер макета контента балуна (в пикселях).
-        /*clusterBalloonContentLayoutWidth: 350,
-        // Устанавливаем собственный макет.
-        
-        // Устанавливаем ширину левой колонки, в которой располагается список всех геообъектов кластера.
-        clusterBalloonLeftColumnWidth: 120 */
     });
 
     myMap.geoObjects.add(objectManager);
@@ -158,6 +180,8 @@ function init(){
     objectManager.add(data);
     //--- 
 
+    //--- Смена шаблона активной метки
+
     let activePlacemarkLayout = ymaps.templateLayoutFactory.createClass(
         '<div class="placemark js-active">' +
             '<div class="placemark-border"></div>' +
@@ -165,20 +189,30 @@ function init(){
             '<div class="placemark-inner"></div>' + 
         '</div>'
     );
-    //customPlacemarkLayout
-
+    
     let previousObjectId = null;
 
-    objectManager.objects.events.add('click', function (e) {
-        let objectId = e.get('objectId');
-
+    const checkIsPreviosObjectIdExist = () => {
         previousObjectId !== null ?
         objectManager.objects.setObjectOptions(previousObjectId, {
             iconLayout: customPlacemarkLayout,
         }) : null
+    }
+
+    objectManager.objects.events.add('click', function (e) {
+        let objectId = e.get('objectId');
+
+        checkIsPreviosObjectIdExist()
+        /*previousObjectId !== null ?
+        objectManager.objects.setObjectOptions(previousObjectId, {
+            iconLayout: customPlacemarkLayout,
+        }) : null*/
 
         objectManager.objects.setObjectOptions(objectId, {
             iconLayout: activePlacemarkLayout,
+
+            balloonContentHeader: 'test',
+            balloonContentFooter: 'footer'
         });
 
         previousObjectId = objectId;
@@ -186,35 +220,15 @@ function init(){
         objectManager.objects.balloon.open(objectId);
     });
 
-    /*objectManager.objects.events.add('mouseleave', function (e) {
-        console.log('CLICK')
+    // закрытие балуна при клике вне его зоны и смена шаблона на стандартную для метки
+    myMap.events.add('click', function() {
+        myMap.balloon.close();
 
-        var objectId = e.get('objectId');
-        // objectManager.objects.balloon.close(objectId);
-
-        objectManager.objects.setObjectOptions(objectId, {
+        previousObjectId !== null ?
+        objectManager.objects.setObjectOptions(previousObjectId, {
             iconLayout: customPlacemarkLayout,
-        });
-    });*/
-
-    //objectManager.clusters.events
-    /*objectManager.objects.events
-        .add('click', function (e) {
-            // Ссылку на объект, вызвавший событие,
-            // можно получить из поля 'target'.
-            //e.get('target').options.set('preset', 'islands#greenIcon');
-            console.log('in', e.get('currentTarget'))
-
-            e.get('currentTarget').options.set({
-                iconLayout: activePlacemarkLayout
-            });
-        })
-        .add('mouseleave', function (e) {
-            //e.get('target').options.unset('preset');
-            console.log('leave')
-        });
-
-    console.log(objectManager.clusters.events)*/
+        }) : null
+    });
 
     // ZOOM-CONTROL
     let ZoomLayout = ymaps.templateLayoutFactory.createClass(
@@ -261,11 +275,27 @@ function init(){
         },
 
         zoomIn: function () {
+            myMap.balloon.close();
+
+            /*previousObjectId !== null ?
+            objectManager.objects.setObjectOptions(previousObjectId, {
+                iconLayout: customPlacemarkLayout,
+            }) : null*/
+            checkIsPreviosObjectIdExist();
+
             let map = this.getData().control.getMap();
             map.setZoom(map.getZoom() + 1, {checkZoomRange: true});
         },
 
         zoomOut: function () {
+            myMap.balloon.close();
+
+            /*previousObjectId !== null ?
+            objectManager.objects.setObjectOptions(previousObjectId, {
+                iconLayout: customPlacemarkLayout,
+            }) : null*/
+            checkIsPreviosObjectIdExist();
+
             let map = this.getData().control.getMap();
             map.setZoom(map.getZoom() - 1, {checkZoomRange: true});
         }

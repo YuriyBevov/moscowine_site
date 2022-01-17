@@ -12,7 +12,6 @@
         background-color: $purple;
 
         opacity: 0.1;
-        transition: opacity $main-transition;
     }
 
     &-inner {
@@ -65,7 +64,6 @@
             background-color: $purple;
     
             opacity: 0.1;
-            transition: opacity $main-transition;
         }
 
         &-inner {
