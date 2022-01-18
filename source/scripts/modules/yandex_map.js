@@ -17,7 +17,7 @@ let data = {
                     "</div>", 
                 "balloonContentFooter": 
                     "<div class='balloon-footer'>" + 
-                        "<button type='button' class='cmn__btn cmn__btn--outlined'>Ассортимент</button>" +
+                        "<a href='#' class='cmn__btn cmn__btn--outlined'>Ассортимент</a>" +
                     "</div>", 
             }
         },
@@ -43,7 +43,7 @@ let data = {
                     "</div>", 
                 "balloonContentFooter": 
                     "<div class='balloon-footer'>" + 
-                        "<button type='button' class='cmn__btn cmn__btn--outlined'>Ассортимент</button>" +
+                        "<a href='#' class='cmn__btn cmn__btn--outlined'>Ассортимент</a>" +
                     "</div>", 
             }
         },
@@ -69,7 +69,7 @@ let data = {
                     "</div>", 
                 "balloonContentFooter": 
                     "<div class='balloon-footer'>" + 
-                        "<button type='button' class='cmn__btn cmn__btn--outlined'>Ассортимент</button>" +
+                        "<a href='#' class='cmn__btn cmn__btn--outlined'>Ассортимент</a>" +
                     "</div>", 
             }
         },
@@ -94,7 +94,7 @@ let data = {
                     "</div>", 
                 "balloonContentFooter": 
                     "<div class='balloon-footer'>" + 
-                        "<button type='button' class='cmn__btn cmn__btn--outlined'>Ассортимент</button>" +
+                        "<a href='#' class='cmn__btn cmn__btn--outlined'>Ассортимент</a>" +
                     "</div>", 
             }
         },
@@ -153,7 +153,7 @@ function init(){
     // Метки
     objectManager.objects.options.set({
         iconLayout: customPlacemarkLayout,
-        iconShape: {type: 'Circle', coordinates: [0, 0], radius: 50},
+        iconShape: {type: 'Circle', coordinates: [0, 0], radius: 30},
         hideIconOnBalloonOpen: false,
     });
 
@@ -203,16 +203,12 @@ function init(){
         let objectId = e.get('objectId');
 
         checkIsPreviosObjectIdExist()
-        /*previousObjectId !== null ?
-        objectManager.objects.setObjectOptions(previousObjectId, {
-            iconLayout: customPlacemarkLayout,
-        }) : null*/
 
         objectManager.objects.setObjectOptions(objectId, {
             iconLayout: activePlacemarkLayout,
 
-            balloonContentHeader: 'test',
-            balloonContentFooter: 'footer'
+            // позиция балуна относительно метки
+            balloonOffset: [65, 237]
         });
 
         previousObjectId = objectId;
@@ -220,14 +216,14 @@ function init(){
         objectManager.objects.balloon.open(objectId);
     });
 
+    objectManager.objects.balloon.events.add('userclose', function() {
+        checkIsPreviosObjectIdExist();
+    })
+
     // закрытие балуна при клике вне его зоны и смена шаблона на стандартную для метки
     myMap.events.add('click', function() {
         myMap.balloon.close();
-
-        previousObjectId !== null ?
-        objectManager.objects.setObjectOptions(previousObjectId, {
-            iconLayout: customPlacemarkLayout,
-        }) : null
+        checkIsPreviosObjectIdExist();
     });
 
     // ZOOM-CONTROL
@@ -276,11 +272,6 @@ function init(){
 
         zoomIn: function () {
             myMap.balloon.close();
-
-            /*previousObjectId !== null ?
-            objectManager.objects.setObjectOptions(previousObjectId, {
-                iconLayout: customPlacemarkLayout,
-            }) : null*/
             checkIsPreviosObjectIdExist();
 
             let map = this.getData().control.getMap();
@@ -289,11 +280,6 @@ function init(){
 
         zoomOut: function () {
             myMap.balloon.close();
-
-            /*previousObjectId !== null ?
-            objectManager.objects.setObjectOptions(previousObjectId, {
-                iconLayout: customPlacemarkLayout,
-            }) : null*/
             checkIsPreviosObjectIdExist();
 
             let map = this.getData().control.getMap();

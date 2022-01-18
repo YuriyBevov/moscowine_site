@@ -1,4 +1,6 @@
 [class*="-balloon"] {
+    //top: 25px !important;
+    //left: -8px !important;
     padding: 0;
     box-shadow: none !important;
 }
@@ -113,7 +115,7 @@
 }
 
 .balloon-footer {
-    button {
+    a {
         width: 100%;
         border: 1px solid $purple;
         color: $purple;
