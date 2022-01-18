@@ -1,0 +1,26 @@
+.outlined-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: $f1_med;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    width: 100%;
+    max-width: fit-content;
+
+    padding: 1rem 0.8rem;
+    padding-right: 1.6rem;
+
+    border: 1px solid $grey-200;
+    border-radius: 4px;
+
+    color: $black-100;
+
+    svg {
+        fill: none;
+        margin-right: 0.8rem;
+    }
+}

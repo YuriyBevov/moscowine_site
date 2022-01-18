@@ -1,0 +1,9 @@
+mixin tooltip(iconName, tooltipText)
+  .tooltip
+    svg(width="20" height="20")
+      use(xlink:href=iconName)
+    
+    .tooltip__body
+      span.cmn__text.cmn__text--white= tooltipText
+    
+      .tooltip__tail(aria-hidden="true")

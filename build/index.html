@@ -256,15 +256,60 @@
                         <fieldset class="search__field search-fieldset">
                           <input type="text" placeholder="Введите запрос для поиска или номер заказа...">
                           <div class="search-fieldset__container">
-                            <svg width="20" height="20">
-                              <use xlink:href="#icon-question"></use>
-                            </svg>
+                                    <div class="tooltip">
+                                      <svg width="20" height="20">
+                                        <use xlink:href="#icon-question"></use>
+                                      </svg>
+                                      <div class="tooltip__body"><span class="cmn__text cmn__text--white">Вы можете узнать статус вашего заказа, вбив его номер в строку поиска.</span>
+                                        <div class="tooltip__tail" aria-hidden="true"></div>
+                                      </div>
+                                    </div>
                             <button class="cmn__btn" type="submit">Найти</button>
                           </div>
                         </fieldset>
               </form>
               <div class="search__advanced">
-                <p>тут будет расширенный поиск...</p>
+                <div class="search__advanced-field search__advanced-field--filter">
+                  <div class="search__advanced-field-content">
+                    <form action="#"> 
+                              <p>Тип напитка</p>
+                              <p>Винтаж</p>
+                              <p>Цвет</p>
+                              <p>Сахар</p>
+                              <p>Цвет</p>
+                              <p>Объем</p>
+                    </form>
+                  </div>
+                </div>
+                <div class="search__advanced-field"><span class="cmn__text cmn__text--small cmn__text--small-semi search__advanced-field-title">Искали ранее</span>
+                  <div class="search__advanced-field-content"><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-search"><span>Charles Pelletier</span></use>
+                              </svg></a><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-search"><span>Коньяк</span></use>
+                              </svg></a><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-search"><span>Blancs Brut</span></use>
+                              </svg></a>
+                  </div>
+                </div>
+                <div class="search__advanced-field"><span class="cmn__text cmn__text--small cmn__text--small-semi search__advanced-field-title">Искали ранее</span>
+                  <div class="search__advanced-field-content"><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-trending-up"><span>Charles Pelletier</span></use>
+                              </svg></a><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-trending-up"><span>Blancs Brut</span></use>
+                              </svg></a><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-trending-up"><span>Шампанское</span></use>
+                              </svg></a><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-trending-up"><span>Коньяк</span></use>
+                              </svg></a>
+                  </div>
+                </div>
               </div><span class="cmn__text">Если не помните название напитка, попробуйте воспользоваться <a href="#">Расширенным поиском</a></span>
             </div>
           </div>

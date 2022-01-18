@@ -12526,6 +12526,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./source/scripts/modules/selectCustom.js":
+/*!************************************************!*\
+  !*** ./source/scripts/modules/selectCustom.js ***!
+  \************************************************/
+/***/ (function() {
+
+
+
+/***/ }),
+
 /***/ "./source/scripts/modules/swiper.js":
 /*!******************************************!*\
   !*** ./source/scripts/modules/swiper.js ***!
@@ -12957,11 +12967,14 @@ var __webpack_exports__ = {};
   !*** ./source/scripts/index.js ***!
   \*********************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
-/* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/yandex_map.js */ "./source/scripts/modules/yandex_map.js");
-/* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _modules_selectCustom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/selectCustom.js */ "./source/scripts/modules/selectCustom.js");
+/* harmony import */ var _modules_selectCustom_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_selectCustom_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
+/* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/yandex_map.js */ "./source/scripts/modules/yandex_map.js");
+/* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_2__);
 
 ;
+
 
 
 }();

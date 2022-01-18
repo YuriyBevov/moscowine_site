@@ -1,10 +1,37 @@
 include ../../mixins/search_fieldset
+include ../../mixins/select
+include ../../mixins/outlined-btn
 
 section.search
   .cmn__wrapper
     .search__container
       form(action="#")
         +search_fieldset('search__field', 'Найти', 'Введите запрос для поиска или номер заказа...', true, '#icon-question')
+
       .search__advanced
-        p тут будет расширенный поиск...
+        .search__advanced-field.search__advanced-field--filter
+          .search__advanced-field-content
+            form(action="#") 
+              +select(null, 'Тип напитка',  ['Любое', '', '', '', '', ''])
+              +select(null, 'Винтаж', ['Любой', '', '', '', '', ''])
+              +select(null, 'Цвет',  ['Любой', '', '', '', 'Полусадкое', ''])
+              +select(null, 'Сахар',  ['Любое', 'Брют', 'Сухое', 'Полусухое', 'Полусладкое', 'Сладкое'])
+              +select(null, 'Цвет',  ['Любой', '', '', '', '', ''])
+              +select(null, 'Объем',  ['Любой', '', '', '', '', ''])
+
+        .search__advanced-field
+          span.cmn__text.cmn__text--small.cmn__text--small-semi.search__advanced-field-title Искали ранее
+          .search__advanced-field-content
+            +outlined-btn(null, 'icon-search', 'Charles Pelletier')
+            +outlined-btn(null, 'icon-search', 'Коньяк')
+            +outlined-btn(null, 'icon-search', 'Blancs Brut')
+
+        .search__advanced-field
+          span.cmn__text.cmn__text--small.cmn__text--small-semi.search__advanced-field-title Искали ранее
+          .search__advanced-field-content
+            +outlined-btn(null, 'icon-trending-up', 'Charles Pelletier')
+            +outlined-btn(null, 'icon-trending-up', 'Blancs Brut')
+            +outlined-btn(null, 'icon-trending-up', 'Шампанское')
+            +outlined-btn(null, 'icon-trending-up', 'Коньяк')
+            
       span.cmn__text Если не помните название напитка, попробуйте воспользоваться <a href="#">Расширенным поиском</a>
