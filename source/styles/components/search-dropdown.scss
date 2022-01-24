@@ -1,6 +1,12 @@
 .search-filter {
     margin-right: 0.8rem;
-    button {
+    &__menu {
+        &.js-collapsed {
+            display: none;
+        }
+    }
+
+    &__dropdown {
         position: relative;
         display: flex;
         align-items: center;
@@ -8,7 +14,7 @@
         padding: 1rem 1.6rem;
         padding-right: 4rem;
 
-        border: 1px solid $grey-200;
+        border: 2px solid $grey-200;
         border-radius: 4px; 
         color: $black-100;
         background-color: transparent;
@@ -16,7 +22,7 @@
         transition: border $main-transition;       
 
         &.js-filter-active {
-            border: 1px solid $black-100;
+            border: 2px solid $black-100;
             backdrop-filter: blur(20px);
         }
 
@@ -63,7 +69,6 @@
             }
         }
     }
-
     
     @keyframes rotateIn {
         0% {

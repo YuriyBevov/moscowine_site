@@ -1,13 +1,15 @@
 mixin search-dropdown(cl, label, title, array)
   .search-filter
-    button(type="button" data-id="select-btn").cmn__text.js-filter-active.active= title
-      span.cmn__text.selected-count.js-filter-selected 2
+    button(type="button" data-id="select-btn").search-filter__dropdown.cmn__text= title
+      span.cmn__text.selected-count
     
-    form(action="#")
-      each item in array
-        fieldset
-          input(type="checkbox" id= label + item.label)
-          label(for= label + item.label)= item.title
+    .search-filter__menu.js-collapsed
+      form(action="#")
+        button(type="button").js-select-all Любой
+        each item in array
+          fieldset
+            input(type="checkbox" id= label + item.label)
+            label(for= label + item.label)= item.title
 
-      input(type="submit").visually-hidden 
+        input(type="submit").visually-hidden 
   

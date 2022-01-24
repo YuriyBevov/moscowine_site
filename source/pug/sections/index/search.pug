@@ -13,10 +13,6 @@ section.search
           .search__advanced-field-content.search__advanced-field-content--filter
             +search-dropdown(null, 'drink_type-', 'Тип напитка',  [
               {
-                title: 'Любое',
-                label: 'any'
-              },
-              {
                 title:  'Водка',
                 label:  'vodka'
               },
@@ -37,11 +33,7 @@ section.search
                 label: 'vine'
               }
             ])
-            +search-dropdown(null, 'drink_vintage', 'Винтаж', [
-              {
-                title: 'Любой',
-                label: 'any'
-              },
+            +search-dropdown(null, 'drink_vintage-', 'Винтаж', [
               {
                 title: '1900-1920',
                 label: '1900-1920'
@@ -59,11 +51,7 @@ section.search
                 label: '1960-1980'
               },
             ])
-            +search-dropdown(null, 'drink_color', 'Цвет',  [
-              {
-                title: 'Любой',
-                label: 'any'
-              },
+            +search-dropdown(null, 'drink_color-', 'Цвет',  [
               {
                 title: 'Белый',
                 label: 'white'
@@ -85,11 +73,7 @@ section.search
                 label: 'light'
               }
             ])
-            +search-dropdown(null, 'drink_sugar', 'Сахар',  [
-              {
-                title: 'Любое',
-                label: 'any'
-              },
+            +search-dropdown(null, 'drink_sugar-', 'Сахар',  [
               {
                 title: 'Сухое',
                 label: 'dry'
@@ -107,11 +91,7 @@ section.search
                 label: 'sweet '
               },
             ])
-            +search-dropdown(null, 'drink_volume', 'Объем',  [
-              {
-                title: 'Любой',
-                label: 'any'
-              },
+            +search-dropdown(null, 'drink_volume-', 'Объем',  [
               {
                 title: '1л',
                 label: '1'
