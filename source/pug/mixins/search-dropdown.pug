@@ -1,0 +1,13 @@
+mixin search-dropdown(cl, label, title, array)
+  .search-filter
+    button(type="button" data-id="select-btn").cmn__text.js-filter-active.active= title
+      span.cmn__text.selected-count.js-filter-selected 2
+    
+    form(action="#")
+      each item in array
+        fieldset
+          input(type="checkbox" id= label + item.label)
+          label(for= label + item.label)= item.title
+
+      input(type="submit").visually-hidden 
+  

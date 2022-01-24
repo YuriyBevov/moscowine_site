@@ -45,12 +45,12 @@
                     display: flex;
                     align-items: center;
 
-                    a {
-                        margin-right: 0.8rem;
+                    &--filter {
+                        align-items: flex-start;
                     }
 
-                    &--filter a {
-                        margin-right: 1.6rem;
+                    a {
+                        margin-right: 0.8rem;
                     }
                 }
             }

@@ -1,5 +1,5 @@
 include ../../mixins/search_fieldset
-include ../../mixins/select
+include ../../mixins/search-dropdown
 include ../../mixins/outlined-btn
 
 section.search
@@ -9,15 +9,130 @@ section.search
         +search_fieldset('search__field', 'Найти', 'Введите запрос для поиска или номер заказа...', true, '#icon-question')
 
       .search__advanced
-        .search__advanced-field.search__advanced-field--filter
-          .search__advanced-field-content
-            form(action="#") 
-              +select(null, 'Тип напитка',  ['Любое', '', '', '', '', ''])
-              +select(null, 'Винтаж', ['Любой', '', '', '', '', ''])
-              +select(null, 'Цвет',  ['Любой', '', '', '', 'Полусадкое', ''])
-              +select(null, 'Сахар',  ['Любое', 'Брют', 'Сухое', 'Полусухое', 'Полусладкое', 'Сладкое'])
-              +select(null, 'Цвет',  ['Любой', '', '', '', '', ''])
-              +select(null, 'Объем',  ['Любой', '', '', '', '', ''])
+        .search__advanced-field
+          .search__advanced-field-content.search__advanced-field-content--filter
+            +search-dropdown(null, 'drink_type-', 'Тип напитка',  [
+              {
+                title: 'Любое',
+                label: 'any'
+              },
+              {
+                title:  'Водка',
+                label:  'vodka'
+              },
+              {
+                title: 'Коньяк',
+                label: 'cognac'
+              },
+              {
+                title: 'Пиво',
+                label: 'beer'
+              },
+              {
+                title: 'Шампансвое',
+                label: 'champagne'
+              },
+              {
+                title: 'Вино',
+                label: 'vine'
+              }
+            ])
+            +search-dropdown(null, 'drink_vintage', 'Винтаж', [
+              {
+                title: 'Любой',
+                label: 'any'
+              },
+              {
+                title: '1900-1920',
+                label: '1900-1920'
+              },
+              {
+                title: '1920-1940',
+                label: '1920-1940'
+              },
+              {
+                title: '1940-1960',
+                label: '1940-1960'
+              },
+              {
+                title: '1960-1980',
+                label: '1960-1980'
+              },
+            ])
+            +search-dropdown(null, 'drink_color', 'Цвет',  [
+              {
+                title: 'Любой',
+                label: 'any'
+              },
+              {
+                title: 'Белый',
+                label: 'white'
+              },
+              {
+                title: 'Красный',
+                label: 'red'
+              },
+              {
+                title: 'Черный',
+                label: 'black'
+              },
+              {
+                title: 'Темный',
+                label: 'dark'
+              },
+              {
+                title: 'Светлый',
+                label: 'light'
+              }
+            ])
+            +search-dropdown(null, 'drink_sugar', 'Сахар',  [
+              {
+                title: 'Любое',
+                label: 'any'
+              },
+              {
+                title: 'Сухое',
+                label: 'dry'
+              },
+              {
+                title: 'Полусухое',
+                label: 'semi-dry'
+              },
+              {
+                title: 'Полусладкое',
+                label: 'semi-sweet'
+              },
+              {
+                title: 'Сладкое',
+                label: 'sweet '
+              },
+            ])
+            +search-dropdown(null, 'drink_volume', 'Объем',  [
+              {
+                title: 'Любой',
+                label: 'any'
+              },
+              {
+                title: '1л',
+                label: '1'
+              },
+              {
+                title: '0,7л',
+                label: '0.7'
+              },
+              {
+                title: '0,5л',
+                label: '0.5'
+              },
+              {
+                title: '0,33л',
+                label: '0.33'
+              },
+              {
+                title: '0,2л',
+                label: '0.2'
+              },
+            ])
 
         .search__advanced-field
           span.cmn__text.cmn__text--small.cmn__text--small-semi.search__advanced-field-title Искали ранее

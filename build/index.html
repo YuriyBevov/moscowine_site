@@ -269,16 +269,150 @@
                         </fieldset>
               </form>
               <div class="search__advanced">
-                <div class="search__advanced-field search__advanced-field--filter">
-                  <div class="search__advanced-field-content">
-                    <form action="#"> 
-                              <p>Тип напитка</p>
-                              <p>Винтаж</p>
-                              <p>Цвет</p>
-                              <p>Сахар</p>
-                              <p>Цвет</p>
-                              <p>Объем</p>
-                    </form>
+                <div class="search__advanced-field">
+                  <div class="search__advanced-field-content search__advanced-field-content--filter">
+                            <div class="search-filter">
+                              <button class="cmn__text js-filter-active active" type="button" data-id="select-btn">Тип напитка<span class="cmn__text selected-count js-filter-selected">2</span></button>
+                              <form action="#">
+                                <fieldset>
+                                  <input type="checkbox" id="drink_type-any">
+                                  <label for="drink_type-any">Любое</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_type-vodka">
+                                  <label for="drink_type-vodka">Водка</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_type-cognac">
+                                  <label for="drink_type-cognac">Коньяк</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_type-beer">
+                                  <label for="drink_type-beer">Пиво</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_type-champagne">
+                                  <label for="drink_type-champagne">Шампансвое</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_type-vine">
+                                  <label for="drink_type-vine">Вино</label>
+                                </fieldset>
+                                <input class="visually-hidden" type="submit">
+                              </form>
+                            </div>
+                            <div class="search-filter">
+                              <button class="cmn__text js-filter-active active" type="button" data-id="select-btn">Винтаж<span class="cmn__text selected-count js-filter-selected">2</span></button>
+                              <form action="#">
+                                <fieldset>
+                                  <input type="checkbox" id="drink_vintageany">
+                                  <label for="drink_vintageany">Любой</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_vintage1900-1920">
+                                  <label for="drink_vintage1900-1920">1900-1920</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_vintage1920-1940">
+                                  <label for="drink_vintage1920-1940">1920-1940</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_vintage1940-1960">
+                                  <label for="drink_vintage1940-1960">1940-1960</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_vintage1960-1980">
+                                  <label for="drink_vintage1960-1980">1960-1980</label>
+                                </fieldset>
+                                <input class="visually-hidden" type="submit">
+                              </form>
+                            </div>
+                            <div class="search-filter">
+                              <button class="cmn__text js-filter-active active" type="button" data-id="select-btn">Цвет<span class="cmn__text selected-count js-filter-selected">2</span></button>
+                              <form action="#">
+                                <fieldset>
+                                  <input type="checkbox" id="drink_colorany">
+                                  <label for="drink_colorany">Любой</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_colorwhite">
+                                  <label for="drink_colorwhite">Белый</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_colorred">
+                                  <label for="drink_colorred">Красный</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_colorblack">
+                                  <label for="drink_colorblack">Черный</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_colordark">
+                                  <label for="drink_colordark">Темный</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_colorlight">
+                                  <label for="drink_colorlight">Светлый</label>
+                                </fieldset>
+                                <input class="visually-hidden" type="submit">
+                              </form>
+                            </div>
+                            <div class="search-filter">
+                              <button class="cmn__text js-filter-active active" type="button" data-id="select-btn">Сахар<span class="cmn__text selected-count js-filter-selected">2</span></button>
+                              <form action="#">
+                                <fieldset>
+                                  <input type="checkbox" id="drink_sugarany">
+                                  <label for="drink_sugarany">Любое</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_sugardry">
+                                  <label for="drink_sugardry">Сухое</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_sugarsemi-dry">
+                                  <label for="drink_sugarsemi-dry">Полусухое</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_sugarsemi-sweet">
+                                  <label for="drink_sugarsemi-sweet">Полусладкое</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_sugarsweet ">
+                                  <label for="drink_sugarsweet ">Сладкое</label>
+                                </fieldset>
+                                <input class="visually-hidden" type="submit">
+                              </form>
+                            </div>
+                            <div class="search-filter">
+                              <button class="cmn__text js-filter-active active" type="button" data-id="select-btn">Объем<span class="cmn__text selected-count js-filter-selected">2</span></button>
+                              <form action="#">
+                                <fieldset>
+                                  <input type="checkbox" id="drink_volumeany">
+                                  <label for="drink_volumeany">Любой</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_volume1">
+                                  <label for="drink_volume1">1л</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_volume0.7">
+                                  <label for="drink_volume0.7">0,7л</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_volume0.5">
+                                  <label for="drink_volume0.5">0,5л</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_volume0.33">
+                                  <label for="drink_volume0.33">0,33л</label>
+                                </fieldset>
+                                <fieldset>
+                                  <input type="checkbox" id="drink_volume0.2">
+                                  <label for="drink_volume0.2">0,2л</label>
+                                </fieldset>
+                                <input class="visually-hidden" type="submit">
+                              </form>
+                            </div>
                   </div>
                 </div>
                 <div class="search__advanced-field"><span class="cmn__text cmn__text--small cmn__text--small-semi search__advanced-field-title">Искали ранее</span>
