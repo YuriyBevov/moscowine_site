@@ -1,40 +1,49 @@
-.search-filter {
+.search-dropdown {
+    position: relative;
     margin-right: 0.8rem;
-    &__menu {
-        &.js-collapsed {
-            display: none;
-        }
-    }
 
-    &__dropdown {
+    &__button {
         position: relative;
         display: flex;
         align-items: center;
 
         padding: 1rem 1.6rem;
         padding-right: 4rem;
+        min-height: 4.8rem;
 
         border: 2px solid $grey-200;
         border-radius: 4px; 
         color: $black-100;
         background-color: transparent;
 
-        transition: border $main-transition;       
+        transition: border $main-transition;
+        backdrop-filter: blur(20px);
+        
+        &:hover,
+        &:focus {
+            border: 2px solid $black-100;
+        }
 
         &.js-filter-active {
             border: 2px solid $black-100;
-            backdrop-filter: blur(20px);
+        }
+
+        b {
+            white-space: nowrap;
         }
 
         span {
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 0;
+            height: 0;
+            transform: rotateY(90deg);
             margin: 0 0.8rem;
             border-radius: 50%;
             color: $white;
             background-color: $black-100;
-            animation: rotateOut 0.7s linear forwards;
+            // animation: rotateOut 0.7s linear;
 
             &.js-filter-selected {
                 width: 2.4rem;
@@ -115,6 +124,93 @@
             width: 0;
             height: 0;
             transform: rotateY(90deg);
+        }
+    }
+
+    /* Выпадающий список */
+    
+    &__menu {
+        padding: 0.8rem;
+
+        &.js-collapsed {
+            display: none;
+        }
+
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        width: 28rem;
+        background: $white;
+        border-radius: 4px;
+        z-index: 10;
+
+        filter: drop-shadow(0px 29px 69px rgba(12, 43, 122, 0.05)) drop-shadow(0px 18.7963px 40.4097px rgba(12, 43, 122, 0.037963)) drop-shadow(0px 11.1704px 21.9778px rgba(12, 43, 122, 0.0303704)) drop-shadow(0px 5.8px 11.2125px rgba(12, 43, 122, 0.025)) drop-shadow(0px 2.36296px 5.62222px rgba(12, 43, 122, 0.0196296)) drop-shadow(0px 0.537037px 2.71528px rgba(12, 43, 122, 0.012037));
+
+        fieldset {
+            border: 0;
+            margin: 0;
+            padding: 0;
+
+            input {
+                display: none;
+            }
+
+            label {
+                position: relative;
+                display: flex;
+                align-items: center;
+                font-family: $f1_med;
+                font-size: 1.5rem;
+                line-height: 2rem;
+
+                width: 100%;
+                height: 100%;
+                
+                padding: 1.8rem 0.8rem;
+                padding-left: 5.2rem;
+                cursor: pointer;
+
+                color: $black-100;
+                transition: background-color $main-transition;
+
+                &:hover,
+                &:focus {
+                    background-color: $grey-100;
+                }
+            }
+        }
+
+        fieldset:first-child {
+            border-bottom: 1px solid $grey-200;
+        }
+
+        fieldset/*:not(:first-child)*/ {
+            label {
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    left: 1.8rem;
+                    transform: translateY(-50%);
+
+                    content: '';
+
+                    width: 2rem;
+                    height: 2rem;
+
+                    border: 1px solid $grey-200;
+                    border-radius: 4px;
+                    background-color: transparent;
+                    transition: background-color $main-transition;
+                }
+            }
+
+            input[type="checkbox"]:checked + label::before {
+                background-color: $purple;
+                background-image: url("../assets/img/check-icon.svg");
+                background-size: 16px;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
         }
     }
 }

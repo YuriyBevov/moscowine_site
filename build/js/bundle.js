@@ -12526,129 +12526,183 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./source/scripts/modules/filter_dropdown.js":
-/*!***************************************************!*\
-  !*** ./source/scripts/modules/filter_dropdown.js ***!
-  \***************************************************/
-/***/ (function() {
+/***/ "./source/scripts/functions.js":
+/*!*************************************!*\
+  !*** ./source/scripts/functions.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-// нахожу все фильтры с менюшками скрытыми
-let filters = document.querySelectorAll('.search-filter');
-//  кнопка открытия меню
-let btns = document.querySelectorAll('.search-filter button');
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addClass": function() { return /* binding */ addClass; },
+/* harmony export */   "removeClass": function() { return /* binding */ removeClass; },
+/* harmony export */   "checkClass": function() { return /* binding */ checkClass; },
+/* harmony export */   "toggleClass": function() { return /* binding */ toggleClass; }
+/* harmony export */ });
+function addClass(el, cl) {
+    el.classList.add(cl);
+}
 
-// btn - js-filter-active = когда фильтр внутри выбран полностью
-// btn - active = когда кнопка активна и фильтр показан
-// span - js-filter-selected = когда фильтр выбран частично и показывается кол-во
-// form - js-collapsed = когда форма закрыта
+function removeClass(el, cl) {
+    el.classList.remove(cl);
+}
+
+function checkClass(el, cl) {
+    return el.classList.contains(cl);
+}
+
+function toggleClass(el, cl) {
+    el.classList.toggle(cl);
+}
 
 
-// все работает норм кроме кнопки выбрать все !!!!!!!!!!!!!!!!!!
-// сделать рефакторинг
+
+/***/ }),
+
+/***/ "./source/scripts/modules/filter_drop.js":
+/*!***********************************************!*\
+  !*** ./source/scripts/modules/filter_drop.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+
+// нахожу все кнопки для открытия меню
+let btns = document.querySelectorAll('.search-dropdown__button');
 
 // сохраняю в пер-ю текущее меню
 let activeMenu;
 
-// получаю активное меню и булево, была ли кликнута кнопка выбрать все
-const setFilterParams = (menu, isSelectedAll) => {
-    // все чекбоксы в форме
-    let checkboxes = menu.querySelectorAll('input[type="checkbox"]');
-    // все активные чекбоксы в форме
-    let activeCheckboxes = menu.querySelectorAll('input[type="checkbox"]:checked');
-    // бэджик в кнопке, с кол-м выбранных фильтров
-    let badge = menu.previousElementSibling.querySelector('span');
+//--------- Загрузчик и показ результатов, для показа
 
-    // если нажата кнопка выбрать все
-    if(isSelectedAll) {
-        ///лаги
-        if(checkboxes.length > activeCheckboxes.length) {
-            checkboxes.forEach(checkbox => checkbox.checked = true);
-            menu.previousElementSibling.classList.add('js-filter-active');
-            badge.classList.contains('js-filter-selected') ?
-            badge.classList.remove('js-filter-selected') : null;
-        } else {
-            checkboxes.forEach(checkbox => checkbox.checked = false);
-            menu.previousElementSibling.classList.remove('js-filter-active');
-        }
-        //------
-    } else {
-        if(activeCheckboxes.length > 0) {
-            !badge.classList.contains('js-filter-selected') ?
-            badge.classList.add('js-filter-selected') : null;
-            badge.innerHTML = activeCheckboxes.length;
-    
-            if(checkboxes.length === activeCheckboxes.length && !menu.previousElementSibling.classList.contains('js-filter-active')) {
-                menu.previousElementSibling.classList.add('js-filter-active');
-                badge.classList.contains('js-filter-selected') ?
-                badge.classList.remove('js-filter-selected') : null;
-            } else {
-                menu.previousElementSibling.classList.remove('js-filter-active');
+let loader = document.querySelector('.loader');
+const loaderTime = 700; //мс
+const intervalTime = 100; // мс
+const intervalClearStep = 1;
+let intervalClearTime = 0;
+let results = document.querySelector('.search__advanced-result-container');
+
+const searching = function(fields) {
+    (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(results, 'active');
+
+    if(!(0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.checkClass)(loader, 'js-active')) {
+        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(loader, 'js-active');
+        let loaderInterval = setInterval(() => {
+            intervalClearTime += intervalClearStep;
+            if(intervalClearTime === loaderTime / intervalTime) {
+                (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(loader, 'js-active');
+                clearInterval(loaderInterval);
+                intervalClearTime = 0;
+                showResults();
             }
-        } else {
-            badge.classList.contains('js-filter-selected') ?
-            badge.classList.remove('js-filter-selected') : null;
-        } 
+        }, intervalTime);
+    } else {
+        intervalClearTime = 0;
     }
+};
+
+const showResults = function() {
+    (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(results, 'active');
 }
 
-const changeFilterParamsHandler = function() {
-    // при выборе чекбокса, передаю активную менюшку, без параметра выбрать все
-    setFilterParams(activeMenu, false);
-}
+//----------
 
-const checkMenuItemsStatus = menu => {
-    // записываю тек меню в пер-ю
-    activeMenu = menu;
+const setFilterParams = (evt) => {
+    // все чекбоксы в форме
+    let controls = activeMenu.querySelectorAll('input[type="checkbox"]');
+    // чекбокс выбрать все
+    let selectAllControl = controls[0];
+    // все активные чекбоксы в форме
+    
+    // бэджик в кнопке, с кол-м выбранных фильтров
+    let badge = activeMenu.previousElementSibling.querySelector('.search-dropdown__badge');
 
-    //--------------------------
+    if(evt.target === selectAllControl) {
+        selectAllControl.checked === true ?
+        controls.forEach(checkbox => checkbox.checked = true) :
+        controls.forEach(checkbox => checkbox.checked = false);
+    }
 
-    // нахожу в меню кнопку "выбрать все"
-    let selectAllBtn = menu.querySelector('.js-select-all');
-    // вешаю на нее обработчик.. !! тут нужнобудет как то его удалять потом
-    selectAllBtn.addEventListener('click', function() {
-        console.log('event')
-        // при клике на кнопку, передаю активную менюшку, с параметром выбрать все
-        setFilterParams(activeMenu, true);
+    let checkedControlsLength = 0;
+
+    controls.forEach(c => {
+        c.checked ?
+        checkedControlsLength += 1 : null;
     });
     
-    //--------------------------------
+    if(controls.length - 1 === checkedControlsLength && selectAllControl.checked === false) {
+        selectAllControl.checked = true;
+        checkedControlsLength += 1;
+    } else if (controls.length - 1 === checkedControlsLength && selectAllControl.checked === true) {
+        selectAllControl.checked = false;
+        checkedControlsLength -= 1;
+    }
+
+    if(checkedControlsLength > 0) {
+        !(0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.checkClass)(badge, 'js-filter-selected') ?
+        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(badge, 'js-filter-selected') : null;
+        // показываю кол-во активных чекбоксов, за искл ч-са выбрать все
+        selectAllControl.checked === false ?
+        badge.innerHTML = checkedControlsLength :
+        badge.innerHTML = checkedControlsLength - 1;
+
+        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(activeMenu.previousElementSibling,'js-filter-active');
+    } else {
+        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.checkClass)(badge, 'js-filter-selected') ?
+        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(badge, 'js-filter-selected') : null;
+        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(activeMenu.previousElementSibling,'js-filter-active');
+    }
+    
+    // передаю выбранные чекбоксы в функцию поиска
+    let selected = [];
+    controls.forEach(ctrl => ctrl.checked === true ? selected.push(ctrl.getAttribute('id')) : null);
+    searching(selected);
+}
+
+const setActiveFilterListeners = filter => {
     // нахожу все чекбоксы
-    let controls = menu.querySelectorAll('input[type="checkbox"]');
+    let controls = filter.querySelectorAll('input[type="checkbox"]');
     controls.forEach(control => {
         // вешаю на них слушатель
-        control.addEventListener('change', changeFilterParamsHandler)
+        control.addEventListener('change', setFilterParams);
     });
 }
 
-const onClickShowMenu = function() {
+// показываю меню
+const onClickOpenMenu = function() {
+    // контекст, наша кнопка открытия фильтра
     let btn = this;
-    //нахожу тек-е меню
-    let menu = btn.nextElementSibling;
-    // закрываю все открытые на данный момент менюшки
+    
+    // текущее меню фильтр
+    activeMenu = btn.nextElementSibling;
+
+    // закрываю все активные фильтры
     btns.forEach(btn => {
-        if(btn !== this && btn.classList.contains('active')) {
-            btn.classList.remove('active');
-            btn.nextElementSibling.classList.add('js-collapsed');
+        if(btn !== this && (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.checkClass)(btn, 'active')) {
+            (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(btn, 'active');
+            (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(btn.nextElementSibling, 'js-collapsed');
         }
     })
-    // проверяю, если тек-я мнюшка уже открыта - закрываю ее,
-    // если нет открываю и проверяю статус чекбоксов
+    // открываю/закрываю фильтр
     if(!btn.classList.contains('active')) {
-        menu.classList.remove('js-collapsed');
-        btn.classList.add('active');
+        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(activeMenu, 'js-collapsed');
+        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(btn, 'active');
         // проверяю статус чекбоксов в текущем меню
-        checkMenuItemsStatus(menu);
+        setActiveFilterListeners(activeMenu);
     } else {
-        menu.classList.add('js-collapsed');
-        btn.classList.remove('active');
+        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(activeMenu, 'js-collapsed');
+        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(btn, 'active');
+        activeMenu = null;
     }
 }
 
-// вешаю событие клика на все кнопки открытия менюшек
-filters.forEach(filter => {
-    let btn = filter.querySelector('button');
-    btn.addEventListener('click', onClickShowMenu);
-});
+//вешаю событие клика на все кнопки открывающие меню с фильтром
+btns.forEach(btn => {
+    btn.addEventListener('click', onClickOpenMenu);
+})
 
 /***/ }),
 
@@ -13083,14 +13137,12 @@ var __webpack_exports__ = {};
   !*** ./source/scripts/index.js ***!
   \*********************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_filter_dropdown_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/filter_dropdown.js */ "./source/scripts/modules/filter_dropdown.js");
-/* harmony import */ var _modules_filter_dropdown_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_filter_dropdown_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_filter_drop_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/filter_drop.js */ "./source/scripts/modules/filter_drop.js");
 /* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
 /* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/yandex_map.js */ "./source/scripts/modules/yandex_map.js");
 /* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_2__);
 
 ;
-
 
 
 

@@ -271,11 +271,14 @@
               <div class="search__advanced">
                 <div class="search__advanced-field">
                   <div class="search__advanced-field-content search__advanced-field-content--filter">
-                            <div class="search-filter">
-                              <button class="search-filter__dropdown cmn__text" type="button" data-id="select-btn">Тип напитка<span class="cmn__text selected-count"></span></button>
-                              <div class="search-filter__menu js-collapsed">
+                            <div class="search-dropdown">
+                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Тип напитка</b><span class="cmn__text search-dropdown__badge"></span></button>
+                              <div class="search-dropdown__menu js-collapsed">
                                 <form action="#">
-                                  <button class="js-select-all" type="button">Любой</button>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_type-any">
+                                    <label for="drink_type-any">Выбрать все</label>
+                                  </fieldset>
                                   <fieldset>
                                     <input type="checkbox" id="drink_type-vodka">
                                     <label for="drink_type-vodka">Водка</label>
@@ -300,11 +303,14 @@
                                 </form>
                               </div>
                             </div>
-                            <div class="search-filter">
-                              <button class="search-filter__dropdown cmn__text" type="button" data-id="select-btn">Винтаж<span class="cmn__text selected-count"></span></button>
-                              <div class="search-filter__menu js-collapsed">
+                            <div class="search-dropdown">
+                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Винтаж</b><span class="cmn__text search-dropdown__badge"></span></button>
+                              <div class="search-dropdown__menu js-collapsed">
                                 <form action="#">
-                                  <button class="js-select-all" type="button">Любой</button>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_vintage-any">
+                                    <label for="drink_vintage-any">Выбрать все</label>
+                                  </fieldset>
                                   <fieldset>
                                     <input type="checkbox" id="drink_vintage-1900-1920">
                                     <label for="drink_vintage-1900-1920">1900-1920</label>
@@ -325,11 +331,14 @@
                                 </form>
                               </div>
                             </div>
-                            <div class="search-filter">
-                              <button class="search-filter__dropdown cmn__text" type="button" data-id="select-btn">Цвет<span class="cmn__text selected-count"></span></button>
-                              <div class="search-filter__menu js-collapsed">
+                            <div class="search-dropdown">
+                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Цвет</b><span class="cmn__text search-dropdown__badge"></span></button>
+                              <div class="search-dropdown__menu js-collapsed">
                                 <form action="#">
-                                  <button class="js-select-all" type="button">Любой</button>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_color-any">
+                                    <label for="drink_color-any">Выбрать все</label>
+                                  </fieldset>
                                   <fieldset>
                                     <input type="checkbox" id="drink_color-white">
                                     <label for="drink_color-white">Белый</label>
@@ -354,11 +363,14 @@
                                 </form>
                               </div>
                             </div>
-                            <div class="search-filter">
-                              <button class="search-filter__dropdown cmn__text" type="button" data-id="select-btn">Сахар<span class="cmn__text selected-count"></span></button>
-                              <div class="search-filter__menu js-collapsed">
+                            <div class="search-dropdown">
+                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Сахар</b><span class="cmn__text search-dropdown__badge"></span></button>
+                              <div class="search-dropdown__menu js-collapsed">
                                 <form action="#">
-                                  <button class="js-select-all" type="button">Любой</button>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_sugar-any">
+                                    <label for="drink_sugar-any">Выбрать все</label>
+                                  </fieldset>
                                   <fieldset>
                                     <input type="checkbox" id="drink_sugar-dry">
                                     <label for="drink_sugar-dry">Сухое</label>
@@ -379,11 +391,14 @@
                                 </form>
                               </div>
                             </div>
-                            <div class="search-filter">
-                              <button class="search-filter__dropdown cmn__text" type="button" data-id="select-btn">Объем<span class="cmn__text selected-count"></span></button>
-                              <div class="search-filter__menu js-collapsed">
+                            <div class="search-dropdown">
+                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Объем</b><span class="cmn__text search-dropdown__badge"></span></button>
+                              <div class="search-dropdown__menu js-collapsed">
                                 <form action="#">
-                                  <button class="js-select-all" type="button">Любой</button>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_volume-any">
+                                    <label for="drink_volume-any">Выбрать все</label>
+                                  </fieldset>
                                   <fieldset>
                                     <input type="checkbox" id="drink_volume-1">
                                     <label for="drink_volume-1">1л</label>
@@ -409,6 +424,14 @@
                               </div>
                             </div>
                   </div>
+                </div>
+                <div class="search__advanced-result">
+                  <div class="loader">
+                    <div class="loader__container">
+                      <div class="loader__body"></div>
+                    </div>
+                  </div>
+                  <div class="search__advanced-result-container"><span class="cmn__text">Ничего не найдено</span></div>
                 </div>
                 <div class="search__advanced-field"><span class="cmn__text cmn__text--small cmn__text--small-semi search__advanced-field-title">Искали ранее</span>
                   <div class="search__advanced-field-content"><a class="outlined-btn" href="#">

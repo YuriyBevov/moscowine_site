@@ -13,6 +13,10 @@ section.search
           .search__advanced-field-content.search__advanced-field-content--filter
             +search-dropdown(null, 'drink_type-', 'Тип напитка',  [
               {
+                title: 'Выбрать все',
+                label: 'any'
+              },
+              {
                 title:  'Водка',
                 label:  'vodka'
               },
@@ -32,8 +36,12 @@ section.search
                 title: 'Вино',
                 label: 'vine'
               }
-            ])
+            ], true)
             +search-dropdown(null, 'drink_vintage-', 'Винтаж', [
+              {
+                title: 'Выбрать все',
+                label: 'any'
+              },
               {
                 title: '1900-1920',
                 label: '1900-1920'
@@ -52,6 +60,10 @@ section.search
               },
             ])
             +search-dropdown(null, 'drink_color-', 'Цвет',  [
+              {
+                title: 'Выбрать все',
+                label: 'any'
+              },
               {
                 title: 'Белый',
                 label: 'white'
@@ -75,6 +87,10 @@ section.search
             ])
             +search-dropdown(null, 'drink_sugar-', 'Сахар',  [
               {
+                title: 'Выбрать все',
+                label: 'any'
+              },
+              {
                 title: 'Сухое',
                 label: 'dry'
               },
@@ -92,6 +108,10 @@ section.search
               },
             ])
             +search-dropdown(null, 'drink_volume-', 'Объем',  [
+              {
+                title: 'Выбрать все',
+                label: 'any'
+              },
               {
                 title: '1л',
                 label: '1'
@@ -113,6 +133,12 @@ section.search
                 label: '0.2'
               },
             ])
+
+        
+        .search__advanced-result
+          include ../common/loader
+          .search__advanced-result-container
+            span.cmn__text Ничего не найдено
 
         .search__advanced-field
           span.cmn__text.cmn__text--small.cmn__text--small-semi.search__advanced-field-title Искали ранее
