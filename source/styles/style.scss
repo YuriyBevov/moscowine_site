@@ -24,13 +24,14 @@
 @import "./components/yandex-map/placemark";
 @import "./components/yandex-map/balloon";
 @import "./components/loader";
+@import "./components/product-card-sm";
 
 /*header*/
 @import "./layouts/components/header";
 /*nav*/
 @import "./layouts/components/nav";
 /*logo*/
-//@import "./layouts/components/logo";
+@import "./layouts/components/logo";
 
 /*index*/
 @import "./sections/index/intro";

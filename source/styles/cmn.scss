@@ -51,6 +51,11 @@
          line-height: 2.3rem;
       }
 
+      &--bold {
+         font-family: $f1_bold;
+         font-weight: 700;
+      }
+
       &--large {
          font-size: 3.2rem;
          line-height: 3.8rem;

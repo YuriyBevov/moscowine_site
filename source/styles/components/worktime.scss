@@ -1,7 +1,7 @@
 .worktime {
     display: flex;
     flex-direction: column;
-    width: 18.5rem;
+    max-width: 18.5rem;
 
     a {
         font-family: $f1_semi;

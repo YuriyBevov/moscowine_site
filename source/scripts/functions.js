@@ -1,3 +1,7 @@
+function limitStr( str, n ) {
+    return str.slice(0, n) + '...';
+}
+
 function addClass(el, cl) {
     el.classList.add(cl);
 }
@@ -14,4 +18,4 @@ function toggleClass(el, cl) {
     el.classList.toggle(cl);
 }
 
-export  { addClass, removeClass, checkClass, toggleClass }
+export  { limitStr, addClass, removeClass, checkClass, toggleClass }

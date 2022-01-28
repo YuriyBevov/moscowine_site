@@ -1,6 +1,46 @@
 include ../../mixins/search_fieldset
 include ../../mixins/search-dropdown
 include ../../mixins/outlined-btn
+include ../../mixins/product-card-sm
+
+-
+  const resultList = [
+    {
+      img: './assets/img/product-img_1.png',
+      name: 'Шампанское Charles Pelletier Reserve Blanc de Blancs Brut',
+      minPrice: '846'
+    },
+
+    {
+      img: './assets/img/product-img_2.png',
+      name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+      minPrice: '8 469'
+    },
+
+    {
+      img: './assets/img/product-img_1.png',
+      name: 'Шампанское Charles Pelletier Reserve Blanc de Blancs Brut',
+      minPrice: '846'
+    },
+
+    {
+      img: './assets/img/product-img_2.png',
+      name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+      minPrice: '8 469'
+    },
+
+    {
+      img: './assets/img/product-img_1.png',
+      name: 'Шампанское Charles Pelletier Reserve Blanc de Blancs Brut',
+      minPrice: '846'
+    },
+
+    {
+      img: './assets/img/product-img_2.png',
+      name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+      minPrice: '8 469'
+    },
+  ]
 
 section.search
   .cmn__wrapper
@@ -133,12 +173,17 @@ section.search
                 label: '0.2'
               },
             ])
-
         
         .search__advanced-result
           include ../common/loader
           .search__advanced-result-container
-            span.cmn__text Ничего не найдено
+            //span.cmn__text Ничего не найдено
+
+            .search__advanced-result-content
+              .search__advanced-result-content-text
+                p.cmn__text Ut lobortis ut mauris <span>Charles Pelletier</span>
+              .search__advanced-result-content-card
+                +product-card-sm(resultList)
 
         .search__advanced-field
           span.cmn__text.cmn__text--small.cmn__text--small-semi.search__advanced-field-title Искали ранее
@@ -155,4 +200,8 @@ section.search
             +outlined-btn(null, 'icon-trending-up', 'Шампанское')
             +outlined-btn(null, 'icon-trending-up', 'Коньяк')
             
-      span.cmn__text Если не помните название напитка, попробуйте воспользоваться <a href="#">Расширенным поиском</a>
+      .search__controls.search__controls--empty
+        span.cmn__text Если не помните название напитка, попробуйте воспользоваться <a href="#" class="js-advanced-search-more">Расширенным поиском</a>
+      .search__controls.search__controls--empty
+        button(type="button").js-search-advanced-more-btn.cmn__btn Все результаты
+        a(href="#") Расширенный поиск

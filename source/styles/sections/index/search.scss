@@ -1,6 +1,10 @@
 .index {
     .search {
+        //display: none; //temp
+
+
         padding-bottom: 6.4rem;
+
         &__container {
             position: relative;
             max-width: 98rem;
@@ -33,6 +37,13 @@
         }
 
         &__advanced {
+            display: none;
+
+            &.active {
+                display: block;
+                animation: fadeIn 1s linear forwards;
+            }
+
             &-field {
                 margin-bottom: 3.2rem;
 
@@ -57,17 +68,51 @@
 
             &-result {
                 position: relative;
-                padding: 3.2rem 0;
+                //padding: 3.2rem 0;
                 margin-bottom: 3.2rem;
 
+
                 &-container {
-                    span {
+                    /*span {
                         opacity: 0.3;
                         display: block;
                         text-align: center;
+                    }*/
+                    max-height: 31.2rem;
+                    overflow: hidden;
+                    padding-right: 2rem;
+                }
+
+                button {
+                    margin-left: auto;
+                }
+
+                &-content {
+                    display: flex;
+
+                    &-text {
+                        width: 50%;
+                        max-width: 45.8rem;
+                        padding-right: 2rem;
+                        margin-right: auto;
+                    }
+
+                    &-card {
+                        width: 50%;
+                        max-width: 44.8rem;
                     }
                 }
             }
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
         }
     }
 }

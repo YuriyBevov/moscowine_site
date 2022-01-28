@@ -5,7 +5,7 @@
     }
 
     &__logo {
-        margin-right: 4.7rem;
+        margin-right: 2.7rem;
     }
 
     &__info {
@@ -18,7 +18,7 @@
         }
 
         span {
-            font-style: 1.2rem;
+            font-size: 1.2rem;
             line-height: 1.8rem;
 
             color: $black-100;
@@ -120,6 +120,56 @@
 
         a:not(:last-child) {
             margin-right: 2.4rem;
+        }
+    }
+
+    @media(max-width: $desktop_small) {
+        &__logo {
+            margin-right: auto;
+        }
+
+        &__info {
+            margin-right: initial;
+            .worktime {
+                align-items: flex-end;
+            }
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__btn {
+            display: none;
+        }
+
+        &__search {
+            margin: 0;
+            margin-right: 2rem;
+        }
+    }
+
+    @media(max-width: $tablet_small) {
+        &__menu {
+            display: none;
+        }
+
+        &__search {
+            margin: 0;
+        }
+    }
+
+    @media(max-width: $mobile_medium) {
+        &__info {
+            a {
+                font-size: 1.5rem;
+                height: 1.9rem;
+            }
+
+            span {
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
         }
     }
 }
