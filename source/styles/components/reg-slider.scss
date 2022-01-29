@@ -2,6 +2,15 @@
     height: 32rem;
     padding: 0 5rem;
 
+    @media(max-width: $tablet_small) {
+        height: 24rem;
+        padding: 0 3rem;
+    }
+
+    @media(max-width: $mobile_medium) {
+        padding: 0 1rem;
+    }
+
     max-width: fit-content;
 
     &-button-next::after,
@@ -48,8 +57,19 @@
         background-repeat: no-repeat;
         background-position: center;
 
+        @media(max-width: $tablet_small) {
+            width: 21.2rem;
+        }
+
         h3 {
             word-break: break-word;
+        }
+    }
+
+    @media(max-width: $tablet_small) {
+        &-button-prev,
+        &-button-next {
+            display: none;
         }
     }
 }

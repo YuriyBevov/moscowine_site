@@ -1,5 +1,5 @@
 .main-slider {
-    height: 48rem;
+    min-height: inherit;
 
     &__container {
         width: 100%;
@@ -7,6 +7,11 @@
 
         margin: auto;
         padding: 2rem 10rem;
+
+        @media(max-width: $tablet_small) {
+            padding: 3rem;
+            padding-bottom: 4rem;
+        }
     }
 
     &-button-next::after,
@@ -37,13 +42,33 @@
         }
     }
 
+    @media(max-width: $tablet_small) {
+        &-button-prev,
+        &-button-next {
+            display: none;
+        }
+    }
+
     &-pagination {
         position: relative;
         margin-top: -6.4rem;
 
+        @media(max-width: $tablet_small) {
+            margin-top: -3.2rem;
+        }
+
+        @media(max-width: $mobile_medium) {
+            margin-top: -1.6rem;
+        }
+
         .swiper-pagination-bullet {
             width: 1.2rem;
             height: 1.2rem;
+
+            @media(max-width: $mobile_medium) {
+                width: .8rem;
+                height: .8rem;
+            }
 
             border-radius: 1rem;
             background: $white;
@@ -55,12 +80,16 @@
         }
     }
 
+    .swiper-wrapper,
+    .swiper-slide{
+        min-height: inherit;
+    }
+
     .swiper-slide {
         display: flex;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        border-radius: 4px;
 
         h2 {
             max-width: 62.5rem;
@@ -71,6 +100,10 @@
             min-width: 17.8rem;
             color: $purple;
             background-color: $white;
+
+            @media(max-width: $mobile_medium) {
+                min-width: initial;
+            }
         }
     }
 }

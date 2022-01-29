@@ -1,0 +1,9 @@
+mixin subscribe_fieldset(cl, buttonText, placeholder)
+  fieldset(class=cl).subscribe-fieldset
+    input(type="text" placeholder= placeholder)
+    
+    .subscribe-fieldset__container        
+      button(type="submit").cmn__btn
+        svg(width="16" height="16")
+          use(xlink:href="#icon-send")
+        span= buttonText

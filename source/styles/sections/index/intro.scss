@@ -2,6 +2,9 @@
     .intro {
         &__wrapper {
             min-height: 48rem;
+            @media(max-width: $mobile_medium) {
+                min-height: 24rem;
+            }
         }
     }
 }

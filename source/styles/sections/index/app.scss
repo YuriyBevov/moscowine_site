@@ -6,8 +6,22 @@
         background-size: cover;
         background-position: center;
 
+        @media(max-width: $mobile_medium) {
+            min-height: 48.8rem;
+            background-image: url("../assets/img/app-bg-mobile.jpg");
+
+            &__wrapper {
+                display: flex;
+                min-height: inherit;
+                flex-direction: column;
+            }
+        }
+
         &__container {
             padding: 6.4rem 0;
+            @media(max-width: $mobile_medium) {
+                margin-top: auto;
+            }
         }
 
         &__title {

@@ -1,4 +1,4 @@
-include ../../mixins/search_fieldset
+include ../../mixins/subscribe_fieldset
 
 section.subscribe
   .cmn__wrapper
@@ -8,7 +8,7 @@ section.subscribe
         p.cmn__text Получайте самые выгодные предложения одним из первых, участвуйте в&nbsp;закрытых распродажах и акциях для подписчиков Cheerz.ru.
       .subscribe__form
         form(action="#")
-          +search_fieldset('subscribe__mail', 'Подписаться', 'Электронная почта')
+          +subscribe_fieldset('subscribe__mail', 'Подписаться', 'Электронная почта')
           
           fieldset.subscribe__accept
             input(type="checkbox" id="subscribe_accept")

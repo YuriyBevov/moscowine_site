@@ -12565,183 +12565,6 @@ function toggleClass(el, cl) {
 
 /***/ }),
 
-/***/ "./source/scripts/modules/filter_drop.js":
-/*!***********************************************!*\
-  !*** ./source/scripts/modules/filter_drop.js ***!
-  \***********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
-
-// нахожу все кнопки для открытия меню
-let btns = document.querySelectorAll('.search-dropdown__button');
-
-// сохраняю в пер-ю текущее меню
-let activeMenu = null;
-
-//--------- Загрузчик и показ результатов, для показа
-
-let loader = document.querySelector('.loader');
-const loaderTime = 700; //мс
-const intervalTime = 100; // мс
-const intervalClearStep = 1;
-let intervalClearTime = 0;
-let results = document.querySelector('.search__advanced-result-container');
-
-const searching = function(fields) {
-    (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(results, 'active');
-
-    if(!(0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.checkClass)(loader, 'js-active')) {
-        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(loader, 'js-active');
-        let loaderInterval = setInterval(() => {
-            intervalClearTime += intervalClearStep;
-            if(intervalClearTime === loaderTime / intervalTime) {
-                (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(loader, 'js-active');
-                clearInterval(loaderInterval);
-                intervalClearTime = 0;
-                showResults();
-            }
-        }, intervalTime);
-    } else {
-        intervalClearTime = 0;
-    }
-};
-
-const showResults = function() {
-    (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(results, 'active');
-}
-
-//----------
-
-const setFilterParams = (evt) => {       
-    // бэджик в кнопке, с кол-м выбранных фильтров
-    let badge = activeMenu.previousElementSibling.querySelector('.search-dropdown__badge');
-    // все чекбоксы в форме
-    let controls = activeMenu.querySelectorAll('input[type="checkbox"]');
-    // чекбокс выбрать все
-    let selectAllControl = controls[0];
-    // все активные чекбоксы в форме
-
-    if(evt.target === selectAllControl) {
-        selectAllControl.checked === true ?
-        controls.forEach(checkbox => {
-            checkbox.checked === false ?
-            checkbox.checked = true : null;
-        }) :
-        controls.forEach(checkbox => {
-            checkbox.checked === true ?
-            checkbox.checked = false : null;
-        });
-    }
-
-    let checkedControlsLength = 0;
-
-    controls.forEach(c => {
-        c.checked ?
-        checkedControlsLength += 1 : null;
-    });
-    
-    if(controls.length - 1 === checkedControlsLength && selectAllControl.checked === false) {
-        selectAllControl.checked = true;
-        checkedControlsLength += 1;
-    } else if (controls.length - 1 === checkedControlsLength && selectAllControl.checked === true) {
-        selectAllControl.checked = false;
-        checkedControlsLength -= 1;
-    }
-
-    if(checkedControlsLength > 0) {
-        !(0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.checkClass)(badge, 'js-filter-selected') ?
-        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(badge, 'js-filter-selected') : null;
-        // показываю кол-во активных чекбоксов, за искл ч-са выбрать все
-        selectAllControl.checked === false ?
-        badge.innerHTML = checkedControlsLength :
-        badge.innerHTML = checkedControlsLength - 1;
-
-        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(activeMenu.previousElementSibling, 'js-filter-active');
-    } else {
-        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.checkClass)(badge, 'js-filter-selected') ?
-        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(badge, 'js-filter-selected') : null;
-        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(activeMenu.previousElementSibling, 'js-filter-active');
-    }
-    
-    // передаю выбранные чекбоксы в функцию поиска
-    let selected = [];
-    controls.forEach(ctrl => ctrl.checked === true ? selected.push(ctrl.getAttribute('id')) : null);
-    searching(selected);
-}
-
-// показываю меню
-const onClickOpenMenu = function() {
-    // контекст, наша кнопка открытия фильтра
-    let btn = this;
-    
-    // текущее меню фильтр
-    let prevMenu = activeMenu;
-    let prevMenuControls;
-
-    activeMenu = btn.nextElementSibling;
-    let activeMenuControls = activeMenu.querySelectorAll('input[type="checkbox"]');
-
-    // закрываю все активные фильтры
-    btns.forEach(btn => {
-        if(btn !== this && (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.checkClass)(btn, 'active')) {
-            (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(btn, 'active');
-            (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(btn.nextElementSibling, 'js-collapsed');
-        }
-    });
-
-    // открываю/закрываю фильтр
-    if(!btn.classList.contains('active')) {
-        console.log(btn);
-        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(activeMenu, 'js-collapsed');
-        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(btn, 'active');
-
-        // вешаю слушатели на инпуты в активном меню
-        activeMenuControls.forEach(control => {
-            control.addEventListener('change', setFilterParams);
-        });
-
-        // удаляю слушатели на инпуты в предыдущем менюб если было
-        if(prevMenu) {
-            prevMenuControls = prevMenu.querySelectorAll('input[type="checkbox"]');
-            prevMenuControls.forEach(control => {
-                control.removeEventListener('change', setFilterParams);
-            });
-        }
-
-    } else {
-        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.addClass)(activeMenu, 'js-collapsed');
-        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.removeClass)(btn, 'active');
-        // обнуляю активное меню
-        activeMenu = null;
-        // удаляю слушатели на инпуты в предыдущем меню
-        let prevMenuControls = prevMenu.querySelectorAll('input[type="checkbox"]');
-        prevMenuControls.forEach(control => {
-            control.removeEventListener('change', setFilterParams);
-            console.log('remove else el')
-        });
-    }
-};
-
-let advancedBtn = document.querySelector('.js-advanced-search-more');
-let advancedFilter = document.querySelector('.search__advanced');
-
-const onClickToggleAdvancedSearch = (evt) => {
-    evt.preventDefault();
-    advancedFilter.classList.toggle('active');
-}
-
-advancedBtn.addEventListener('click', onClickToggleAdvancedSearch);
-
-//вешаю событие клика на все кнопки открывающие меню с фильтром
-btns.forEach(btn => {
-    btn.addEventListener('click', onClickOpenMenu);
-})
-
-/***/ }),
-
 /***/ "./source/scripts/modules/limitStr.js":
 /*!********************************************!*\
   !*** ./source/scripts/modules/limitStr.js ***!
@@ -13193,25 +13016,24 @@ var __webpack_exports__ = {};
   !*** ./source/scripts/index.js ***!
   \*********************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_filter_drop_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/filter_drop.js */ "./source/scripts/modules/filter_drop.js");
-/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
-/* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/yandex_map.js */ "./source/scripts/modules/yandex_map.js");
-/* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _modules_limitStr_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/limitStr.js */ "./source/scripts/modules/limitStr.js");
+/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/swiper.js */ "./source/scripts/modules/swiper.js");
+/* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/yandex_map.js */ "./source/scripts/modules/yandex_map.js");
+/* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _modules_limitStr_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/limitStr.js */ "./source/scripts/modules/limitStr.js");
 
+//import filter_drop from './modules/filter_drop.js';
 ;
 
 
 
-
-let btn = document.querySelector('.js-search-advanced-more-btn');
+/*let btn = document.querySelector('.js-search-advanced-more-btn');
 let container = document.querySelector('.search__advanced-result-container');
 
 const onClickShowMoreResults = () => {
     container.style.overflowY = 'auto';
 }
 
-btn.addEventListener('click', onClickShowMoreResults);
+btn.addEventListener('click', onClickShowMoreResults);*/
 
 }();
 /******/ })()

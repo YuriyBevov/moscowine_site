@@ -2,11 +2,20 @@
     &__container {
         display: flex;
         padding: 4.7rem 0;
+
+        @media(max-width: $tablet_medium) {
+            flex-direction: column;
+        }
     }
 
     &__content {
         width: calc(50% - 1rem);
         margin-right: auto;
+
+        @media(max-width: $tablet_medium) {
+            width: 100%;
+            margin-bottom: 3rem;
+        }
     }
 
     &__title {
@@ -16,6 +25,10 @@
     &__form {
         width: calc(50% - 1rem);
 
+        @media(max-width: $tablet_medium) {
+            width: 100%;
+        }
+
         form {
             display: flex;
             flex-direction: column;
@@ -23,12 +36,14 @@
             fieldset {
                 padding: 0;
                 border: none;
+                margin: 0;
+                margin-bottom: 2.1rem;
             }
         }
     }
 
-    &__mail {
-        margin-bottom: 2.1rem;
+    &__mail input {
+        
     }
 
     &__accept {

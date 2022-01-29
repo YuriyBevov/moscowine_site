@@ -4,7 +4,7 @@ mixin main_slider(array)
       each item in array
         .swiper-slide(style="background-image: url('" + item.imgUrl + "')")
           .main-slider__container
-            h2.cmn__title.cmn__title--white.cmn__title--med!= item.title
+            h2.cmn__title.cmn__title--white.cmn__title--bold.cmn__title--large!= item.title
             a(href=item.linkUrl).cmn__btn= item.linkText
 
     .swiper-button-next.main-slider-button-next
