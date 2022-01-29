@@ -1,0 +1,29 @@
+include ../../mixins/product-card-slider
+
+-
+  const accesories = [
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/acc_1.png',
+            flagBadge: null,
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/acc_2.png',
+            flagBadge: null,
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+  ]
+
+section.accessories
+  .cmn__wrapper
+    h2.cmn__title.cmn__title--small Аксессуары
+    +product_card_slider(accesories)

@@ -18,6 +18,7 @@
 @import "./components/search-dropdown";
 @import "./components/main-slider";
 @import "./components/reg-slider";
+@import "./components/product-card-slider";
 @import "./components/worktime";
 @import "./components/item-count-badge";
 @import "./components/tooltip";
@@ -27,6 +28,7 @@
 @import "./components/yandex-map/balloon";
 @import "./components/loader";
 @import "./components/product-card-sm";
+@import "./components/product-card";
 
 /*header*/
 @import "./layouts/components/header";
@@ -41,6 +43,10 @@
 @import "./sections/index/features";
 @import "./sections/index/map";
 @import "./sections/index/app";
+
+/*catalog-item*/
+@import "./sections/catalog-item/relative";
+@import "./sections/catalog-item/accessories";
 
 /*common*/
 @import "./sections/common/subscribe";

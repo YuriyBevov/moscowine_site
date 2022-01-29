@@ -1,0 +1,50 @@
+include ../../mixins/product-card-slider
+
+-
+  const relatives = [
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            countryBadge: './assets/img/flag-fr.png',
+            country: 'Франция',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+  ]
+
+section.relative
+  .cmn__wrapper
+    h2.cmn__title.cmn__title--small Похожие напитки
+    +product_card_slider(relatives)

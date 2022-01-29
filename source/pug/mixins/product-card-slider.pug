@@ -1,0 +1,8 @@
+include ./product-card
+
+mixin product_card_slider(array)
+  .swiper.product-card-slider
+    .swiper-wrapper
+      each item in array
+        .swiper-slide
+          +product-card(item)

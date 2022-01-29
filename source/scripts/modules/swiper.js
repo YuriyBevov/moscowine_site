@@ -39,3 +39,13 @@ new Swiper(regSlider, {
         prevEl: ".reg-slider-button-prev",
     }
 }) : null
+
+let prodSlider = document.querySelectorAll('.product-card-slider');
+
+prodSlider ?
+prodSlider.forEach(slider => {
+    new Swiper(slider, {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+    });
+}) : null;

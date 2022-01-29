@@ -7,13 +7,6 @@ $f1_bold: 'Manrope-Bold';
 
 // widths
 
-/*$w_xxl: 1920px;
-$w_xl: 1440px;
-$w_lg: 1140px;
-$w_md: 768px;
-$w_sm: 534px;
-$w_xs: 320px;*/
-
 $w_xxl: 1920px;
 $w_xl: 1440px;
 $w_lg: 1140px;
@@ -49,12 +42,11 @@ $black-100: #2c2b3c;
 $black-200: #1E262E;
 $black:     #000000;
 
-
 $main-bg: $white;
 
 // transitions
 
-$main-transition: 0.3s ease;
+$main-transition: 0.4s 0.1s ease;
 
 // retina
 
