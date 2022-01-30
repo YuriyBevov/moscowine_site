@@ -1,7 +1,7 @@
 include ../../mixins/search_fieldset
-include ../../mixins/search_dropdown
-include ../../mixins/outlined_btn
-include ../../mixins/product-card_sm
+include ../../mixins/search-dropdown
+include ../../mixins/outlined-btn
+include ../../mixins/product-card-sm
 
 -
   const resultList = [
@@ -44,15 +44,14 @@ include ../../mixins/product-card_sm
 
 section.search
   .cmn__wrapper
-    .search__wrapper
+    .search__container
       form(action="#")
-        +search_fieldset('search__control', 'Найти', 'Введите запрос для поиска...', true, '#icon-question')
+        +search_fieldset('search__field', 'Найти', 'Введите запрос для поиска...', true, '#icon-question')
 
-      .search__filter
-
-        .search__field.search__field--controls
-          .search__field-content.search__field-content--filter
-            +search_dropdown(null, 'drink_type-', 'Тип напитка',  [
+      //.search__advanced
+        .search__advanced-field
+          .search__advanced-field-content.search__advanced-field-content--filter
+            +search-dropdown(null, 'drink_type-', 'Тип напитка',  [
               {
                 title: 'Выбрать все',
                 label: 'any'
@@ -78,7 +77,7 @@ section.search
                 label: 'vine'
               }
             ], true)
-            +search_dropdown(null, 'drink_vintage-', 'Винтаж', [
+            +search-dropdown(null, 'drink_vintage-', 'Винтаж', [
               {
                 title: 'Выбрать все',
                 label: 'any'
@@ -100,7 +99,7 @@ section.search
                 label: '1960-1980'
               },
             ])
-            +search_dropdown(null, 'drink_color-', 'Цвет',  [
+            +search-dropdown(null, 'drink_color-', 'Цвет',  [
               {
                 title: 'Выбрать все',
                 label: 'any'
@@ -126,7 +125,7 @@ section.search
                 label: 'light'
               }
             ])
-            +search_dropdown(null, 'drink_sugar-', 'Сахар',  [
+            +search-dropdown(null, 'drink_sugar-', 'Сахар',  [
               {
                 title: 'Выбрать все',
                 label: 'any'
@@ -148,7 +147,7 @@ section.search
                 label: 'sweet '
               },
             ])
-            +search_dropdown(null, 'drink_volume-', 'Объем',  [
+            +search-dropdown(null, 'drink_volume-', 'Объем',  [
               {
                 title: 'Выбрать все',
                 label: 'any'
@@ -174,20 +173,35 @@ section.search
                 label: '0.2'
               },
             ])
+        
+        .search__advanced-result
+          include ../common/loader
+          .search__advanced-result-container
+            //span.cmn__text Ничего не найдено
 
-        .search__field
-          span.cmn__text.cmn__text--small.cmn__text--small-semi.search__field-title Искали ранее
-          .search__field-content
+            .search__advanced-result-content
+              .search__advanced-result-content-text
+                p.cmn__text Ut lobortis ut mauris <span>Charles Pelletier</span>
+              .search__advanced-result-content-card
+                +product-card-sm(resultList)
+
+        .search__advanced-field
+          span.cmn__text.cmn__text--small.cmn__text--small-semi.search__advanced-field-title Искали ранее
+          .search__advanced-field-content
             +outlined-btn(null, 'icon-search', 'Charles Pelletier')
             +outlined-btn(null, 'icon-search', 'Коньяк')
             +outlined-btn(null, 'icon-search', 'Blancs Brut')
 
-        .search__field
-          span.cmn__text.cmn__text--small.cmn__text--small-semi.search__field-title Популярные запросы
-          .search__field-content
+        .search__advanced-field
+          span.cmn__text.cmn__text--small.cmn__text--small-semi.search__advanced-field-title Искали ранее
+          .search__advanced-field-content
             +outlined-btn(null, 'icon-trending-up', 'Charles Pelletier')
             +outlined-btn(null, 'icon-trending-up', 'Blancs Brut')
             +outlined-btn(null, 'icon-trending-up', 'Шампанское')
             +outlined-btn(null, 'icon-trending-up', 'Коньяк')
             
-      span.cmn__text Если не помните название напитка, попробуйте&nbsp;воспользоваться&nbsp;<a href="#" class="js-advanced-search-more">Каталогом</a>
+      .search__controls.search__controls--empty
+        span.cmn__text Если не помните название напитка, попробуйте воспользоваться <a href="#" class="js-advanced-search-more">Каталогом</a>
+      //.search__controls.search__controls--empty
+        button(type="button").js-search-advanced-more-btn.cmn__btn Все результаты
+        a(href="#") Перейти в каталог

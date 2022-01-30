@@ -1,5 +1,5 @@
 ymaps.ready(init);
-
+console.log('yandex-map')
 let data = {
     "type": "FeatureCollection",
     "features": [

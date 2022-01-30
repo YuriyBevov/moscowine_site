@@ -26,6 +26,11 @@
             font-weight: 700;
             font-size: 5.6rem;
             line-height: 6.7rem;
+
+            @media(max-width: $desktop_small) {
+               font-size: 4.4rem;
+               line-height: 4.7rem;
+            }
             
             @media(max-width: $tablet_small) {
                font-size: 3.2rem;
@@ -115,6 +120,11 @@
          font-size: 3.2rem;
          line-height: 3.8rem;
 
+         @media(max-width: $desktop_small) {
+            font-size: 2.8rem;
+            line-height: 3.6rem;
+         }
+
          @media(max-width: $tablet_small) {
             font-size: 2rem;
             line-height: 2.4rem;
@@ -127,6 +137,10 @@
 
       &--white {
          color: $white;
+      }
+
+      &--purple {
+         color: $purple;
       }
 
       &-semi {

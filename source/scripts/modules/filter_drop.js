@@ -93,7 +93,7 @@ const setFilterParams = (evt) => {
     // передаю выбранные чекбоксы в функцию поиска
     let selected = [];
     controls.forEach(ctrl => ctrl.checked === true ? selected.push(ctrl.getAttribute('id')) : null);
-    searching(selected);
+    //searching(selected);
 }
 
 // показываю меню
@@ -134,7 +134,6 @@ const onClickOpenMenu = function() {
                 control.removeEventListener('change', setFilterParams);
             });
         }
-
     } else {
         addClass(activeMenu, 'js-collapsed');
         removeClass(btn, 'active');

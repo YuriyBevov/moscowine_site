@@ -1,8 +1,9 @@
 .index {
     .search {
+        //display: none; //temp
         padding-bottom: 6.4rem;
 
-        &__wrapper {
+        &__container {
             position: relative;
             max-width: 98rem;
             margin: 0 auto;
@@ -29,25 +30,65 @@
             }
         }
 
-        &__filter {
-            display: none;
+        &__field {
+            margin-bottom: 2.4rem;
 
-            &.js-mounted {
-                display: block;
-                /*display: flex;
-                flex-direction: column;*/
-                animation: fadeIn 0.5s linear;
+            input {
+                padding-right: 20rem;
 
-                /*overflow: hidden;
-                overflow-x: auto;
-                height: 430px;*/
+                @media(max-width: $tablet_small) {
+                    padding-right: 7rem;
+                }
             }
 
-            /*&-result {
-                position: relative;
+            svg {
+                opacity: .5;
+            }
+        }
+
+        &__advanced {
+            //display: none;
+            opacity: 0;
+
+            &.active {
+                //display: block;
+                animation: fadeIn 1s linear forwards;
+            }
+
+            &-field {
                 margin-bottom: 3.2rem;
 
+                &-title {
+                    display: inline-block;
+                    margin-bottom: 0.8rem;
+                }
+
+                &-content {
+                    display: flex;
+                    align-items: center;
+
+                    &--filter {
+                        align-items: flex-start;
+                    }
+
+                    a {
+                        margin-right: 0.8rem;
+                    }
+                }
+            }
+
+            &-result {
+                position: relative;
+                //padding: 3.2rem 0;
+                margin-bottom: 3.2rem;
+
+
                 &-container {
+                    /*span {
+                        opacity: 0.3;
+                        display: block;
+                        text-align: center;
+                    }*/
                     max-height: 31.2rem;
                     overflow: hidden;
                     padding-right: 2rem;
@@ -72,50 +113,12 @@
                         max-width: 44.8rem;
                     }
                 }
-            }*/
-        }
-
-        &__field {
-            margin-bottom: 3.2rem;
-
-            &--controls {
-               // margin-bottom: auto;
-            }
-
-            &-title {
-                display: inline-block;
-                margin-bottom: 0.8rem;
-            }
-
-            &-content {
-                display: flex;
-                align-items: center;
-                white-space: nowrap;
-
-                &--filter {
-                    align-items: flex-start;
-                }
-
-                a {
-                    margin-right: 0.8rem;
-                }
             }
         }
 
-        &__control {
-            margin-bottom: 2.4rem;
-
-            input {
-                padding-right: 20rem;
-
-                @media(max-width: $tablet_small) {
-                    padding-right: 7rem;
-                }
-            }
-
-            svg {
-                opacity: .5;
-            }
+        &__field input:focus + .search__advanced {
+            background-color: red;
+                opacity: 1;
         }
     }
 

@@ -12656,7 +12656,7 @@ prodSlider.forEach(slider => {
 /***/ (function() {
 
 ymaps.ready(init);
-
+console.log('yandex-map')
 let data = {
     "type": "FeatureCollection",
     "features": [
@@ -13036,15 +13036,8 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-
-/*let btn = document.querySelector('.js-search-advanced-more-btn');
-let container = document.querySelector('.search__advanced-result-container');
-
-const onClickShowMoreResults = () => {
-    container.style.overflowY = 'auto';
-}
-
-btn.addEventListener('click', onClickShowMoreResults);*/
+//import openSearchFilter from './modules/openSearchFilter.js';
+//import filterSelect from './modules/filterSelect.js'
 
 }();
 /******/ })()

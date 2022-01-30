@@ -1,0 +1,84 @@
+
+-
+  const chars = [
+      {
+          title: 'Каталог',
+          desc: 'Вино',
+          class: 'cmn__text--purple'
+      },
+      {
+          title: 'Цвет',
+          desc: 'Красное',
+          class: 'cmn__text--purple'
+      },
+      {
+          title: 'Сахар',
+          desc: 'Полусухое',
+          class: 'cmn__text--purple'
+      },
+      {
+          title: 'Год',
+          desc: '2017',
+          class: 'cmn__text--purple'
+      },
+      {
+          title: 'Крепость',
+          desc: '14%',
+          class: 'cmn__text--purple'
+      },
+      {
+          title: 'Производитель',
+          desc: 'Casa Defra',
+          class: 'cmn__text--purple'
+      },
+      {
+          title: 'Регион',
+          desc: 'США, Калифорния',
+          countryFlag: './assets/img/flag-us.png',
+          class: 'cmn__text--purple'
+      },
+      {
+          title: 'Виноград',
+          desc: 'Пино Менье, Пино Нуар, Шардоне',
+          class: 'cmn__text--purple'
+      },
+      {
+          title: 'Особенности',
+          desc: 'Нет',
+      },
+      {
+          title: 't° сервировки',
+          desc: '18 °C',
+      },
+      {
+          title: 'Вкус',
+          desc: 'Гармоничный, кислинка, приятный, свежий, фруктовый, цветочный, чистый',
+      },
+      {
+          title: 'Гастрономия',
+          desc: 'Выпечка, десерты, морепродукты/дары моря, ракообразные, рыбные деликатесы',
+      },
+  ]
+
+section.about
+  .cmn__wrapper
+    .about__grid
+      .about__header 
+        h2.cmn__title Wine Charles Pelletier Blanc de Blancs Reserve Brut
+        p.cmn_text Шарль Пеллетье Блан де Блан Резерв Брют
+      .about__gallery
+        p slider
+      .about__controls
+        p controls
+      .about__places
+        .p about__buy
+      .about__chars
+        h2.cmn__title.cmn__title--small Характеристики
+
+        ul
+          each char in chars
+            li
+              span.cmn__text= char.title
+              span.cmn__text(class=char.class ? char.class : null)= char.desc
+      .about__map
+        #yandex-map

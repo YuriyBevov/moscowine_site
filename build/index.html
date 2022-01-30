@@ -264,9 +264,9 @@
         </section>
         <section class="search">
           <div class="cmn__wrapper">
-            <div class="search__container">
+            <div class="search__wrapper">
               <form action="#">
-                        <fieldset class="search__field search-fieldset">
+                        <fieldset class="search__control search-fieldset">
                           <input type="text" placeholder="Введите запрос для поиска...">
                           <div class="search-fieldset__container">
                                     <div class="tooltip">
@@ -281,164 +281,193 @@
                           </div>
                         </fieldset>
               </form>
-              <!--.search__advanced
-              .search__advanced-field
-                .search__advanced-field-content.search__advanced-field-content--filter
-                  +search-dropdown(null, 'drink_type-', 'Тип напитка',  [
-                    {
-                      title: 'Выбрать все',
-                      label: 'any'
-                    },
-                    {
-                      title:  'Водка',
-                      label:  'vodka'
-                    },
-                    {
-                      title: 'Коньяк',
-                      label: 'cognac'
-                    },
-                    {
-                      title: 'Пиво',
-                      label: 'beer'
-                    },
-                    {
-                      title: 'Шампансвое',
-                      label: 'champagne'
-                    },
-                    {
-                      title: 'Вино',
-                      label: 'vine'
-                    }
-                  ], true)
-                  +search-dropdown(null, 'drink_vintage-', 'Винтаж', [
-                    {
-                      title: 'Выбрать все',
-                      label: 'any'
-                    },
-                    {
-                      title: '1900-1920',
-                      label: '1900-1920'
-                    },
-                    {
-                      title: '1920-1940',
-                      label: '1920-1940'
-                    },
-                    {
-                      title: '1940-1960',
-                      label: '1940-1960'
-                    },
-                    {
-                      title: '1960-1980',
-                      label: '1960-1980'
-                    },
-                  ])
-                  +search-dropdown(null, 'drink_color-', 'Цвет',  [
-                    {
-                      title: 'Выбрать все',
-                      label: 'any'
-                    },
-                    {
-                      title: 'Белый',
-                      label: 'white'
-                    },
-                    {
-                      title: 'Красный',
-                      label: 'red'
-                    },
-                    {
-                      title: 'Черный',
-                      label: 'black'
-                    },
-                    {
-                      title: 'Темный',
-                      label: 'dark'
-                    },
-                    {
-                      title: 'Светлый',
-                      label: 'light'
-                    }
-                  ])
-                  +search-dropdown(null, 'drink_sugar-', 'Сахар',  [
-                    {
-                      title: 'Выбрать все',
-                      label: 'any'
-                    },
-                    {
-                      title: 'Сухое',
-                      label: 'dry'
-                    },
-                    {
-                      title: 'Полусухое',
-                      label: 'semi-dry'
-                    },
-                    {
-                      title: 'Полусладкое',
-                      label: 'semi-sweet'
-                    },
-                    {
-                      title: 'Сладкое',
-                      label: 'sweet '
-                    },
-                  ])
-                  +search-dropdown(null, 'drink_volume-', 'Объем',  [
-                    {
-                      title: 'Выбрать все',
-                      label: 'any'
-                    },
-                    {
-                      title: '1л',
-                      label: '1'
-                    },
-                    {
-                      title: '0,7л',
-                      label: '0.7'
-                    },
-                    {
-                      title: '0,5л',
-                      label: '0.5'
-                    },
-                    {
-                      title: '0,33л',
-                      label: '0.33'
-                    },
-                    {
-                      title: '0,2л',
-                      label: '0.2'
-                    },
-                  ])
-              
-              .search__advanced-result
-                include ../common/loader
-                .search__advanced-result-container
-                  //span.cmn__text Ничего не найдено
-              
-                  .search__advanced-result-content
-                    .search__advanced-result-content-text
-                      p.cmn__text Ut lobortis ut mauris <span>Charles Pelletier</span>
-                    .search__advanced-result-content-card
-                      +product-card-sm(resultList)
-              
-              .search__advanced-field
-                span.cmn__text.cmn__text--small.cmn__text--small-semi.search__advanced-field-title Искали ранее
-                .search__advanced-field-content
-                  +outlined-btn(null, 'icon-search', 'Charles Pelletier')
-                  +outlined-btn(null, 'icon-search', 'Коньяк')
-                  +outlined-btn(null, 'icon-search', 'Blancs Brut')
-              
-              .search__advanced-field
-                span.cmn__text.cmn__text--small.cmn__text--small-semi.search__advanced-field-title Искали ранее
-                .search__advanced-field-content
-                  +outlined-btn(null, 'icon-trending-up', 'Charles Pelletier')
-                  +outlined-btn(null, 'icon-trending-up', 'Blancs Brut')
-                  +outlined-btn(null, 'icon-trending-up', 'Шампанское')
-                  +outlined-btn(null, 'icon-trending-up', 'Коньяк')
-                  
-              -->
-              <div class="search__controls search__controls--empty"><span class="cmn__text">Если не помните название напитка, попробуйте воспользоваться <a href="#" class="js-advanced-search-more">Расширенным поиском</a></span></div>
-              <!--.search__controls.search__controls--empty
-              button(type="button").js-search-advanced-more-btn.cmn__btn Все результаты
-              a(href="#") Расширенный поиск
-              -->
+              <div class="search__filter">
+                <div class="search__field search__field--controls">
+                  <div class="search__field-content search__field-content--filter">
+                            <div class="search-dropdown">
+                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Тип напитка</b><span class="cmn__text search-dropdown__badge"></span></button>
+                              <div class="search-dropdown__menu js-collapsed">
+                                <form action="#">
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_type-any">
+                                    <label for="drink_type-any">Выбрать все</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_type-vodka">
+                                    <label for="drink_type-vodka">Водка</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_type-cognac">
+                                    <label for="drink_type-cognac">Коньяк</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_type-beer">
+                                    <label for="drink_type-beer">Пиво</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_type-champagne">
+                                    <label for="drink_type-champagne">Шампансвое</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_type-vine">
+                                    <label for="drink_type-vine">Вино</label>
+                                  </fieldset>
+                                  <input class="visually-hidden" type="submit">
+                                </form>
+                              </div>
+                            </div>
+                            <div class="search-dropdown">
+                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Винтаж</b><span class="cmn__text search-dropdown__badge"></span></button>
+                              <div class="search-dropdown__menu js-collapsed">
+                                <form action="#">
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_vintage-any">
+                                    <label for="drink_vintage-any">Выбрать все</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_vintage-1900-1920">
+                                    <label for="drink_vintage-1900-1920">1900-1920</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_vintage-1920-1940">
+                                    <label for="drink_vintage-1920-1940">1920-1940</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_vintage-1940-1960">
+                                    <label for="drink_vintage-1940-1960">1940-1960</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_vintage-1960-1980">
+                                    <label for="drink_vintage-1960-1980">1960-1980</label>
+                                  </fieldset>
+                                  <input class="visually-hidden" type="submit">
+                                </form>
+                              </div>
+                            </div>
+                            <div class="search-dropdown">
+                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Цвет</b><span class="cmn__text search-dropdown__badge"></span></button>
+                              <div class="search-dropdown__menu js-collapsed">
+                                <form action="#">
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_color-any">
+                                    <label for="drink_color-any">Выбрать все</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_color-white">
+                                    <label for="drink_color-white">Белый</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_color-red">
+                                    <label for="drink_color-red">Красный</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_color-black">
+                                    <label for="drink_color-black">Черный</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_color-dark">
+                                    <label for="drink_color-dark">Темный</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_color-light">
+                                    <label for="drink_color-light">Светлый</label>
+                                  </fieldset>
+                                  <input class="visually-hidden" type="submit">
+                                </form>
+                              </div>
+                            </div>
+                            <div class="search-dropdown">
+                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Сахар</b><span class="cmn__text search-dropdown__badge"></span></button>
+                              <div class="search-dropdown__menu js-collapsed">
+                                <form action="#">
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_sugar-any">
+                                    <label for="drink_sugar-any">Выбрать все</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_sugar-dry">
+                                    <label for="drink_sugar-dry">Сухое</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_sugar-semi-dry">
+                                    <label for="drink_sugar-semi-dry">Полусухое</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_sugar-semi-sweet">
+                                    <label for="drink_sugar-semi-sweet">Полусладкое</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_sugar-sweet ">
+                                    <label for="drink_sugar-sweet ">Сладкое</label>
+                                  </fieldset>
+                                  <input class="visually-hidden" type="submit">
+                                </form>
+                              </div>
+                            </div>
+                            <div class="search-dropdown">
+                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Объем</b><span class="cmn__text search-dropdown__badge"></span></button>
+                              <div class="search-dropdown__menu js-collapsed">
+                                <form action="#">
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_volume-any">
+                                    <label for="drink_volume-any">Выбрать все</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_volume-1">
+                                    <label for="drink_volume-1">1л</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_volume-0.7">
+                                    <label for="drink_volume-0.7">0,7л</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_volume-0.5">
+                                    <label for="drink_volume-0.5">0,5л</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_volume-0.33">
+                                    <label for="drink_volume-0.33">0,33л</label>
+                                  </fieldset>
+                                  <fieldset>
+                                    <input type="checkbox" id="drink_volume-0.2">
+                                    <label for="drink_volume-0.2">0,2л</label>
+                                  </fieldset>
+                                  <input class="visually-hidden" type="submit">
+                                </form>
+                              </div>
+                            </div>
+                  </div>
+                </div>
+                <div class="search__field"><span class="cmn__text cmn__text--small cmn__text--small-semi search__field-title">Искали ранее</span>
+                  <div class="search__field-content"><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-search"><span>Charles Pelletier</span></use>
+                              </svg></a><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-search"><span>Коньяк</span></use>
+                              </svg></a><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-search"><span>Blancs Brut</span></use>
+                              </svg></a>
+                  </div>
+                </div>
+                <div class="search__field"><span class="cmn__text cmn__text--small cmn__text--small-semi search__field-title">Популярные запросы</span>
+                  <div class="search__field-content"><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-trending-up"><span>Charles Pelletier</span></use>
+                              </svg></a><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-trending-up"><span>Blancs Brut</span></use>
+                              </svg></a><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-trending-up"><span>Шампанское</span></use>
+                              </svg></a><a class="outlined-btn" href="#">
+                              <svg width="16" height="16">
+                                <use xlink:href="#icon-trending-up"><span>Коньяк</span></use>
+                              </svg></a>
+                  </div>
+                </div>
+              </div><span class="cmn__text">Если не помните название напитка, попробуйте&nbsp;воспользоваться&nbsp;<a href="#" class="js-advanced-search-more">Каталогом</a></span>
             </div>
           </div>
         </section>
