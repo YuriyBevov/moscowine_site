@@ -12565,6 +12565,48 @@ function toggleClass(el, cl) {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/cartAddCount.js":
+/*!************************************************!*\
+  !*** ./source/scripts/modules/cartAddCount.js ***!
+  \************************************************/
+/***/ (function() {
+
+let cartAddBtns = document.querySelectorAll('.js-cart-add-btn');
+
+const onClickShowItemCount = function() {
+    this.classList.add('clicked');
+    const countField = this.nextElementSibling.querySelector('span');
+    let currentCount = 1;
+    const countDec = this.nextElementSibling.querySelector('.js-count-dec');
+    const countInc = this.nextElementSibling.querySelector('.js-count-inc');
+
+    countField.innerHTML = currentCount;
+    const onClickDecCount = () => {
+        if(currentCount > 1) {
+            currentCount -= 1;
+            countField.innerHTML = currentCount;
+        } else {
+            currentCount = 0;
+            countField.innerHTML = currentCount;
+            this.classList.remove('clicked');
+            countInc.removeEventListener('click', onClickIncCount);
+            countDec.removeEventListener('click', onClickDecCount);
+        }
+    }
+    const onClickIncCount = () => {
+        currentCount += 1;
+        countField.innerHTML = currentCount;
+    }
+    countInc.addEventListener('click', onClickIncCount);
+    countDec.addEventListener('click', onClickDecCount);
+}
+
+cartAddBtns.forEach(btn => {
+    btn.addEventListener('click', onClickShowItemCount);
+});
+
+/***/ }),
+
 /***/ "./source/scripts/modules/limitStr.js":
 /*!********************************************!*\
   !*** ./source/scripts/modules/limitStr.js ***!
@@ -13031,13 +13073,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/yandex_map.js */ "./source/scripts/modules/yandex_map.js");
 /* harmony import */ var _modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_yandex_map_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _modules_limitStr_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/limitStr.js */ "./source/scripts/modules/limitStr.js");
+/* harmony import */ var _modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/cartAddCount.js */ "./source/scripts/modules/cartAddCount.js");
+/* harmony import */ var _modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3__);
 
 //import filter_drop from './modules/filter_drop.js';
 ;
 
 
+
 //import openSearchFilter from './modules/openSearchFilter.js';
 //import filterSelect from './modules/filterSelect.js'
+
+
 
 }();
 /******/ })()
