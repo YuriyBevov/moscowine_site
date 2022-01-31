@@ -12688,6 +12688,28 @@ prodSlider.forEach(slider => {
     });
 }) : null;
 
+const catItemSlider = document.querySelector('.thumbs-slider');
+
+if(catItemSlider) {
+    let swiper = new swiper_core__WEBPACK_IMPORTED_MODULE_0__.default(".thumbs-slider-preview", {
+      slidesPerView: "auto",
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      direction: 'vertical',
+      spaceBetween: 10,
+    });
+
+    let swiperThumbs = new swiper_core__WEBPACK_IMPORTED_MODULE_0__.default(".thumbs-slider", {
+      zoom: true,
+      loop: true,
+      spaceBetween: 10,
+
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+}
+
 
 /***/ }),
 

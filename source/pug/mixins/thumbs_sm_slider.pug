@@ -1,0 +1,11 @@
+mixin thumbs_sm_slider(images, desc)
+  .swiper.thumbs-slider 
+    .swiper-wrapper
+      each img in images
+        .swiper-slide
+          img(src=img alt=desc width="480" height="480")
+    .swiper.thumbs-slider-preview
+      .swiper-wrapper
+        each img in images
+          .swiper-slide
+            img(src=img alt=desc width="480" height="480")

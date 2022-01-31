@@ -49,3 +49,25 @@ prodSlider.forEach(slider => {
         spaceBetween: 20,
     });
 }) : null;
+
+const catItemSlider = document.querySelector('.thumbs-slider');
+
+if(catItemSlider) {
+    let swiper = new Swiper(".thumbs-slider-preview", {
+      slidesPerView: "auto",
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      direction: 'vertical',
+      spaceBetween: 10,
+    });
+
+    let swiperThumbs = new Swiper(".thumbs-slider", {
+      zoom: true,
+      loop: true,
+      spaceBetween: 10,
+
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+}

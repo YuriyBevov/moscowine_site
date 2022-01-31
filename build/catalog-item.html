@@ -151,8 +151,18 @@
 </symbol><symbol id="icon-send" viewBox="0 0 16 16">
 <path d="M14.6667 1.33337L7.33334 8.66671" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M14.6667 1.33337L10 14.6667L7.33334 8.66671L1.33334 6.00004L14.6667 1.33337Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+</symbol><symbol id="icon-share" viewBox="0 0 24 24">
+<g opacity="0.3">
+<path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M6 15C7.65685 15 9 13.6569 9 12C9 10.3431 7.65685 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M8.59009 13.51L15.4201 17.49" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15.4101 6.51001L8.59009 10.49" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</g>
 </symbol><symbol id="icon-slider-arr" viewBox="0 0 18 32">
 <path d="M2 2L16 16L2 30" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+</symbol><symbol id="icon-star" viewBox="0 0 20 20">
+<path d="M10 0L13.09 6.26L20 7.27L15 12.14L16.18 19.02L10 15.77L3.82 19.02L5 12.14L0 7.27L6.91 6.26L10 0Z"></path>
 </symbol><symbol id="icon-trending-up" viewBox="0 0 16 16">
 <g opacity="0.3" clip-path="url(#clip0_2537_21276)">
 <path d="M15.3332 4L8.99984 10.3333L5.6665 7L0.666504 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -229,20 +239,217 @@
               <div class="about__header"> 
                 <h2 class="cmn__title">Wine Charles Pelletier Blanc de Blancs Reserve Brut</h2>
                 <p class="cmn_text">Шарль Пеллетье Блан де Блан Резерв Брют</p>
+                        <div class="rate">
+                          <ul class="rate__list">
+                            <li class="rate__item rate__item--active">
+                              <svg width="20" height="20">
+                                <use xlink:href="#icon-star"></use>
+                              </svg>
+                            </li>
+                            <li class="rate__item rate__item--active">
+                              <svg width="20" height="20">
+                                <use xlink:href="#icon-star"></use>
+                              </svg>
+                            </li>
+                            <li class="rate__item rate__item--active">
+                              <svg width="20" height="20">
+                                <use xlink:href="#icon-star"></use>
+                              </svg>
+                            </li>
+                            <li class="rate__item rate__item--active">
+                              <svg width="20" height="20">
+                                <use xlink:href="#icon-star"></use>
+                              </svg>
+                            </li>
+                            <li class="rate__item">
+                              <svg width="20" height="20">
+                                <use xlink:href="#icon-star"></use>
+                              </svg>
+                            </li>
+                          </ul><span class="cmn__text rate__value">4.0</span><span class="cmn__text cmn__text--purple rate__reviews">20 отзывов</span>
+                          <!--if isBtnExist
+                          span.cmn__text.cmn__text--small.cmn__text--opacity 10 дней назад
+                          
+                          -->
+                          <div class="rate__action"><a href="#"> 
+                              <svg width="24" height="24">
+                                <use xlink:href="#icon-chart"></use>
+                              </svg></a><a href="#">
+                              <svg width="24" height="24">
+                                <use xlink:href="#icon-heart"></use>
+                              </svg></a><a href="#">
+                              <svg width="24" height="24">
+                                <use xlink:href="#icon-share"></use>
+                              </svg></a></div>
+                        </div>
               </div>
               <div class="about__gallery">
-                <p>slider</p>
+                        <div class="swiper thumbs-slider"> 
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./assets/img/cat-item_1.png" alt="Wine Charles Pelletier Blanc de Blancs Reserve Brut" width="480" height="480"></div>
+                            <div class="swiper-slide"><img src="./assets/img/cat-item_2.png" alt="Wine Charles Pelletier Blanc de Blancs Reserve Brut" width="480" height="480"></div>
+                            <div class="swiper-slide"><img src="./assets/img/cat-item_3.png" alt="Wine Charles Pelletier Blanc de Blancs Reserve Brut" width="480" height="480"></div>
+                            <div class="swiper-slide"><img src="./assets/img/cat-item_4.png" alt="Wine Charles Pelletier Blanc de Blancs Reserve Brut" width="480" height="480"></div>
+                          </div>
+                          <div class="swiper thumbs-slider-preview">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide"><img src="./assets/img/cat-item_1.png" alt="Wine Charles Pelletier Blanc de Blancs Reserve Brut" width="480" height="480"></div>
+                              <div class="swiper-slide"><img src="./assets/img/cat-item_2.png" alt="Wine Charles Pelletier Blanc de Blancs Reserve Brut" width="480" height="480"></div>
+                              <div class="swiper-slide"><img src="./assets/img/cat-item_3.png" alt="Wine Charles Pelletier Blanc de Blancs Reserve Brut" width="480" height="480"></div>
+                              <div class="swiper-slide"><img src="./assets/img/cat-item_4.png" alt="Wine Charles Pelletier Blanc de Blancs Reserve Brut" width="480" height="480"></div>
+                            </div>
+                          </div>
+                        </div>
               </div>
               <div class="about__controls">
-                <p>controls</p>
+                <div class="about__controls-field"><span class="cmn__text cmn__text-small cmn__text--bold">Подарочная упаковка</span>
+                  <form action="#">
+                    <input type="radio" id="gift-wrap-no" name="gift-wrap" value="Нет" checked="">
+                    <label class="cmn__label" for="gift-wrap-no">Нет</label>
+                    <input type="radio" id="gift-wrap-yes" name="gift-wrap" value="Да">
+                    <label class="cmn__label" for="gift-wrap-yes">Да        </label>
+                  </form>
+                </div>
+                <div class="about__controls-field"><span class="cmn__text cmn__text-small cmn__text--bold">Винтаж</span>
+                  <p>2018</p>
+                </div>
+                <div class="about__controls-field"><span class="cmn__text cmn__text-small cmn__text--bold">Объем</span>
+                  <form action="#"> 
+                    <input type="radio" id="volume-0.33" name="volume" value="0.33">
+                    <label class="cmn__label" for="volume-0.33">0.33</label>
+                    <input type="radio" id="volume-0.5" name="volume" value="0.5" checked="">
+                    <label class="cmn__label" for="volume-0.5">0.5</label>
+                    <input type="radio" id="volume-0.75" name="volume" value="0.75">
+                    <label class="cmn__label" for="volume-0.75">0.75</label>
+                    <input type="radio" id="volume-1.0" name="volume" value="1.0">
+                    <label class="cmn__label" for="volume-1.0">1.0</label>
+                  </form>
+                </div>
               </div>
               <div class="about__places">
-                <h2 class="cmn__title cmn__title--small">Где купить</h2>
-                <div class="cart-add">
-                  <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
-                  <div class="cart-add-count">
-                    <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
-                    <button class="cart-add-btn js-count-inc" type="button"></button>
+                <div class="about__places-header">
+                  <h2 class="cmn__title cmn__title--small">Где купить</h2>
+                  <p>По цене</p>
+                </div>
+                <div class="about__places-wrapper">
+                  <ul>
+                    <li>
+                      <div class="place-field place-field-main"><span class="cmn__text cmn__text--small place-position">Павелецкая</span><span class="cmn__text cmn__text--small">Открыто до 22:00</span><span class="cmn__text cmn__text--small place-note">Покупка от 12 000 ₽</span>
+                      </div>
+                      <div class="place-field place-field-count"><span class="cmn__text">12шт.</span></div>
+                      <!--.place-fieldspan.cmn__text= place.vintage
+                      -->
+                      <!--.place-fieldspan.cmn__text= place.volume
+                      -->
+                      <div class="place-field place-field-price"><span class="cmn__text cmn__text--purple">3156₽</span></div>
+                      <div class="place-field place-field-add">
+                        <div class="cart-add">
+                          <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
+                          <div class="cart-add-count">
+                            <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
+                            <button class="cart-add-btn js-count-inc" type="button"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="place-field place-field-main"><span class="cmn__text cmn__text--small place-position">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 9:00</span>
+                      </div>
+                      <div class="place-field place-field-count"><span class="cmn__text">12шт.</span></div>
+                      <!--.place-fieldspan.cmn__text= place.vintage
+                      -->
+                      <!--.place-fieldspan.cmn__text= place.volume
+                      -->
+                      <div class="place-field place-field-price"><span class="cmn__text cmn__text--purple">13253156₽</span></div>
+                      <div class="place-field place-field-add">
+                        <div class="cart-add">
+                          <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
+                          <div class="cart-add-count">
+                            <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
+                            <button class="cart-add-btn js-count-inc" type="button"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="place-field place-field-main"><span class="cmn__text cmn__text--small place-position">Павелецкая</span><span class="cmn__text cmn__text--small">Открыто до 22:00</span>
+                      </div>
+                      <div class="place-field place-field-count"><span class="cmn__text">12шт.</span></div>
+                      <!--.place-fieldspan.cmn__text= place.vintage
+                      -->
+                      <!--.place-fieldspan.cmn__text= place.volume
+                      -->
+                      <div class="place-field place-field-price"><span class="cmn__text cmn__text--purple">3156₽</span></div>
+                      <div class="place-field place-field-add">
+                        <div class="cart-add">
+                          <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
+                          <div class="cart-add-count">
+                            <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
+                            <button class="cart-add-btn js-count-inc" type="button"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="place-field place-field-main"><span class="cmn__text cmn__text--small place-position">Павелецкая</span><span class="cmn__text cmn__text--small">Открыто до 22:00</span><span class="cmn__text cmn__text--small place-note">Покупка от 12 000 ₽</span>
+                      </div>
+                      <div class="place-field place-field-count"><span class="cmn__text">12шт.</span></div>
+                      <!--.place-fieldspan.cmn__text= place.vintage
+                      -->
+                      <!--.place-fieldspan.cmn__text= place.volume
+                      -->
+                      <div class="place-field place-field-price"><span class="cmn__text cmn__text--purple">3156₽</span></div>
+                      <div class="place-field place-field-add">
+                        <div class="cart-add">
+                          <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
+                          <div class="cart-add-count">
+                            <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
+                            <button class="cart-add-btn js-count-inc" type="button"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="place-field place-field-main"><span class="cmn__text cmn__text--small place-position">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 9:00</span>
+                      </div>
+                      <div class="place-field place-field-count"><span class="cmn__text">155шт.</span></div>
+                      <!--.place-fieldspan.cmn__text= place.vintage
+                      -->
+                      <!--.place-fieldspan.cmn__text= place.volume
+                      -->
+                      <div class="place-field place-field-price"><span class="cmn__text cmn__text--purple">323156₽</span></div>
+                      <div class="place-field place-field-add">
+                        <div class="cart-add">
+                          <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
+                          <div class="cart-add-count">
+                            <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
+                            <button class="cart-add-btn js-count-inc" type="button"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="place-field place-field-main"><span class="cmn__text cmn__text--small place-position">Павелецкая</span><span class="cmn__text cmn__text--small">Открыто до 22:00</span>
+                      </div>
+                      <div class="place-field place-field-count"><span class="cmn__text">12шт.</span></div>
+                      <!--.place-fieldspan.cmn__text= place.vintage
+                      -->
+                      <!--.place-fieldspan.cmn__text= place.volume
+                      -->
+                      <div class="place-field place-field-price"><span class="cmn__text cmn__text--purple">3156₽</span></div>
+                      <div class="place-field place-field-add">
+                        <div class="cart-add">
+                          <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
+                          <div class="cart-add-count">
+                            <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
+                            <button class="cart-add-btn js-count-inc" type="button"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="about__places-more">
+                    <button class="cmn__btn cmn__btn--outlined" type="button">Показать все</button><span class="cmn__text cmn__text--bold cmn__text--small">16</span>
                   </div>
                 </div>
               </div>

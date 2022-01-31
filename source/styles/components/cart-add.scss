@@ -1,4 +1,5 @@
 .cart-add {
+    height: 4rem;
     &-count {
         display: none;
     }
@@ -7,6 +8,10 @@
         border-color: $purple;
         color: $purple;
         padding: 1rem 1.6rem;
+        
+        white-space: nowrap;
+
+        height: 4rem;
 
         &.clicked {
             display: none;
@@ -15,6 +20,7 @@
                 display: flex;
                 align-items: center;
                 width: fit-content;
+                height: 4rem;
 
                 font-family: $f1_med;
                 font-size: 1.5rem;
@@ -30,7 +36,7 @@
 
                 span {
                     min-width: 4rem;
-                    text-align: center;;
+                    text-align: center;
                 }
 
                 button {
@@ -50,7 +56,7 @@
                     width: 1.6rem;
                     height: 2px;
                     content: '';
-                    border-radius: 2px;
+                    //border-radius: 5px;
                     background-color: $black-100;
                     transform: translateY(-50%);
                 }
@@ -62,7 +68,7 @@
                     width: 2px;
                     height: 1.6rem;
                     content: '';
-                    border-radius: 2px;
+                    //border-radius: 5px;
                     background-color: $black-100;
                     transform: translateX(-50%);
                 }

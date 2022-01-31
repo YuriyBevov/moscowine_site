@@ -1,0 +1,42 @@
+mixin rate(isDateExist, isRateValueExist, isReviewsExist, isBtnExist, isActionExist)
+  .rate
+    if isDateExist
+      span.cmn__text.cmn__text--small.cmn__text--opacity.rate__date 10 дней назад
+    
+    ul.rate__list
+      li.rate__item.rate__item--active
+        svg(width="20" height="20")
+          use(xlink:href="#icon-star")
+      li.rate__item.rate__item--active
+        svg(width="20" height="20")
+          use(xlink:href="#icon-star")
+      li.rate__item.rate__item--active
+        svg(width="20" height="20")
+          use(xlink:href="#icon-star")
+      li.rate__item.rate__item--active
+        svg(width="20" height="20")
+          use(xlink:href="#icon-star")
+      li.rate__item
+        svg(width="20" height="20")
+          use(xlink:href="#icon-star")
+
+    if isRateValueExist
+      span.cmn__text.rate__value 4.0
+
+    if isReviewsExist
+      span.cmn__text.cmn__text--purple.rate__reviews 20 отзывов
+    
+    //if isBtnExist
+      span.cmn__text.cmn__text--small.cmn__text--opacity 10 дней назад
+      
+    if isActionExist
+      .rate__action
+        a(href="#") 
+          svg(width="24" height="24")
+            use(xlink:href="#icon-chart")
+        a(href="#")
+          svg(width="24" height="24")
+            use(xlink:href="#icon-heart")
+        a(href="#")
+          svg(width="24" height="24")
+            use(xlink:href="#icon-share")

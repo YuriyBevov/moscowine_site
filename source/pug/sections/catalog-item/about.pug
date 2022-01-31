@@ -1,3 +1,5 @@
+include ../../mixins/thumbs_sm_slider
+include ../../mixins/rate
 
 -
   const chars = [
@@ -60,19 +62,148 @@
       },
   ]
 
+-
+  const places = [
+    {
+      metro: 'Павелецкая',
+      openFrom: '9:00',
+      openUntil: '22:00',
+      isOpen: true,
+      note: 'Покупка от 12 000 ₽',
+      count: '12',
+      vintage: '2018',
+      volume: '0.75',
+      price: '3156'
+    },
+
+    {
+      metro: 'Павелецкая',
+      openFrom: '9:00',
+      openUntil: '22:00',
+      isOpen: false,
+      count: '12',
+      vintage: '2018',
+      volume: '0.75',
+      price: '13253156'
+    },
+
+    {
+      metro: 'Павелецкая',
+      openFrom: '9:00',
+      openUntil: '22:00',
+      isOpen: true,
+      count: '12',
+      vintage: '2018',
+      volume: '0.75',
+      price: '3156'
+    },
+    {
+      metro: 'Павелецкая',
+      openFrom: '9:00',
+      openUntil: '22:00',
+      isOpen: true,
+      note: 'Покупка от 12 000 ₽',
+      count: '12',
+      vintage: '2018',
+      volume: '0.75',
+      price: '3156'
+    },
+
+    {
+      metro: 'Павелецкая',
+      openFrom: '9:00',
+      openUntil: '22:00',
+      isOpen: false,
+      count: '155',
+      vintage: '2018',
+      volume: '0.75',
+      price: '323156'
+    },
+
+    {
+      metro: 'Павелецкая',
+      openFrom: '9:00',
+      openUntil: '22:00',
+      isOpen: true,
+      count: '12',
+      vintage: '2018',
+      volume: '0.75',
+      price: '3156'
+    }
+  ]
+
+-
+  const images = ['./assets/img/cat-item_1.png','./assets/img/cat-item_2.png','./assets/img/cat-item_3.png','./assets/img/cat-item_4.png',]
+
 section.about
   .cmn__wrapper
     .about__grid
       .about__header 
         h2.cmn__title Wine Charles Pelletier Blanc de Blancs Reserve Brut
         p.cmn_text Шарль Пеллетье Блан де Блан Резерв Брют
+      
+        +rate(false, true, true, true, true)
       .about__gallery
-        p slider
+        +thumbs_sm_slider(images, 'Wine Charles Pelletier Blanc de Blancs Reserve Brut')
+      
       .about__controls
-        p controls
+        .about__controls-field
+          span.cmn__text.cmn__text-small.cmn__text--bold Подарочная упаковка
+
+          form(action="#")
+            input(type="radio" id="gift-wrap-no" name="gift-wrap" value="Нет" checked)
+            label(for="gift-wrap-no").cmn__label Нет
+
+            input(type="radio" id="gift-wrap-yes" name="gift-wrap" value="Да")
+            label(for="gift-wrap-yes").cmn__label Да        
+        
+        .about__controls-field
+          span.cmn__text.cmn__text-small.cmn__text--bold Винтаж
+          p 2018
+        
+        .about__controls-field
+          span.cmn__text.cmn__text-small.cmn__text--bold Объем
+          form(action="#") 
+            input(type="radio" id="volume-0.33" name="volume" value="0.33")
+            label(for="volume-0.33").cmn__label 0.33
+
+            input(type="radio" id="volume-0.5" name="volume" value="0.5" checked)
+            label(for="volume-0.5").cmn__label 0.5
+
+            input(type="radio" id="volume-0.75" name="volume" value="0.75")
+            label(for="volume-0.75").cmn__label 0.75
+
+            input(type="radio" id="volume-1.0" name="volume" value="1.0")
+            label(for="volume-1.0").cmn__label 1.0
+        
       .about__places
-        h2.cmn__title.cmn__title--small Где купить
-        include ../../components/cart-add-btn
+        .about__places-header
+          h2.cmn__title.cmn__title--small Где купить
+          p По цене
+        
+        .about__places-wrapper
+          ul
+            each place in places
+              li
+                .place-field.place-field-main
+                  span.cmn__text.cmn__text--small.place-position= place.metro
+                  span.cmn__text.cmn__text--small(class=!place.isOpen ? 'cmn__text--warning' : null)= place.isOpen ? 'Открыто до ' + place.openUntil : 'Закрыто до ' + place.openFrom
+                  if place.note
+                    span.cmn__text.cmn__text--small.place-note= place.note
+                .place-field.place-field-count
+                  span.cmn__text= place.count + 'шт.'
+                //.place-field
+                  span.cmn__text= place.vintage
+                //.place-field
+                  span.cmn__text= place.volume
+                .place-field.place-field-price
+                  span.cmn__text.cmn__text--purple= place.price + '₽'
+                .place-field.place-field-add
+                  include ../../components/cart-add-btn
+          
+          .about__places-more
+            button(type="button").cmn__btn.cmn__btn--outlined Показать все
+            span.cmn__text.cmn__text--bold.cmn__text--small 16
       .about__chars
         h2.cmn__title.cmn__title--small Характеристики
 
