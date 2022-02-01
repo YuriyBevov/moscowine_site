@@ -12535,6 +12535,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "tabs": function() { return /* binding */ tabs; },
 /* harmony export */   "limitStr": function() { return /* binding */ limitStr; },
 /* harmony export */   "addClass": function() { return /* binding */ addClass; },
 /* harmony export */   "removeClass": function() { return /* binding */ removeClass; },
@@ -12559,6 +12560,29 @@ function checkClass(el, cl) {
 
 function toggleClass(el, cl) {
     el.classList.toggle(cl);
+}
+
+function tabs(btns, tabs) {
+    const onClickChangeTab = function(evt) {
+        let btn = evt.currentTarget;
+
+        btns.forEach(btn => {
+            if(btn.classList.contains('active')){
+                btn.classList.remove('active');
+                let id = btn.getAttribute('data-id');
+                tabs[id].classList.remove('active-tab');
+            }
+        })
+
+        btn.classList.add('active');
+        let id = btn.getAttribute('data-id');
+        tabs[id].classList.add('active-tab');
+    }
+
+    btns.forEach((btn,i) => {
+        btn.setAttribute('data-id', i);
+        btn.addEventListener('click', onClickChangeTab);
+    })
 }
 
 
@@ -12604,6 +12628,25 @@ const onClickShowItemCount = function() {
 cartAddBtns.forEach(btn => {
     btn.addEventListener('click', onClickShowItemCount);
 });
+
+/***/ }),
+
+/***/ "./source/scripts/modules/infoTabs.js":
+/*!********************************************!*\
+  !*** ./source/scripts/modules/infoTabs.js ***!
+  \********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+
+
+const btns = document.querySelectorAll('.js-info-tab');
+const tabFields = document.querySelectorAll('.js-info-tab-field');
+
+(0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.tabs)(btns, tabFields);
+
 
 /***/ }),
 
@@ -13097,6 +13140,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_limitStr_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/limitStr.js */ "./source/scripts/modules/limitStr.js");
 /* harmony import */ var _modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/cartAddCount.js */ "./source/scripts/modules/cartAddCount.js");
 /* harmony import */ var _modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _modules_infoTabs_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/infoTabs.js */ "./source/scripts/modules/infoTabs.js");
 
 //import filter_drop from './modules/filter_drop.js';
 ;
@@ -13105,6 +13149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 //import openSearchFilter from './modules/openSearchFilter.js';
 //import filterSelect from './modules/filterSelect.js'
+
 
 
 

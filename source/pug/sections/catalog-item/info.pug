@@ -1,4 +1,5 @@
 include ../../mixins/reviews_list
+include ../../mixins/product_description
 
 -
   const reviewsList = [
@@ -36,14 +37,14 @@ include ../../mixins/reviews_list
 section.info
   .cmn__wrapper
     .info__header
-      button(type="button").info__button Описание
+      button(type="button").info__button.js-info-tab Описание
 
-      button(type="button").info__button.active
+      button(type="button").info__button.js-info-tab.active
         span Отзывы
         span.info__button-count 158
 
     .info__content
-      .info__description
-
-      .info__reviews
+      .info__description.info__tab.js-info-tab-field
+        +product_description
+      .info__reviews.info__tab.js-info-tab-field.active-tab
         +reviews_list(reviewsList)

@@ -21,8 +21,6 @@
             transition: all 0.4s linear;
 
             &.active {
-                font-family: $f1_bold;
-                font-weight: 700;
                 border-bottom: 3px solid $purple;
             }
 
@@ -34,6 +32,23 @@
             }
         }
 
+        &__tab {
+            display: none;
 
+            &.active-tab {
+                display: block;
+                animation: fadeIn 0.4s linear;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
     }
 }

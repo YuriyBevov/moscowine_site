@@ -6,6 +6,11 @@
             grid-auto-rows: min-content;
             grid-column-gap: 2rem;
             grid-row-gap: 3.2rem;
+
+            /* @media(max-width: $desktop_small) {
+                display: flex;
+                flex-direction: column;
+            } */
         }
 
         &__gallery {
@@ -13,6 +18,11 @@
             grid-column-end: 3;
             grid-row-start: 1;
             grid-row-end: 4;
+
+            @media(max-width: $tablet_large) {
+                grid-row-end: 3;
+                min-width: 28rem;
+            }
         }
 
         &__chars {
@@ -20,6 +30,13 @@
             grid-column-end: 3;
             grid-row-start: 4;
             grid-row-end: 10;
+
+            @media(max-width: $tablet_large) {
+                grid-column-start: 1;
+                grid-column-end: 6;
+                grid-row-start: 6;
+                grid-row-end: 10;
+            }
         }
 
         &__header {
@@ -41,6 +58,10 @@
             grid-column-end: 6;
             grid-row-start: 3;
             grid-row-end: 6;
+
+            @media(max-width: $tablet_large) {
+                grid-column-start: 1;
+            }
         }
 
         &__map {
@@ -48,6 +69,13 @@
             grid-column-end: 6;
             grid-row-start: 6;
             grid-row-end: 10;
+
+            @media(max-width: $tablet_large) {
+                grid-column-start: 1;
+                grid-column-end: 6;
+                grid-row-start: 10;
+                grid-row-end: 14;
+            }
         }
 
         margin-bottom: 6rem;
@@ -59,6 +87,10 @@
 
             p {
                 margin-bottom: 2.4rem;
+
+                @media(max-width: $tablet_large) {
+                    margin-bottom: 1rem;
+                }
             }
         }
 
@@ -247,8 +279,20 @@
         &__controls {
             display: flex;
 
+            @media(max-width: $tablet_large) {
+                //flex-direction: column;
+                flex-wrap: wrap;
+            }
+
             &-field {
                 margin-right: 4.8rem;
+
+                &:last-child {
+                    @media(max-width: $tablet_large) {
+                        width: 100%;
+                    }
+                }
+                
 
                 span {
                     display: block;

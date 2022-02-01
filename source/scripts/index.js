@@ -6,5 +6,6 @@ import limitStr from './modules/limitStr.js';
 import cardAddCount from './modules/cartAddCount.js';
 //import openSearchFilter from './modules/openSearchFilter.js';
 //import filterSelect from './modules/filterSelect.js'
+import infoTabs from './modules/infoTabs.js';
 
 
