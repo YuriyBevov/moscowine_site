@@ -1,0 +1,49 @@
+include ../../mixins/reviews_list
+
+-
+  const reviewsList = [
+      {
+          userName: 'Татьяна Моисеева',
+          userAvatar: './assets/img/review_avatar.png',
+          text: ['Convallis sollicitudin dolor venenatis est habitant elementum, lectus. Pellentesque massa placerat arcu aliquam. Nisl nunc tellus diam ac eleifend quam. Elit bibendum proin viverra tincidunt congue etiam venenatis nulla lectus. Aenean a leo viverra urna, in morbi hendrerit diam. Metus, felis volutpat adipiscing ut consequat.', 'Diam, eu turpis semper at proin proin lobortis. Risus, faucibus luctus orci placerat. Nunc ante nulla duis et, quam dolor urna. Pharetra amet odio commodo enim elit sollicitudin fermentum. Est, maecenas sapien fringilla porttitor condimentum adipiscing neque, auctor. Velit a.']
+      },
+      {
+          userName: 'Татьяна Моисеева',
+          userAvatar: './assets/img/review_avatar.png',
+          text: ['Convallis sollicitudin dolor venenatis est habitant elementum, lectus. Pellentesque massa placerat arcu aliquam. Nisl nunc tellus diam ac eleifend quam. Elit bibendum proin viverra tincidunt congue etiam venenatis nulla lectus. Aenean a leo viverra urna, in morbi hendrerit diam. Metus, felis volutpat adipiscing ut consequat.', 'Diam, eu turpis semper at proin proin lobortis. Risus, faucibus luctus orci placerat. Nunc ante nulla duis et, quam dolor urna. Pharetra amet odio commodo enim elit sollicitudin fermentum. Est, maecenas sapien fringilla porttitor condimentum adipiscing neque, auctor. Velit a.']
+      },
+      {
+          userName: 'Татьяна Моисеева',
+          userAvatar: './assets/img/review_avatar.png',
+          text: ['Convallis sollicitudin dolor venenatis est habitant elementum, lectus. Pellentesque massa placerat arcu aliquam. Nisl nunc tellus diam ac eleifend quam. Elit bibendum proin viverra tincidunt congue etiam venenatis nulla lectus. Aenean a leo viverra urna, in morbi hendrerit diam. Metus, felis volutpat adipiscing ut consequat.', 'Diam, eu turpis semper at proin proin lobortis. Risus, faucibus luctus orci placerat. Nunc ante nulla duis et, quam dolor urna. Pharetra amet odio commodo enim elit sollicitudin fermentum. Est, maecenas sapien fringilla porttitor condimentum adipiscing neque, auctor. Velit a.']
+      },
+      {
+          userName: 'Татьяна Моисеева',
+          userAvatar: './assets/img/review_avatar.png',
+          text: ['Convallis sollicitudin dolor venenatis est habitant elementum, lectus. Pellentesque massa placerat arcu aliquam. Nisl nunc tellus diam ac eleifend quam. Elit bibendum proin viverra tincidunt congue etiam venenatis nulla lectus. Aenean a leo viverra urna, in morbi hendrerit diam. Metus, felis volutpat adipiscing ut consequat.', 'Diam, eu turpis semper at proin proin lobortis. Risus, faucibus luctus orci placerat. Nunc ante nulla duis et, quam dolor urna. Pharetra amet odio commodo enim elit sollicitudin fermentum. Est, maecenas sapien fringilla porttitor condimentum adipiscing neque, auctor. Velit a.']
+      },
+      {
+          userName: 'Татьяна Моисеева',
+          userAvatar: './assets/img/review_avatar.png',
+          text: ['Convallis sollicitudin dolor venenatis est habitant elementum, lectus. Pellentesque massa placerat arcu aliquam. Nisl nunc tellus diam ac eleifend quam. Elit bibendum proin viverra tincidunt congue etiam venenatis nulla lectus. Aenean a leo viverra urna, in morbi hendrerit diam. Metus, felis volutpat adipiscing ut consequat.', 'Diam, eu turpis semper at proin proin lobortis. Risus, faucibus luctus orci placerat. Nunc ante nulla duis et, quam dolor urna. Pharetra amet odio commodo enim elit sollicitudin fermentum. Est, maecenas sapien fringilla porttitor condimentum adipiscing neque, auctor. Velit a.']
+      },
+      {
+          userName: 'Татьяна Моисеева',
+          userAvatar: './assets/img/review_avatar.png',
+          text: ['Convallis sollicitudin dolor venenatis est habitant elementum, lectus. Pellentesque massa placerat arcu aliquam. Nisl nunc tellus diam ac eleifend quam. Elit bibendum proin viverra tincidunt congue etiam venenatis nulla lectus. Aenean a leo viverra urna, in morbi hendrerit diam. Metus, felis volutpat adipiscing ut consequat.', 'Diam, eu turpis semper at proin proin lobortis. Risus, faucibus luctus orci placerat. Nunc ante nulla duis et, quam dolor urna. Pharetra amet odio commodo enim elit sollicitudin fermentum. Est, maecenas sapien fringilla porttitor condimentum adipiscing neque, auctor. Velit a.']
+      },
+  ]
+section.info
+  .cmn__wrapper
+    .info__header
+      button(type="button").info__button Описание
+
+      button(type="button").info__button.active
+        span Отзывы
+        span.info__button-count 158
+
+    .info__content
+      .info__description
+
+      .info__reviews
+        +reviews_list(reviewsList)

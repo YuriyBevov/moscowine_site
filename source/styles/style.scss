@@ -32,6 +32,8 @@
 @import "./components/cart-add";
 @import "./components/thumbs-sm-slider";
 @import "./components/rate";
+@import "./components/description";
+@import "./components/reviews";
 
 /*header*/
 @import "./layouts/components/header";
@@ -49,6 +51,8 @@
 
 /*catalog-item*/
 @import "./sections/catalog-item/about";
+@import "./sections/catalog-item/info";
+
 @import "./sections/catalog-item/relative";
 @import "./sections/catalog-item/accessories";
 

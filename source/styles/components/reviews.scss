@@ -1,0 +1,197 @@
+.reviews {
+    display: flex;
+
+    &__list {
+        flex-grow: 1;
+        max-width: 75rem;
+        padding-right: 3.4rem;
+
+        outline: 1px solid red;
+    }
+
+    &__item {
+        padding: 3.2rem 0;
+
+        &-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.6rem;
+
+            img {
+                border-radius: 50%;
+                margin-right: 1.6rem;
+            }
+        }
+
+        &-info {
+            margin-right: auto;
+        }
+
+        &-vote {
+            display: flex;
+            align-items: center;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1.2rem 1.6rem;
+                background-color: transparent;
+                border: 2px solid $grey-200;
+                border-radius: 4px;
+                transition: border $main-transition;
+
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
+
+                svg {
+                    fill: none;
+                    margin-right: 0.8rem;
+                }
+
+                &:last-child {
+                    svg {
+                        transform: rotateX(180deg);
+                    }
+                }
+
+                &:hover,
+                &:focus {
+                    border: 2px solid $purple;
+                }
+            }
+        }
+
+        &-text {
+            p {
+                opacity: .8; 
+                margin-bottom: 1.6rem;
+            }
+        }
+    }
+    
+    &__stat {
+        min-width: 20.5rem;
+        padding: 3.2rem 1rem;
+        margin: 0 auto;
+        outline: 1px solid red;
+
+        &-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.8rem;
+
+            & svg {
+                fill: $grey-200;
+                margin-right: 0.8rem;
+            }
+
+            & span {
+                margin-right: 2.5rem;
+            }
+        }
+
+        &-list {
+            margin-bottom: 3.2rem;
+        }
+
+        &-stars {
+            margin-right: 0.8rem;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.6rem;
+
+            svg {
+                fill: $grey-200;
+            }
+
+            &:nth-child(1) {
+                svg {
+                    fill: $purple;
+                }
+            }
+
+            &:nth-child(2) {
+                svg:not(:last-child) {
+                    fill: $purple;
+                }
+            }
+
+            &:nth-child(3) {
+                svg:not(:nth-child(4), :nth-child(5)) {
+                    fill: $purple;
+                }
+            }
+
+            &:nth-child(4) {
+                svg:nth-child(1), :nth-child(2) {
+                    fill: $purple;
+                }
+            }
+
+            &:nth-child(5) {
+                svg:nth-child(1) {
+                    fill: $purple;
+                }
+            }
+        }
+
+        & form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3.2rem;
+
+            input[type="radio"] {
+                display: none;
+            }
+
+            label {
+                cursor: pointer;
+                position: relative;
+                padding-left: 2.4rem;
+                margin-bottom: 1rem;
+
+                &:before {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+
+                    width: 1.6rem;
+                    height: 1.6rem;
+
+                    content: '';
+
+                    border-radius: 50%;
+                    border: 1px solid $grey-200;
+                }
+
+                &:after {
+                    position: absolute;
+                    top: 50%;
+                    left: -2px;
+                    transform: translate(50%, -50%);
+
+                    width: 1rem;
+                    height: 1rem;
+
+                    content: '';
+                    border-radius: 50%;
+                    background-color: transparent;
+                }
+            }
+          
+            input[type="radio"]:checked + label:before {
+                border: 1px solid $purple;
+            }
+
+            input[type="radio"]:checked + label:after {
+                background-color: $purple;
+            }
+        }
+    }
+}

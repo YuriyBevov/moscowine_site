@@ -1,0 +1,39 @@
+.catalog-item {
+    .info {
+        margin-bottom: 6.4rem;
+
+        &__header {
+            border-bottom: 1px solid $grey-200;
+        }
+
+        &__button {
+            font-family: $f1_med;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            border: 0;
+            margin-right: 4.8rem;
+            padding: 1rem 0;
+            padding-bottom: 2rem;
+
+            color: $black-100;
+            background-color: transparent;
+            border-bottom: 3px solid transparent;
+            transition: all 0.4s linear;
+
+            &.active {
+                font-family: $f1_bold;
+                font-weight: 700;
+                border-bottom: 3px solid $purple;
+            }
+
+            &-count {
+                font-family: $f1_med;
+                font-weight: 500;
+                padding-left: 0.8rem;
+                opacity: 0.4;
+            }
+        }
+
+
+    }
+}
