@@ -1,12 +1,21 @@
 .reviews {
-    display: flex;
+    &__container {
+        display: flex;
+        margin-bottom: 4.8rem;
+    }
+
+    &__more-btn {
+        border: 1px solid $purple;
+        color: $purple;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 38rem;
+    }
 
     &__list {
         flex-grow: 1;
         max-width: 75rem;
         padding-right: 3.4rem;
-
-        outline: 1px solid red;
     }
 
     &__item {
@@ -75,7 +84,6 @@
         min-width: 20.5rem;
         padding: 3.2rem 1rem;
         margin: 0 auto;
-        outline: 1px solid red;
 
         &-header {
             display: flex;
@@ -98,6 +106,7 @@
 
         &-stars {
             margin-right: 0.8rem;
+            display: flex; 
         }
 
         &-item {

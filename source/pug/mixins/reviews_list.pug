@@ -2,113 +2,116 @@ include ./rate
 
 mixin reviews_list(array)
   .reviews
-    ul.reviews__list
-      each item in array
-        li.reviews__item
-          .reviews__item-header
-            img(src=item.userAvatar alt="аватар")
-            .reviews__item-info
+    .reviews__container
+      ul.reviews__list
+        each item in array
+          li.reviews__item
+            .reviews__item-header
+              img(src=item.userAvatar alt="аватар")
+              .reviews__item-info
                 span.cmn__text.cmn__text--bold= item.userName
                 +rate(true, false, false, false, false)
                 
-            .reviews__item-vote
-              button(type="button")
-                svg(width="24" height="24")
-                  use(xlink:href="#icon-thumbs-up")
-                span.cmn__text 25
-              button(type="button")
-                svg(width="24" height="24")
-                  use(xlink:href="#icon-thumbs-up")
-                span.cmn__text 2698
+              .reviews__item-vote
+                button(type="button")
+                  svg(width="24" height="24")
+                    use(xlink:href="#icon-thumbs-up")
+                  span.cmn__text 25
+                button(type="button")
+                  svg(width="24" height="24")
+                    use(xlink:href="#icon-thumbs-up")
+                  span.cmn__text 2698
 
-          .reviews__item-text
-            each par in item.text
-              p.cmn__text= par
+            .reviews__item-text
+              each par in item.text
+                p.cmn__text= par
 
-    .reviews__stat
-      .reviews__stat-header
-        svg(width="20" height="20")
+      .reviews__stat
+        .reviews__stat-header
+          svg(width="20" height="20")
             use(xlink:href="#icon-star")
         
-        span.cmn__text.cmn__text--opacity.cmn__txt--med 4.0
-        span.cmn__text.cmn__text--opacity.cmn__txt--med 158 отзывов
+          span.cmn__text.cmn__text--opacity.cmn__txt--med 4.0
+          span.cmn__text.cmn__text--opacity.cmn__txt--med 158 отзывов
 
-      ul.reviews__stat-list
-        li.reviews__stat-item
-          .reviews__stat-stars
-            svg(width="20" height="20")
+        ul.reviews__stat-list
+          li.reviews__stat-item
+            .reviews__stat-stars
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-          span.cmn__text.cmn__text--purple 1 отзыв
+            span.cmn__text.cmn__text--purple 1 отзыв
 
-        li.reviews__stat-item
-          .reviews__stat-stars
-            svg(width="20" height="20")
+          li.reviews__stat-item
+            .reviews__stat-stars
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-          span.cmn__text.cmn__text--purple 145 отзывов
+            span.cmn__text.cmn__text--purple 145 отзывов
 
-        li.reviews__stat-item
-          .reviews__stat-stars
-            svg(width="20" height="20")
+          li.reviews__stat-item
+            .reviews__stat-stars
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-          span.cmn__text.cmn__text--purple 145 отзывов
+            span.cmn__text.cmn__text--purple 145 отзывов
 
-        li.reviews__stat-item
-          .reviews__stat-stars
-            svg(width="20" height="20")
+          li.reviews__stat-item
+            .reviews__stat-stars
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-          span.cmn__text.cmn__text--purple 145 отзывов
+            span.cmn__text.cmn__text--purple 145 отзывов
 
-        li.reviews__stat-item
-          .reviews__stat-stars
-            svg(width="20" height="20")
+          li.reviews__stat-item
+            .reviews__stat-stars
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-            svg(width="20" height="20")
+              svg(width="20" height="20")
                 use(xlink:href="#icon-star")
-          span.cmn__text.cmn__text--purple 145 отзывов
+            span.cmn__text.cmn__text--purple 145 отзывов
 
-      form(action="#")
-        input(type="radio" id="review_new" name="reviews_type" value="Сначала новые" checked)
-        label(for="review_new").cmn__text Сначала новые
+        form(action="#")
+          input(type="radio" id="review_new" name="reviews_type" value="Сначала новые" checked)
+          label(for="review_new").cmn__text Сначала новые
 
-        input(type="radio" id="reviews_useful" name="reviews_type" value="Сначала полезные")
-        label(for="reviews_useful").cmn__text Сначала полезные  
+          input(type="radio" id="reviews_useful" name="reviews_type" value="Сначала полезные")
+          label(for="reviews_useful").cmn__text Сначала полезные  
 
-      button(type="button").cmn__btn Написать отзыв
+        button(type="button").cmn__btn Написать отзыв
+
+    button(type="button").cmn__btn.cmn__btn--outlined.reviews__more-btn Загрузить еще
