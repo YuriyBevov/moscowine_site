@@ -11,6 +11,10 @@
         @media(max-width: $tablet_large) {
             width: 100%;
         }
+
+        @media(max-width: $tablet_small) {
+            width: auto;
+        }
     }
 
     &__item {
@@ -19,6 +23,17 @@
         justify-content: center;
         width: 2.4rem;
         height: 2.4rem;
+
+        @media(max-width: $tablet_small) {
+            width: 1.6rem;
+            height: 1.6rem;
+
+            svg {
+                width: 1.3rem;
+                height: 1.3rem;
+            }
+        }
+
         svg {
             fill: $grey-200;
         }
@@ -37,6 +52,10 @@
     &__value {
         margin-top: 3px;
         margin-right: 0.8rem;
+
+        @media(max-width: $tablet_small) {
+            display: none;
+        }
     }
 
     &__reviews {
@@ -49,6 +68,10 @@
         svg {
             fill: none;
             margin-right: 1.6rem;
+
+            @media(max-width: $tablet_small) {
+                margin-right: 0.8rem;
+            }
         }
     }
 }

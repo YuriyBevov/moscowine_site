@@ -159,7 +159,10 @@ section.about
         
         .about__controls-field
           span.cmn__text.cmn__text-small.cmn__text--bold Винтаж
-          p 2018
+          .cmn__select
+            select.cmn__select
+              option 2018
+              option 2019
         
         .about__controls-field
           span.cmn__text.cmn__text-small.cmn__text--bold Объем
@@ -179,26 +182,26 @@ section.about
       .about__places
         .about__places-header
           h2.cmn__title.cmn__title--small Где купить
-          p По цене
+          .cmn__select
+            select.cmn__select
+              option По цене
+              option По кол-ву
         
         .about__places-wrapper
-          ul
+          ul.about__places-list
             each place in places
-              li
-                .place-field.place-field-main
+              li.about__places-item
+                .about__places-field.about__places-field-main
                   span.cmn__text.cmn__text--small.place-position= place.metro
                   span.cmn__text.cmn__text--small(class=!place.isOpen ? 'cmn__text--warning' : null)= place.isOpen ? 'Открыто до ' + place.openUntil : 'Закрыто до ' + place.openFrom
                   if place.note
-                    span.cmn__text.cmn__text--small.place-note= place.note
-                .place-field.place-field-count
+                    i.cmn__text.cmn__text--small= place.note
+                .about__places-field.about__places-field-chars
                   span.cmn__text= place.count + 'шт.'
-                //.place-field
                   span.cmn__text= place.vintage
-                //.place-field
                   span.cmn__text= place.volume
-                .place-field.place-field-price
                   span.cmn__text.cmn__text--purple= place.price + '₽'
-                .place-field.place-field-add
+                .about__places-field.about__places-add
                   include ../../components/cart-add-btn
           
           .about__places-more

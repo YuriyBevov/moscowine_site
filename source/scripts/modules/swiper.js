@@ -10,7 +10,7 @@ mainSlider ?
 new Swiper(mainSlider, {
     slidesPerView: 1,
     spaceBetween: 20,
-    speed: 1500,
+    speed: 800,
     loop: true,
     modules: [Pagination, Navigation],
     pagination: {
@@ -65,7 +65,6 @@ if(catItemSlider) {
       zoom: true,
       loop: true,
       spaceBetween: 10,
-
       thumbs: {
         swiper: swiper,
       },

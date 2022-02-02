@@ -12691,7 +12691,7 @@ mainSlider ?
 new swiper_core__WEBPACK_IMPORTED_MODULE_0__.default(mainSlider, {
     slidesPerView: 1,
     spaceBetween: 20,
-    speed: 1500,
+    speed: 800,
     loop: true,
     modules: [swiper_core__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper_core__WEBPACK_IMPORTED_MODULE_0__.Navigation],
     pagination: {
@@ -12746,7 +12746,6 @@ if(catItemSlider) {
       zoom: true,
       loop: true,
       spaceBetween: 10,
-
       thumbs: {
         swiper: swiper,
       },

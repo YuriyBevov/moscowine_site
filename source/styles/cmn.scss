@@ -199,8 +199,47 @@
 
       @media(max-width: $desktop_small) {
          padding: 1rem;
-     }
+      }
    }
+
+   &__select {
+      position: relative;
+
+      select {
+         font-family: $f1_med;
+         font-size: 1.5rem;
+         line-height: 2rem;
+
+         padding: 0.8rem 1.2rem;
+         padding-right: 4rem;
+         border: 1px solid $grey-200;
+         border-radius: 4px;
+         cursor: pointer;
+
+         color: $black-100;
+         background-color: transparent;
+      }
+
+      &::before {
+         position: absolute;
+         top: 0.8rem;
+         right: 0.8rem;
+
+         content: '';
+         width: 2.4rem;
+         height: 2.4rem;
+
+         background-image: url("../assets/img/dropdown-arr.png");
+         background-repeat: no-repeat;
+      }
+   }
+
+   select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+    }
 
    input[type="radio"]:checked + .cmn__label {
          border: 2px solid $purple;
