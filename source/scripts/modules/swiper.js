@@ -70,3 +70,13 @@ if(catItemSlider) {
       },
     });
 }
+
+const filterSlider = document.querySelector('.filter-slider');
+
+if(filterSlider) {
+    let swiper = new Swiper(filterSlider, {
+        slidesPerView: "auto",
+        freeMode: true,
+        spaceBetween: 10,
+    });
+}

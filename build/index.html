@@ -300,7 +300,7 @@
                   <div class="search__field-content search__field-content--filter">
                             <div class="search-dropdown">
                               <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Тип напитка</b><span class="cmn__text search-dropdown__badge"></span></button>
-                              <div class="search-dropdown__menu js-collapsed">
+                              <div class="search-dropdown__menu js-collapsed" tab-index="1">
                                 <form action="#">
                                   <fieldset>
                                     <input type="checkbox" id="drink_type-any">
@@ -332,7 +332,7 @@
                             </div>
                             <div class="search-dropdown">
                               <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Винтаж</b><span class="cmn__text search-dropdown__badge"></span></button>
-                              <div class="search-dropdown__menu js-collapsed">
+                              <div class="search-dropdown__menu js-collapsed" tab-index="1">
                                 <form action="#">
                                   <fieldset>
                                     <input type="checkbox" id="drink_vintage-any">
@@ -360,7 +360,7 @@
                             </div>
                             <div class="search-dropdown">
                               <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Цвет</b><span class="cmn__text search-dropdown__badge"></span></button>
-                              <div class="search-dropdown__menu js-collapsed">
+                              <div class="search-dropdown__menu js-collapsed" tab-index="1">
                                 <form action="#">
                                   <fieldset>
                                     <input type="checkbox" id="drink_color-any">
@@ -392,7 +392,7 @@
                             </div>
                             <div class="search-dropdown">
                               <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Сахар</b><span class="cmn__text search-dropdown__badge"></span></button>
-                              <div class="search-dropdown__menu js-collapsed">
+                              <div class="search-dropdown__menu js-collapsed" tab-index="1">
                                 <form action="#">
                                   <fieldset>
                                     <input type="checkbox" id="drink_sugar-any">
@@ -420,7 +420,7 @@
                             </div>
                             <div class="search-dropdown">
                               <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Объем</b><span class="cmn__text search-dropdown__badge"></span></button>
-                              <div class="search-dropdown__menu js-collapsed">
+                              <div class="search-dropdown__menu js-collapsed" tab-index="1">
                                 <form action="#">
                                   <fieldset>
                                     <input type="checkbox" id="drink_volume-any">
@@ -451,8 +451,54 @@
                               </div>
                             </div>
                   </div>
+                  <div class="search__filter-result">
+                    <div class="search-result">
+                      <div class="loader">
+                        <div class="loader__container">
+                          <div class="loader__body"></div>
+                        </div>
+                      </div>
+                      <div class="search-result__container">
+                        <div class="search-result__empty"><span class="cmn__text">Ничего не найдено</span></div>
+                        <div class="search-result__list">
+                          <div class="search-result__list-side">
+                            <p class="cmn__text">Ut lobortis ut mauris <span>Charles Pelletier</span></p>
+                          </div>
+                          <div class="search-result__list-side"><a class="product-card-sm" href="#"><img src="./assets/img/product-img_1.png" alt="Шампанское Charles Pelletier Reserve Blanc de Blancs Brut" width="108" height="108">
+                                      <div class="priduct-card-sm__description">
+                                        <h3 class="cmn__text js-limited-string">Шампанское Charles Pelletier Reserve Blanc de Blancs Brut</h3>
+                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 846 ₽</p>
+                                      </div></a><a class="product-card-sm" href="#"><img src="./assets/img/product-img_2.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="108" height="108">
+                                      <div class="priduct-card-sm__description">
+                                        <h3 class="cmn__text js-limited-string">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
+                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 8 469 ₽</p>
+                                      </div></a><a class="product-card-sm" href="#"><img src="./assets/img/product-img_1.png" alt="Шампанское Charles Pelletier Reserve Blanc de Blancs Brut" width="108" height="108">
+                                      <div class="priduct-card-sm__description">
+                                        <h3 class="cmn__text js-limited-string">Шампанское Charles Pelletier Reserve Blanc de Blancs Brut</h3>
+                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 846 ₽</p>
+                                      </div></a><a class="product-card-sm" href="#"><img src="./assets/img/product-img_2.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="108" height="108">
+                                      <div class="priduct-card-sm__description">
+                                        <h3 class="cmn__text js-limited-string">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
+                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 8 469 ₽</p>
+                                      </div></a><a class="product-card-sm" href="#"><img src="./assets/img/product-img_1.png" alt="Шампанское Charles Pelletier Reserve Blanc de Blancs Brut" width="108" height="108">
+                                      <div class="priduct-card-sm__description">
+                                        <h3 class="cmn__text js-limited-string">Шампанское Charles Pelletier Reserve Blanc de Blancs Brut</h3>
+                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 846 ₽</p>
+                                      </div></a><a class="product-card-sm" href="#"><img src="./assets/img/product-img_2.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="108" height="108">
+                                      <div class="priduct-card-sm__description">
+                                        <h3 class="cmn__text js-limited-string">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
+                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 8 469 ₽</p>
+                                      </div></a>
+                            <div class="search-result__list-more">
+                              <button class="cmn__btn js-search-result-more-btn" type="button">Все результаты      </button><a class="cmn__btn cmn__btn--outlined" href="#">Каталог      </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="search__field"><span class="cmn__text cmn__text--small cmn__text--small-semi search__field-title">Искали ранее</span>
+                <div class="search__field search__field--adds"><span class="cmn__text cmn__text--small cmn__text--small-semi search__field-title">Искали ранее</span>
                   <div class="search__field-content"><a class="outlined-btn" href="#">
                               <svg width="16" height="16">
                                 <use xlink:href="#icon-search"><span>Charles Pelletier</span></use>
@@ -465,7 +511,7 @@
                               </svg></a>
                   </div>
                 </div>
-                <div class="search__field"><span class="cmn__text cmn__text--small cmn__text--small-semi search__field-title">Популярные запросы</span>
+                <div class="search__field search__field--adds"><span class="cmn__text cmn__text--small cmn__text--small-semi search__field-title">Популярные запросы</span>
                   <div class="search__field-content"><a class="outlined-btn" href="#">
                               <svg width="16" height="16">
                                 <use xlink:href="#icon-trending-up"><span>Charles Pelletier</span></use>
@@ -481,7 +527,7 @@
                               </svg></a>
                   </div>
                 </div>
-              </div><span class="cmn__text">Если не помните название напитка, попробуйте&nbsp;воспользоваться&nbsp;<a href="#" class="js-advanced-search-more">Каталогом</a></span>
+              </div><span class="cmn__text search__catalog-btn">Если не помните название напитка, попробуйте&nbsp;воспользоваться&nbsp;<a href="#" class="js-advanced-search-more">Каталогом</a></span>
             </div>
           </div>
         </section>
@@ -492,7 +538,6 @@
                 <h2 class="cmn__title cmn__title--main features__title">Поможем найти лучшую цену на любимый напиток</h2>
                 <p class="cmn__text cmn__text--large features__text">Экономия до 50%</p>
                 <p class="cmn__text cmn__text--large features__text">Не тратьте время на походы в магазины и поиск лучшей цены</p>
-                <p class="cmn__text cmn__text--large features__text">Вина, которые вы не найдете в рознице</p>
               </div>
               <ul class="features__list">
                 <li class="features__item"><img src="./assets/img/feature_1.png" width="128" height="128" alt="Сравнение цен в магазинах-партнёрах">

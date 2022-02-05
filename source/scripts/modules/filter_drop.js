@@ -96,6 +96,27 @@ const setFilterParams = (evt) => {
     //searching(selected);
 }
 
+const onClickCloseActiveMenu = (evt) => {
+    console.log(activeMenu.previousElementSibling)
+
+    if(!activeMenu.contains(evt.target) && activeMenu.classList.contains('opened')) {
+        console.log('close')
+        let activeMenuControls = activeMenu.querySelectorAll('input[type="checkbox"]');
+
+        activeMenuControls.forEach(control => {
+            control.removeEventListener('change', setFilterParams);
+        });
+
+        addClass(activeMenu, 'js-collapsed');
+        removeClass(activeMenu.previousElementSibling, 'active');
+
+        window.removeEventListener('click', onClickCloseActiveMenu);
+        removeClass(activeMenu, 'opened');
+    }
+    console.log(activeMenu)
+    addClass(activeMenu, 'opened');
+}
+
 // показываю меню
 const onClickOpenMenu = function() {
     // контекст, наша кнопка открытия фильтра
@@ -118,9 +139,8 @@ const onClickOpenMenu = function() {
 
     // открываю/закрываю фильтр
     if(!btn.classList.contains('active')) {
-        console.log(btn);
         removeClass(activeMenu, 'js-collapsed');
-        addClass(btn, 'active');
+        addClass(btn, 'active');       
 
         // вешаю слушатели на инпуты в активном меню
         activeMenuControls.forEach(control => {
@@ -134,6 +154,8 @@ const onClickOpenMenu = function() {
                 control.removeEventListener('change', setFilterParams);
             });
         }
+        
+        window.addEventListener('click', onClickCloseActiveMenu);
     } else {
         addClass(activeMenu, 'js-collapsed');
         removeClass(btn, 'active');

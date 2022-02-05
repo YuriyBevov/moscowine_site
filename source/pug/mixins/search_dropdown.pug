@@ -4,7 +4,7 @@ mixin search_dropdown(cl, label, title, array, temp)
       b.cmn__text= title
       span.cmn__text.search-dropdown__badge
     
-    .search-dropdown__menu.js-collapsed
+    .search-dropdown__menu(tab-index="1").js-collapsed
       form(action="#")
         each item in array
           fieldset

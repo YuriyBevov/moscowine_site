@@ -32,55 +32,37 @@
         &__filter {
             display: none;
 
-            &.js-mounted {
-                display: block;
-                /*display: flex;
-                flex-direction: column;*/
-                animation: fadeIn 0.5s linear;
-
-                /*overflow: hidden;
-                overflow-x: auto;
-                height: 430px;*/
+            &::-webkit-scrollbar {
+                width: 0 !important;
+                height: 0 !important;
+            }
+            
+            &::-webkit-scrollbar-thumb {
+                width: 0 !important;
+                height: 0 !important;
+                background-color: $purple;
             }
 
-            /*&-result {
-                position: relative;
-                margin-bottom: 3.2rem;
+            // разворачивание поиска по клику на инпуте
+            &.js-mounted {
+                display: block;
+                animation: fadeIn 0.5s linear;
+            }
+            //--
 
-                &-container {
-                    max-height: 31.2rem;
-                    overflow: hidden;
-                    padding-right: 2rem;
-                }
+           &-result {
+               display: none;
+               position: relative;
+               padding: 3.2rem 0;
 
-                button {
-                    margin-left: auto;
-                }
-
-                &-content {
-                    display: flex;
-
-                    &-text {
-                        width: 50%;
-                        max-width: 45.8rem;
-                        padding-right: 2rem;
-                        margin-right: auto;
-                    }
-
-                    &-card {
-                        width: 50%;
-                        max-width: 44.8rem;
-                    }
-                }
-            }*/
+               &.active {
+                   display: block;
+               }
+           }
         }
 
         &__field {
             margin-bottom: 3.2rem;
-
-            &--controls {
-               // margin-bottom: auto;
-            }
 
             &-title {
                 display: inline-block;
@@ -94,6 +76,17 @@
 
                 &--filter {
                     align-items: flex-start;
+
+                    @media(max-width: $tablet_small) {
+                        //flex-direction: column;
+                        flex-wrap: wrap;
+
+                        .search-dropdown {
+                            margin-bottom: 1rem;
+                            margin-right: 1.2rem;
+                            width: fit-content;
+                        }
+                    }
                 }
 
                 a {
@@ -126,6 +119,66 @@
 
         100% {
             opacity: 1;
+        }
+    }
+
+    .search-result {
+        display: flex;
+        align-items: center;
+        min-height: 8.6rem;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &__list {
+            display: flex;
+        }
+
+        &__empty {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                opacity: 0.3;
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+
+
+            &-side {
+                width: calc(50% - 1.5rem);
+
+                &:not(:first-child) {
+                    margin-right: auto;
+                }
+
+                p span {
+                    color: $purple;
+                }
+            }
+
+            &-more {
+                display: flex;
+                width: 100%;
+                //justify-content: flex-end;
+
+                button {
+                    margin-right: 1.2rem;
+                }
+
+                a {
+                    color: $purple;
+                }
+            }
+
+            
         }
     }
 }

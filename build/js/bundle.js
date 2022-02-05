@@ -12631,6 +12631,206 @@ cartAddBtns.forEach(btn => {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/filter.js":
+/*!******************************************!*\
+  !*** ./source/scripts/modules/filter.js ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions */ "./source/scripts/functions.js");
+
+
+const filterBtns = document.querySelectorAll('.search-dropdown__button');
+
+let activeFilterBtn = null;
+let prevFilterBtn = null;
+let activeFilter = null;
+let prevFilter = null;
+let isActiveFilterOpened = false;
+
+const onClickAwayCloseActiveFilter = function(evt) {
+
+    if(!activeFilter.contains(evt.target) && isActiveFilterOpened) {
+        console.log('conta')
+        window.removeEventListener('click', onClickAwayCloseActiveFilter);
+        activeFilterBtn.classList.remove('active');
+        activeFilter.classList.add('js-collapsed');
+    }
+
+    isActiveFilterOpened = true;
+}
+
+//--------- Загрузчик и показ результатов, временно, для показа
+
+let loader = document.querySelector('.loader');
+const loaderTime = 700; //мс
+const intervalTime = 100; // мс
+const intervalClearStep = 1;
+let intervalClearTime = 0;
+
+let resultBlock = document.querySelector('.search__filter-result');
+let resultsContainer = document.querySelector('.search-result__container');
+
+let emptyResultBlock = document.querySelector('.search-result__empty');
+let listResultBlock = document.querySelector('.search-result__list');
+
+let addsFields = document.querySelectorAll('.search__field--adds');
+let catalogBtn = document.querySelector('.search__catalog-btn');
+
+const searching = function(fields) {
+    emptyResultBlock.style.display = 'none';
+    listResultBlock.style.display = 'none';
+    
+    (0,_functions__WEBPACK_IMPORTED_MODULE_0__.removeClass)(resultsContainer, 'active');
+
+    if(!(0,_functions__WEBPACK_IMPORTED_MODULE_0__.checkClass)(loader, 'js-active')) {
+        (0,_functions__WEBPACK_IMPORTED_MODULE_0__.addClass)(loader, 'js-active');
+        
+        (0,_functions__WEBPACK_IMPORTED_MODULE_0__.addClass)(resultBlock, 'active');
+        
+        let loaderInterval = setInterval(() => {
+            intervalClearTime += intervalClearStep;
+            if(intervalClearTime === loaderTime / intervalTime) {
+                (0,_functions__WEBPACK_IMPORTED_MODULE_0__.removeClass)(loader, 'js-active');
+                clearInterval(loaderInterval);
+                intervalClearTime = 0;
+                showResults();
+            }
+        }, intervalTime);
+    } else {
+        intervalClearTime = 0;
+    }
+};
+
+const showResults = function() {
+    //-- рандомный показ блока с результатами
+    let random = Math.floor(Math.random() * 10);
+
+    if(random % 2 === 0) {
+        emptyResultBlock.style.display = 'none';
+        listResultBlock.style.display = 'flex';
+    } else {
+        emptyResultBlock.style.display = 'flex';
+        listResultBlock.style.display = 'none';
+    }
+    //----
+
+    (0,_functions__WEBPACK_IMPORTED_MODULE_0__.addClass)(resultsContainer, 'active');
+
+    addsFields.forEach(field => {
+        field.style.display = 'none';
+    })
+    catalogBtn.style.display = 'none';
+}
+
+//----------
+
+const onClickCheckControl = function(evt) {
+        // бэджик в кнопке, с кол-м выбранных фильтров
+        let badge = activeFilter.previousElementSibling.querySelector('.search-dropdown__badge');
+        // все чекбоксы в форме
+        let controls = activeFilter.querySelectorAll('input[type="checkbox"]');
+        // чекбокс выбрать все
+        let selectAllControl = controls[0];
+        // все активные чекбоксы в форме
+    
+        if(evt.target === selectAllControl) {
+            selectAllControl.checked === true ?
+            controls.forEach(checkbox => {
+                checkbox.checked === false ?
+                checkbox.checked = true : null;
+            }) :
+            controls.forEach(checkbox => {
+                checkbox.checked === true ?
+                checkbox.checked = false : null;
+            });
+        }
+    
+        let checkedControlsLength = 0;
+    
+        controls.forEach(c => {
+            c.checked ?
+            checkedControlsLength += 1 : null;
+        });
+        
+        if(controls.length - 1 === checkedControlsLength && selectAllControl.checked === false) {
+            selectAllControl.checked = true;
+            checkedControlsLength += 1;
+        } else if (controls.length - 1 === checkedControlsLength && selectAllControl.checked === true) {
+            selectAllControl.checked = false;
+            checkedControlsLength -= 1;
+        }
+    
+        if(checkedControlsLength > 0) {
+            !(0,_functions__WEBPACK_IMPORTED_MODULE_0__.checkClass)(badge, 'js-filter-selected') ?
+            (0,_functions__WEBPACK_IMPORTED_MODULE_0__.addClass)(badge, 'js-filter-selected') : null;
+            // показываю кол-во активных чекбоксов, за искл ч-са выбрать все
+            selectAllControl.checked === false ?
+            badge.innerHTML = checkedControlsLength :
+            badge.innerHTML = checkedControlsLength - 1;
+    
+            (0,_functions__WEBPACK_IMPORTED_MODULE_0__.addClass)(activeFilter.previousElementSibling, 'js-filter-active');
+        } else {
+            (0,_functions__WEBPACK_IMPORTED_MODULE_0__.checkClass)(badge, 'js-filter-selected') ?
+            (0,_functions__WEBPACK_IMPORTED_MODULE_0__.removeClass)(badge, 'js-filter-selected') : null;
+            (0,_functions__WEBPACK_IMPORTED_MODULE_0__.removeClass)(activeFilter.previousElementSibling, 'js-filter-active');
+        }
+        
+        // передаю выбранные чекбоксы в функцию поиска
+        let selected = [];
+        controls.forEach(ctrl => ctrl.checked === true ? selected.push(ctrl.getAttribute('id')) : null);
+
+        searching(selected);
+}
+
+const onClickOpenDropdown = function(evt) {
+    prevFilterBtn = activeFilterBtn;
+    prevFilterBtn ?
+    prevFilter = prevFilterBtn.nextElementSibling : null;
+
+    activeFilterBtn = this;
+    activeFilter = this.nextElementSibling;
+
+    if(prevFilterBtn && prevFilterBtn !== activeFilterBtn) {
+        (0,_functions__WEBPACK_IMPORTED_MODULE_0__.removeClass)(prevFilterBtn, 'active');
+        (0,_functions__WEBPACK_IMPORTED_MODULE_0__.addClass)(prevFilter, 'js-collapsed');
+        window.removeEventListener('click', onClickAwayCloseActiveFilter);
+
+        let controls = prevFilter.querySelectorAll('input[type="checkbox"]');
+
+        controls.forEach(control => {
+            control.addEventListener('click', onClickCheckControl);
+        })
+    }
+
+    isActiveFilterOpened = false;
+    window.addEventListener('click', onClickAwayCloseActiveFilter);
+
+    activeFilterBtn.classList.toggle('active');
+    activeFilter.classList.toggle('js-collapsed');
+
+    //--controls
+    let controls = activeFilter.querySelectorAll('input[type="checkbox"]');
+
+    controls.forEach(control => {
+        control.addEventListener('click', onClickCheckControl);
+    })
+    //--
+
+    if(!activeFilterBtn.classList.contains('active')) {
+        window.removeEventListener('click', onClickAwayCloseActiveFilter);
+    }
+}
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', onClickOpenDropdown);
+})
+
+
+/***/ }),
+
 /***/ "./source/scripts/modules/infoTabs.js":
 /*!********************************************!*\
   !*** ./source/scripts/modules/infoTabs.js ***!
@@ -12667,6 +12867,94 @@ limited.forEach(str => {
     str.innerHTML = (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.limitStr)(str.innerHTML, 50);
 })
 
+
+/***/ }),
+
+/***/ "./source/scripts/modules/openSearchFilter.js":
+/*!****************************************************!*\
+  !*** ./source/scripts/modules/openSearchFilter.js ***!
+  \****************************************************/
+/***/ (function() {
+
+//import { initFilters } from './filter.js';
+const searchControl = document.querySelector('.search__control');
+const filter = document.querySelector('.search__filter');
+const overlay = document.querySelector('.search__wrapper');
+
+const onClickHideFilter = (evt) => {
+    if(!overlay.contains(evt.target)) {
+        filter.classList.remove('js-mounted');
+        searchControl.addEventListener('focusin', onClickShowFilter);
+        window.removeEventListener('click', onClickHideFilter);
+
+        let activeFilter = document.querySelector('.search-dropdown__button.active');
+        // let resultBlock = document.querySelector('.search__filter-result');
+
+        if(activeFilter) {
+            console.log('searchClose')
+            activeFilter.classList.remove('active');
+            activeFilter.nextElementSibling.classList.add('js-collapsed');
+        }
+
+        /* if(resultBlock.classList.contains('active')) {
+            resultBlock.classList.remove('active');
+        } */
+    }
+}
+
+const onClickShowFilter = () => {
+    filter.classList.add('js-mounted');
+    searchControl.removeEventListener('focusin', onClickShowFilter);
+    window.addEventListener('click', onClickHideFilter);
+}
+
+searchControl.addEventListener('focusin', onClickShowFilter);
+
+/***/ }),
+
+/***/ "./source/scripts/modules/searchResultMore.js":
+/*!****************************************************!*\
+  !*** ./source/scripts/modules/searchResultMore.js ***!
+  \****************************************************/
+/***/ (function() {
+
+let moreBtn = document.querySelector('.js-search-result-more-btn');
+let productCards = document.querySelectorAll('.product-card-sm');
+let searchBlock = document.querySelector('.search');
+
+productCards.forEach((card, i) => {
+    if(i > 1) {
+        card.style.display = 'none';
+    }
+})
+
+const onClickHideMoreCards = () => {
+    productCards.forEach((card, i) => {
+        if(i > 1) {
+            card.style.display = 'none';
+        }
+    })
+
+    moreBtn.removeEventListener('click', onClickHideMoreCards);
+    moreBtn.innerHTML = 'Все результаты';
+    moreBtn.addEventListener('click', onClickShowMoreCards);
+
+    searchBlock.scrollIntoView({ top: 0, behavior: "smooth" })
+}
+
+const onClickShowMoreCards = () => {
+    productCards.forEach(card => {
+        if(card.style.display === 'none') {
+            card.style.display = 'block';
+        }
+
+        moreBtn.removeEventListener('click', onClickShowMoreCards);
+        moreBtn.innerHTML = 'Свернуть';
+        moreBtn.addEventListener('click', onClickHideMoreCards);       
+    })
+}
+
+moreBtn.addEventListener('click', onClickShowMoreCards);
 
 /***/ }),
 
@@ -12749,6 +13037,16 @@ if(catItemSlider) {
       thumbs: {
         swiper: swiper,
       },
+    });
+}
+
+const filterSlider = document.querySelector('.filter-slider');
+
+if(filterSlider) {
+    let swiper = new swiper_core__WEBPACK_IMPORTED_MODULE_0__.default(filterSlider, {
+        slidesPerView: "auto",
+        freeMode: true,
+        spaceBetween: 10,
     });
 }
 
@@ -13139,15 +13437,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_limitStr_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/limitStr.js */ "./source/scripts/modules/limitStr.js");
 /* harmony import */ var _modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/cartAddCount.js */ "./source/scripts/modules/cartAddCount.js");
 /* harmony import */ var _modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _modules_infoTabs_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/infoTabs.js */ "./source/scripts/modules/infoTabs.js");
+/* harmony import */ var _modules_openSearchFilter_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/openSearchFilter.js */ "./source/scripts/modules/openSearchFilter.js");
+/* harmony import */ var _modules_openSearchFilter_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_openSearchFilter_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modules_infoTabs_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/infoTabs.js */ "./source/scripts/modules/infoTabs.js");
+/* harmony import */ var _modules_filter_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/filter.js */ "./source/scripts/modules/filter.js");
+/* harmony import */ var _modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/searchResultMore.js */ "./source/scripts/modules/searchResultMore.js");
+/* harmony import */ var _modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_7__);
 
 //import filter_drop from './modules/filter_drop.js';
+
 ;
 
 
 
-//import openSearchFilter from './modules/openSearchFilter.js';
-//import filterSelect from './modules/filterSelect.js'
+
+
 
 
 
