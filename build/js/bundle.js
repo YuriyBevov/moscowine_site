@@ -12589,6 +12589,117 @@ function tabs(btns, tabs) {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/addReview.js":
+/*!*********************************************!*\
+  !*** ./source/scripts/modules/addReview.js ***!
+  \*********************************************/
+/***/ (function() {
+
+let reviewBtn = document.querySelector('.js-review-btn');
+let modal = document.querySelector('.modal-review');
+let modalContent = document.querySelector('.modal__wrapper');
+let body = document.querySelector('body');
+let resetBtn = document.querySelector('.js-modal-review-reset-btn');
+let submitBtn = document.querySelector('.js-modal-review-submit-btn');
+let form = document.querySelector('.modal-review form');
+
+let controls = form.querySelectorAll('.js-validation-control');
+
+if(reviewBtn) {  
+    const onTouchCloseModal = (evt) => {
+        if(evt.target.contains(modalContent)) {
+            modal.classList.add('closed');
+            body.style.overflow = 'auto';
+            reviewBtn.addEventListener('click', onClickShowModal);
+            resetBtn.removeEventListener('click', onClickCloseModal);
+            modal.removeEventListener('click', onTouchCloseModal);
+        }
+    }
+
+    const onClickCloseModal = () => {
+        modal.classList.add('closed');
+        body.style.overflow = 'auto';
+        reviewBtn.addEventListener('click', onClickShowModal);
+        modal.removeEventListener('click', onTouchCloseModal);
+    }
+
+    const onClickShowModal = () => {
+        let btns = document.querySelectorAll('.modal-review__rate-container button');
+
+        btns.forEach(btn => {
+            btn.classList.contains('js-active') ?
+            btn.classList.remove('js-active') : null;
+        });
+
+
+        controls.forEach(control => {
+            control.classList.contains('js-invalid-control') ?
+            control.classList.remove('js-invalid-control') : null;
+        });
+
+        let validateMsg = form.querySelector('.modal-review__validation-badge');
+
+        !validateMsg.classList.contains('js-hidden') ?
+        validateMsg.classList.add('js-hidden') : null;
+
+        modal.classList.remove('closed');
+        body.style.overflow = 'hidden';
+        reviewBtn.removeEventListener('click', onClickShowModal);
+        modal.addEventListener('click', onTouchCloseModal);
+        resetBtn.addEventListener('click', onClickCloseModal);
+    }
+
+    reviewBtn.addEventListener('click', onClickShowModal);
+
+    const onClickSubmitForm = (evt) => {
+        evt.preventDefault();
+        validateFormControls(form);
+    }  
+
+    function validateFormControls(form) {
+        let validateMsg = form.querySelector('.modal-review__validation-badge');
+    
+        let invalidControls = [];
+    
+        controls.forEach(control => {
+            control.classList.contains('js-invalid-control') ?
+            control.classList.remove('js-invalid-control') : null;
+    
+            if(!control.value.trim().length) {
+                invalidControls.push(control);
+                control.classList.add('js-invalid-control');
+            }
+        })
+
+        console.log(invalidControls)
+    
+        if(invalidControls.length && validateMsg.classList.contains('js-hidden')) {
+            validateMsg.classList.remove('js-hidden');
+        } else if(!invalidControls.length) {
+
+            !validateMsg.classList.contains('js-hidden') ?
+            validateMsg.classList.add('js-hidden') : null;
+            
+            console.log('SEND FORM DATA');
+
+
+            modal.classList.add('closed');
+            body.style.overflow = 'auto';
+            reviewBtn.addEventListener('click', onClickShowModal);
+            modal.removeEventListener('click', onTouchCloseModal);
+            resetBtn.removeEventListener('click', onClickCloseModal);
+
+            controls.forEach(control => {
+                control.value = '';
+            });
+        }
+    }
+
+    submitBtn.addEventListener('click', onClickSubmitForm);
+}
+
+/***/ }),
+
 /***/ "./source/scripts/modules/cartAddCount.js":
 /*!************************************************!*\
   !*** ./source/scripts/modules/cartAddCount.js ***!
@@ -12962,117 +13073,6 @@ if(filter) {
     searchControl.addEventListener('focusin', onClickShowFilter);
 }
 
-
-/***/ }),
-
-/***/ "./source/scripts/modules/review.js":
-/*!******************************************!*\
-  !*** ./source/scripts/modules/review.js ***!
-  \******************************************/
-/***/ (function() {
-
-let reviewBtn = document.querySelector('.js-review-btn');
-let modal = document.querySelector('.modal-review');
-let modalContent = document.querySelector('.modal__wrapper');
-let body = document.querySelector('body');
-let resetBtn = document.querySelector('.js-modal-review-reset-btn');
-let submitBtn = document.querySelector('.js-modal-review-submit-btn');
-let form = document.querySelector('.modal-review form');
-
-let controls = form.querySelectorAll('.js-validation-control');
-
-if(reviewBtn) {  
-    const onTouchCloseModal = (evt) => {
-        if(evt.target.contains(modalContent)) {
-            modal.classList.add('closed');
-            body.style.overflow = 'auto';
-            reviewBtn.addEventListener('click', onClickShowModal);
-            resetBtn.removeEventListener('click', onClickCloseModal);
-            modal.removeEventListener('click', onTouchCloseModal);
-        }
-    }
-
-    const onClickCloseModal = () => {
-        modal.classList.add('closed');
-        body.style.overflow = 'auto';
-        reviewBtn.addEventListener('click', onClickShowModal);
-        modal.removeEventListener('click', onTouchCloseModal);
-    }
-
-    const onClickShowModal = () => {
-        let btns = document.querySelectorAll('.modal-review__rate-container button');
-
-        btns.forEach(btn => {
-            btn.classList.contains('js-active') ?
-            btn.classList.remove('js-active') : null;
-        });
-
-
-        controls.forEach(control => {
-            control.classList.contains('js-invalid-control') ?
-            control.classList.remove('js-invalid-control') : null;
-        });
-
-        let validateMsg = form.querySelector('.modal-review__validation-badge');
-
-        !validateMsg.classList.contains('js-hidden') ?
-        validateMsg.classList.add('js-hidden') : null;
-
-        modal.classList.remove('closed');
-        body.style.overflow = 'hidden';
-        reviewBtn.removeEventListener('click', onClickShowModal);
-        modal.addEventListener('click', onTouchCloseModal);
-        resetBtn.addEventListener('click', onClickCloseModal);
-    }
-
-    reviewBtn.addEventListener('click', onClickShowModal);
-
-    const onClickSubmitForm = (evt) => {
-        evt.preventDefault();
-        validateFormControls(form);
-    }  
-
-    function validateFormControls(form) {
-        let validateMsg = form.querySelector('.modal-review__validation-badge');
-    
-        let invalidControls = [];
-    
-        controls.forEach(control => {
-            control.classList.contains('js-invalid-control') ?
-            control.classList.remove('js-invalid-control') : null;
-    
-            if(!control.value.trim().length) {
-                invalidControls.push(control);
-                control.classList.add('js-invalid-control');
-            }
-        })
-
-        console.log(invalidControls)
-    
-        if(invalidControls.length && validateMsg.classList.contains('js-hidden')) {
-            validateMsg.classList.remove('js-hidden');
-        } else if(!invalidControls.length) {
-
-            !validateMsg.classList.contains('js-hidden') ?
-            validateMsg.classList.add('js-hidden') : null;
-            
-            console.log('SEND FORM DATA');
-
-
-            modal.classList.add('closed');
-            body.style.overflow = 'auto';
-            reviewBtn.addEventListener('click', onClickShowModal);
-            modal.removeEventListener('click', onTouchCloseModal);
-            resetBtn.removeEventListener('click', onClickCloseModal);
-
-            controls.forEach(control => {
-                control.value = '';
-            });
-        }
-    }
-
-    submitBtn.addEventListener('click', onClickSubmitForm);
-}
 
 /***/ }),
 
@@ -13684,10 +13684,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_showMorePlaces_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_showMorePlaces_js__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/reviewStarControl.js */ "./source/scripts/modules/reviewStarControl.js");
 /* harmony import */ var _modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _modules_review_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/review.js */ "./source/scripts/modules/review.js");
-/* harmony import */ var _modules_review_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_review_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _modules_addReview_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/addReview.js */ "./source/scripts/modules/addReview.js");
+/* harmony import */ var _modules_addReview_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_addReview_js__WEBPACK_IMPORTED_MODULE_11__);
 
 ;
+
 
 
 

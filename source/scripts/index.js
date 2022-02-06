@@ -2,6 +2,7 @@
 import swiper from './modules/swiper.js';
 import yandex_map from './modules/yandex_map.js';
 import limitStr from './modules/limitStr.js';
+
 import cardAddCount from './modules/cartAddCount.js';
 import openSearchFilter from './modules/openSearchFilter.js';
 import infoTabs from './modules/infoTabs.js';
@@ -10,4 +11,4 @@ import searchResultMore from './modules/searchResultMore.js';
 import filterObserver from './modules/filterObserver.js';
 import showMorePlaces from './modules/showMorePlaces.js';
 import reviewStarControl from './modules/reviewStarControl.js';
-import review from './modules/review.js';
+import addReview from './modules/addReview.js';
