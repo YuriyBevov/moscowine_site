@@ -1,15 +1,50 @@
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: $white;
+
     &__top {
         display: flex;
-        padding-top: 2.2rem;
+        padding: 2.2rem 0;
+
+        &-content {
+            display: flex;
+            flex-grow: 1;
+
+            @media(max-width: $tablet_large) {
+                flex-direction: column;
+            }
+        }
     }
 
     &__logo {
         margin-right: 2.7rem;
+
+        @media(max-width: $tablet_large) {
+            margin-right: 1.5rem;
+        }
     }
 
     &__info {
         margin-right: auto;
+
+        @media(max-width: $tablet_large) {
+            margin-right: 1.6rem;
+            margin-left: auto;
+            order: 2;
+
+            .worktime {
+                flex-direction: row;
+                max-width: 100%;
+                align-items: flex-end;
+
+                a {
+                    margin-right: 1.2rem;
+                }
+            }
+        }
+
         a {
             font-size: 1.8rem;
             line-height: 2.3rem;
@@ -29,7 +64,6 @@
     &__btn {
         position: relative;
         justify-content: flex-start;
-        min-width: 17.3rem;
         padding: 0.9rem 2.4rem;
         padding-left: 1.6rem;
         font-size: 16px;
@@ -43,7 +77,13 @@
     &__bottom {
         display: flex;
         align-items: center;
-        padding: 2rem 0 2.4rem;
+        padding-bottom: 2.4rem;
+
+        @media(max-width: $tablet_medium) {
+            &.js-hidden {
+                display: none;
+            }
+        }
     }
 
     &__search {
@@ -51,6 +91,14 @@
         flex-grow: 1;
         margin: 0 3.2rem;
         height: 4rem;
+        transition: all $main-transition;
+
+        &.js-hidden {
+            @media(min-width: $tablet_medium) {
+                opacity: 0;
+                z-index: -1;
+            }
+        }
 
         label {
             position: absolute;
@@ -123,15 +171,17 @@
         }
     }
 
-    @media(max-width: $desktop_small) {
-        &__logo {
-            margin-right: auto;
-        }
-
+    @media(max-width: $tablet_medium) {
         &__info {
-            margin-right: initial;
+            margin-right: 0;
+
             .worktime {
-                align-items: flex-end;
+                flex-direction: column;
+                align-items: flex-start;
+
+                a {
+                    margin-right: 0;
+                }
             }
         }
 
@@ -147,9 +197,7 @@
             margin: 0;
             margin-right: 2rem;
         }
-    }
 
-    @media(max-width: $tablet_small) {
         &__menu {
             display: none;
         }

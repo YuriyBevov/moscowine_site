@@ -12831,6 +12831,48 @@ filterBtns.forEach(btn => {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/filterObserver.js":
+/*!**************************************************!*\
+  !*** ./source/scripts/modules/filterObserver.js ***!
+  \**************************************************/
+/***/ (function() {
+
+let search = document.querySelector('.search');
+let headerSearch = document.querySelector('.header__search');
+let headerBottom = document.querySelector('.header__bottom');
+let width = window.innerWidth;
+
+let observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+            if(!entry.isIntersecting) {
+                if(width > 959) {
+                    headerSearch.classList.remove('js-hidden');
+                } else {
+                    headerBottom.classList.remove('js-hidden');
+                }
+            } else {
+                if(width > 959) {
+                    !headerSearch.classList.contains('js-hidden') ?
+                    headerSearch.classList.add('js-hidden') : null;
+                } else {
+                    !headerBottom.classList.contains('js-hidden') ?
+                    headerBottom.classList.add('js-hidden') : null;
+                }
+                
+            }
+        
+    });
+});
+
+const onResizeSetWidth = () => {
+    width = window.innerWidth;
+}
+
+window.addEventListener('resize', onResizeSetWidth);
+observer.observe(search);
+
+/***/ }),
+
 /***/ "./source/scripts/modules/infoTabs.js":
 /*!********************************************!*\
   !*** ./source/scripts/modules/infoTabs.js ***!
@@ -13449,11 +13491,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_filter_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/filter.js */ "./source/scripts/modules/filter.js");
 /* harmony import */ var _modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/searchResultMore.js */ "./source/scripts/modules/searchResultMore.js");
 /* harmony import */ var _modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_7__);
-
-//import filter_drop from './modules/filter_drop.js';
+/* harmony import */ var _modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/filterObserver.js */ "./source/scripts/modules/filterObserver.js");
+/* harmony import */ var _modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_8__);
 
 ;
-
 
 
 

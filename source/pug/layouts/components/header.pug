@@ -3,18 +3,19 @@ header.header
     .header__top
       .header__logo
         include ./logo
-      .header__info
-        include ../../components/worktime
-      .header__nav
-        include ./nav
+      .header__top-content
+        .header__info
+          include ../../components/worktime
+        .header__nav
+          include ./nav
     
     .header__bottom
       button(type="button").cmn__btn.header__btn
         svg(width="16" height="16")
             use(xlink:href="#icon-burger")
-        span Ассортимент
+        span Каталог
 
-      .header__search
+      .header__search.js-hidden
         label(for="header_search" aria-label="Поиск")
           svg(width="24" height="24")
             use(xlink:href="#icon-search")

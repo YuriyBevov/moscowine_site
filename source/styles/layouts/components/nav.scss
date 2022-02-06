@@ -3,6 +3,11 @@
     display: flex;
     flex-wrap: wrap;
     //margin-right: -1.6rem;
+
+    @media(max-width: $tablet_large) {
+        justify-content: flex-end;
+        margin-bottom: 1.2rem;
+    }
   }
 
   &__item {

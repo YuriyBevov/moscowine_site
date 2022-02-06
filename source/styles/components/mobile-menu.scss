@@ -1,7 +1,7 @@
 .mobile-menu {
     display: none;
 
-    @media(max-width: $tablet_small) {
+    @media(max-width: $tablet_medium) {
         position: fixed;
         bottom: 0;
         left: 0;
