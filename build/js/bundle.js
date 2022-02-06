@@ -12677,7 +12677,7 @@ let emptyResultBlock = document.querySelector('.search-result__empty');
 let listResultBlock = document.querySelector('.search-result__list');
 
 let addsFields = document.querySelectorAll('.search__field--adds');
-let catalogBtn = document.querySelector('.search__catalog-btn');
+//let catalogBtn = document.querySelector('.search__catalog-btn');
 
 const searching = function(fields) {
     emptyResultBlock.style.display = 'none';
@@ -12722,7 +12722,7 @@ const showResults = function() {
     addsFields.forEach(field => {
         field.style.display = 'none';
     })
-    catalogBtn.style.display = 'none';
+    //catalogBtn.style.display = 'none';
 }
 
 //----------
@@ -12880,6 +12880,7 @@ limited.forEach(str => {
 const searchControl = document.querySelector('.search__control');
 const filter = document.querySelector('.search__filter');
 const overlay = document.querySelector('.search__wrapper');
+// const searchCatalogBtn = document.querySelector('.search__catalog-btn');
 
 const onClickHideFilter = (evt) => {
     if(!overlay.contains(evt.target)) {
@@ -12899,6 +12900,11 @@ const onClickHideFilter = (evt) => {
         /* if(resultBlock.classList.contains('active')) {
             resultBlock.classList.remove('active');
         } */
+        /*console.log(searchCatalogBtn)
+        if(searchCatalogBtn.style.display === 'none') {
+            console.log(searchCatalogBtn)
+            searchCatalogBtn.style.display = 'flex'
+        }*/
     }
 }
 
@@ -12945,7 +12951,7 @@ const onClickHideMoreCards = () => {
 const onClickShowMoreCards = () => {
     productCards.forEach(card => {
         if(card.style.display === 'none') {
-            card.style.display = 'block';
+            card.style.display = 'flex';
         }
 
         moreBtn.removeEventListener('click', onClickShowMoreCards);

@@ -44,6 +44,10 @@
             color: $white;
             background-color: $black-100;
 
+            @media(max-width: $tablet_medium) {
+                margin-left: auto;
+            }
+
             &.js-filter-selected {
                 width: 2.4rem;
                 height: 2.4rem;
@@ -143,6 +147,10 @@
         border-radius: 4px;
         z-index: 10;
 
+        @media(max-width: $tablet_medium) {
+            width: 20rem;
+        }
+
         filter: drop-shadow(0px 29px 69px rgba(12, 43, 122, 0.05)) drop-shadow(0px 18.7963px 40.4097px rgba(12, 43, 122, 0.037963)) drop-shadow(0px 11.1704px 21.9778px rgba(12, 43, 122, 0.0303704)) drop-shadow(0px 5.8px 11.2125px rgba(12, 43, 122, 0.025)) drop-shadow(0px 2.36296px 5.62222px rgba(12, 43, 122, 0.0196296)) drop-shadow(0px 0.537037px 2.71528px rgba(12, 43, 122, 0.012037));
 
         fieldset {
@@ -167,6 +175,10 @@
                 
                 padding: 1.8rem 0.8rem;
                 padding-left: 5.2rem;
+
+                @media(max-width: $tablet_medium) {
+                    padding: 1.3rem 0.8rem 1.3rem 5.2rem;
+                }
                 cursor: pointer;
 
                 color: $black-100;

@@ -25,7 +25,7 @@ const onClickHideMoreCards = () => {
 const onClickShowMoreCards = () => {
     productCards.forEach(card => {
         if(card.style.display === 'none') {
-            card.style.display = 'block';
+            card.style.display = 'flex';
         }
 
         moreBtn.removeEventListener('click', onClickShowMoreCards);

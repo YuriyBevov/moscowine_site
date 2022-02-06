@@ -35,7 +35,7 @@ let emptyResultBlock = document.querySelector('.search-result__empty');
 let listResultBlock = document.querySelector('.search-result__list');
 
 let addsFields = document.querySelectorAll('.search__field--adds');
-let catalogBtn = document.querySelector('.search__catalog-btn');
+//let catalogBtn = document.querySelector('.search__catalog-btn');
 
 const searching = function(fields) {
     emptyResultBlock.style.display = 'none';
@@ -80,7 +80,7 @@ const showResults = function() {
     addsFields.forEach(field => {
         field.style.display = 'none';
     })
-    catalogBtn.style.display = 'none';
+    //catalogBtn.style.display = 'none';
 }
 
 //----------

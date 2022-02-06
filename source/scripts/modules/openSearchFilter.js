@@ -2,6 +2,7 @@
 const searchControl = document.querySelector('.search__control');
 const filter = document.querySelector('.search__filter');
 const overlay = document.querySelector('.search__wrapper');
+// const searchCatalogBtn = document.querySelector('.search__catalog-btn');
 
 const onClickHideFilter = (evt) => {
     if(!overlay.contains(evt.target)) {
@@ -21,6 +22,11 @@ const onClickHideFilter = (evt) => {
         /* if(resultBlock.classList.contains('active')) {
             resultBlock.classList.remove('active');
         } */
+        /*console.log(searchCatalogBtn)
+        if(searchCatalogBtn.style.display === 'none') {
+            console.log(searchCatalogBtn)
+            searchCatalogBtn.style.display = 'flex'
+        }*/
     }
 }
 
