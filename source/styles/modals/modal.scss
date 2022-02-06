@@ -1,0 +1,50 @@
+.modal {
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  &.closed {
+    display: none;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 2rem;
+    top: 50%;
+    left: 50%;
+    overflow-y: auto;
+
+    width: fit-content;
+    min-width: 30vw;
+    max-width: 80vw;
+    height: fit-content;
+    min-height: 30vh;
+    max-height: 80vh;
+    background-color: $white;
+    transform: translate(-50%, -50%);
+
+    animation: showModal 0.7s forwards;
+
+    @media(max-width: $tablet_small) {
+      padding: 1rem;
+      width: calc(100% - 2rem);
+      max-width: calc(100% - 2rem);
+    }
+  }
+}
+
+@keyframes showModal {
+  0% {
+    transform: translate(0%, -50%) ;
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}

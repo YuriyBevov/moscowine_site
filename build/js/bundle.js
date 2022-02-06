@@ -12842,34 +12842,36 @@ let headerSearch = document.querySelector('.header__search');
 let headerBottom = document.querySelector('.header__bottom');
 let width = window.innerWidth;
 
-let observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-            if(!entry.isIntersecting) {
-                if(width > 959) {
-                    headerSearch.classList.remove('js-hidden');
+if(search) {
+    let observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+                if(!entry.isIntersecting) {
+                    if(width > 959) {
+                        headerSearch.classList.remove('js-hidden');
+                    } else {
+                        headerBottom.classList.remove('js-hidden');
+                    }
                 } else {
-                    headerBottom.classList.remove('js-hidden');
+                    if(width > 959) {
+                        !headerSearch.classList.contains('js-hidden') ?
+                        headerSearch.classList.add('js-hidden') : null;
+                    } else {
+                        !headerBottom.classList.contains('js-hidden') ?
+                        headerBottom.classList.add('js-hidden') : null;
+                    }
+                    
                 }
-            } else {
-                if(width > 959) {
-                    !headerSearch.classList.contains('js-hidden') ?
-                    headerSearch.classList.add('js-hidden') : null;
-                } else {
-                    !headerBottom.classList.contains('js-hidden') ?
-                    headerBottom.classList.add('js-hidden') : null;
-                }
-                
-            }
-        
+            
+        });
     });
-});
 
-const onResizeSetWidth = () => {
-    width = window.innerWidth;
+    const onResizeSetWidth = () => {
+        width = window.innerWidth;
+    }
+
+    window.addEventListener('resize', onResizeSetWidth);
+    observer.observe(search);
 }
-
-window.addEventListener('resize', onResizeSetWidth);
-observer.observe(search);
 
 /***/ }),
 
@@ -12924,39 +12926,188 @@ const filter = document.querySelector('.search__filter');
 const overlay = document.querySelector('.search__wrapper');
 // const searchCatalogBtn = document.querySelector('.search__catalog-btn');
 
-const onClickHideFilter = (evt) => {
-    if(!overlay.contains(evt.target)) {
-        filter.classList.remove('js-mounted');
-        searchControl.addEventListener('focusin', onClickShowFilter);
-        window.removeEventListener('click', onClickHideFilter);
-
-        let activeFilter = document.querySelector('.search-dropdown__button.active');
-        // let resultBlock = document.querySelector('.search__filter-result');
-
-        if(activeFilter) {
-            console.log('searchClose')
-            activeFilter.classList.remove('active');
-            activeFilter.nextElementSibling.classList.add('js-collapsed');
+if(filter) {
+    const onClickHideFilter = (evt) => {
+        if(!overlay.contains(evt.target)) {
+            filter.classList.remove('js-mounted');
+            searchControl.addEventListener('focusin', onClickShowFilter);
+            window.removeEventListener('click', onClickHideFilter);
+    
+            let activeFilter = document.querySelector('.search-dropdown__button.active');
+            // let resultBlock = document.querySelector('.search__filter-result');
+    
+            if(activeFilter) {
+                console.log('searchClose')
+                activeFilter.classList.remove('active');
+                activeFilter.nextElementSibling.classList.add('js-collapsed');
+            }
+    
+            /* if(resultBlock.classList.contains('active')) {
+                resultBlock.classList.remove('active');
+            } */
+            /*console.log(searchCatalogBtn)
+            if(searchCatalogBtn.style.display === 'none') {
+                console.log(searchCatalogBtn)
+                searchCatalogBtn.style.display = 'flex'
+            }*/
         }
-
-        /* if(resultBlock.classList.contains('active')) {
-            resultBlock.classList.remove('active');
-        } */
-        /*console.log(searchCatalogBtn)
-        if(searchCatalogBtn.style.display === 'none') {
-            console.log(searchCatalogBtn)
-            searchCatalogBtn.style.display = 'flex'
-        }*/
     }
+    
+    const onClickShowFilter = () => {
+        filter.classList.add('js-mounted');
+        searchControl.removeEventListener('focusin', onClickShowFilter);
+        window.addEventListener('click', onClickHideFilter);
+    }
+    
+    searchControl.addEventListener('focusin', onClickShowFilter);
 }
 
-const onClickShowFilter = () => {
-    filter.classList.add('js-mounted');
-    searchControl.removeEventListener('focusin', onClickShowFilter);
-    window.addEventListener('click', onClickHideFilter);
+
+/***/ }),
+
+/***/ "./source/scripts/modules/review.js":
+/*!******************************************!*\
+  !*** ./source/scripts/modules/review.js ***!
+  \******************************************/
+/***/ (function() {
+
+let reviewBtn = document.querySelector('.js-review-btn');
+let modal = document.querySelector('.modal-review');
+let modalContent = document.querySelector('.modal__wrapper');
+let body = document.querySelector('body');
+let resetBtn = document.querySelector('.js-modal-review-reset-btn');
+let submitBtn = document.querySelector('.js-modal-review-submit-btn');
+let form = document.querySelector('.modal-review form');
+
+let controls = form.querySelectorAll('.js-validation-control');
+
+if(reviewBtn) {  
+    const onTouchCloseModal = (evt) => {
+        if(evt.target.contains(modalContent)) {
+            modal.classList.add('closed');
+            body.style.overflow = 'auto';
+            reviewBtn.addEventListener('click', onClickShowModal);
+            resetBtn.removeEventListener('click', onClickCloseModal);
+            modal.removeEventListener('click', onTouchCloseModal);
+        }
+    }
+
+    const onClickCloseModal = () => {
+        modal.classList.add('closed');
+        body.style.overflow = 'auto';
+        reviewBtn.addEventListener('click', onClickShowModal);
+        modal.removeEventListener('click', onTouchCloseModal);
+    }
+
+    const onClickShowModal = () => {
+        let btns = document.querySelectorAll('.modal-review__rate-container button');
+
+        btns.forEach(btn => {
+            btn.classList.contains('js-active') ?
+            btn.classList.remove('js-active') : null;
+        });
+
+
+        controls.forEach(control => {
+            control.classList.contains('js-invalid-control') ?
+            control.classList.remove('js-invalid-control') : null;
+        });
+
+        let validateMsg = form.querySelector('.modal-review__validation-badge');
+
+        !validateMsg.classList.contains('js-hidden') ?
+        validateMsg.classList.add('js-hidden') : null;
+
+        modal.classList.remove('closed');
+        body.style.overflow = 'hidden';
+        reviewBtn.removeEventListener('click', onClickShowModal);
+        modal.addEventListener('click', onTouchCloseModal);
+        resetBtn.addEventListener('click', onClickCloseModal);
+    }
+
+    reviewBtn.addEventListener('click', onClickShowModal);
+
+    const onClickSubmitForm = (evt) => {
+        evt.preventDefault();
+        validateFormControls(form);
+    }  
+
+    function validateFormControls(form) {
+        let validateMsg = form.querySelector('.modal-review__validation-badge');
+    
+        let invalidControls = [];
+    
+        controls.forEach(control => {
+            control.classList.contains('js-invalid-control') ?
+            control.classList.remove('js-invalid-control') : null;
+    
+            if(!control.value.trim().length) {
+                invalidControls.push(control);
+                control.classList.add('js-invalid-control');
+            }
+        })
+
+        console.log(invalidControls)
+    
+        if(invalidControls.length && validateMsg.classList.contains('js-hidden')) {
+            validateMsg.classList.remove('js-hidden');
+        } else if(!invalidControls.length) {
+
+            !validateMsg.classList.contains('js-hidden') ?
+            validateMsg.classList.add('js-hidden') : null;
+            
+            console.log('SEND FORM DATA');
+
+
+            modal.classList.add('closed');
+            body.style.overflow = 'auto';
+            reviewBtn.addEventListener('click', onClickShowModal);
+            modal.removeEventListener('click', onTouchCloseModal);
+            resetBtn.removeEventListener('click', onClickCloseModal);
+
+            controls.forEach(control => {
+                control.value = '';
+            });
+        }
+    }
+
+    submitBtn.addEventListener('click', onClickSubmitForm);
 }
 
-searchControl.addEventListener('focusin', onClickShowFilter);
+/***/ }),
+
+/***/ "./source/scripts/modules/reviewStarControl.js":
+/*!*****************************************************!*\
+  !*** ./source/scripts/modules/reviewStarControl.js ***!
+  \*****************************************************/
+/***/ (function() {
+
+let btns = document.querySelectorAll('.modal-review__rate-container button');
+
+const onClickSetControlValue = (evt) => {
+    let index = evt.currentTarget.getAttribute('data-id');
+
+    let control = document.querySelector('.modal-review__hidden-rate input[data-rate-id="' + index + '"]');
+    control.checked = true;
+
+    btns.forEach(btn => {
+        btn.classList.contains('js-active') ?
+        btn.classList.remove('js-active') : null;
+    })
+
+    btns.forEach((btn, i) => {
+        if(i < index && !btn.classList.contains('js-active')) {
+            btn.classList.add('js-active');
+        }
+    })
+}
+
+if(btns) {
+    btns.forEach(btn => {
+        btn.addEventListener('click', onClickSetControlValue);
+    })
+}
+
 
 /***/ }),
 
@@ -12970,39 +13121,75 @@ let moreBtn = document.querySelector('.js-search-result-more-btn');
 let productCards = document.querySelectorAll('.product-card-sm');
 let searchBlock = document.querySelector('.search');
 
-productCards.forEach((card, i) => {
-    if(i > 1) {
-        card.style.display = 'none';
-    }
-})
-
-const onClickHideMoreCards = () => {
+if(moreBtn) {
     productCards.forEach((card, i) => {
         if(i > 1) {
             card.style.display = 'none';
         }
     })
 
-    moreBtn.removeEventListener('click', onClickHideMoreCards);
-    moreBtn.innerHTML = 'Все результаты';
+    const onClickHideMoreCards = () => {
+        productCards.forEach((card, i) => {
+            if(i > 1) {
+                card.style.display = 'none';
+            }
+        })
+
+        moreBtn.removeEventListener('click', onClickHideMoreCards);
+        moreBtn.innerHTML = 'Все результаты';
+        moreBtn.addEventListener('click', onClickShowMoreCards);
+
+        searchBlock.scrollIntoView({ top: 0, behavior: "smooth" })
+    }
+
+    const onClickShowMoreCards = () => {
+        productCards.forEach(card => {
+            if(card.style.display === 'none') {
+                card.style.display = 'flex';
+            }
+
+            moreBtn.removeEventListener('click', onClickShowMoreCards);
+            moreBtn.innerHTML = 'Свернуть';
+            moreBtn.addEventListener('click', onClickHideMoreCards);       
+        })
+    }
+
     moreBtn.addEventListener('click', onClickShowMoreCards);
-
-    searchBlock.scrollIntoView({ top: 0, behavior: "smooth" })
 }
 
-const onClickShowMoreCards = () => {
-    productCards.forEach(card => {
-        if(card.style.display === 'none') {
-            card.style.display = 'flex';
-        }
+/***/ }),
 
-        moreBtn.removeEventListener('click', onClickShowMoreCards);
-        moreBtn.innerHTML = 'Свернуть';
-        moreBtn.addEventListener('click', onClickHideMoreCards);       
+/***/ "./source/scripts/modules/showMorePlaces.js":
+/*!**************************************************!*\
+  !*** ./source/scripts/modules/showMorePlaces.js ***!
+  \**************************************************/
+/***/ (function() {
+
+let items = document.querySelectorAll('.about__places-item');
+let btn = document.querySelector('.js-show-more-places-btn');
+let btnContainer = document.querySelector('.about__places-more');
+
+if(btn) {
+    items.forEach((item, i) => {
+        if(i > 5) {
+            item.style.display = 'none';
+        }   
     })
-}
 
-moreBtn.addEventListener('click', onClickShowMoreCards);
+    const onClickShowMore = () => {
+        items.forEach((item, i) => {
+            item.style.display = 'flex';
+            if(i === items.length - 1) {
+                item.style.borderBottom = 'none';
+            }
+        })
+
+        btn.removeEventListener('click', onClickShowMore);
+        btnContainer.style.display = 'none';
+    }
+
+    btn.addEventListener('click', onClickShowMore);
+}
 
 /***/ }),
 
@@ -13493,8 +13680,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/filterObserver.js */ "./source/scripts/modules/filterObserver.js");
 /* harmony import */ var _modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _modules_showMorePlaces_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/showMorePlaces.js */ "./source/scripts/modules/showMorePlaces.js");
+/* harmony import */ var _modules_showMorePlaces_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_showMorePlaces_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/reviewStarControl.js */ "./source/scripts/modules/reviewStarControl.js");
+/* harmony import */ var _modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _modules_review_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/review.js */ "./source/scripts/modules/review.js");
+/* harmony import */ var _modules_review_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_review_js__WEBPACK_IMPORTED_MODULE_11__);
 
 ;
+
+
+
 
 
 

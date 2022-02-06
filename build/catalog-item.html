@@ -118,6 +118,10 @@
 <path d="M21.0001 0.999939H1.00012L9.00012 10.4599V16.9999L13.0001 18.9999V10.4599L21.0001 0.999939Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 </symbol><symbol id="icon-heart" viewBox="0 0 32 32">
 <path d="M27.7867 6.14666C27.1057 5.46533 26.2971 4.92485 25.4071 4.5561C24.5172 4.18735 23.5633 3.99756 22.6 3.99756C21.6367 3.99756 20.6828 4.18735 19.7929 4.5561C18.9029 4.92485 18.0943 5.46533 17.4133 6.14666L16 7.55999L14.5867 6.14666C13.2111 4.77107 11.3454 3.99827 9.4 3.99827C7.45462 3.99827 5.58892 4.77107 4.21333 6.14666C2.83774 7.52225 2.06494 9.38795 2.06494 11.3333C2.06494 13.2787 2.83774 15.1444 4.21333 16.52L5.62666 17.9333L16 28.3067L26.3733 17.9333L27.7867 16.52C28.468 15.839 29.0085 15.0304 29.3772 14.1405C29.746 13.2505 29.9358 12.2966 29.9358 11.3333C29.9358 10.37 29.746 9.41613 29.3772 8.52619C29.0085 7.63624 28.468 6.82767 27.7867 6.14666V6.14666Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</symbol><symbol id="icon-info-treangle" viewBox="0 0 24 24">
+<path d="M10.2898 3.8602L1.81978 18.0002C1.64514 18.3026 1.55274 18.6455 1.55177 18.9947C1.55079 19.3439 1.64127 19.6873 1.8142 19.9907C1.98714 20.2941 2.2365 20.547 2.53748 20.7241C2.83847 20.9012 3.18058 20.9964 3.52978 21.0002H20.4698C20.819 20.9964 21.1611 20.9012 21.4621 20.7241C21.7631 20.547 22.0124 20.2941 22.1854 19.9907C22.3583 19.6873 22.4488 19.3439 22.4478 18.9947C22.4468 18.6455 22.3544 18.3026 22.1798 18.0002L13.7098 3.8602C13.5315 3.56631 13.2805 3.32332 12.981 3.15469C12.6814 2.98605 12.3435 2.89746 11.9998 2.89746C11.656 2.89746 11.3181 2.98605 11.0186 3.15469C10.7191 3.32332 10.468 3.56631 10.2898 3.8602V3.8602Z" stroke="#EB5757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 9V13" stroke="#EB5757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 17H12.01" stroke="#EB5757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 </symbol><symbol id="icon-info" viewBox="0 0 12 12">
 <path opacity="0.3" d="M6.6 4.2H5.4V3H6.6V4.2ZM6.6 9H5.4V5.4H6.6V9ZM6 0C5.21207 0 4.43185 0.155195 3.7039 0.456723C2.97595 0.758251 2.31451 1.20021 1.75736 1.75736C0.632141 2.88258 0 4.4087 0 6C0 7.5913 0.632141 9.11742 1.75736 10.2426C2.31451 10.7998 2.97595 11.2417 3.7039 11.5433C4.43185 11.8448 5.21207 12 6 12C7.5913 12 9.11742 11.3679 10.2426 10.2426C11.3679 9.11742 12 7.5913 12 6C12 5.21207 11.8448 4.43185 11.5433 3.7039C11.2417 2.97595 10.7998 2.31451 10.2426 1.75736C9.68549 1.20021 9.02405 0.758251 8.2961 0.456723C7.56815 0.155195 6.78793 0 6 0Z" fill="black"></path>
 </symbol><symbol id="icon-insta" viewBox="0 0 36 36">
@@ -318,23 +322,27 @@
                 </div>
                 <div class="about__controls-field"><span class="cmn__text cmn__text-small cmn__text--bold">Винтаж</span>
                   <div class="cmn__select">
-                    <select class="cmn__select">
-                      <option>2018</option>
-                      <option>2019</option>
-                    </select>
+                    <form action=""> 
+                      <select class="cmn__select">
+                        <option>2018</option>
+                        <option>2019</option>
+                      </select>
+                    </form>
                   </div>
                 </div>
                 <div class="about__controls-field"><span class="cmn__text cmn__text-small cmn__text--bold">Объем</span>
-                  <form action="#"> 
-                    <input type="radio" id="volume-0.33" name="volume" value="0.33">
-                    <label class="cmn__label" for="volume-0.33">0.33</label>
-                    <input type="radio" id="volume-0.5" name="volume" value="0.5" checked="">
-                    <label class="cmn__label" for="volume-0.5">0.5</label>
-                    <input type="radio" id="volume-0.75" name="volume" value="0.75">
-                    <label class="cmn__label" for="volume-0.75">0.75</label>
-                    <input type="radio" id="volume-1.0" name="volume" value="1.0">
-                    <label class="cmn__label" for="volume-1.0">1.0</label>
-                  </form>
+                  <div class="cmn__select">
+                    <form action=""> 
+                      <select class="cmn__select">
+                        <option>0.1л</option>
+                        <option>0.25л</option>
+                        <option>0.5л</option>
+                        <option>0.7л</option>
+                        <option>0.75л</option>
+                        <option>1.0л</option>
+                      </select>
+                    </form>
+                  </div>
                 </div>
               </div>
               <div class="about__places">
@@ -433,9 +441,51 @@
                         </div>
                       </div>
                     </li>
+                    <li class="about__places-item">
+                      <div class="about__places-field about__places-field-main"><span class="cmn__text cmn__text--small place-position">Павелецкая</span><span class="cmn__text cmn__text--small">Открыто до 22:00</span><i class="cmn__text cmn__text--small">Покупка от 12 000 ₽</i>
+                      </div>
+                      <div class="about__places-field about__places-field-chars"><span class="cmn__text">12шт.</span><span class="cmn__text">2018</span><span class="cmn__text">0.75</span><span class="cmn__text cmn__text--purple">3156₽</span></div>
+                      <div class="about__places-field about__places-add">
+                        <div class="cart-add">
+                          <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
+                          <div class="cart-add-count">
+                            <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
+                            <button class="cart-add-btn js-count-inc" type="button"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="about__places-item">
+                      <div class="about__places-field about__places-field-main"><span class="cmn__text cmn__text--small place-position">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 9:00</span>
+                      </div>
+                      <div class="about__places-field about__places-field-chars"><span class="cmn__text">155шт.</span><span class="cmn__text">2018</span><span class="cmn__text">0.75</span><span class="cmn__text cmn__text--purple">323156₽</span></div>
+                      <div class="about__places-field about__places-add">
+                        <div class="cart-add">
+                          <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
+                          <div class="cart-add-count">
+                            <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
+                            <button class="cart-add-btn js-count-inc" type="button"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="about__places-item">
+                      <div class="about__places-field about__places-field-main"><span class="cmn__text cmn__text--small place-position">Павелецкая</span><span class="cmn__text cmn__text--small">Открыто до 22:00</span>
+                      </div>
+                      <div class="about__places-field about__places-field-chars"><span class="cmn__text">12шт.</span><span class="cmn__text">2018</span><span class="cmn__text">0.75</span><span class="cmn__text cmn__text--purple">3156₽</span></div>
+                      <div class="about__places-field about__places-add">
+                        <div class="cart-add">
+                          <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
+                          <div class="cart-add-count">
+                            <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
+                            <button class="cart-add-btn js-count-inc" type="button"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
                   </ul>
                   <div class="about__places-more">
-                    <button class="cmn__btn cmn__btn--outlined" type="button">Показать все</button><span class="cmn__text cmn__text--bold cmn__text--small">16</span>
+                    <button class="cmn__btn cmn__btn--outlined js-show-more-places-btn" type="button">Показать все</button><span class="cmn__text cmn__text--bold cmn__text--small">16</span>
                   </div>
                 </div>
               </div>
@@ -923,7 +973,7 @@
                                 <input type="radio" id="reviews_useful" name="reviews_type" value="Сначала полезные">
                                 <label class="cmn__text" for="reviews_useful">Сначала полезные  </label>
                               </form>
-                              <button class="cmn__btn" type="button">Написать отзыв</button>
+                              <button class="cmn__btn js-review-btn" type="button">Написать отзыв</button>
                             </div>
                           </div>
                           <button class="cmn__btn cmn__btn--outlined reviews__more-btn" type="button">Загрузить еще</button>
@@ -1221,7 +1271,76 @@
         </div>
       </div>
     </footer>
-    <!-- include ./modals/menuModal-->
+    <div class="modal modal-review closed">
+      <div class="modal__wrapper modal-review__wrapper">
+        <form action="#">
+          <fieldset class="modal-review__hidden-rate">
+            <input type="radio" id="rate_1" name="rate" data-rate-id="1">
+            <input type="radio" id="rate_2" name="rate" data-rate-id="2">
+            <input type="radio" id="rate_3" name="rate" data-rate-id="3">
+            <input type="radio" id="rate_4" name="rate" data-rate-id="4">
+            <input type="radio" id="rate_5" name="rate" data-rate-id="5">
+          </fieldset>
+          <div class="modal-review__rate"><span class="cmn__text cmn__text--bold cmn__text--small">Ваша оценка</span>
+            <div class="modal-review__rate-container">
+              <button type="button" data-id="1">
+                <svg width="26" height="26">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+              </button>
+              <button type="button" data-id="2">
+                <svg width="26" height="26">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+              </button>
+              <button type="button" data-id="3">
+                <svg width="26" height="26">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+              </button>
+              <button type="button" data-id="4">
+                <svg width="26" height="26">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+              </button>
+              <button type="button" data-id="5">
+                <svg width="26" height="26">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="modal-review__controls">
+            <fieldset class="modal-review__field modal-review__name">
+              <label class="cmn__text cmn__text--bold cmn__text--small" for="user_name">Имя<span>*</span></label>
+              <input class="js-validation-control" type="text" id="user_name" placeholder="Иван Иванов">
+            </fieldset>
+            <fieldset class="modal-review__field modal-review__mail">
+              <label class="cmn__text cmn__text--bold cmn__text--small" for="user_mail">Email<span>*</span></label>
+              <input class="js-validation-control" type="text" id="user_mail" placeholder="example@mail.ru">
+            </fieldset>
+          </div>
+          <fieldset class="modal-review__field modal-review__textarea">
+            <label class="cmn__text cmn__text--bold cmn__text--small" for="user_text">Отзыв</label>
+            <textarea id="user_text" placeholder="Напишите свой отзыв"></textarea>
+          </fieldset>
+          <div class="modal-review__badge modal-review__validation-badge js-hidden">
+            <svg width="20" height="20">
+              <use xlink:href="#icon-info-treangle"></use>
+            </svg><span class="cmn__text">Допушена ошибка при заполнении формы. Проверьте правильность заполнения полей.</span>
+          </div>
+          <fieldset class="modal-review__btn">
+            <input class="js-modal-review-submit-btn cmn__btn" type="submit" value="Опубликовать">
+            <input class="js-modal-review-reset-btn cmn__btn cmn__btn--outlined" type="reset" value="Отмена">
+          </fieldset>
+          <div class="modal-review__badge modal-review__info-badge">
+            <svg width="20" height="20">
+              <use xlink:href="#icon-info"></use>
+            </svg><span class="cmn__text cmn__text--small">Все отзывы проходят предварительную модерацию. Отзыв будет опубликован после её прохождения.</span>
+          </div>
+        </form>
+      </div>
+    </div>
     <script src="./js/bundle.js"></script>
   </body>
 </html>

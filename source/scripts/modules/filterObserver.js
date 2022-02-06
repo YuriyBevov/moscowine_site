@@ -3,31 +3,33 @@ let headerSearch = document.querySelector('.header__search');
 let headerBottom = document.querySelector('.header__bottom');
 let width = window.innerWidth;
 
-let observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-            if(!entry.isIntersecting) {
-                if(width > 959) {
-                    headerSearch.classList.remove('js-hidden');
+if(search) {
+    let observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+                if(!entry.isIntersecting) {
+                    if(width > 959) {
+                        headerSearch.classList.remove('js-hidden');
+                    } else {
+                        headerBottom.classList.remove('js-hidden');
+                    }
                 } else {
-                    headerBottom.classList.remove('js-hidden');
+                    if(width > 959) {
+                        !headerSearch.classList.contains('js-hidden') ?
+                        headerSearch.classList.add('js-hidden') : null;
+                    } else {
+                        !headerBottom.classList.contains('js-hidden') ?
+                        headerBottom.classList.add('js-hidden') : null;
+                    }
+                    
                 }
-            } else {
-                if(width > 959) {
-                    !headerSearch.classList.contains('js-hidden') ?
-                    headerSearch.classList.add('js-hidden') : null;
-                } else {
-                    !headerBottom.classList.contains('js-hidden') ?
-                    headerBottom.classList.add('js-hidden') : null;
-                }
-                
-            }
-        
+            
+        });
     });
-});
 
-const onResizeSetWidth = () => {
-    width = window.innerWidth;
+    const onResizeSetWidth = () => {
+        width = window.innerWidth;
+    }
+
+    window.addEventListener('resize', onResizeSetWidth);
+    observer.observe(search);
 }
-
-window.addEventListener('resize', onResizeSetWidth);
-observer.observe(search);

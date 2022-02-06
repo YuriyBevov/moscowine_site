@@ -207,7 +207,6 @@
 
                     top: 1.6rem;
                     left: 1.6rem;
-                    //transform: translateY(-50%);
 
                     content: 'М';
 
@@ -329,7 +328,6 @@
             display: flex;
 
             @media(max-width: $tablet_large) {
-                //flex-direction: column;
                 flex-wrap: wrap;
             }
 
@@ -337,21 +335,16 @@
                 margin-right: 4.8rem;
                 margin-bottom: 1.2rem;
 
-                @media(max-width: $tablet_small) {
-                    margin-right: 4rem;
+                @media(max-width: $tablet_medium) {
+                    margin-right: 2rem;
                     margin-bottom: 2.4rem;
                 }
-
-                &:last-child {
-                    @media(max-width: $tablet_large) {
-                        width: 100%;
-                    }
-
-                    @media(max-width: $tablet_small) {
-                        width: auto;
-                    }
-                }
                 
+                @media(max-width: $mobile_medium) {
+                    &:first-child {
+                        width: 100%;
+                    }  
+                }
 
                 span {
                     display: block;

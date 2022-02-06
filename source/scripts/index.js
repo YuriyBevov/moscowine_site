@@ -8,3 +8,6 @@ import infoTabs from './modules/infoTabs.js';
 import filter from './modules/filter.js'
 import searchResultMore from './modules/searchResultMore.js';
 import filterObserver from './modules/filterObserver.js';
+import showMorePlaces from './modules/showMorePlaces.js';
+import reviewStarControl from './modules/reviewStarControl.js';
+import review from './modules/review.js';

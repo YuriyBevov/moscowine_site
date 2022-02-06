@@ -129,6 +129,40 @@ include ../../mixins/rate
       vintage: '2018',
       volume: '0.75',
       price: '3156'
+    },
+
+    {
+      metro: 'Павелецкая',
+      openFrom: '9:00',
+      openUntil: '22:00',
+      isOpen: true,
+      note: 'Покупка от 12 000 ₽',
+      count: '12',
+      vintage: '2018',
+      volume: '0.75',
+      price: '3156'
+    },
+
+    {
+      metro: 'Павелецкая',
+      openFrom: '9:00',
+      openUntil: '22:00',
+      isOpen: false,
+      count: '155',
+      vintage: '2018',
+      volume: '0.75',
+      price: '323156'
+    },
+
+    {
+      metro: 'Павелецкая',
+      openFrom: '9:00',
+      openUntil: '22:00',
+      isOpen: true,
+      count: '12',
+      vintage: '2018',
+      volume: '0.75',
+      price: '3156'
     }
   ]
 
@@ -160,24 +194,22 @@ section.about
         .about__controls-field
           span.cmn__text.cmn__text-small.cmn__text--bold Винтаж
           .cmn__select
-            select.cmn__select
-              option 2018
-              option 2019
+            form(action="") 
+              select.cmn__select
+                option 2018
+                option 2019
         
         .about__controls-field
           span.cmn__text.cmn__text-small.cmn__text--bold Объем
-          form(action="#") 
-            input(type="radio" id="volume-0.33" name="volume" value="0.33")
-            label(for="volume-0.33").cmn__label 0.33
-
-            input(type="radio" id="volume-0.5" name="volume" value="0.5" checked)
-            label(for="volume-0.5").cmn__label 0.5
-
-            input(type="radio" id="volume-0.75" name="volume" value="0.75")
-            label(for="volume-0.75").cmn__label 0.75
-
-            input(type="radio" id="volume-1.0" name="volume" value="1.0")
-            label(for="volume-1.0").cmn__label 1.0
+          .cmn__select
+            form(action="") 
+              select.cmn__select
+                option 0.1л
+                option 0.25л
+                option 0.5л
+                option 0.7л
+                option 0.75л
+                option 1.0л
         
       .about__places
         .about__places-header
@@ -205,7 +237,7 @@ section.about
                   include ../../components/cart-add-btn
           
           .about__places-more
-            button(type="button").cmn__btn.cmn__btn--outlined Показать все
+            button(type="button").cmn__btn.cmn__btn--outlined.js-show-more-places-btn Показать все
             span.cmn__text.cmn__text--bold.cmn__text--small 16
       .about__chars
         h2.cmn__title.cmn__title--small Характеристики

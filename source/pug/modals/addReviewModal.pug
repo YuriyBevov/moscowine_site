@@ -1,0 +1,58 @@
+.modal.modal-review.closed
+  .modal__wrapper.modal-review__wrapper
+    form(action="#")
+      fieldset.modal-review__hidden-rate
+        input(type="radio" id="rate_1" name="rate" data-rate-id="1")
+        input(type="radio" id="rate_2" name="rate" data-rate-id="2")
+        input(type="radio" id="rate_3" name="rate" data-rate-id="3")
+        input(type="radio" id="rate_4" name="rate" data-rate-id="4")
+        input(type="radio" id="rate_5" name="rate" data-rate-id="5")
+      
+      .modal-review__rate
+        span.cmn__text.cmn__text--bold.cmn__text--small Ваша оценка
+        .modal-review__rate-container
+          button(type="button" data-id="1")
+            svg(width="26" height="26")
+              use(xlink:href="#icon-star")
+          button(type="button" data-id="2")
+            svg(width="26" height="26")
+              use(xlink:href="#icon-star")
+          button(type="button" data-id="3")
+            svg(width="26" height="26")
+              use(xlink:href="#icon-star")
+          button(type="button" data-id="4")
+            svg(width="26" height="26")
+              use(xlink:href="#icon-star")
+          button(type="button" data-id="5")
+            svg(width="26" height="26")
+              use(xlink:href="#icon-star")
+
+      .modal-review__controls
+        fieldset.modal-review__field.modal-review__name
+          label(for="user_name").cmn__text.cmn__text--bold.cmn__text--small Имя<span>*</span>
+          input(type="text" id="user_name" placeholder="Иван Иванов").js-validation-control
+        
+        fieldset.modal-review__field.modal-review__mail
+          label(for="user_mail").cmn__text.cmn__text--bold.cmn__text--small Email<span>*</span>
+          input(type="text" id="user_mail" placeholder="example@mail.ru").js-validation-control
+
+      fieldset.modal-review__field.modal-review__textarea
+        label(for="user_text").cmn__text.cmn__text--bold.cmn__text--small Отзыв
+        textarea(id="user_text" placeholder="Напишите свой отзыв")
+
+      .modal-review__badge.modal-review__validation-badge.js-hidden
+        svg(width="20" height="20")
+          use(xlink:href="#icon-info-treangle")
+        
+        span.cmn__text Допушена ошибка при заполнении формы. Проверьте правильность заполнения полей.
+
+      fieldset.modal-review__btn
+        input(type="submit" value="Опубликовать").js-modal-review-submit-btn.cmn__btn
+        input(type="reset" value="Отмена").js-modal-review-reset-btn.cmn__btn.cmn__btn--outlined
+      
+      .modal-review__badge.modal-review__info-badge
+        svg(width="20" height="20")
+          use(xlink:href="#icon-info")
+        
+        span.cmn__text.cmn__text--small Все отзывы проходят предварительную модерацию. Отзыв будет опубликован после её прохождения.
+
