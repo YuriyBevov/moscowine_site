@@ -133,6 +133,19 @@
     /* Выпадающий список */
     
     &__menu {
+        max-height: 310px;
+        overflow: hidden;
+        overflow-y: auto;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $purple;
+        }
+
+        &::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
         padding: 0.8rem;
 
         &.js-collapsed {
