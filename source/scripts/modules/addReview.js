@@ -73,8 +73,6 @@ if(reviewBtn) {
                 control.classList.add('js-invalid-control');
             }
         })
-
-        console.log(invalidControls)
     
         if(invalidControls.length && validateMsg.classList.contains('js-hidden')) {
             validateMsg.classList.remove('js-hidden');
@@ -84,7 +82,6 @@ if(reviewBtn) {
             validateMsg.classList.add('js-hidden') : null;
             
             console.log('SEND FORM DATA');
-
 
             modal.classList.add('closed');
             body.style.overflow = 'auto';
