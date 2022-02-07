@@ -31,5 +31,8 @@ if(search) {
     }
 
     window.addEventListener('resize', onResizeSetWidth);
+
     observer.observe(search);
+} else {
+    headerSearch.classList.remove('js-hidden');
 }

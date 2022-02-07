@@ -12603,9 +12603,12 @@ let resetBtn = document.querySelector('.js-modal-review-reset-btn');
 let submitBtn = document.querySelector('.js-modal-review-submit-btn');
 let form = document.querySelector('.modal-review form');
 
-let controls = form.querySelectorAll('.js-validation-control');
 
-if(reviewBtn) {  
+
+
+if(reviewBtn) {
+    let controls = form.querySelectorAll('.js-validation-control');
+    
     const onTouchCloseModal = (evt) => {
         if(evt.target.contains(modalContent)) {
             modal.classList.add('closed');
@@ -12978,7 +12981,10 @@ if(search) {
     }
 
     window.addEventListener('resize', onResizeSetWidth);
+
     observer.observe(search);
+} else {
+    headerSearch.classList.remove('js-hidden');
 }
 
 /***/ }),
