@@ -248,388 +248,243 @@
       </div>
     </header>
     <main>
-      <div class="index">
-        <section class="intro">
-          <div class="intro__wrapper">
-                    <div class="swiper main-slider">
-                      <div class="swiper-wrapper">
-                        <div class="swiper-slide" style="background-image: url('./assets/img/intro-slider_slide-1.jpg')">
-                          <div class="main-slider__container">
-                            <h2 class="cmn__title cmn__title--white cmn__title--bold cmn__title--large">Вина, которые вы не&nbsp;найдете&nbsp;в&nbsp;рознице</h2><a class="cmn__btn" href="#">Подобрать</a>
-                          </div>
+      <div class="cart">
+        <section class="cart-content">
+          <div class="cmn__wrapper cart-content__wrapper">
+            <ul class="cart-content__list">
+              <li class="cart-content__item">
+                <div class="cart-content__item-header"><a class="cmn__text" href="#">Калужская, Новые Черемушки</a>
+                  <button class="cmn__btn cmn__btn--outlined" type="button">Каталог</button>
+                </div>
+                <div class="cart-content__item-content">
+                  <ul class="cart-list">
+                    <li class="cart-item"><img src="../assets/img/cart-item.png" alt="Charles Pelletier" width="114" height="114">
+                      <div class="cart-item__content">
+                        <div class="cart-item__content-desc">
+                          <h2 class="cmn__text cmn__text--med">Wine Charles Pelletier Blanc de Blancs Reserve Brut</h2>
+                          <div class="cart-item__content-chars"><span class="cmn__text cmn__text--small">0.75</span><span class="cmn__text cmn__text--small">2018 </span><span class="cmn__text cmn__text--small">Красное</span><span class="cmn__text cmn__text--small">Полусладкое</span><span class="cmn__text cmn__text--small">Австралия</span></div>
                         </div>
-                        <div class="swiper-slide" style="background-image: url('./assets/img/intro-slider_slide-1.jpg')">
-                          <div class="main-slider__container">
-                            <h2 class="cmn__title cmn__title--white cmn__title--bold cmn__title--large">Вина, которые вы не&nbsp;найдете&nbsp;в&nbsp;рознице  asdfasdfasdfasdf</h2><a class="cmn__btn" href="#">Подобрать</a>
-                          </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image: url('./assets/img/intro-slider_slide-1.jpg')">
-                          <div class="main-slider__container">
-                            <h2 class="cmn__title cmn__title--white cmn__title--bold cmn__title--large">Вина, которые вы не&nbsp;найдете&nbsp;в&nbsp;рознице</h2><a class="cmn__btn" href="#">Подобрать</a>
-                          </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image: url('./assets/img/intro-slider_slide-1.jpg')">
-                          <div class="main-slider__container">
-                            <h2 class="cmn__title cmn__title--white cmn__title--bold cmn__title--large">Вина, которые вы не&nbsp;найдете&nbsp;в&nbsp;рознице  asdfasdfasdfasdf</h2><a class="cmn__btn" href="#">Подобрать</a>
+                        <div class="cart-item__content-price"><span class="cmn__text cmn__text--med">7 650 ₽</span><span class="cmn__text cmn__text--opacity cmn__text--lth">9 650 ₽</span></div>
+                        <div class="cart-item__content-bottom">
+                          <button class="cmn__btn cmn__btn--outlined" type="button">В избранное </button>
+                          <button class="cmn__btn cmn__btn--outlined" type="button">Удалить</button>
+                          <div class="cart-add">
+                            <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
+                            <div class="cart-add-count">
+                              <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
+                              <button class="cart-add-btn js-count-inc" type="button"></button>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div class="swiper-button-next main-slider-button-next">
-                        <svg width="14" height="28">
-                          <use xlink:href="#icon-slider-arr"></use>
-                        </svg>
-                      </div>
-                      <div class="swiper-button-prev main-slider-button-prev">
-                        <svg width="14" height="28">
-                          <use xlink:href="#icon-slider-arr"></use>
-                        </svg>
-                      </div>
-                      <div class="swiper-pagination main-slider-pagination"></div>
-                    </div>
-          </div>
-        </section>
-        <section class="search">
-          <div class="cmn__wrapper">
-            <div class="search__wrapper">
-              <form action="#">
-                        <fieldset class="search__control search-fieldset">
-                          <input type="text" placeholder="Введите запрос для поиска...">
-                          <div class="search-fieldset__container">
-                                    <div class="tooltip">
-                                      <svg width="20" height="20">
-                                        <use xlink:href="#icon-question"></use>
-                                      </svg>
-                                      <div class="tooltip__body"><span class="cmn__text cmn__text--white">Вы можете узнать статус вашего заказа, вбив его номер в строку поиска.</span>
-                                        <div class="tooltip__tail" aria-hidden="true"></div>
-                                      </div>
-                                    </div>
-                            <button class="cmn__btn" type="submit">Найти</button>
-                          </div>
-                        </fieldset>
-              </form>
-              <div class="search__filter">
-                <div class="search__field search__field--controls">
-                  <div class="search__field-content search__field-content--filter">
-                            <div class="search-dropdown">
-                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Тип напитка</b><span class="cmn__text search-dropdown__badge"></span></button>
-                              <div class="search-dropdown__menu js-collapsed" tab-index="1">
-                                <form action="#">
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_type-any">
-                                    <label for="drink_type-any">Выбрать все</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_type-vodka">
-                                    <label for="drink_type-vodka">Водка</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_type-cognac">
-                                    <label for="drink_type-cognac">Коньяк</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_type-beer">
-                                    <label for="drink_type-beer">Пиво</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_type-champagne">
-                                    <label for="drink_type-champagne">Шампансвое</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_type-vine">
-                                    <label for="drink_type-vine">Вино</label>
-                                  </fieldset>
-                                  <input class="visually-hidden" type="submit">
-                                </form>
-                              </div>
-                            </div>
-                            <div class="search-dropdown">
-                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Винтаж</b><span class="cmn__text search-dropdown__badge"></span></button>
-                              <div class="search-dropdown__menu js-collapsed" tab-index="1">
-                                <form action="#">
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_vintage-any">
-                                    <label for="drink_vintage-any">Выбрать все</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_vintage-1900-1920">
-                                    <label for="drink_vintage-1900-1920">1900-1920</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_vintage-1920-1940">
-                                    <label for="drink_vintage-1920-1940">1920-1940</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_vintage-1940-1960">
-                                    <label for="drink_vintage-1940-1960">1940-1960</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_vintage-1960-1980">
-                                    <label for="drink_vintage-1960-1980">1960-1980</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_vintage-1901-1921">
-                                    <label for="drink_vintage-1901-1921">1901-1921</label>
-                                  </fieldset>
-                                  <input class="visually-hidden" type="submit">
-                                </form>
-                              </div>
-                            </div>
-                            <div class="search-dropdown">
-                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Цвет</b><span class="cmn__text search-dropdown__badge"></span></button>
-                              <div class="search-dropdown__menu js-collapsed" tab-index="1">
-                                <form action="#">
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_color-any">
-                                    <label for="drink_color-any">Выбрать все</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_color-white">
-                                    <label for="drink_color-white">Белый</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_color-red">
-                                    <label for="drink_color-red">Красный</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_color-black">
-                                    <label for="drink_color-black">Черный</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_color-dark">
-                                    <label for="drink_color-dark">Темный</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_color-light">
-                                    <label for="drink_color-light">Светлый</label>
-                                  </fieldset>
-                                  <input class="visually-hidden" type="submit">
-                                </form>
-                              </div>
-                            </div>
-                            <div class="search-dropdown">
-                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Сахар</b><span class="cmn__text search-dropdown__badge"></span></button>
-                              <div class="search-dropdown__menu js-collapsed" tab-index="1">
-                                <form action="#">
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_sugar-any">
-                                    <label for="drink_sugar-any">Выбрать все</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_sugar-dry">
-                                    <label for="drink_sugar-dry">Сухое</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_sugar-semi-dry">
-                                    <label for="drink_sugar-semi-dry">Полусухое</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_sugar-semi-sweet">
-                                    <label for="drink_sugar-semi-sweet">Полусладкое</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_sugar-sweet ">
-                                    <label for="drink_sugar-sweet ">Сладкое</label>
-                                  </fieldset>
-                                  <input class="visually-hidden" type="submit">
-                                </form>
-                              </div>
-                            </div>
-                            <div class="search-dropdown">
-                              <button class="search-dropdown__button" type="button" data-id="select-btn"><b class="cmn__text">Объем</b><span class="cmn__text search-dropdown__badge"></span></button>
-                              <div class="search-dropdown__menu js-collapsed" tab-index="1">
-                                <form action="#">
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_volume-any">
-                                    <label for="drink_volume-any">Выбрать все</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_volume-1">
-                                    <label for="drink_volume-1">1л</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_volume-0.7">
-                                    <label for="drink_volume-0.7">0,7л</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_volume-0.5">
-                                    <label for="drink_volume-0.5">0,5л</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_volume-0.33">
-                                    <label for="drink_volume-0.33">0,33л</label>
-                                  </fieldset>
-                                  <fieldset>
-                                    <input type="checkbox" id="drink_volume-0.2">
-                                    <label for="drink_volume-0.2">0,2л</label>
-                                  </fieldset>
-                                  <input class="visually-hidden" type="submit">
-                                </form>
-                              </div>
-                            </div>
-                  </div>
-                  <div class="search__filter-result">
-                    <div class="search-result">
-                      <div class="loader">
-                        <div class="loader__container">
-                          <div class="loader__body"></div>
-                        </div>
-                      </div>
-                      <div class="search-result__container">
-                        <div class="search-result__empty"><span class="cmn__text">Ничего не найдено</span></div>
-                        <div class="search-result__list">
-                          <div class="search-result__list-side">
-                            <p class="cmn__text">Ut lobortis ut mauris <span>Charles Pelletier</span></p>
-                          </div>
-                          <div class="search-result__list-side"><a class="product-card-sm" href="#"><img src="./assets/img/product-img_1.png" alt="Шампанское Charles Pelletier Reserve Blanc de Blancs Brut" width="108" height="108">
-                                      <div class="priduct-card-sm__description">
-                                        <h3 class="cmn__text js-limited-string">Шампанское Charles Pelletier Reserve Blanc de Blancs Brut</h3>
-                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 846 ₽</p>
-                                      </div></a><a class="product-card-sm" href="#"><img src="./assets/img/product-img_2.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="108" height="108">
-                                      <div class="priduct-card-sm__description">
-                                        <h3 class="cmn__text js-limited-string">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
-                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 8 469 ₽</p>
-                                      </div></a><a class="product-card-sm" href="#"><img src="./assets/img/product-img_1.png" alt="Шампанское Charles Pelletier Reserve Blanc de Blancs Brut" width="108" height="108">
-                                      <div class="priduct-card-sm__description">
-                                        <h3 class="cmn__text js-limited-string">Шампанское Charles Pelletier Reserve Blanc de Blancs Brut</h3>
-                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 846 ₽</p>
-                                      </div></a><a class="product-card-sm" href="#"><img src="./assets/img/product-img_2.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="108" height="108">
-                                      <div class="priduct-card-sm__description">
-                                        <h3 class="cmn__text js-limited-string">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
-                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 8 469 ₽</p>
-                                      </div></a><a class="product-card-sm" href="#"><img src="./assets/img/product-img_1.png" alt="Шампанское Charles Pelletier Reserve Blanc de Blancs Brut" width="108" height="108">
-                                      <div class="priduct-card-sm__description">
-                                        <h3 class="cmn__text js-limited-string">Шампанское Charles Pelletier Reserve Blanc de Blancs Brut</h3>
-                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 846 ₽</p>
-                                      </div></a><a class="product-card-sm" href="#"><img src="./assets/img/product-img_2.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="108" height="108">
-                                      <div class="priduct-card-sm__description">
-                                        <h3 class="cmn__text js-limited-string">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
-                                        <p class="cmn__text cmn__text--med cmn__text--bold">от 8 469 ₽</p>
-                                      </div></a>
-                            <div class="search-result__list-more">
-                              <button class="cmn__btn js-search-result-more-btn" type="button">Все результаты      </button><a class="cmn__btn cmn__btn--outlined" href="#">Каталог      </a>
-                            </div>
-                          </div>
-                        </div>
+                    </li>
+                  </ul>
+                  <!-- если не валидно, добавляется is-invalid и is-active-->
+                  <div class="cart-content__item-footer is-invalid">
+                    <div class="cart-alert cart-validate is-active"><img src="./assets/img/alert.png" alt="Информация" width="24" height="24">
+                      <div class="cart-alert__msg">
+                        <p class="cmn__text cmn__text--small cmn__text--warning cmn__text--bold">Не достигнута минимальная сумма заказа</p><span class="cmn__text cmn__text--small cmn__text--warning">У магазина имеется ограничение по минимальной сумме закупки. Чтобы оформить заказ, выберите товаров на сумму 24 000 ₽.</span>
                       </div>
                     </div>
+                    <div class="cart-content__item-footer-price"><span class="cmn__text cmn__text--med">1 155 300 ₽</span><span class="cmn__text cmn__text--warning cart-validate is-active">из 1 155 300 ₽</span></div>
                   </div>
                 </div>
-                <div class="search__field search__field--adds"><span class="cmn__text cmn__text--small cmn__text--small-semi search__field-title">Искали ранее</span>
-                  <div class="search__field-content"><a class="outlined-btn" href="#">
-                              <svg width="16" height="16">
-                                <use xlink:href="#icon-search"><span>Charles Pelletier</span></use>
-                              </svg></a><a class="outlined-btn" href="#">
-                              <svg width="16" height="16">
-                                <use xlink:href="#icon-search"><span>Коньяк</span></use>
-                              </svg></a><a class="outlined-btn" href="#">
-                              <svg width="16" height="16">
-                                <use xlink:href="#icon-search"><span>Blancs Brut</span></use>
-                              </svg></a>
+              </li>
+              <li class="cart-content__item">
+                <div class="cart-content__item-header"><a class="cmn__text" href="#">Калужская, Новые Черемушки</a>
+                  <button class="cmn__btn cmn__btn--outlined" type="button">Каталог</button>
+                </div>
+                <div class="cart-content__item-content">
+                  <ul class="cart-list">
+                    <li class="cart-item"><img src="../assets/img/cart-item.png" alt="Charles Pelletier" width="114" height="114">
+                      <div class="cart-item__content">
+                        <div class="cart-item__content-desc">
+                          <h2 class="cmn__text cmn__text--med">Wine Charles Pelletier Blanc de Blancs Reserve Brut</h2>
+                          <div class="cart-item__content-chars"><span class="cmn__text cmn__text--small">0.75</span><span class="cmn__text cmn__text--small">2018 </span><span class="cmn__text cmn__text--small">Красное</span><span class="cmn__text cmn__text--small">Полусладкое</span><span class="cmn__text cmn__text--small">Австралия</span></div>
+                        </div>
+                        <div class="cart-item__content-price"><span class="cmn__text cmn__text--med">7 650 ₽</span><span class="cmn__text cmn__text--opacity cmn__text--lth">9 650 ₽</span></div>
+                        <div class="cart-item__content-bottom">
+                          <button class="cmn__btn cmn__btn--outlined" type="button">В избранное </button>
+                          <button class="cmn__btn cmn__btn--outlined" type="button">Удалить</button>
+                          <div class="cart-add">
+                            <button class="cmn__btn cmn__btn--outlined js-cart-add-btn" type="button">В корзину</button>
+                            <div class="cart-add-count">
+                              <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">0</span>
+                              <button class="cart-add-btn js-count-inc" type="button"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- если не валидно, добавляется is-invalid и is-active-->
+                  <div class="cart-content__item-footer">
+                    <div class="cart-alert cart-validate"><img src="./assets/img/alert.png" alt="Информация" width="24" height="24">
+                      <div class="cart-alert__msg">
+                        <p class="cmn__text cmn__text--small cmn__text--warning cmn__text--bold">Не достигнута минимальная сумма заказа</p><span class="cmn__text cmn__text--small cmn__text--warning">У магазина имеется ограничение по минимальной сумме закупки. Чтобы оформить заказ, выберите товаров на сумму 24 000 ₽.</span>
+                      </div>
+                    </div>
+                    <div class="cart-content__item-footer-price"><span class="cmn__text cmn__text--med">1 155 300 ₽</span><span class="cmn__text cmn__text--warning cart-validate">из 1 155 300 ₽</span></div>
                   </div>
                 </div>
-                <div class="search__field search__field--adds"><span class="cmn__text cmn__text--small cmn__text--small-semi search__field-title">Популярные запросы</span>
-                  <div class="search__field-content"><a class="outlined-btn" href="#">
-                              <svg width="16" height="16">
-                                <use xlink:href="#icon-trending-up"><span>Charles Pelletier</span></use>
-                              </svg></a><a class="outlined-btn" href="#">
-                              <svg width="16" height="16">
-                                <use xlink:href="#icon-trending-up"><span>Blancs Brut</span></use>
-                              </svg></a><a class="outlined-btn" href="#">
-                              <svg width="16" height="16">
-                                <use xlink:href="#icon-trending-up"><span>Шампанское</span></use>
-                              </svg></a><a class="outlined-btn" href="#">
-                              <svg width="16" height="16">
-                                <use xlink:href="#icon-trending-up"><span>Коньяк</span></use>
-                              </svg></a>
-                  </div>
-                </div>
-              </div><span class="cmn__text search__catalog-btn">Если не помните название напитка, попробуйте&nbsp;воспользоваться&nbsp;<a href="#" class="js-advanced-search-more">Каталогом</a></span>
-            </div>
-          </div>
-        </section>
-        <section class="features">
-          <div class="cmn__wrapper">
-            <div class="features__container">
-              <div class="features__header">
-                <h2 class="cmn__title cmn__title--main features__title">Поможем найти лучшую цену на любимый напиток</h2>
-                <p class="cmn__text cmn__text--large features__text">Экономия до 50%</p>
-                <p class="cmn__text cmn__text--large features__text">Не тратьте время на походы в магазины и поиск лучшей цены</p>
+              </li>
+            </ul>
+            <aside class="cart-content__aside">
+              <div class="cart-content__aside-section cart-content__promo"><span class="cmn__text cmn__text--small cmn__text--bold">Промокод</span>
+                <form action="#"> 
+                          <input class="cmn__input" id="null" placeholder="Промокод">
+                  <button type="submit" aria-label="Подтвердить">
+                    <svg width="24" height="24">
+                      <use xlink:href="#icon-arr"></use>
+                    </svg>
+                  </button>
+                </form>
               </div>
-              <ul class="features__list">
-                <li class="features__item"><img src="./assets/img/feature_1.png" width="128" height="128" alt="Сравнение цен в магазинах-партнёрах">
-                  <p class="cmn__text">Сравнение цен в магазинах-партнёрах</p>
-                </li>
-                <li class="features__item"><img src="./assets/img/feature_2.png" width="128" height="128" alt="Гарантия скидки и выгодные предложения">
-                  <p class="cmn__text">Гарантия скидки и выгодные предложения</p>
-                </li>
-                <li class="features__item"><img src="./assets/img/feature_3.png" width="128" height="128" alt="Актуальные остатки в&amp;nbsp;магазинах партнёров">
-                  <p class="cmn__text">Актуальные остатки в&nbsp;магазинах партнёров</p>
-                </li>
-                <li class="features__item"><img src="./assets/img/feature_4.png" width="128" height="128" alt="Более 70 точек выдачи">
-                  <p class="cmn__text">Более 70 точек выдачи</p>
-                </li>
-                <li class="features__item"><img src="./assets/img/feature_5.png" width="128" height="128" alt="Опт и розница">
-                  <p class="cmn__text">Опт и розница</p>
-                </li>
-                <li class="features__item"><img src="./assets/img/feature_6.png" width="128" height="128" alt="Консультация сомелье">
-                  <p class="cmn__text">Консультация сомелье</p>
-                </li>
-              </ul>
-            </div>
+              <div class="cart-content__aside-section cart-content__items">
+                <ul>
+                  <li><span class="cmn__text cmm__text--semi">7 товаров</span><span class="cmn__text cmm__text--semi">12 650 ₽</span></li>
+                  <li><span class="cmn__text cmm__text--semi">Скидка</span><span class="cmn__text cmm__text--semi">- 650 ₽</span></li>
+                  <li><span class="cmn__text cmm__text--semi">К оплате</span><span class="cmn__text cmn__text--large cmm__text--semi">12 000 ₽</span></li>
+                </ul>
+              </div>
+              <div class="cart-content__aside-section cart-content__buyer"><b class="cmn__title cmn__title--small">Покупатель</b>
+                <form action="#">
+                  <fieldset>
+                    <label class="cmn__text cmn__text--small cmn__text--bold" for="buyer_name">Имя<span>*</span></label>
+                            <input class="cmn__input" id="buyer_name" placeholder="Имя">
+                  </fieldset>
+                  <fieldset>
+                    <label class="cmn__text cmn__text--small cmn__text--bold" for="buyer_mail">Электронная почта<span>*</span>   </label>
+                            <input class="cmn__input" id="buyer_mail" placeholder="email@example.ru">
+                  </fieldset>
+                  <fieldset>
+                    <label class="cmn__text cmn__text--small cmn__text--bold" for="buyer_phone">Телефон<span>*</span>  </label>
+                            <input class="cmn__input" id="buyer_phone" placeholder="+7 900 900 90 90">
+                  </fieldset>
+                  <p class="cmn__text cmn__text--small">Отправляя заказ, вы принимаете <a href="#">пользовательское соглашение</a>, даёте согласие на обработку персональных данных и соглашаетесь с <a href="#">условиями приобретения</a>.</p>
+                  <button class="cmn__btn" type="submit">Оформить заказ</button>
+                </form>
+              </div>
+              <div class="cart-content__aside-section cart-content__badge"><img src="../assets/img/icon-cart-badge-info.png" alt="Иконка" width="32" height="32">
+                <p class="cmn__text cmn__text--white">Для быстрого заказа и сохранения истории покупок — <a href="#">авторизуйтесь.</a> </p>
+              </div>
+            </aside>
           </div>
-                  <div class="swiper reg-slider">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_1.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Красные вина до 1000₽</h3>
-                      </div>
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_2.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Рекомендации команды Cheerz</h3>
-                      </div>
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_3.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Элитные вина и коньяки</h3>
-                      </div>
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_4.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Лучший выбор для семейного праздника</h3>
-                      </div>
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_1.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Красные вина до 1000₽ Красные вина до 1000₽</h3>
-                      </div>
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_2.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Рекомендации команды Cheerz Рекомендации команды Cheerz Рекомендации команды Cheerz</h3>
-                      </div>
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_3.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Элитные вина и коньяки</h3>
-                      </div>
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_4.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Лучший выбор для семейного праздника</h3>
-                      </div>
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_1.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Красные вина до 1000₽ Красныевинадо1000₽Красные вина до 1000₽</h3>
-                      </div>
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_2.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Рекомендации команды Cheerz</h3>
-                      </div>
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_3.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Элитные вина и коньяки</h3>
-                      </div>
-                      <div class="swiper-slide" style="background-image: url('./assets/img/cat_4.jpg')">
-                        <h3 class="cmn__text cmn__text--med cmn__text--white">Лучший выбор для семейного праздника</h3>
-                      </div>
-                    </div>
-                    <div class="swiper-button-next reg-slider-button-next">
-                      <svg width="9" height="18">
-                        <use xlink:href="#icon-slider-arr"></use>
-                      </svg>
-                    </div>
-                    <div class="swiper-button-prev reg-slider-button-prev">
-                      <svg width="9" height="18">
-                        <use xlink:href="#icon-slider-arr"></use>
-                      </svg>
-                    </div>
-                  </div>
         </section>
-        <section class="map">
-          <div id="yandex-map"></div>
+                <section class="same-offer">
+                  <div class="cmn__wrapper">
+                    <h2 class="cmn__title cmn__title--small">Может понравиться</h2>
+                            <div class="swiper product-card-slider">
+                              <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                          <div class="product-card">
+                                            <div class="product-card__badge-country"><img src="./assets/img/flag-fr.png" width="34" height="24"></div>
+                                            <div class="product-card__badge-comparing"><a href="#">  
+                                                <svg width="24" height="24">
+                                                  <use xlink:href="#icon-chart"></use>
+                                                </svg></a></div>
+                                            <div class="product-card__badge-chosen"><a href="#"> 
+                                                <svg width="24" height="24">
+                                                  <use xlink:href="#icon-heart"></use>
+                                                </svg></a></div><img src="./assets/img/product-card_1.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="248" height="248">
+                                            <div class="product-card__description"><span class="cmn__text cmn_text--small">Красное</span><span class="cmn__text cmn_text--small">Полусладкое</span><span class="cmn__text cmn_text--small">0.75</span>
+                                            </div>
+                                            <h3 class="cmn__text">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
+                                            <div class="product-card__price"><span class="cmn__text cmn__text--lth product-card__price-old">1 123 456 ₽</span><span class="cmn__text product-card__price-current">229 846 ₽</span>
+                                              <div class="product-card__sale-badge"><span class="cmn__text cmn__text--small cmn__text--bold cmn__text--white">-15%</span></div>
+                                            </div><a class="cmn__btn product-card__link" href="#">
+                                              <svg width="16" height="16">
+                                                <use xlink:href="#icon-search"></use>
+                                              </svg><span class="cmn__text cmn__text--white cmn__text--semi">Выбрать</span></a>
+                                          </div>
+                                </div>
+                                <div class="swiper-slide">
+                                          <div class="product-card">
+                                            <div class="product-card__badge-country"><img width="34" height="24"></div>
+                                            <div class="product-card__badge-comparing"><a href="#">  
+                                                <svg width="24" height="24">
+                                                  <use xlink:href="#icon-chart"></use>
+                                                </svg></a></div>
+                                            <div class="product-card__badge-chosen"><a href="#"> 
+                                                <svg width="24" height="24">
+                                                  <use xlink:href="#icon-heart"></use>
+                                                </svg></a></div><img src="./assets/img/product-card_1.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="248" height="248">
+                                            <div class="product-card__description"><span class="cmn__text cmn_text--small">Красное</span><span class="cmn__text cmn_text--small">Полусладкое</span><span class="cmn__text cmn_text--small">0.75</span>
+                                            </div>
+                                            <h3 class="cmn__text">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
+                                            <div class="product-card__price"><span class="cmn__text cmn__text--lth product-card__price-old">1 123 456 ₽</span><span class="cmn__text product-card__price-current">229 846 ₽</span>
+                                              <div class="product-card__sale-badge"><span class="cmn__text cmn__text--small cmn__text--bold cmn__text--white">-15%</span></div>
+                                            </div><a class="cmn__btn product-card__link" href="#">
+                                              <svg width="16" height="16">
+                                                <use xlink:href="#icon-search"></use>
+                                              </svg><span class="cmn__text cmn__text--white cmn__text--semi">Выбрать</span></a>
+                                          </div>
+                                </div>
+                                <div class="swiper-slide">
+                                          <div class="product-card">
+                                            <div class="product-card__badge-country"><img width="34" height="24"></div>
+                                            <div class="product-card__badge-comparing"><a href="#">  
+                                                <svg width="24" height="24">
+                                                  <use xlink:href="#icon-chart"></use>
+                                                </svg></a></div>
+                                            <div class="product-card__badge-chosen"><a href="#"> 
+                                                <svg width="24" height="24">
+                                                  <use xlink:href="#icon-heart"></use>
+                                                </svg></a></div><img src="./assets/img/product-card_1.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="248" height="248">
+                                            <div class="product-card__description"><span class="cmn__text cmn_text--small">Красное</span><span class="cmn__text cmn_text--small">Полусладкое</span><span class="cmn__text cmn_text--small">0.75</span>
+                                            </div>
+                                            <h3 class="cmn__text">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
+                                            <div class="product-card__price"><span class="cmn__text cmn__text--lth product-card__price-old">1 123 456 ₽</span><span class="cmn__text product-card__price-current">229 846 ₽</span>
+                                              <div class="product-card__sale-badge"><span class="cmn__text cmn__text--small cmn__text--bold cmn__text--white">-15%</span></div>
+                                            </div><a class="cmn__btn product-card__link" href="#">
+                                              <svg width="16" height="16">
+                                                <use xlink:href="#icon-search"></use>
+                                              </svg><span class="cmn__text cmn__text--white cmn__text--semi">Выбрать</span></a>
+                                          </div>
+                                </div>
+                                <div class="swiper-slide">
+                                          <div class="product-card">
+                                            <div class="product-card__badge-country"><img width="34" height="24"></div>
+                                            <div class="product-card__badge-comparing"><a href="#">  
+                                                <svg width="24" height="24">
+                                                  <use xlink:href="#icon-chart"></use>
+                                                </svg></a></div>
+                                            <div class="product-card__badge-chosen"><a href="#"> 
+                                                <svg width="24" height="24">
+                                                  <use xlink:href="#icon-heart"></use>
+                                                </svg></a></div><img src="./assets/img/product-card_1.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="248" height="248">
+                                            <div class="product-card__description"><span class="cmn__text cmn_text--small">Красное</span><span class="cmn__text cmn_text--small">Полусладкое</span><span class="cmn__text cmn_text--small">0.75</span>
+                                            </div>
+                                            <h3 class="cmn__text">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
+                                            <div class="product-card__price"><span class="cmn__text cmn__text--lth product-card__price-old">1 123 456 ₽</span><span class="cmn__text product-card__price-current">229 846 ₽</span>
+                                              <div class="product-card__sale-badge"><span class="cmn__text cmn__text--small cmn__text--bold cmn__text--white">-15%</span></div>
+                                            </div><a class="cmn__btn product-card__link" href="#">
+                                              <svg width="16" height="16">
+                                                <use xlink:href="#icon-search"></use>
+                                              </svg><span class="cmn__text cmn__text--white cmn__text--semi">Выбрать</span></a>
+                                          </div>
+                                </div>
+                              </div>
+                            </div>
+                  </div>
+                </section>
+        <section class="advantages">
+          <div class="cmn__wrapper">
+            <ul class="advantages__list">
+              <li class="advantages__item">
+                <div class="advantages__item-title"><span class="advantages__item-text advantages__item-text--bold">10 000 </span><span class="advantages__item-text">позиций</span></div>
+                <div class="advantages__item-content"><span class="cmn__text">Мы постоянно выбраковываем то, что вам не стоит пробовать</span></div>
+              </li>
+              <li class="advantages__item">
+                <div class="advantages__item-title"><span class="advantages__item-text advantages__item-text--bold">1000</span><span class="advantages__item-text">магазинов</span></div>
+                <div class="advantages__item-content"><span class="cmn__text">Просто найдите ближе</span></div>
+              </li>
+              <li class="advantages__item">
+                <div class="advantages__item-title"><span class="advantages__item-text advantages__item-text--bold">100%</span><span class="advantages__item-text">честная цена</span></div>
+                <div class="advantages__item-content"><span class="cmn__text">И честные скидки</span></div>
+              </li>
+            </ul>
+          </div>
         </section>
         <section class="app">
           <div class="cmn__wrapper app__wrapper">

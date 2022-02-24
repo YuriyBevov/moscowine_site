@@ -1,0 +1,94 @@
+.cart-item {
+    display: flex;
+    padding: 1.6rem;
+    padding-right: 2.4rem;
+    border-bottom: 1px solid $grey-200;
+
+    &__content {
+        display: flex;
+        //flex-direction: column;
+
+        flex-wrap: wrap;
+        &-desc {
+            display: flex;
+            flex-wrap: wrap;
+            height: fit-content;
+            
+            width: calc(100% - 12rem);
+            margin-right: auto;
+
+            h2 {
+                padding-left: 1.2rem;
+                padding-right: 2rem;
+            }
+
+            & > span {
+                width: 10rem;
+                text-align: right;
+            }
+        }
+
+        &-price {
+            display: flex;
+            flex-direction: column;
+            width: 10rem;
+
+            & > span {
+                text-align: right;
+            }
+        }
+
+        &-chars {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding-left: 1.2rem;
+
+            span {
+                display: block;
+                position: relative;
+                opacity: 0.4;
+                padding-right: 2rem;
+                line-height: 1.8rem;
+
+                &:not(:last-child)::after {
+                    position: absolute;
+                    top: 4px;
+                    right: 8px;
+                    content: '';
+
+                    width: 5px;
+                    height: 5px;
+
+                    border-radius: 3px;
+
+                    background-color: $black-100;
+                    opacity: 0.4;
+                }
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+            width: 100%;
+
+            & > button {
+                height: 4rem;
+                padding: 0.5em 1.2rem;
+                color: $purple;
+
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
+            }
+
+            .cart-add {
+                margin-left: auto;
+            }
+        }
+    }
+
+
+}

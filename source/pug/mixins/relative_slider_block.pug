@@ -1,0 +1,7 @@
+include ./product-card-slider
+
+mixin relative_slider_block(array, title, cl)
+  section(class= cl)
+    .cmn__wrapper
+      h2.cmn__title.cmn__title--small= title
+      +product_card_slider(array) 

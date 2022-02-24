@@ -4,6 +4,7 @@ import yandex_map from './modules/yandex_map.js';
 import limitStr from './modules/limitStr.js';
 
 import cardAddCount from './modules/cartAddCount.js';
+import cartCountBtn from './modules/cartCountBtn.js';
 import openSearchFilter from './modules/openSearchFilter.js';
 import infoTabs from './modules/infoTabs.js';
 import filter from './modules/filter.js'

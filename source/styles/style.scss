@@ -30,6 +30,7 @@
 @import "./components/product-card-sm";
 @import "./components/product-card";
 @import "./components/cart-add";
+@import "./components/cart-count";
 @import "./components/thumbs-sm-slider";
 @import "./components/rate";
 @import "./components/description";
@@ -56,8 +57,14 @@
 @import "./sections/catalog-item/relative";
 @import "./sections/catalog-item/accessories";
 
+/*cart*/
+@import "./sections/cart/cart-content";
+@import "./sections/cart/cart-item";
+
 /*common*/
 @import "./sections/common/subscribe";
+@import "./sections/common/same-offer";
+@import "./sections/common/advantages";
 
 /*footer*/
 @import "./layouts/components/footer";

@@ -22,3 +22,24 @@
         padding: 0 1rem;
     } */
 }
+
+@mixin bm-lg() {
+    margin-bottom: 9.6rem;
+
+    @media(max-width: $tablet_medium) {
+        margin-bottom: 6.4rem;
+    }
+
+    @media(max-width: $tablet_small) {
+        margin-bottom: 4.8rem;
+    }
+}
+
+@mixin bm-md() {
+    margin-bottom: 6.4rem;
+}
+
+@mixin bm-sm() {
+    margin-bottom: 3.2rem;
+}
+

@@ -1,0 +1,210 @@
+.cart-content {
+    
+    padding-top: 1rem;
+    @include bm-md();
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 40rem);
+        height: fit-content;
+        margin-right: 2rem;
+        
+    }
+
+    &__item {
+        margin-bottom: 2.4rem;
+        border: 1px solid $grey-200;
+        border-radius: 4px;
+        background: $white;
+
+        &-header {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid $grey-200;
+
+            & > a {
+                padding-right: 2rem;
+                padding-left: 5rem;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 2.4rem;
+                    content: '';
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    background-image: url('../assets/img/map-pin.png');
+
+                }
+            }
+
+            & > button {
+                font-size: 1.5rem;
+                line-height: 2.2rem;
+                height: 4rem;
+                margin-left: auto;
+
+                color: #841DA4;
+            }
+        }
+
+        &-footer {
+            display: flex;
+            padding: 1.6rem 2.4rem;
+
+            span {
+                margin-left: auto;
+            }
+
+            &.is-invalid {
+                span {
+                    color: $red-600;
+                }
+            }
+
+            .cart-alert {
+                display: flex;
+
+                img {
+                    margin-right: 1.6rem;
+                }
+
+                &__msg {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            &-price {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-width: 15rem;
+                margin-left: auto;
+            }
+
+            .cart-validate {
+                display: none;
+
+                &.is-active {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    &__aside {
+        width: 38rem;
+
+        &-section {
+            background-color: $grey-100;
+            border-radius: 4px;
+            padding: 2.4rem;
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__items {
+        li {
+            display: flex;
+
+            &:not(:last-child) {
+                margin-bottom: 2.4rem;
+            }
+
+            span {
+                width: 50%;
+            }
+
+            span:first-child {
+                text-align: left;
+            }
+
+            span:last-child {
+                text-align: right;
+            }
+        }
+    }
+
+    &__promo {
+        span {
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        form {
+            position: relative;
+
+            input {
+                width: 100%;
+            }
+
+            button {
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                width: 4rem;
+                height: 4rem;
+                border: 0;
+                border-radius: 4px;
+                background-color: $purple;
+            }
+        }
+    }
+
+    &__buyer {
+        b {
+            display: inline-block;
+            margin-bottom: 1.6rem;
+        }
+
+        form {
+            fieldset {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                margin-bottom: 1.6rem;
+            }
+
+            label {
+                display: inline-block;
+                margin-bottom: 0.8rem;
+                cursor: pointer;
+
+                span {
+                    color: $red-600;
+                }
+            }
+
+            p {
+                margin-bottom: 2.4rem;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+
+    &__badge {
+        display: flex;
+        background-color: $black-100;
+        border-radius: 4px;
+        margin-bottom: 0;
+
+        p {
+            color: $grey-100;
+        }
+
+        img {
+            margin-right: 1.6rem;
+        }
+    }
+}

@@ -244,4 +244,21 @@
    input[type="radio"]:checked + .cmn__label {
          border: 2px solid $purple;
    }
+
+   &__input {
+      width: 100%;
+      font-family: $f1_med;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+      
+      background-color: $grey-100;
+      backdrop-filter: blur(20px);
+      border: 1px solid #B7B3C2;
+      border-radius: 4px;
+
+      padding: 1.2rem 1.6rem;
+            
+      color: $black-100;
+      opacity: 0.5;
+   }
 }

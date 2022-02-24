@@ -12742,6 +12742,50 @@ cartAddBtns.forEach(btn => {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/cartCountBtn.js":
+/*!************************************************!*\
+  !*** ./source/scripts/modules/cartCountBtn.js ***!
+  \************************************************/
+/***/ (function() {
+
+const cartCountBtns = document.querySelectorAll('.cart-count');
+console.log(cartCountBtns)
+
+const onClickChangeCount = function() {
+    this.classList.add('clicked');
+    /*const countField = this.nextElementSibling.querySelector('span');
+    let currentCount = 1;
+    const countDec = this.nextElementSibling.querySelector('.js-count-dec');
+    const countInc = this.nextElementSibling.querySelector('.js-count-inc');
+
+    countField.innerHTML = currentCount;
+    
+    const onClickDecCount = () => {
+        if(currentCount > 1) {
+            currentCount -= 1;
+            countField.innerHTML = currentCount;
+        } else {
+            currentCount = 0;
+            countField.innerHTML = currentCount;
+            this.classList.remove('clicked');
+            countInc.removeEventListener('click', onClickIncCount);
+            countDec.removeEventListener('click', onClickDecCount);
+        }
+    }
+    const onClickIncCount = () => {
+        currentCount += 1;
+        countField.innerHTML = currentCount;
+    }
+    countInc.addEventListener('click', onClickIncCount);
+    countDec.addEventListener('click', onClickDecCount); */
+}
+
+cartCountBtns.forEach(btn => {
+    btn.addEventListener('click', onClickChangeCount);
+});
+
+/***/ }),
+
 /***/ "./source/scripts/modules/filter.js":
 /*!******************************************!*\
   !*** ./source/scripts/modules/filter.js ***!
@@ -13675,22 +13719,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_limitStr_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/limitStr.js */ "./source/scripts/modules/limitStr.js");
 /* harmony import */ var _modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/cartAddCount.js */ "./source/scripts/modules/cartAddCount.js");
 /* harmony import */ var _modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_cartAddCount_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _modules_openSearchFilter_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/openSearchFilter.js */ "./source/scripts/modules/openSearchFilter.js");
-/* harmony import */ var _modules_openSearchFilter_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_openSearchFilter_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _modules_infoTabs_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/infoTabs.js */ "./source/scripts/modules/infoTabs.js");
-/* harmony import */ var _modules_filter_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/filter.js */ "./source/scripts/modules/filter.js");
-/* harmony import */ var _modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/searchResultMore.js */ "./source/scripts/modules/searchResultMore.js");
-/* harmony import */ var _modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/filterObserver.js */ "./source/scripts/modules/filterObserver.js");
-/* harmony import */ var _modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _modules_showMorePlaces_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/showMorePlaces.js */ "./source/scripts/modules/showMorePlaces.js");
-/* harmony import */ var _modules_showMorePlaces_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_showMorePlaces_js__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/reviewStarControl.js */ "./source/scripts/modules/reviewStarControl.js");
-/* harmony import */ var _modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _modules_addReview_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/addReview.js */ "./source/scripts/modules/addReview.js");
-/* harmony import */ var _modules_addReview_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_addReview_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _modules_cartCountBtn_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/cartCountBtn.js */ "./source/scripts/modules/cartCountBtn.js");
+/* harmony import */ var _modules_cartCountBtn_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_cartCountBtn_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modules_openSearchFilter_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/openSearchFilter.js */ "./source/scripts/modules/openSearchFilter.js");
+/* harmony import */ var _modules_openSearchFilter_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_openSearchFilter_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _modules_infoTabs_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/infoTabs.js */ "./source/scripts/modules/infoTabs.js");
+/* harmony import */ var _modules_filter_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/filter.js */ "./source/scripts/modules/filter.js");
+/* harmony import */ var _modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/searchResultMore.js */ "./source/scripts/modules/searchResultMore.js");
+/* harmony import */ var _modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_searchResultMore_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/filterObserver.js */ "./source/scripts/modules/filterObserver.js");
+/* harmony import */ var _modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_filterObserver_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _modules_showMorePlaces_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/showMorePlaces.js */ "./source/scripts/modules/showMorePlaces.js");
+/* harmony import */ var _modules_showMorePlaces_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_showMorePlaces_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/reviewStarControl.js */ "./source/scripts/modules/reviewStarControl.js");
+/* harmony import */ var _modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _modules_addReview_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/addReview.js */ "./source/scripts/modules/addReview.js");
+/* harmony import */ var _modules_addReview_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_modules_addReview_js__WEBPACK_IMPORTED_MODULE_12__);
 
 ;
+
 
 
 
