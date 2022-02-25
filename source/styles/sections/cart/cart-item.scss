@@ -3,12 +3,28 @@
     padding: 1.6rem;
     padding-right: 2.4rem;
     border-bottom: 1px solid $grey-200;
+    transition: opacity $main-transition;
+
+    &.is-deleted {
+        opacity: 0.3;
+    }
+
+    img {
+        width: 11.4rem;
+        height: 11.4rem;
+        object-fit: cover;
+
+        @media(max-width: $tablet_small) {
+            width: 5.6rem;
+            height: 5.6rem;
+        }
+    }
 
     &__content {
         display: flex;
-        //flex-direction: column;
 
         flex-wrap: wrap;
+
         &-desc {
             display: flex;
             flex-wrap: wrap;
@@ -26,6 +42,11 @@
                 width: 10rem;
                 text-align: right;
             }
+
+            @media(max-width: $tablet_small) {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
         }
 
         &-price {
@@ -36,10 +57,23 @@
             & > span {
                 text-align: right;
             }
+
+            @media(max-width: $tablet_small) {
+                flex-direction: row;
+                width: 100%;
+                padding-left: 1.2rem;
+                margin-bottom: 1rem;
+
+
+                & > span {
+                    margin-right: 0.8rem;
+                }
+            }
         }
 
         &-chars {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             width: 100%;
             padding-left: 1.2rem;
@@ -53,7 +87,7 @@
 
                 &:not(:last-child)::after {
                     position: absolute;
-                    top: 4px;
+                    top: 6px;
                     right: 8px;
                     content: '';
 
@@ -70,6 +104,7 @@
 
         &-bottom {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             margin-top: auto;
             width: 100%;
@@ -82,13 +117,21 @@
                 &:not(:last-child) {
                     margin-right: 1rem;
                 }
+
+                @media(max-width: $tablet_small) {
+                    order: 2;
+                }
             }
 
-            .cart-add {
+            .cart-count {
                 margin-left: auto;
+
+                @media(max-width: $tablet_small) {
+                    order: 1;
+                    margin-left: 1.2rem;
+                    margin-right: 100%;
+                }
             }
         }
     }
-
-
 }

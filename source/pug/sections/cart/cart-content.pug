@@ -1,133 +1,143 @@
 include ../../mixins/input
+include ../../mixins/cart_count
 
 section.cart-content
   .cmn__wrapper.cart-content__wrapper
-    ul.cart-content__list
-      li.cart-content__item
-        .cart-content__item-header
-          a(href="#").cmn__text Калужская, Новые Черемушки
+    .cart-content__header
+      h2.cmn__title.cmn__title--small Корзина
+
+      a(href="#").cmn__btn.cmn__btn--outlined Вернуться к покупкам 
+    .cart-content__body
+      ul.cart-content__list
+        li.cart-content__item
+          .cart-content__item-header
+            a(href="#").cmn__text Калужская, Новые Черемушки
+              
+            button(type="button").cmn__btn.cmn__btn--outlined Каталог
+          .cart-content__item-content
+            ul.cart-list
+              li.cart-item
+                img(src="../assets/img/cart-item.png" alt="Charles Pelletier" width="114" height="114")
+
+                .cart-item__content
+                  .cart-item__content-desc
+                      h2.cmn__text.cmn__text--med Wine Charles Pelletier Blanc de Blancs Reserve Brut
+
+                      div.cart-item__content-chars
+                        span.cmn__text.cmn__text--small 0.75
+                        span.cmn__text.cmn__text--small 2018 
+                        span.cmn__text.cmn__text--small Красное
+                        span.cmn__text.cmn__text--small Полусладкое
+                        span.cmn__text.cmn__text--small Австралия
+
+                  .cart-item__content-price
+                    span.cmn__text.cmn__text--med 7 650 ₽
+                    span.cmn__text.cmn__text--opacity.cmn__text--lth 9 650 ₽
+                  .cart-item__content-bottom
+                    button(type="button").cmn__btn.cmn__btn--outlined В избранное 
+                    button(type="button").cmn__btn.cmn__btn--outlined Удалить
+                    +cart_count(7)
+
+            // если не валидно, добавляется is-invalid и is-active
+            .cart-content__item-footer.is-invalid
+              .cart-alert.cart-validate.is-active
+                img(src="./assets/img/alert.png" alt="Информация" width="24" height="24")
+                .cart-alert__msg
+                  p.cmn__text.cmn__text--small.cmn__text--warning.cmn__text--bold Не достигнута минимальная сумма заказа
+                  span.cmn__text.cmn__text--small.cmn__text--warning У магазина имеется ограничение по минимальной сумме закупки. Чтобы оформить заказ, выберите товаров на сумму 24 000 ₽.
+              .cart-content__item-footer-price
+                span.cmn__text.cmn__text--med 1 155 300 ₽
+                span.cmn__text.cmn__text--warning.cart-validate.is-active из 1 155 300 ₽
+        
+        li.cart-content__item
+          .cart-content__item-header
+            a(href="#").cmn__text Калужская, Новые Черемушки
+              
+            button(type="button").cmn__btn.cmn__btn--outlined Каталог
+          .cart-content__item-content
+            ul.cart-list
+              li.cart-item
+                img(src="../assets/img/cart-item.png" alt="Charles Pelletier" width="114" height="114")
+
+                .cart-item__content
+                  .cart-item__content-desc
+                      h2.cmn__text.cmn__text--med Wine Charles Pelletier Blanc de Blancs Reserve Brut
+
+                      div.cart-item__content-chars
+                        span.cmn__text.cmn__text--small 0.75
+                        span.cmn__text.cmn__text--small 2018 
+                        span.cmn__text.cmn__text--small Красное
+                        span.cmn__text.cmn__text--small Полусладкое
+                        span.cmn__text.cmn__text--small Австралия
+
+                  .cart-item__content-price
+                    span.cmn__text.cmn__text--med 7 650 ₽
+                    span.cmn__text.cmn__text--opacity.cmn__text--lth 9 650 ₽
+                  .cart-item__content-bottom
+                    button(type="button").cmn__btn.cmn__btn--outlined В избранное 
+                    button(type="button").cmn__btn.cmn__btn--outlined Удалить
+                    +cart_count(3)
+
+            // если не валидно, добавляется is-invalid и is-active
+            .cart-content__item-footer
+              .cart-alert.cart-validate
+                img(src="./assets/img/alert.png" alt="Информация" width="24" height="24")
+                .cart-alert__msg
+                  p.cmn__text.cmn__text--small.cmn__text--warning.cmn__text--bold Не достигнута минимальная сумма заказа
+                  span.cmn__text.cmn__text--small.cmn__text--warning У магазина имеется ограничение по минимальной сумме закупки. Чтобы оформить заказ, выберите товаров на сумму 24 000 ₽.
+              .cart-content__item-footer-price
+                span.cmn__text.cmn__text--med 1 155 300 ₽
+                span.cmn__text.cmn__text--warning.cart-validate из 1 155 300 ₽
+
+                
+
+      aside.cart-content__aside
+        // невалидно .js-invalid, промокод применен .js-valid
+        .cart-content__aside-section.cart-content__promo.js-invalid
+          span.cmn__text.cmn__text--small.cmn__text--bold Промокод
+
+          form(action="#")
+            +input(text, user-promo, 'Промокод')
+            button(type="submit" aria-label="Подтвердить")
+              svg(width="24" height="24")
+                use(xlink:href="#icon-arr")
+          // сообщение пок-ся .is-active
+          .span.cart-content__promo-msg.cmn__text.cmn__text--small.is-active Истёк срок действия промокода.
             
-          button(type="button").cmn__btn.cmn__btn--outlined Каталог
-        .cart-content__item-content
-          ul.cart-list
-            li.cart-item
-              img(src="../assets/img/cart-item.png" alt="Charles Pelletier" width="114" height="114")
-
-              .cart-item__content
-                .cart-item__content-desc
-                    h2.cmn__text.cmn__text--med Wine Charles Pelletier Blanc de Blancs Reserve Brut
-
-                    div.cart-item__content-chars
-                      span.cmn__text.cmn__text--small 0.75
-                      span.cmn__text.cmn__text--small 2018 
-                      span.cmn__text.cmn__text--small Красное
-                      span.cmn__text.cmn__text--small Полусладкое
-                      span.cmn__text.cmn__text--small Австралия
-
-                .cart-item__content-price
-                  span.cmn__text.cmn__text--med 7 650 ₽
-                  span.cmn__text.cmn__text--opacity.cmn__text--lth 9 650 ₽
-                .cart-item__content-bottom
-                   button(type="button").cmn__btn.cmn__btn--outlined В избранное 
-                   button(type="button").cmn__btn.cmn__btn--outlined Удалить
-                   include ../../components/cart-add-btn
-
-          // если не валидно, добавляется is-invalid и is-active
-          .cart-content__item-footer.is-invalid
-            .cart-alert.cart-validate.is-active
-              img(src="./assets/img/alert.png" alt="Информация" width="24" height="24")
-              .cart-alert__msg
-                p.cmn__text.cmn__text--small.cmn__text--warning.cmn__text--bold Не достигнута минимальная сумма заказа
-                span.cmn__text.cmn__text--small.cmn__text--warning У магазина имеется ограничение по минимальной сумме закупки. Чтобы оформить заказ, выберите товаров на сумму 24 000 ₽.
-            .cart-content__item-footer-price
-              span.cmn__text.cmn__text--med 1 155 300 ₽
-              span.cmn__text.cmn__text--warning.cart-validate.is-active из 1 155 300 ₽
-      
-      li.cart-content__item
-        .cart-content__item-header
-          a(href="#").cmn__text Калужская, Новые Черемушки
+        .cart-content__aside-section.cart-content__items
+          ul
+            li
+              span.cmn__text.cmm__text--semi 7 товаров
+              span.cmn__text.cmm__text--semi 12 650 ₽
             
-          button(type="button").cmn__btn.cmn__btn--outlined Каталог
-        .cart-content__item-content
-          ul.cart-list
-            li.cart-item
-              img(src="../assets/img/cart-item.png" alt="Charles Pelletier" width="114" height="114")
-
-              .cart-item__content
-                .cart-item__content-desc
-                    h2.cmn__text.cmn__text--med Wine Charles Pelletier Blanc de Blancs Reserve Brut
-
-                    div.cart-item__content-chars
-                      span.cmn__text.cmn__text--small 0.75
-                      span.cmn__text.cmn__text--small 2018 
-                      span.cmn__text.cmn__text--small Красное
-                      span.cmn__text.cmn__text--small Полусладкое
-                      span.cmn__text.cmn__text--small Австралия
-
-                .cart-item__content-price
-                  span.cmn__text.cmn__text--med 7 650 ₽
-                  span.cmn__text.cmn__text--opacity.cmn__text--lth 9 650 ₽
-                .cart-item__content-bottom
-                   button(type="button").cmn__btn.cmn__btn--outlined В избранное 
-                   button(type="button").cmn__btn.cmn__btn--outlined Удалить
-                   include ../../components/cart-add-btn
-
-          // если не валидно, добавляется is-invalid и is-active
-          .cart-content__item-footer
-            .cart-alert.cart-validate
-              img(src="./assets/img/alert.png" alt="Информация" width="24" height="24")
-              .cart-alert__msg
-                p.cmn__text.cmn__text--small.cmn__text--warning.cmn__text--bold Не достигнута минимальная сумма заказа
-                span.cmn__text.cmn__text--small.cmn__text--warning У магазина имеется ограничение по минимальной сумме закупки. Чтобы оформить заказ, выберите товаров на сумму 24 000 ₽.
-            .cart-content__item-footer-price
-              span.cmn__text.cmn__text--med 1 155 300 ₽
-              span.cmn__text.cmn__text--warning.cart-validate из 1 155 300 ₽
+            li
+              span.cmn__text.cmm__text--semi Скидка
+              span.cmn__text.cmm__text--semi - 650 ₽
             
+            li
+              span.cmn__text.cmm__text--semi К оплате
+              span.cmn__text.cmn__text--large.cmm__text--semi 12 000 ₽
+            
+        .cart-content__aside-section.cart-content__buyer
+          b.cmn__title.cmn__title--small Покупатель
 
+          form(action="#")
+            fieldset
+              label(for="buyer_name").cmn__text.cmn__text--small.cmn__text--bold Имя<span>*</span>
+              +input(text, 'buyer_name', 'Имя')
+            
+            fieldset
+              label(for="buyer_mail").cmn__text.cmn__text--small.cmn__text--bold Электронная почта<span>*</span>   
+              +input(text, 'buyer_mail', 'email@example.ru')
 
-    aside.cart-content__aside
-      .cart-content__aside-section.cart-content__promo
-        span.cmn__text.cmn__text--small.cmn__text--bold Промокод
+            fieldset
+              label(for="buyer_phone").cmn__text.cmn__text--small.cmn__text--bold Телефон<span>*</span>  
+              +input(text, 'buyer_phone', '+7 900 900 90 90')
+            
+            p.cmn__text.cmn__text--small Отправляя заказ, вы принимаете <a href="#">пользовательское соглашение</a>, даёте согласие на обработку персональных данных и соглашаетесь с <a href="#">условиями приобретения</a>.
 
-        form(action="#") 
-          +input(text, user-promo, 'Промокод')
-          button(type="submit" aria-label="Подтвердить")
-            svg(width="24" height="24")
-              use(xlink:href="#icon-arr")
-      .cart-content__aside-section.cart-content__items
-        ul
-          li
-            span.cmn__text.cmm__text--semi 7 товаров
-            span.cmn__text.cmm__text--semi 12 650 ₽
-          
-          li
-            span.cmn__text.cmm__text--semi Скидка
-            span.cmn__text.cmm__text--semi - 650 ₽
-          
-          li
-            span.cmn__text.cmm__text--semi К оплате
-            span.cmn__text.cmn__text--large.cmm__text--semi 12 000 ₽
-          
-      .cart-content__aside-section.cart-content__buyer
-        b.cmn__title.cmn__title--small Покупатель
-
-        form(action="#")
-          fieldset
-            label(for="buyer_name").cmn__text.cmn__text--small.cmn__text--bold Имя<span>*</span>
-            +input(text, 'buyer_name', 'Имя')
-          
-          fieldset
-            label(for="buyer_mail").cmn__text.cmn__text--small.cmn__text--bold Электронная почта<span>*</span>   
-            +input(text, 'buyer_mail', 'email@example.ru')
-
-          fieldset
-            label(for="buyer_phone").cmn__text.cmn__text--small.cmn__text--bold Телефон<span>*</span>  
-            +input(text, 'buyer_phone', '+7 900 900 90 90')
-          
-          p.cmn__text.cmn__text--small Отправляя заказ, вы принимаете <a href="#">пользовательское соглашение</a>, даёте согласие на обработку персональных данных и соглашаетесь с <a href="#">условиями приобретения</a>.
-
-          button(type="submit").cmn__btn Оформить заказ
-      .cart-content__aside-section.cart-content__badge
-        img(src="../assets/img/icon-cart-badge-info.png" alt="Иконка" width="32" height="32")
-        p.cmn__text.cmn__text--white Для быстрого заказа и сохранения истории покупок — <a href="#">авторизуйтесь.</a> 
-      
+            button(type="submit").cmn__btn Оформить заказ
+        .cart-content__aside-section.cart-content__badge
+          img(src="../assets/img/icon-cart-badge-info.png" alt="Иконка" width="32" height="32")
+          p.cmn__text.cmn__text--white Для быстрого заказа и сохранения истории покупок — <a href="#">авторизуйтесь.</a> 
+        

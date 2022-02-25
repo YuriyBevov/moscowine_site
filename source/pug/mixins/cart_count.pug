@@ -1,0 +1,5 @@
+mixin cart_count(count)
+  .cart-count
+    button(type="button").cart-remove-btn.js-count-dec
+    span.cmn__text= count ? count : 0
+    button(type="button").cart-add-btn.js-count-inc

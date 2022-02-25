@@ -12748,41 +12748,51 @@ cartAddBtns.forEach(btn => {
   \************************************************/
 /***/ (function() {
 
-const cartCountBtns = document.querySelectorAll('.cart-count');
-console.log(cartCountBtns)
+const cartCountDecs = document.querySelectorAll('.cart-content .js-count-dec');
+const cartCountIncs = document.querySelectorAll('.cart-content .js-count-inc');
 
-const onClickChangeCount = function() {
-    this.classList.add('clicked');
-    /*const countField = this.nextElementSibling.querySelector('span');
-    let currentCount = 1;
-    const countDec = this.nextElementSibling.querySelector('.js-count-dec');
-    const countInc = this.nextElementSibling.querySelector('.js-count-inc');
+const cartItems = document.querySelectorAll('.cart-item');
+console.log(cartItems);
 
-    countField.innerHTML = currentCount;
+const onClickDecItems = (evt) => {
+    let countNode = evt.target.parentNode.querySelector('span');
+    let currentCount = Number(countNode.innerHTML);
+
+    if(currentCount > 0) {
+        currentCount -= 1;
+    }
+
+    if (currentCount === 0) {
+        cartItems.forEach(item => {
+            item.contains(countNode) && !item.classList.contains('is-deleted') ?
+            item.classList.add('is-deleted') : null;
+        })
+    }
+
+    countNode.innerHTML = currentCount;
+}   
+
+const onClickIncItems = (evt) => {
+    let countNode = evt.target.parentNode.querySelector('span');
+    let currentCount = Number(countNode.innerHTML);
     
-    const onClickDecCount = () => {
-        if(currentCount > 1) {
-            currentCount -= 1;
-            countField.innerHTML = currentCount;
-        } else {
-            currentCount = 0;
-            countField.innerHTML = currentCount;
-            this.classList.remove('clicked');
-            countInc.removeEventListener('click', onClickIncCount);
-            countDec.removeEventListener('click', onClickDecCount);
-        }
-    }
-    const onClickIncCount = () => {
-        currentCount += 1;
-        countField.innerHTML = currentCount;
-    }
-    countInc.addEventListener('click', onClickIncCount);
-    countDec.addEventListener('click', onClickDecCount); */
-}
+    currentCount += 1;
 
-cartCountBtns.forEach(btn => {
-    btn.addEventListener('click', onClickChangeCount);
-});
+    cartItems.forEach(item => {
+        item.contains(countNode) && item.classList.contains('is-deleted') ?
+        item.classList.remove('is-deleted') : null;
+    })
+
+    countNode.innerHTML = currentCount;
+}   
+
+cartCountDecs.forEach(btn => {
+    btn.addEventListener('click', onClickDecItems);
+})
+cartCountIncs.forEach(btn => {
+    btn.addEventListener('click', onClickIncItems);
+})
+
 
 /***/ }),
 

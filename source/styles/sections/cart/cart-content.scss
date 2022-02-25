@@ -1,18 +1,44 @@
 .cart-content {
-    
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     @include bm-md();
 
-    &__wrapper {
+    &__body {
         display: flex;
+        flex-wrap: wrap;
+    }
+    
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3.2rem;
+
+        h2 {
+            padding-right: 2rem;
+        }
+
+        a {
+            margin-left: auto;
+            padding: 1rem 2.4rem;
+            border-color: $purple;
+            color: $purple;
+        }
     }
 
     &__list {
+        position: sticky;
+        top: 180px;
         display: flex;
         flex-direction: column;
         width: calc(100% - 40rem);
         height: fit-content;
         margin-right: 2rem;
+
+        @media(max-width: $tablet_large) {
+            position: static;
+            top: 0;
+            width: 100%;
+            margin-right: 0;
+        }
         
     }
 
@@ -79,6 +105,10 @@
                 &__msg {
                     display: flex;
                     flex-direction: column;
+
+                    @media(max-width: $tablet_small) {
+                        margin-bottom: 0.8rem;
+                    }
                 }
             }
 
@@ -97,6 +127,10 @@
                     display: flex;
                 }
             }
+
+            @media(max-width: $tablet_small) {
+                flex-wrap: wrap;
+            }
         }
     }
 
@@ -108,6 +142,12 @@
             border-radius: 4px;
             padding: 2.4rem;
             margin-bottom: 1.6rem;
+        }
+
+        @media(max-width: $tablet_large) {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
         }
     }
 
@@ -130,6 +170,17 @@
             span:last-child {
                 text-align: right;
             }
+        }
+
+        @media(max-width: $tablet_large) {
+            width: calc(50% - 1rem);
+            order: 1;
+            margin-right: auto;
+        }
+
+        @media(max-width: $tablet_small) {
+            width: 100%;
+            order: 2;
         }
     }
 
@@ -155,7 +206,75 @@
                 border: 0;
                 border-radius: 4px;
                 background-color: $purple;
+            }            
+        }
+
+        &-msg {
+            display: none;
+            margin-top: 0.8rem;
+
+            &.is-active {
+                display: block;
             }
+        }
+
+        
+        &.js-invalid {
+            input {
+                border: 1px solid $red-600;
+
+                color: $red-600;
+
+                &::placeholder {
+                    color: $red-600;
+                }
+            }
+
+            .cart-content__promo-msg {
+                color: $red-600;
+            }
+        }
+
+        &.js-valid {
+            position: relative;
+            
+
+            &::after {
+                position: absolute;
+                top: 50%;
+                right: 3rem;
+                transform: translate(-50%,-50%);
+                content: "";
+                width: 2.4rem;
+                height: 2.4rem;
+                background-image: url(../assets/img/check.png);
+                opacity: 0.5;
+            }
+
+            input {
+                position: relative;
+                border: 1px solid $green-600;
+
+                color: $green-600;
+
+                &::placeholder {
+                    color: $green-600;
+                }
+            }
+
+            button {
+                display: none;
+            } 
+        }
+
+        @media(max-width: $tablet_large) {
+            width: calc(50% - 1rem);
+            order: 2;
+        }
+
+        @media(max-width: $tablet_small) {
+            width: 100%;
+            order: 1;
         }
     }
 
@@ -185,22 +304,41 @@
 
             p {
                 margin-bottom: 2.4rem;
+
+                a {
+                    color: $purple;
+                }
             }
 
             button {
                 width: 100%;
             }
         }
+
+        @media(max-width: $tablet_large) {
+            width: 100%;
+            order: 3;
+        }
     }
 
     &__badge {
         display: flex;
+        align-items: center;
         background-color: $black-100;
         border-radius: 4px;
         margin-bottom: 0;
 
+        @media(max-width: $tablet_large) {
+            width: 100%;
+            order: 4;
+        }
+
         p {
             color: $grey-100;
+
+            a {
+                color: $purple;
+            }
         }
 
         img {

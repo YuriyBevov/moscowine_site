@@ -1,8 +1,0 @@
-mixin cartCountBtn(isActive, count)
-  .cart-add( class=isActive ? 'clicked' : null)
-    button(type="button").cmn__btn.cmn__btn--outlined.js-cart-add-btn В корзину
-    
-    .cart-add-count
-        button(type="button").cart-remove-btn.js-count-dec
-        span.cmn__text= isActive ? count : 0
-        button(type="button").cart-add-btn.js-count-inc
