@@ -1,0 +1,55 @@
+.about {
+    .advantages {
+        @include bm-md();
+
+        h2 {
+            margin-bottom: 1.6rem;
+        }
+
+        p {
+            opacity: 0.8;
+        }
+        
+        &__list {
+            display: flex;
+        }
+
+        &__item {
+            width: 25%;
+            padding: 0;
+            padding-right: 2rem;
+
+            align-items: flex-start;
+
+            img {
+                margin-bottom: 1.6rem;
+            }
+
+            b {
+                margin-bottom: 0.8rem;
+            }
+
+            p {
+                text-align: start;
+                max-width: 27rem;
+            }
+
+            @media(max-width: $tablet_medium) {
+                width: 50%;
+                margin-bottom: 2.4rem;
+
+                &:last-child {
+                    width: 50%;
+                }
+            }
+
+            @media(max-width: $mobile_medium) {
+                width: 100%;
+
+                &:last-child {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.about {
+    .intro {
+        padding-top: 6.4rem;
+        @include bm-md();
+
+        h2 {
+            margin-bottom: 1.6rem;
+        }
+
+        p {
+            opacity: 0.8;
+        }
+    }
+}

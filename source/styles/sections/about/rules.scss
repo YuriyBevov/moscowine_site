@@ -1,0 +1,85 @@
+.about {
+    .rules {
+        @include bm-lg();
+
+        h2 {
+            margin-bottom: 1.6rem;
+        }
+
+        p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        &__banner {
+            display: flex;
+            align-items: center;
+            background: $grey-100;
+            border-radius: 4px;
+            
+            padding: 2.4rem;
+            margin-top: 6.4rem;
+
+            @media(max-width: $tablet_medium) {
+                padding: 1.6rem;
+                margin-top: 3.2rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            &-content {
+                position: relative;
+
+                padding-left: 4.8rem;
+                padding-right: 2rem;
+                margin-right: auto;
+
+                @media(max-width: $tablet_small) {
+                    padding-left: 4rem;
+                }
+
+                b {
+                    display: inline-block;
+                    margin-bottom: 0.8rem;
+                }
+
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    content: '';
+
+                    width: 3.2rem;
+                    height: 3.2rem;
+
+                    background-image: url('../assets/img/icon-cart-badge-info.png');
+                    background-size: contain;
+
+                    @media(max-width: $tablet_small) {
+                        width: 2.4rem;
+                        height: 2.4rem;
+                    }
+                }
+            }
+
+            &-phone {
+                a {
+                    font-size: 3.6rem;
+                    line-height: 4.3rem;
+
+                    @media(max-width: $tablet_large) {
+                        font-size: 2.6rem;
+                        line-height: 1.2;
+                    }
+
+                    @media(max-width: $tablet_medium) {
+                        font-size: 2.4rem;
+                        line-height: 2.9rem;
+                        padding-left: 4rem;
+                    }
+                }
+            }
+        }
+    }
+}
