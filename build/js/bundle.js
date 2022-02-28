@@ -12796,6 +12796,29 @@ cartCountIncs.forEach(btn => {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/copyToClipboard.js":
+/*!***************************************************!*\
+  !*** ./source/scripts/modules/copyToClipboard.js ***!
+  \***************************************************/
+/***/ (function() {
+
+let btns = document.querySelectorAll('.js-clipboard-btn');
+console.log(btns)
+
+function onClickCopyToClipboard(evt) {
+        let copyText = evt.target.previousElementSibling.getAttribute('href');
+        navigator.clipboard.writeText(copyText);
+}
+
+if(btns) {
+    btns.forEach(btn => {
+        btn.addEventListener('click', onClickCopyToClipboard)
+    })
+}
+
+
+/***/ }),
+
 /***/ "./source/scripts/modules/filter.js":
 /*!******************************************!*\
   !*** ./source/scripts/modules/filter.js ***!
@@ -13342,6 +13365,18 @@ if(filterSlider) {
     });
 }
 
+let tabSlider = document.querySelectorAll('.tabs-swiper-container');
+
+tabSlider ?
+tabSlider.forEach(slider => {
+    new swiper_core__WEBPACK_IMPORTED_MODULE_0__.default(slider, {
+        slidesPerView: 'auto',
+        //spaceBetween: 48,
+        slideToClickedSlide: true,
+    });
+}) : null;
+
+
 
 /***/ }),
 
@@ -13745,6 +13780,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_reviewStarControl_js__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _modules_addReview_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/addReview.js */ "./source/scripts/modules/addReview.js");
 /* harmony import */ var _modules_addReview_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_modules_addReview_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _modules_copyToClipboard_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/copyToClipboard.js */ "./source/scripts/modules/copyToClipboard.js");
+/* harmony import */ var _modules_copyToClipboard_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_modules_copyToClipboard_js__WEBPACK_IMPORTED_MODULE_13__);
 
 ;
 
@@ -13760,6 +13797,58 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+let items = document.querySelectorAll('.offers__data-item');
+
+const onClickExpandItem = (evt) => {
+    console.log(evt.currentTarget);
+    evt.currentTarget.classList.toggle('active');
+}
+
+items.forEach(item => {
+    item.addEventListener('click', onClickExpandItem);
+})
+
+let historyTogglers = document.querySelectorAll('.history__togglers button');
+let contents = document.querySelectorAll('.history__content-field');
+
+const onClickToggleContent = (evt) => {
+    console.log(evt.target)
+
+    let num = evt.target.getAttribute('data-history-tab');
+    historyTogglers.forEach(toggler => {
+        toggler.classList.contains('active') ?
+        toggler.classList.remove('active') : null;
+    })
+    evt.target.classList.add('active');
+
+    contents.forEach(content => {
+        content.classList.contains('active') ?
+        content.classList.remove('active') : null;
+    })
+
+    contents[num - 1].classList.add('active');
+}
+
+historyTogglers.forEach(toggler => {
+    toggler.addEventListener('click', onClickToggleContent);
+})
+
+let historyTabs = document.querySelectorAll('.offers__tab button');
+
+const onClickChangeTab = (evt) => {
+    historyTabs.forEach(tab => {
+        tab.classList.contains('active') ?
+        tab.classList.remove('active') : null;
+    });
+
+    evt.target.classList.add('active');
+}
+
+historyTabs.forEach(tab => {
+    tab.addEventListener('click', onClickChangeTab);
+})
 }();
 /******/ })()
 ;

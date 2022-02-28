@@ -8,6 +8,8 @@
 </clipPath>
 </defs><symbol id="icon-arr" viewBox="0 0 8 14">
 <path d="M1 13L7 7L0.999999 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol><symbol id="icon-arrow" viewBox="0 0 14 8">
+<path d="M1 1L7 7L13 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol><symbol id="icon-burger" viewBox="0 0 16 16">
 <path d="M2 8H14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M2 4H14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

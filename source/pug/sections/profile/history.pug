@@ -1,0 +1,11 @@
+section.history 
+  .cmn__wrapper 
+    .history__togglers
+      button(type="button" data-history-tab="1").cmn__btn.cmn__btn--outlined.active Заказы
+      button(type="button" data-history-tab="2").cmn__btn.cmn__btn--outlined Реферальная программа
+
+    .history__content
+      .history__offers.history__content-field(data-history-content="1").active
+        include offers
+      .history__ref.history__content-field(data-history-content="2")
+        include ./ref

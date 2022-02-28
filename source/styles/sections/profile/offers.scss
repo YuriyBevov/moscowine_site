@@ -1,0 +1,204 @@
+.history {
+    .offers {
+        &__tabs {
+            overflow: hidden;
+        }
+
+        &__tab {
+            width: fit-content;
+            padding-right: 3.2rem;
+
+            button {
+                font-size: 1.8rem;
+                line-height: 2.5rem;
+                padding: 1.4rem 0;
+                color: $black-100;
+                border-color: transparent;
+                border-radius: 0;
+                white-space: nowrap;
+                border-bottom: 2px solid transparent;
+
+                transition: border $main-transition;
+                &.active {
+                    font-weight: 700;
+
+                    border-bottom: 2px solid $purple;
+                }
+
+                @media(max-width: $tablet_medium) {
+                    font-size: 1.5rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+
+        &__data {
+            margin-bottom: 3.2rem;
+
+            &-list {
+                border-top: 1px solid  $grey-200;
+                border-bottom: 1px solid  $grey-200;
+            }
+
+            &-inner {
+                display: none;
+                order: 4;
+            }
+
+            &-item {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                padding: 1.6rem 2.4rem;
+                cursor: pointer;
+
+                &.active {
+                    position: relative;
+                    background-color: $grey-100;
+
+                    svg {
+                        transform: rotate(180deg);
+                    }
+
+                    .offers__data-inner {
+                        display: flex;
+                        flex-direction: column;
+
+                        width: 100%;
+                        padding-top: 2.4rem;
+
+                        li {
+                            display: flex;
+                            flex-wrap: wrap;
+                        }
+
+                        &-title {
+                            width: 60%;
+                            max-width: 45rem;
+                            padding-right: 1.5rem;
+
+                            @media(max-width: $tablet_medium) {
+                                margin-right: auto;
+                            }
+                        }
+
+                        &-total {
+                            display: flex;
+                            @media(max-width: $tablet_medium) {
+                                flex-direction: column;
+                                align-items: flex-end;
+
+                                span {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+
+                        &-count {
+                            width: 5.5rem;
+                            text-align: right;
+                            margin-right: 3.2rem;
+                        }
+
+                        /*&-price {
+                            outline: 1px solid red;
+                            text-align: right;
+                        }*/
+
+                        li:not(:last-child) {
+                            margin-bottom: 1.6rem;
+                        }
+                    }
+                }
+
+                @media(max-width: $tablet_medium) {
+                    padding: 1.6rem;
+                }
+
+                &:not(:first-child) {
+                    border-top: 1px solid $grey-200;
+                }
+
+                svg {
+                    opacity: 0.3;
+                    fill: none;
+                    margin-left: auto;
+
+                    @media(max-width: $tablet_medium) {
+                        order: 2;
+                    }
+                }
+
+                i {
+                    font-style: normal;
+                }
+            }
+
+            &-field {
+                margin-right: 3.2rem;
+                width: fit-content;
+                max-width: 15rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                @media(max-width: $tablet_medium) {
+                    margin-right: 0;
+                    margin-bottom: 0.4rem;
+
+                    font-size: 1.2rem;
+                    line-height: 1.8rem;
+                }
+
+                &--status {
+                    width: 17rem;
+
+                    @media(max-width: $tablet_medium) {
+                        width: 50%;
+                        max-width: calc(50% - 2rem);
+                        margin-right: 2rem;
+                    }
+                }
+
+                &--id {
+                    width: 15rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @media(max-width: $tablet_medium) {
+                        width: 50%;
+                        max-width: 50%;
+                        text-align: right;
+                    }
+                }
+
+                &--date,
+                &--time {
+                    @media(max-width: $tablet_medium) {
+                        width: 25%;
+                        max-width: 6rem;
+                        margin-right: 1.6rem;
+                    }
+                }
+
+                &--total {
+                    @media(max-width: $tablet_medium) {
+                        width: 100%;
+                        max-width: 50%;
+                        text-align: right;
+                        margin-left: auto;
+                        order: 1;
+                    }
+                }
+
+                &--count {
+                    @media(max-width: $tablet_medium) {
+                        order: 2;
+                        width: 100%;
+                        max-width: calc(100% - 4rem);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,118 @@
+-
+  const tabs = [
+      {
+          name: 'Все',
+          isActive: true,
+          dataTab: 1,
+      },
+
+      {
+          name: 'В обработке',
+          isActive: false,
+          dataTab: 2,
+      },
+
+      {
+          name: 'Подтверждённые',
+          isActive: false,
+          dataTab: 3,
+      },
+
+      {
+          name: 'Завершенные',
+          isActive: false,
+          dataTab: 4,
+      },
+
+      {
+          name: 'Отмененные',
+          isActive: false,
+          dataTab: 5,
+      }
+  ]
+
+-
+  const content = [
+      {
+        id: '№ 246612DE',
+        status: 'В ОБРАБОТКЕ',
+        dateFrom: '25.11.2020',
+        timeStamp: '18:34',
+        cls: 'cmn__text--blue'
+      },
+
+      {
+        id: '№ 246612DE',
+        status: 'ОТМЕНЁН',
+        dateFrom: '25.11.2020',
+        timeStamp: '18:34',
+        cls: 'cmn__text--red'
+      },
+
+      {
+        id: '№ 246612DE',
+        status: 'В ОБРАБОТКЕ',
+        dateFrom: '25.11.2020',
+        timeStamp: '18:34',
+        cls: 'cmn__text--blue',
+        isActive: true
+      },
+
+      {
+        id: '№ 246612DEafasdfasdfasdf',
+        status: 'В ОБРАБОТКЕ',
+        dateFrom: '25.11.2020',
+        timeStamp: '18:34',
+        cls: 'cmn__text--blue'
+      },
+
+      {
+        id: '№ 246612DE',
+        status: 'ЗАВЕРШЁН',
+        dateFrom: '25.11.2020',
+        timeStamp: '18:34',
+        cls: 'cmn__text--green'
+      },
+  ]
+
+.offers
+  .offers__tabs.tabs-swiper-container
+    .swiper-wrapper
+      each tab in tabs
+        .offers__tab.swiper-slide
+          button(type="button" class=tab.isActive ? 'active' : null data-tab=tab.dataTab).cmn__btn.cmn__btn--outlined= tab.name 
+  
+  .offers__data
+    ul.offers__data-list
+      each data in content  
+        li.offers__data-item(class= data.isActive ? 'active' : null)
+          span(class= data.cls).cmn__text.offers__data-field.offers__data-field--status= data.status
+
+          span.cmn__text.offers__data-field.offers__data-field--id= data.id
+          span.cmn__text.offers__data-field.offers__data-field--date= data.dateFrom
+          span.cmn__text.offers__data-field.offers__data-field--time= data.timeStamp
+          span.cmn__text.offers__data-field.offers__data-field--count 3 наименования
+          span.cmn__text.offers__data-field.offers__data-field--total <i class="offers__data-total"> 1 502 135</i> ₽
+
+          svg(width="12" height="6")
+              use(xlink:href="#icon-arrow")
+
+          ul.offers__data-inner
+            li
+              .offers__data-inner-title
+                h3.cmn__text Wine Charles Pelletier Blanc de Blancs Reserve Brut
+                span.cmn__text.cmn__text--small.cmn__text--opacity Венето м. Н. Черемушки
+              
+              .offers__data-inner-total
+                span.cmn__text.offers__data-inner-count 438шт.
+                span.cmn__text.offers__data-inner-price 5 035 ₽
+            
+            li
+              .offers__data-inner-title
+                h3.cmn__text Wine Charles Pelletier Blanc de Blancs Reserve Brut Wine Charles Pelletier Blanc de Blancs Reserve Brut
+                span.cmn__text.cmn__text--small.cmn__text--opacity Венето м. Н. Черемушки
+              
+              .offers__data-inner-total
+                span.cmn__text.offers__data-inner-count 8шт.
+                span.cmn__text.offers__data-inner-price 11 125 035 ₽
+        

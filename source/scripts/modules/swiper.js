@@ -80,3 +80,15 @@ if(filterSlider) {
         spaceBetween: 10,
     });
 }
+
+let tabSlider = document.querySelectorAll('.tabs-swiper-container');
+
+tabSlider ?
+tabSlider.forEach(slider => {
+    new Swiper(slider, {
+        slidesPerView: 'auto',
+        //spaceBetween: 48,
+        slideToClickedSlide: true,
+    });
+}) : null;
+

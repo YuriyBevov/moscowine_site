@@ -1,0 +1,41 @@
+.history {
+    padding-top: 1.2rem;
+    @include bm-lg();
+
+    &__togglers {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3.2rem;
+
+        button {
+            color: $black-100;
+            border-color: $grey-100;
+            margin-right: 0.8rem;
+            padding: 1.2rem 1.6rem;
+
+            &.active {
+                border-color: $purple;
+            }
+        }
+    }
+
+    &__content {
+
+        &-field {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+
+    }
+
+    &__offers {
+
+    }
+
+    &__ref {
+
+    }
+}

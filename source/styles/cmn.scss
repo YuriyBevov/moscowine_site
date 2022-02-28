@@ -160,6 +160,27 @@
       &--opacity {
          opacity: 0.5;
       }
+
+      
+      &--green {
+         font-family: $f1_reg;
+         color: $green-700;
+      }
+
+      &--red {
+         font-family: $f1_reg;
+         color: $red-700;
+      }
+
+      &--blue {
+         font-family: $f1_reg;
+         color: $blue-500;
+      }
+
+      &--yellow {
+         font-family: $f1_reg;
+         color: $yellow-700;
+      }
    }
 
    &__btn {

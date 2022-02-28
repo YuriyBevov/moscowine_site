@@ -1,0 +1,86 @@
+.history {
+    .ref {
+        &__about {
+            margin-bottom: 2.4rem;
+            h2 {
+                margin-bottom: 1.6rem;
+            }
+        }
+
+        &__link {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 3.2rem;
+
+            span {
+                width: 100%;
+                margin-bottom: 0.8rem;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1.4rem 1.6rem;
+                margin-right: 1rem;
+                min-height: 4.8rem;
+                backdrop-filter: blur(20px);
+                border-radius: 4px;
+                color: $black-100;
+                background-color: $grey-100;
+                border: 1px solid #B7B3C2;
+            }
+        }
+
+        &__detail {
+            h2 {
+                margin-bottom: 2.4rem;
+            }
+
+            &-list {
+                border-top: 1px solid $grey-200;
+                border-bottom: 1px solid $grey-200;
+            }
+
+            &-item {
+                padding: 1.6rem 2.4rem;
+
+                &:not(:first-child) {
+                    border-top: 1px solid $grey-200;
+                }
+
+                span {
+                    display: inline-block;
+
+                    &:not(:first-child) {
+                        text-align: center;
+                        padding: 0 1.5rem;
+
+                        @media(max-width: $tablet_small) {
+                            padding: 0;
+                            text-align: start;
+                        }
+                    }
+
+                    &:not(:last-child) {
+                        width: 12rem;
+                    }
+
+                    &:first-child {
+                        @media(max-width: $tablet_small) {
+                            width: 100%;
+                        }
+                    }
+
+                    &:last-child {
+                        @media(max-width: $mobile_medium) {
+                            width: 100%;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}
