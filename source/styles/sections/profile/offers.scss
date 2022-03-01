@@ -52,12 +52,17 @@
                 padding: 1.6rem 2.4rem;
                 cursor: pointer;
 
+                svg {
+                    fill: $black-200;
+                    transition: transform $main-transition;
+                }
+
                 &.active {
                     position: relative;
                     background-color: $grey-100;
 
                     svg {
-                        transform: rotate(180deg);
+                        transform: rotate(90deg);
                     }
 
                     .offers__data-inner {
@@ -121,7 +126,6 @@
 
                 svg {
                     opacity: 0.3;
-                    fill: none;
                     margin-left: auto;
 
                     @media(max-width: $tablet_medium) {

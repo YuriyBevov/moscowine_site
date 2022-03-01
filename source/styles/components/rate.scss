@@ -65,8 +65,10 @@
 
     &__action {
         height: 2.4rem;
+
         svg {
-            fill: none;
+            @include svg-fill(rgba(0,0,0,0.5), $purple);
+
             margin-right: 1.6rem;
 
             @media(max-width: $tablet_small) {

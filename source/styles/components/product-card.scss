@@ -97,13 +97,16 @@
     &__badge-chosen {
         opacity: 0;
         transition: opacity $main-transition;
+
         svg {
-            fill: none;
+            @include svg-fill(rgba(0,0,0,0.5), $purple);
         }
     }
 
     &__badge-chosen {
         right: 1.6rem;
+
+
     }
 
     &__badge-comparing {
@@ -115,8 +118,9 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+
         svg {
-            fill: none;
+            fill: $white;
             margin-right: 1.2rem;
         }
     }

@@ -30,6 +30,10 @@
         border-radius: 50%;
         background-color: $black-200;
         cursor: pointer;
+
+        svg {
+            fill: $white;
+        }
     }
 
     &-button-next {

@@ -29,6 +29,10 @@
         height: 4.8rem;
 
         cursor: pointer;
+        
+        svg {
+            @include svg-fill($white, $purple);
+        }
     }
 
     &-button-next {
@@ -37,9 +41,7 @@
 
     &-button-prev {
         left: 3.2rem;
-        svg {
-            transform: rotate(180deg);
-        }
+        transform: rotate(180deg);
     }
 
     @media(max-width: $tablet_small) {

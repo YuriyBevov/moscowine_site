@@ -43,3 +43,26 @@
     margin-bottom: 3.2rem;
 }
 
+@mixin svg-fill($initial, $hover) {
+    fill: $initial;
+
+    &:hover,
+    &:focus {
+        fill: $hover;
+    }
+}
+
+@mixin link-svg-hover($color) {
+    fill: $color;
+}
+
+@mixin link-hover($color) {
+    transition: all $main-transition;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+        color: $color;
+    }
+}
+

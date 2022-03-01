@@ -65,7 +65,7 @@
 
                 border: 1px solid $grey-200;
                 border-radius: 4px;
-                background: transparent;
+                background-color: transparent;
             }
 
             a {
@@ -74,7 +74,10 @@
         }
 
         input:checked + label::before {
-            border-color: red;
+            background-image: url(../assets/img/check-icon.svg);
+            background-color: $purple;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         input {
