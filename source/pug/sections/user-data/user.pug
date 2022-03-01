@@ -1,0 +1,64 @@
+section.user
+  .cmn__wrapper
+    .user__header
+      h2.cmn__title.cmn__title--small Мои данные
+    
+    .user__container
+      .user__sidebar
+        img(src="./assets/img/user_avatar.png" alt="Аватар пользователя" width="168" height="168")
+        button(type="file").cmn__btn.cmn__btn--outlined Изменить
+      .user__form
+        form(action="#") 
+          fieldset
+            label(for="user_name").cmn__text.cmn__text--small.cmn__text--bold Имя
+            input(type="text" id="user_name" placeholder="Имя")
+          fieldset
+            label(for="user_surname").cmn__text.cmn__text--small.cmn__text--bold Фамилия
+            input(type="text" id="user_surname" placeholder="Фамилия")
+          fieldset
+            label(for="user_mail").cmn__text.cmn__text--small.cmn__text--bold Электронная почта
+            input(type="text" id="user_mail" placeholder="Электронная почта")
+          fieldset
+            label(for="user_phone").cmn__text.cmn__text--small.cmn__text--bold Телефон
+            input(type="text" id="user_phone" placeholder="Телефон")
+          fieldset
+            label(for="user_city").cmn__text.cmn__text--small.cmn__text--bold Город
+            input(type="text" id="user_city" placeholder="Город")
+          fieldset
+            span.cmn__text.cmn__text--small.cmn__text--bold Дата рождения
+
+            //.user__select-box
+              select(id="user_bdate" value="1")
+
+              select(id="user_bmonth")
+                option(value="январь") январь
+                option(value="февраль" selected) февраль
+                option(value="март") март
+                option(value="апрель") апрель
+                option(value="май") май
+                option(value="июнь") июнь
+                option(value="июль") июль
+                option(value="август") август
+                option(value="сентябрь") сентябрь
+                option(value="октябрь") октябрь
+                option(value="ноябрь") ноябрь
+                option(value="декабрь") декабрь
+
+              select(id="user_byear" value="1985")
+
+          
+          fieldset.user__confirm.js-invalid.active
+            .user__confirm-container
+              span.cmn__text Для подтверждения изменений введите пароль от учетной записи
+            label(for="user_password").cmn__text.cmn__text--small.cmn__text--bold Пароль
+            input(type="password" id="user_password" placeholder="Пароль")  
+            span.user__confirm-msg Неверный пароль
+
+          .user__form-btns
+            button(type="button").cmn__btn.cmn__btn--outlined Изменить пароль
+            button(type="button").cmn__btn Сохранить изменения
+          
+          .user__confirm-change-msg.active
+            span.cmn__text.cmn__text--opacity Cсылка для смены пароля была отправлена на Ваш электронный адрес yu...ev@yandex,eu. Пожалуйста, проверьте свой почтовый ящик. 
+          
+          

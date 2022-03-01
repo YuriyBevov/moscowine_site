@@ -1,0 +1,192 @@
+.user-data {
+    .user {
+        padding-top: 2.4rem;
+        @include bm-lg();
+
+        &__container {
+            display: flex;
+
+            @media(max-width: $tablet_small) {
+                flex-direction: column;
+            }
+        }
+
+        &__sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            width: 16.8rem;
+            margin-right: 3.2rem;
+
+            img {
+                width: 16.8rem;
+                height: 16.8rem;
+                border-radius: 50%;
+                object-fit: contain;
+            }
+
+            button {
+                color: $purple;
+            }
+
+            @media(max-width: $tablet_small) {
+                flex-direction: row;
+                align-items: flex-end;
+                margin-right: 0;
+                margin-bottom: 3.2rem;
+
+                img {
+                    margin-right: 2.4rem;
+                }
+            }
+        }
+
+        &__header {
+            margin-bottom: 2.4rem;
+        }
+
+        &__form {
+            width: 100%;
+            max-width: 58rem;
+
+            fieldset {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                margin-bottom: 1.6rem;
+
+                label {
+                    margin-bottom: 0.8rem;
+                }
+
+                input {
+                    width: 100%;
+                    max-width: 38rem;
+                    padding: 1.2rem 1.6rem;
+                    font-size: 1.5rem;
+                    line-height: 2.2rem;
+
+                    border: 1px solid #B7B3C2;
+                    backdrop-filter: blur(20px);
+                    border-radius: 4px;
+                    color: $black-100;
+                }
+            }
+
+            &-btns {
+                display: flex;
+                align-items: center;
+
+                
+
+                button {
+                    padding: 1rem 2.4rem;
+                    height: 4.8rem;
+                }
+
+                button:first-child {
+                    border-color: $purple;
+                    color: $purple;
+                    margin-right: 2.4rem;
+                }
+
+                @media(max-width: $mobile_medium) {
+                    flex-direction: column;
+
+                    button {
+                        width: 100%;
+                        margin-bottom: 2rem;
+
+                        &:first-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__confirm {
+            margin-bottom: 3.2rem;
+            display: none;
+
+            &.active {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            input {
+                margin-bottom: 0.8rem;
+            }
+
+            &-container {
+                background: $grey-100;
+                border-radius: 4px;
+                padding: 2.4rem;
+                margin-bottom: 1.6rem;
+
+                span {
+                    opacity: 0.8;
+                }
+
+                @media(max-width: $mobile_medium) {
+                    padding: 1.6rem;
+                }
+            }
+
+            &.js-invalid {
+                input {
+                    border-color: $red-600;
+                    color: $red-600;
+
+                    &::placeholder {
+                        color: $red-600;
+                    }
+                }
+
+                .user__confirm-msg {
+                    color: $red-600;
+                }
+            }
+
+            &-change-msg {
+                position: relative;
+                margin-top: 3.2rem;
+                background: $grey-100;
+                border-radius: 4px;
+                padding: 2.4rem;
+                display: none;
+                padding-left: 5.4rem;
+
+                &.active {
+                    display: flex;
+                }
+
+                &::before {
+                    position: absolute;
+                    top: 2.4rem;
+                    left: 2.4rem;
+                    content: '';
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    background-image: url('../assets/img/icon-info.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+
+                @media(max-width: $mobile_medium) {
+                    padding: 1.6rem;
+                    padding-left: 4.6rem;
+                    margin-top: 1.6rem;
+
+                    &::before {
+                        top: 1.6rem;
+                        left: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}

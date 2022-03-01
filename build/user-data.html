@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Moscowine_site-layout</title>
+    <link rel="stylesheet" href="./css/styles.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?56c6be8d-b5f9-45d5-8ffa-7fdb884fcf53&amp;lang=ru_RU" type="text/javascript"></script>
+  </head>
+  <body class="cmn">
+    <div style="display:none"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+<clipPath id="clip0_2498_20785">
+<rect width="35.7143" height="35.7143" transform="translate(0.143066 0.143066)"></rect>
+</clipPath>
+
+<clipPath id="clip0_2537_21276">
+<rect width="16" height="16" fill="white"></rect>
+</clipPath>
+</defs><symbol id="icon-arr" viewBox="0 0 8 14">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 13.7071C-0.0976311 13.3166 -0.0976312 12.6834 0.292893 12.2929L5.58579 7L0.292893 1.70711C-0.0976317 1.31658 -0.0976317 0.683417 0.292893 0.292893C0.683417 -0.0976315 1.31658 -0.0976315 1.70711 0.292893L7.70711 6.29289C8.09763 6.68342 8.09763 7.31658 7.70711 7.70711L1.70711 13.7071C1.31658 14.0976 0.683418 14.0976 0.292893 13.7071Z"></path>
+</symbol><symbol id="icon-burger" viewBox="0 0 16 16">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1 8C1 7.44772 1.44772 7 2 7H14C14.5523 7 15 7.44772 15 8C15 8.55228 14.5523 9 14 9H2C1.44772 9 1 8.55228 1 8Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1 4C1 3.44772 1.44772 3 2 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H2C1.44772 5 1 4.55228 1 4Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1 12C1 11.4477 1.44772 11 2 11H14C14.5523 11 15 11.4477 15 12C15 12.5523 14.5523 13 14 13H2C1.44772 13 1 12.5523 1 12Z" fill="white"></path>
+</symbol><symbol id="icon-cart" viewBox="0 0 33 32">
+<path d="M12 13.3333C12 12.781 11.5523 12.3333 11 12.3333C10.4477 12.3333 10 12.781 10 13.3333C10 15.013 10.6673 16.6239 11.855 17.8116C13.0427 18.9993 14.6536 19.6666 16.3333 19.6666C18.013 19.6666 19.6239 18.9993 20.8117 17.8116C21.9994 16.6239 22.6667 15.013 22.6667 13.3333C22.6667 12.781 22.219 12.3333 21.6667 12.3333C21.1144 12.3333 20.6667 12.781 20.6667 13.3333C20.6667 14.4825 20.2101 15.5847 19.3975 16.3974C18.5848 17.21 17.4826 17.6666 16.3333 17.6666C15.1841 17.6666 14.0819 17.21 13.2692 16.3974C12.4565 15.5847 12 14.4825 12 13.3333Z"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.53325 2.06675C7.72211 1.81494 8.01849 1.66675 8.33325 1.66675H24.3333C24.648 1.66675 24.9444 1.81494 25.1333 2.06675L29.1249 7.3889C29.2555 7.5579 29.3333 7.76987 29.3333 8V26.6667C29.3333 27.6392 28.9469 28.5718 28.2593 29.2595C27.5717 29.9471 26.639 30.3334 25.6666 30.3334H6.99992C6.02746 30.3334 5.09483 29.9471 4.40719 29.2595C3.71956 28.5718 3.33325 27.6392 3.33325 26.6667V8.00008C3.33325 7.76994 3.411 7.55787 3.54166 7.38887L7.53325 2.06675ZM23.8333 3.66675L26.3332 7H6.33331L8.83325 3.66675H23.8333ZM5.33325 26.6667V9H27.3333V26.6667C27.3333 27.1088 27.1577 27.5327 26.8451 27.8453C26.5325 28.1578 26.1086 28.3334 25.6666 28.3334H6.99992C6.55789 28.3334 6.13397 28.1578 5.82141 27.8453C5.50885 27.5327 5.33325 27.1088 5.33325 26.6667Z"></path>
+</symbol><symbol id="icon-chart" viewBox="0 0 32 32">
+<g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24 12.3334C24.5523 12.3334 25 12.7811 25 13.3334V26.6667C25 27.219 24.5523 27.6667 24 27.6667C23.4477 27.6667 23 27.219 23 26.6667V13.3334C23 12.7811 23.4477 12.3334 24 12.3334Z"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16 4.33337C16.5523 4.33337 17 4.78109 17 5.33337V26.6667C17 27.219 16.5523 27.6667 16 27.6667C15.4477 27.6667 15 27.219 15 26.6667V5.33337C15 4.78109 15.4477 4.33337 16 4.33337Z"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8 17.6666C8.55228 17.6666 9 18.1143 9 18.6666V26.6666C9 27.2189 8.55228 27.6666 8 27.6666C7.44772 27.6666 7 27.2189 7 26.6666V18.6666C7 18.1143 7.44772 17.6666 8 17.6666Z"></path>
+</g>
+</symbol><symbol id="icon-dzen" viewBox="0 0 50 50">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M49.9999 25.2765V25.0003V24.725C38.9298 24.39 33.8675 24.1138 29.83 20.1703C25.8876 16.1336 25.6103 11.0715 25.2762 0.000976562H24.9999H24.7236C24.3896 11.0715 24.1123 16.1336 20.1698 20.1703C16.1323 24.1138 11.07 24.39 0 24.725V25.0003V25.2765C11.07 25.6114 16.1323 25.8877 20.1698 29.8303C24.1123 33.8679 24.3896 38.93 24.7236 50.0005H24.9999H25.2762C25.6103 38.93 25.8876 33.8679 29.83 29.8303C33.8675 25.8877 38.9298 25.6114 49.9999 25.2765Z"></path>
+</symbol><symbol id="icon-fb" viewBox="0 0 19 35">
+<path d="M14.9957 6.26415H18.1257V0.812718C17.5857 0.738432 15.7286 0.571289 13.5657 0.571289C9.05287 0.571289 5.96145 3.40986 5.96145 8.627V13.4284H0.981445V19.5227H5.96145V34.857H12.0672V19.5241H16.8457L17.6043 13.4299H12.0657V9.23129C12.0672 7.46986 12.5414 6.26415 14.9957 6.26415V6.26415Z"></path>
+</symbol><symbol id="icon-heart" viewBox="0 0 32 32">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.4101 3.63227C20.4214 3.21324 21.5053 2.99756 22.6 2.99756C23.6947 2.99756 24.7786 3.21324 25.7899 3.63227C26.8011 4.05124 27.7198 4.66531 28.4936 5.43939C29.2677 6.21319 29.8821 7.13224 30.3011 8.14339C30.7201 9.15469 30.9358 10.2386 30.9358 11.3333C30.9358 12.428 30.7201 13.512 30.3011 14.5233C29.882 15.5345 29.2678 16.4534 28.4936 17.2273L16.7071 29.0138C16.3166 29.4043 15.6834 29.4043 15.2929 29.0138L3.50622 17.2271C1.9431 15.664 1.06494 13.5439 1.06494 11.3333C1.06494 9.12273 1.9431 7.00268 3.50622 5.43955C5.06935 3.87643 7.1894 2.99827 9.4 2.99827C11.6106 2.99827 13.7306 3.87643 15.2938 5.43955L16 6.14578L16.7061 5.43972C17.4799 4.66556 18.3988 4.05127 19.4101 3.63227ZM20.1756 5.47994C19.4071 5.7984 18.7087 6.26518 18.1206 6.8536L16.7071 8.2671C16.3166 8.65762 15.6834 8.65762 15.2929 8.2671L13.8796 6.85377C12.6915 5.66571 11.0802 4.99827 9.4 4.99827C7.71983 4.99827 6.10849 5.66571 4.92044 6.85377C3.73238 8.04182 3.06494 9.65316 3.06494 11.3333C3.06494 13.0135 3.73238 14.6248 4.92044 15.8129L16 26.8924L27.0796 15.8129C27.1741 15.7184 27.2655 15.6211 27.3536 15.5211C27.8142 14.9985 28.1861 14.4028 28.4534 13.7577C28.4671 13.7246 28.4805 13.6915 28.4936 13.6582C28.7856 12.9182 28.9358 12.1295 28.9358 11.3333C28.9358 10.5371 28.7856 9.74843 28.4936 9.00842C28.4805 8.97518 28.4671 8.94203 28.4534 8.90898C28.1349 8.14039 27.6681 7.44207 27.0797 6.85393C26.4916 6.26551 25.7929 5.79841 25.0243 5.47994C24.2558 5.16147 23.432 4.99756 22.6 4.99756C21.9017 4.99756 21.2091 5.11305 20.5501 5.33848C20.424 5.38162 20.2991 5.42879 20.1756 5.47994Z"></path>
+</symbol><symbol id="icon-insta" viewBox="0 0 36 36">
+<g clip-path="url(#clip0_2498_20785)">
+<path d="M35.8221 10.6432C35.7385 8.74553 35.4316 7.44092 34.992 6.31046C34.5385 5.1105 33.8408 4.03618 32.9268 3.14309C32.0337 2.23611 30.9523 1.53134 29.7662 1.08494C28.6292 0.645342 27.3314 0.338472 25.4338 0.254804C23.522 0.164051 22.9151 0.143066 18.0662 0.143066C13.2173 0.143066 12.6104 0.164051 10.7057 0.247719C8.80802 0.331386 7.50341 0.638529 6.37322 1.07785C5.173 1.53134 4.09868 2.22902 3.20559 3.14309C2.29861 4.03618 1.59411 5.11759 1.14743 6.30364C0.707842 7.44092 0.400971 8.73844 0.317304 10.6361C0.226551 12.5479 0.205566 13.1548 0.205566 18.0037C0.205566 22.8526 0.226551 23.4595 0.310218 25.3642C0.393886 27.2619 0.701028 28.5665 1.14062 29.6969C1.59411 30.8969 2.29861 31.9712 3.20559 32.8643C4.09868 33.7713 5.18008 34.4761 6.36614 34.9225C7.50341 35.3621 8.80093 35.6689 10.6988 35.7526C12.6033 35.8365 13.2105 35.8572 18.0594 35.8572C22.9082 35.8572 23.5152 35.8365 25.4199 35.7526C27.3175 35.6689 28.6221 35.3621 29.7523 34.9225C32.1525 33.9945 34.0501 32.0969 34.9781 29.6969C35.4174 28.5597 35.7246 27.2619 35.8082 25.3642C35.8919 23.4595 35.9129 22.8526 35.9129 18.0037C35.9129 13.1548 35.9058 12.5479 35.8221 10.6432ZM32.606 25.2247C32.5292 26.9689 32.2362 27.9108 31.992 28.5387C31.3919 30.0946 30.157 31.3294 28.6012 31.9295C27.9732 32.1737 27.0246 32.4667 25.2872 32.5433C23.4034 32.6272 22.8385 32.6479 18.0733 32.6479C13.3081 32.6479 12.736 32.6272 10.8591 32.5433C9.11489 32.4667 8.17302 32.1737 7.54511 31.9295C6.77085 31.6434 6.06608 31.1899 5.49404 30.5968C4.90101 30.0177 4.44752 29.32 4.16136 28.5458C3.91717 27.9179 3.6242 26.9689 3.54762 25.2318C3.46368 23.348 3.44297 22.7828 3.44297 18.0176C3.44297 13.2524 3.46368 12.6803 3.54762 10.8037C3.6242 9.05948 3.91717 8.11761 4.16136 7.4897C4.44752 6.71517 4.90101 6.01067 5.50112 5.43836C6.07998 4.84533 6.77766 4.39183 7.55219 4.10595C8.18011 3.86176 9.12906 3.56879 10.8662 3.49194C12.7499 3.40827 13.3151 3.38728 18.0801 3.38728C22.8524 3.38728 23.4173 3.40827 25.2943 3.49194C27.0385 3.56879 27.9803 3.86176 28.6082 4.10595C29.3825 4.39183 30.0873 4.84533 30.6593 5.43836C31.2523 6.01749 31.7058 6.71517 31.992 7.4897C32.2362 8.11761 32.5292 9.0663 32.606 10.8037C32.6897 12.6874 32.7107 13.2524 32.7107 18.0176C32.7107 22.7828 32.6897 23.341 32.606 25.2247Z"></path>
+<path d="M18.0666 8.8291C13.0016 8.8291 8.89209 12.9383 8.89209 18.0036C8.89209 23.0689 13.0016 27.1781 18.0666 27.1781C23.1319 27.1781 27.2411 23.0689 27.2411 18.0036C27.2411 12.9383 23.1319 8.8291 18.0666 8.8291ZM18.0666 23.9549C14.7807 23.9549 12.1153 21.2898 12.1153 18.0036C12.1153 14.7174 14.7807 12.0523 18.0666 12.0523C21.3528 12.0523 24.0179 14.7174 24.0179 18.0036C24.0179 21.2898 21.3528 23.9549 18.0666 23.9549V23.9549Z"></path>
+<path d="M29.7459 8.46654C29.7459 9.64933 28.7868 10.6084 27.6037 10.6084C26.421 10.6084 25.4619 9.64933 25.4619 8.46654C25.4619 7.28347 26.421 6.32471 27.6037 6.32471C28.7868 6.32471 29.7459 7.28347 29.7459 8.46654V8.46654Z"></path>
+</g>
+
+</symbol><symbol id="icon-search" viewBox="0 0 24 24">
+<g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.6178 18.0318C15.0781 19.2635 13.125 20 11 20C6.02944 20 2 15.9706 2 11C2 6.02944 6.02944 2 11 2C15.9706 2 20 6.02944 20 11C20 13.125 19.2635 15.078 18.032 16.6176L21.7071 20.2928C22.0977 20.6833 22.0977 21.3165 21.7071 21.707C21.3166 22.0975 20.6834 22.0975 20.2929 21.707L16.6178 18.0318ZM4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11C18 12.8858 17.2543 14.5974 16.0417 15.8561C16.0074 15.8825 15.9744 15.9114 15.9429 15.9428C15.9115 15.9742 15.8826 16.0072 15.8562 16.0416C14.5975 17.2543 12.8858 18 11 18C7.13401 18 4 14.866 4 11Z"></path>
+</g>
+</symbol><symbol id="icon-slider-arr" viewBox="0 0 48 48">
+<path d="M18 10L32 24L18 38" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+</symbol><symbol id="icon-star" viewBox="0 0 20 20">
+<path d="M10 0L13.09 6.26L20 7.27L15 12.14L16.18 19.02L10 15.77L3.82 19.02L5 12.14L0 7.27L6.91 6.26L10 0Z"></path>
+</symbol><symbol id="icon-thumbs-up" viewBox="0 0 24 24">
+<g opacity="0.3">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.0857 1.59386C10.2462 1.23273 10.6043 1 10.9995 1C12.0604 1 13.0778 1.42143 13.8279 2.17157C14.5781 2.92172 14.9995 3.93913 14.9995 5V8H19.6544C20.0872 7.996 20.5157 8.08567 20.9105 8.26289C21.3073 8.44096 21.6606 8.70317 21.946 9.03134C22.2313 9.35951 22.4419 9.7458 22.5632 10.1634C22.6845 10.5811 22.7134 11.0201 22.6482 11.4501L21.2682 20.4499C21.2682 20.4502 21.2682 20.4497 21.2682 20.4499C21.1596 21.165 20.7962 21.8175 20.2451 22.2859C19.6953 22.7532 18.9957 23.0067 18.2743 23H3.99951C3.20386 23 2.4408 22.6839 1.87819 22.1213C1.31558 21.5587 0.999512 20.7957 0.999512 20V13C0.999512 12.2044 1.31558 11.4413 1.87819 10.8787C2.4408 10.3161 3.20386 10 3.99951 10H6.34964L10.0857 1.59386ZM7.99951 11.2122L11.6073 3.0946C11.9087 3.19075 12.1859 3.35794 12.4137 3.58579C12.7888 3.96086 12.9995 4.46957 12.9995 5V9C12.9995 9.55228 13.4472 10 13.9995 10H19.6595L19.6708 9.99994C19.8158 9.99829 19.9594 10.0282 20.0916 10.0875C20.2239 10.1469 20.3416 10.2343 20.4368 10.3437C20.5319 10.4531 20.6021 10.5818 20.6425 10.7211C20.6829 10.8601 20.6926 11.0063 20.6709 11.1495C20.6709 11.1494 20.6709 11.1497 20.6709 11.1495L19.2908 20.1501C19.2547 20.3885 19.1335 20.6059 18.9498 20.7621C18.766 20.9183 18.532 21.0028 18.2908 21.0001L7.99951 21V11.2122ZM5.99951 21V12H3.99951C3.7343 12 3.47994 12.1054 3.2924 12.2929C3.10487 12.4804 2.99951 12.7348 2.99951 13V20C2.99951 20.2652 3.10487 20.5196 3.2924 20.7071C3.47994 20.8946 3.7343 21 3.99951 21H5.99951Z" fill="black"></path>
+</g>
+</symbol><symbol id="icon-trending-up" viewBox="0 0 16 16">
+<g opacity="0.3" clip-path="url(#clip0_2537_21276)">
+<path d="M15.3334 4L9.00008 10.3333L5.66675 7L0.666748 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M11.3333 4H15.3333V8" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</g>
+
+</symbol><symbol id="icon-user" viewBox="0 0 32 32">
+<g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.18849 20.855C7.37622 19.6673 8.98712 19 10.6668 19H21.3335C23.0132 19 24.6241 19.6673 25.8118 20.855C26.9996 22.0427 27.6668 23.6536 27.6668 25.3333V28C27.6668 28.5523 27.2191 29 26.6668 29C26.1145 29 25.6668 28.5523 25.6668 28V25.3333C25.6668 24.1841 25.2103 23.0819 24.3976 22.2692C23.585 21.4565 22.4828 21 21.3335 21H10.6668C9.51756 21 8.41536 21.4565 7.6027 22.2692C6.79004 23.0819 6.3335 24.1841 6.3335 25.3333V28C6.3335 28.5523 5.88578 29 5.3335 29C4.78121 29 4.3335 28.5523 4.3335 28V25.3333C4.3335 23.6536 5.00076 22.0427 6.18849 20.855Z"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16 5C13.6068 5 11.6667 6.9401 11.6667 9.33333C11.6667 11.7266 13.6068 13.6667 16 13.6667C18.3933 13.6667 20.3334 11.7266 20.3334 9.33333C20.3334 6.9401 18.3933 5 16 5ZM9.66669 9.33333C9.66669 5.83553 12.5022 3 16 3C19.4978 3 22.3334 5.83553 22.3334 9.33333C22.3334 12.8311 19.4978 15.6667 16 15.6667C12.5022 15.6667 9.66669 12.8311 9.66669 9.33333Z"></path>
+</g>
+</symbol><symbol id="icon-zoom-in" viewBox="0 0 14 14">
+<path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="black"></path>
+</symbol><symbol id="icon-zoom-out" viewBox="0 0 14 2">
+<path d="M14 2H0V0H14V2Z" fill="black"></path>
+</symbol></svg>
+    </div>
+    <header class="header">
+      <div class="cmn__wrapper">
+        <div class="header__top">
+          <div class="header__logo"><a class="logo" href="index.html"><img src="./assets/img/logo.svg" alt="логотип" width="180" height="44"></a></div>
+          <div class="header__top-content">
+            <div class="header__info">
+              <div class="worktime"><a href="tel:88007077534">8 800 707-75-34</a><span class="cmn__text">c 10:00 до 19:00</span></div>
+            </div>
+            <div class="header__nav">
+              <nav class="nav">
+                <ul class="nav__list">
+                  <li class="nav__item"><a class="cmn__text cmn__text--small nav__link" href="#">Пункты выдачи</a></li>
+                  <li class="nav__item"><a class="cmn__text cmn__text--small nav__link" href="#">Как это работает</a></li>
+                  <li class="nav__item"><a class="cmn__text cmn__text--small nav__link" href="#">Зарабатывать с MoscoWine</a></li>
+                  <li class="nav__item"><a class="cmn__text cmn__text--small nav__link" href="#">Подключиться</a></li>
+                  <li class="nav__item"><a class="cmn__text cmn__text--small nav__link" href="#">Онлайн сервисы</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <button class="cmn__btn header__btn" type="button">
+            <svg width="16" height="16">
+              <use xlink:href="#icon-burger"></use>
+            </svg><span>Каталог</span>
+          </button>
+          <div class="header__search js-hidden">
+            <label for="header_search" aria-label="Поиск">
+              <svg width="24" height="24">
+                <use xlink:href="#icon-search"></use>
+              </svg>
+            </label>
+            <input type="text" id="header_search" placeholder="Поиск...">
+          </div>
+          <div class="header__menu"><a href="#">
+              <svg width="32" height="32">
+                <use xlink:href="#icon-chart"></use>
+              </svg><span class="cmn__text cmn__text--small">Сравнение</span></a><a href="#">
+              <div class="item-count-badge js-active"><span class="cmn__text cmn__text--small cmn__text--white">99</span></div>
+              <svg width="32" height="32">
+                <use xlink:href="#icon-heart"></use>
+              </svg><span class="cmn__text cmn__text--small">Избранное</span></a><a href="#">
+              <div class="item-count-badge js-active"><span class="cmn__text cmn__text--small cmn__text--white">99</span></div>
+              <svg width="32" height="32">
+                <use xlink:href="#icon-cart"></use>
+              </svg><span class="cmn__text cmn__text--small">Корзина</span></a><a href="#">
+              <svg width="32" height="32">
+                <use xlink:href="#icon-user"></use>
+              </svg><span class="cmn__text cmn__text--small">Войти</span></a></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="user-data">
+        <section class="user">
+          <div class="cmn__wrapper">
+            <div class="user__header">
+              <h2 class="cmn__title cmn__title--small">Мои данные</h2>
+            </div>
+            <div class="user__container">
+              <div class="user__sidebar"><img src="./assets/img/user_avatar.png" alt="Аватар пользователя" width="168" height="168">
+                <button class="cmn__btn cmn__btn--outlined" type="file">Изменить</button>
+              </div>
+              <div class="user__form">
+                <form action="#"> 
+                  <fieldset>
+                    <label class="cmn__text cmn__text--small cmn__text--bold" for="user_name">Имя</label>
+                    <input type="text" id="user_name" placeholder="Имя">
+                  </fieldset>
+                  <fieldset>
+                    <label class="cmn__text cmn__text--small cmn__text--bold" for="user_surname">Фамилия</label>
+                    <input type="text" id="user_surname" placeholder="Фамилия">
+                  </fieldset>
+                  <fieldset>
+                    <label class="cmn__text cmn__text--small cmn__text--bold" for="user_mail">Электронная почта</label>
+                    <input type="text" id="user_mail" placeholder="Электронная почта">
+                  </fieldset>
+                  <fieldset>
+                    <label class="cmn__text cmn__text--small cmn__text--bold" for="user_phone">Телефон</label>
+                    <input type="text" id="user_phone" placeholder="Телефон">
+                  </fieldset>
+                  <fieldset>
+                    <label class="cmn__text cmn__text--small cmn__text--bold" for="user_city">Город</label>
+                    <input type="text" id="user_city" placeholder="Город">
+                  </fieldset>
+                  <fieldset><span class="cmn__text cmn__text--small cmn__text--bold">Дата рождения</span>
+                    <!--.user__select-box
+                    select(id="user_bdate" value="1")
+                    
+                    select(id="user_bmonth")
+                      option(value="январь") январь
+                      option(value="февраль" selected) февраль
+                      option(value="март") март
+                      option(value="апрель") апрель
+                      option(value="май") май
+                      option(value="июнь") июнь
+                      option(value="июль") июль
+                      option(value="август") август
+                      option(value="сентябрь") сентябрь
+                      option(value="октябрь") октябрь
+                      option(value="ноябрь") ноябрь
+                      option(value="декабрь") декабрь
+                    
+                    select(id="user_byear" value="1985")
+                    
+                    
+                    -->
+                  </fieldset>
+                  <fieldset class="user__confirm js-invalid active">
+                    <div class="user__confirm-container"><span class="cmn__text">Для подтверждения изменений введите пароль от учетной записи</span></div>
+                    <label class="cmn__text cmn__text--small cmn__text--bold" for="user_password">Пароль</label>
+                    <input type="password" id="user_password" placeholder="Пароль"><span class="user__confirm-msg">Неверный пароль</span>
+                  </fieldset>
+                  <div class="user__form-btns">
+                    <button class="cmn__btn cmn__btn--outlined" type="button">Изменить пароль</button>
+                    <button class="cmn__btn" type="button">Сохранить изменения</button>
+                  </div>
+                  <div class="user__confirm-change-msg active"><span class="cmn__text cmn__text--opacity">Cсылка для смены пароля была отправлена на Ваш электронный адрес yu...ev@yandex,eu. Пожалуйста, проверьте свой почтовый ящик. </span></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="app">
+          <div class="cmn__wrapper app__wrapper">
+            <div class="app__container">
+              <h2 class="cmn__title app__title">Мобильное приложение с&nbsp;лучшим ассортиментом напитоков</h2>
+                      <div class="apps"><a href="#" aria-label="Скачать с AppStore"><img src="./assets/img/appstore-btn_black.png" alt="App store" width="167" height="50"></a><a href="#" aria-label="Скачать с GooglePlay"><img src="./assets/img/googleplay-btn_black.png" alt="Google play" width="167" height="50"></a></div>
+            </div>
+          </div>
+        </section>
+        <section class="subscribe">
+          <div class="cmn__wrapper">
+            <div class="subscribe__container">
+              <div class="subscribe__content">
+                <h2 class="cmn__title subscribe__title">Подпишитесь на нашу рассылку</h2>
+                <p class="cmn__text">Получайте самые выгодные предложения одним из первых, участвуйте в&nbsp;закрытых распродажах и акциях для подписчиков MoscoWine.</p>
+              </div>
+              <div class="subscribe__form">
+                <form action="#">
+                          <fieldset class="subscribe__mail subscribe-fieldset">
+                            <input type="text" placeholder="Электронная почта">
+                            <div class="subscribe-fieldset__container">       
+                              <button class="cmn__btn" type="submit">
+                                <svg width="16" height="16">
+                                  <use xlink:href="#icon-send"></use>
+                                </svg><span>Подписаться</span>
+                              </button>
+                            </div>
+                          </fieldset>
+                  <fieldset class="subscribe__accept">
+                    <input type="checkbox" id="subscribe_accept">
+                    <label class="cmn__text cmn__text--small" for="subscribe_accept">Даю согласие на обработку персональных данных в соответствии с <a href="#"> пользовательским соглашением</a>.</label>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="mobile-menu">
+        <div class="cmn__wrapper mobile-menu__wrapper">
+          <ul class="mobile-menu__list">
+            <li><a href="#">
+                <svg width="24" height="24">
+                  <use xlink:href="#icon-catalog"></use>
+                </svg><span>Каталог</span></a></li>
+            <li><a href="#">
+                <svg width="24" height="24">
+                  <use xlink:href="#icon-heart"></use>
+                </svg><span>Избранное</span></a></li>
+            <li><a href="#">
+                <svg width="24" height="24">
+                  <use xlink:href="#icon-cart"></use>
+                </svg><span>Корзина</span></a></li>
+            <li><a href="#">
+                <svg width="24" height="24">
+                  <use xlink:href="#icon-user"></use>
+                </svg><span>Войти</span></a></li>
+            <li><a href="#">
+                <svg width="24" height="24">
+                  <use xlink:href="#icon-mobile-menu-burger"></use>
+                </svg><span>Меню</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="cmn__wrapper">
+        <div class="footer__container">
+          <div class="footer__top"><a class="logo" href="index.html"><img src="./assets/img/logo.svg" alt="логотип" width="180" height="44"></a></div>
+          <div class="footer__nav">
+            <div class="footer__nav-lists">
+                  <div class="bottom-menu footer__nav-item">
+                    <h3 class="cmn__text cmn_text--med">О компании</h3>
+                    <ul>
+                      <li><a class="cmn__text" href="#">О сервисе</a></li>
+                      <li><a class="cmn__text" href="#">Пресс-центр</a></li>
+                      <li><a class="cmn__text" href="#">Отзывы</a></li>
+                      <li><a class="cmn__text" href="#">Контакты</a></li>
+                    </ul>
+                  </div>
+                  <div class="bottom-menu footer__nav-item">
+                    <h3 class="cmn__text cmn_text--med">Клиентам</h3>
+                    <ul>
+                      <li><a class="cmn__text" href="#">Как это работает</a></li>
+                      <li><a class="cmn__text" href="#">Доставка и оплата</a></li>
+                      <li><a class="cmn__text" href="#">Возврат</a></li>
+                      <li><a class="cmn__text" href="#">Вопросы и ответы</a></li>
+                    </ul>
+                  </div>
+                  <div class="bottom-menu footer__nav-item">
+                    <h3 class="cmn__text cmn_text--med">Партнерам</h3>
+                    <ul>
+                      <li><a class="cmn__text" href="#">Как подключиться</a></li>
+                      <li><a class="cmn__text" href="#">Виды сотрудничества</a></li>
+                      <li><a class="cmn__text" href="#">Тарифы</a></li>
+                      <li><a class="cmn__text" href="#">Правила работы</a></li>
+                    </ul>
+                  </div>
+                  <div class="bottom-menu footer__nav-item">
+                    <h3 class="cmn__text cmn_text--med">Инвесторам</h3>
+                    <ul>
+                      <li><a class="cmn__text" href="#">Информация</a></li>
+                      <li><a class="cmn__text" href="#">Скачать презентацию</a></li>
+                    </ul>
+                  </div>
+            </div>
+            <div class="footer__contacts">
+              <div class="footer__info">
+                <div class="worktime"><a href="tel:88007077534">8 800 707-75-34</a><span class="cmn__text">c 10:00 до 19:00</span></div>
+              </div>
+              <button class="cmn__btn cmn__btn--outlined" type="button">Заказать звонок</button>
+            </div>
+          </div>
+          <div class="footer__links"> 
+            <div class="footer__social">
+              <div class="social">
+                <ul class="social__list">
+                  <li class="social__item"><a href="#">
+                      <svg width="17" height="34" aria-label="facebook">
+                        <use xlink:href="#icon-fb"></use>
+                      </svg></a></li>
+                  <li class="social__item"><a href="#">
+                      <svg width="36" height="36" aria-label="instagram">
+                        <use xlink:href="#icon-insta"></use>
+                      </svg></a></li>
+                  <li class="social__item"><a href="#">
+                      <svg width="50" height="50" aria-label="dzen">
+                        <use xlink:href="#icon-dzen"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__apps">
+                  <div class="apps"><a href="#" aria-label="Скачать с AppStore"><img src="./assets/img/appstore-btn_white.png" alt="App store" width="167" height="50"></a><a href="#" aria-label="Скачать с GooglePlay"><img src="./assets/img/googleplay-btn_white.png" alt="Google play" width="167" height="50"></a></div>
+            </div>
+          </div>
+          <div class="footer__bottom"><span class="cmn__text footer__rights">© MoscoWine, 2022</span><a class="cmn__text cmn__text--white" href="#">Пользовательское соглашение</a><a class="cmn__text cmn__text--white" href="">Условия приобретения</a></div>
+        </div>
+      </div>
+    </footer>
+    <!-- include ./modals/menuModal-->
+    <script src="./js/bundle.js"></script>
+  </body>
+</html>
