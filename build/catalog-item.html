@@ -200,7 +200,7 @@
                         </div>
               </div>
               <div class="about__controls">
-                <div class="about__controls-field"><span class="cmn__text cmn__text-small cmn__text--bold">Подарочная упаковка</span>
+                <div class="about__controls-field"><span class="cmn__text cmn__text-small cmn__text--bold about__controls-field-name">Подарочная упаковка</span>
                   <form action="#">
                     <input type="radio" id="gift-wrap-no" name="gift-wrap" value="Нет" checked="">
                     <label class="cmn__label" for="gift-wrap-no">Нет</label>
@@ -208,40 +208,38 @@
                     <label class="cmn__label" for="gift-wrap-yes">Да        </label>
                   </form>
                 </div>
-                <div class="about__controls-field"><span class="cmn__text cmn__text-small cmn__text--bold">Винтаж</span>
-                  <div class="cmn__select">
-                    <form action=""> 
-                      <select class="cmn__select">
-                        <option>2018</option>
-                        <option>2019</option>
-                      </select>
-                    </form>
-                  </div>
+                <div class="about__controls-field"><span class="cmn__text cmn__text-small cmn__text--bold about__controls-field-name">Винтаж</span>
+                  <form action="#"> 
+                    <select class="custom-select">
+                      <option value="">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                    </select>
+                  </form>
                 </div>
-                <div class="about__controls-field"><span class="cmn__text cmn__text-small cmn__text--bold">Объем</span>
-                  <div class="cmn__select">
-                    <form action=""> 
-                      <select class="cmn__select">
-                        <option>0.1л</option>
-                        <option>0.25л</option>
-                        <option>0.5л</option>
-                        <option>0.7л</option>
-                        <option>0.75л</option>
-                        <option>1.0л</option>
-                      </select>
-                    </form>
-                  </div>
+                <div class="about__controls-field"><span class="cmn__text cmn__text-small cmn__text--bold about__controls-field-name">Объем</span>
+                  <form action=""> 
+                    <select class="custom-select">
+                      <option>0.1л</option>
+                      <option>0.25л</option>
+                      <option>0.5л</option>
+                      <option>0.7л</option>
+                      <option>0.75л</option>
+                      <option>1.0л</option>
+                    </select>
+                  </form>
                 </div>
               </div>
               <div class="about__places">
                 <div class="about__places-header">
                   <h2 class="cmn__title cmn__title--small">Где купить</h2>
-                  <div class="cmn__select">
-                    <select class="cmn__select">
+                  <form action=""> 
+                    <select class="custom-select">
                       <option>По цене</option>
-                      <option>По кол-ву</option>
+                      <option>По количеству</option>
+                      <option>По удаленности</option>
                     </select>
-                  </div>
+                  </form>
                 </div>
                 <div class="about__places-wrapper">
                   <ul class="about__places-list">

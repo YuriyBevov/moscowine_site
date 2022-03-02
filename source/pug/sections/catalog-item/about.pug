@@ -182,7 +182,7 @@ section.about
       
       .about__controls
         .about__controls-field
-          span.cmn__text.cmn__text-small.cmn__text--bold Подарочная упаковка
+          span.cmn__text.cmn__text-small.cmn__text--bold.about__controls-field-name Подарочная упаковка
 
           form(action="#")
             input(type="radio" id="gift-wrap-no" name="gift-wrap" value="Нет" checked)
@@ -192,32 +192,35 @@ section.about
             label(for="gift-wrap-yes").cmn__label Да        
         
         .about__controls-field
-          span.cmn__text.cmn__text-small.cmn__text--bold Винтаж
-          .cmn__select
-            form(action="") 
-              select.cmn__select
-                option 2018
-                option 2019
+          span.cmn__text.cmn__text-small.cmn__text--bold.about__controls-field-name Винтаж
+
+          form(action="#") 
+            select.custom-select
+              option(value) 2018
+              option(value="2019") 2019
+              option(value="2020") 2020
         
         .about__controls-field
-          span.cmn__text.cmn__text-small.cmn__text--bold Объем
-          .cmn__select
-            form(action="") 
-              select.cmn__select
-                option 0.1л
-                option 0.25л
-                option 0.5л
-                option 0.7л
-                option 0.75л
-                option 1.0л
+          span.cmn__text.cmn__text-small.cmn__text--bold.about__controls-field-name Объем
+
+          form(action="") 
+            select.custom-select
+              option 0.1л
+              option 0.25л
+              option 0.5л
+              option 0.7л
+              option 0.75л
+              option 1.0л
         
       .about__places
         .about__places-header
           h2.cmn__title.cmn__title--small Где купить
-          .cmn__select
-            select.cmn__select
+          
+          form(action="") 
+            select.custom-select
               option По цене
-              option По кол-ву
+              option По количеству
+              option По удаленности
         
         .about__places-wrapper
           ul.about__places-list

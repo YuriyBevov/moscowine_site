@@ -24,28 +24,27 @@ section.user
           fieldset
             label(for="user_city").cmn__text.cmn__text--small.cmn__text--bold Город
             input(type="text" id="user_city" placeholder="Город")
-          fieldset
+          fieldset.user__birth
             span.cmn__text.cmn__text--small.cmn__text--bold Дата рождения
 
-            //.user__select-box
-              select(id="user_bdate" value="1")
+            .user__birth-controls
+              select(id="user_bday").custom-select-birth
 
-              select(id="user_bmonth")
-                option(value="январь") январь
-                option(value="февраль" selected) февраль
-                option(value="март") март
-                option(value="апрель") апрель
-                option(value="май") май
-                option(value="июнь") июнь
-                option(value="июль") июль
-                option(value="август") август
-                option(value="сентябрь") сентябрь
-                option(value="октябрь") октябрь
-                option(value="ноябрь") ноябрь
-                option(value="декабрь") декабрь
-
-              select(id="user_byear" value="1985")
-
+              select(id="user_bmonth").custom-select-birth
+                option(value="Январь" selected) Январь
+                option(value="Февраль") Февраль
+                option(value="Март") Март
+                option(value="Апрель") Апрель
+                option(value="Май") Май
+                option(value="Июнь") Июнь
+                option(value="Июль") Июль
+                option(value="Август") Август
+                option(value="Сентябрь") Сентябрь
+                option(value="Октябрь") Октябрь
+                option(value="Ноябрь") Ноябрь
+                option(value="Декабрь") Декабрь
+              
+              select(id="user_byear").custom-select-birth
           
           fieldset.user__confirm.js-invalid.active
             .user__confirm-container

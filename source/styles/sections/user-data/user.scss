@@ -80,8 +80,6 @@
                 display: flex;
                 align-items: center;
 
-                
-
                 button {
                     padding: 1rem 2.4rem;
                     height: 4.8rem;
@@ -108,6 +106,25 @@
             }
         }
 
+        &__birth {
+            & > span {
+                display: inline-block;
+                margin-bottom: 0.8rem;
+            }
+
+            &-controls {
+                display: flex;
+                align-items: center;
+
+                .custom-select-container:not(:last-child) {
+                    margin-right: 0.8rem;
+                }
+
+                .custom-select-opener {
+                    min-height: 4.8rem;
+                }
+            }
+        }
         &__confirm {
             margin-bottom: 3.2rem;
             display: none;
