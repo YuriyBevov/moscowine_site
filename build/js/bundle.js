@@ -13225,7 +13225,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "toggleClass": function() { return /* binding */ toggleClass; }
 /* harmony export */ });
 function limitStr( str, n ) {
-    return str.slice(0, n) + '...';
+    if ( str.length > 50 ) {
+        return str.slice(0, n) + '...';
+    } else {
+        return str
+    }
 }
 
 function addClass(el, cl) {
@@ -14162,6 +14166,21 @@ prodSlider.forEach(slider => {
     new swiper_core__WEBPACK_IMPORTED_MODULE_0__.default(slider, {
         slidesPerView: 'auto',
         spaceBetween: 20,
+    });
+}) : null;
+
+let compareSlider = document.querySelectorAll('.compare-card-slider');
+
+compareSlider ?
+compareSlider.forEach(slider => {
+    new swiper_core__WEBPACK_IMPORTED_MODULE_0__.default(slider, {
+        slidesPerView: 'auto',
+        modules: [swiper_core__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper_core__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+        
+        navigation: {
+            nextEl: ".compare-slider-button-next",
+            prevEl: ".compare-slider-button-prev",
+        }
     });
 }) : null;
 

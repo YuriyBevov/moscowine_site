@@ -1,0 +1,56 @@
+.compare-card-slider {
+    width: fit-content;
+    max-width: 100%;
+    padding: 0 8rem;
+
+    @media(max-width: $desktop_small) {
+        padding: 0 6rem;
+    }
+
+    @media(max-width: $tablet_medium) {
+        padding: 0;
+    }
+
+    .swiper-slide {
+        width: 28rem;
+        margin-right: 0.8rem;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        display: none;
+    }
+
+    .compare-slider-button-next,
+    .compare-slider-button-prev {
+        top: 21rem;
+        width: 5.6rem;
+        height: 5.6rem;
+
+        border-radius: 50%;
+
+        background-color: #1E262E;
+
+        svg {
+            fill: $white;
+        }
+
+        @media(max-width: $tablet_medium) {
+            display: none;
+        }
+
+        @media(max-width: $desktop_small) {
+            width: 4rem;
+            height: 4rem;
+
+            svg {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+    }
+
+    .compare-slider-button-prev {
+        transform: rotate(180deg);
+    }
+}

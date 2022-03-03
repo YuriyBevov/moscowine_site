@@ -1,0 +1,77 @@
+.compare {
+    .compare {
+        padding-top: 1.5rem;
+        @include bm-md();
+
+        &__wrapper {
+            max-width: 164rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__header {
+            width: 100%;
+            max-width: 124rem;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            margin-bottom: 3.2rem;
+            padding: 0 3rem;
+    
+            h2 {
+                padding-right: 2rem;
+            }
+    
+            a {
+                margin-left: auto;
+                padding: 1rem 2.4rem;
+                border-color: $purple;
+                color: $purple;
+            }
+        }
+
+        &__selected {
+            width: 100%;
+            max-width: 118rem;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-bottom: 2.4rem;
+
+            border-bottom: 1px solid $grey-100;
+        }
+
+        &__item {
+            width: fit-content;
+            padding: 0 1.2rem;
+            margin-right: 2rem;
+
+            button {
+                position: relative;
+                border: 0;
+                background-color: transparent;
+                padding-left: 3.6rem;
+                width: fit-content;
+                height: 4rem;
+                border-bottom: 2px solid transparent;
+                transition: border $main-transition;
+
+                &.active {
+                    font-family: $f1_bold;
+                    border-color: $purple;
+                }
+
+                span {
+                    opacity: .4;
+                    padding: 0 0.5rem;
+                }
+
+                svg {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}

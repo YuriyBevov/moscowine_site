@@ -9,18 +9,6 @@
     @media(max-width: $mobile_medium) {
         padding: 0 1rem;
     }
-
-    /*@media(max-width: $lg_w) {
-        padding: 0 6rem;
-    }
-
-    @media(max-width: $md_w) {
-        padding: 0 3rem;
-    }
-
-    @media(max-width: $sm_w) {
-        padding: 0 1rem;
-    } */
 }
 
 @mixin bm-lg() {

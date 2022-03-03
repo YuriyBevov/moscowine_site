@@ -1,0 +1,147 @@
+include ../../mixins/compare_card_slider
+-
+  const selected = [
+      {
+        name: 'Вино',
+        isActive: false,
+        dataTab: 1,
+        count: 2
+      },
+
+      {
+        name: 'Виски',
+        isActive: true,
+        dataTab: 2,
+        count: 1
+      },
+
+      {
+        name: 'Коньяк',
+        isActive: false,
+        dataTab: 3,
+        count: 24
+      },
+  ]
+
+-
+  const compares = [
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            countryBadge: './assets/img/flag-fr.png',
+            country: 'Франция',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+  ]
+
+section.compare
+  .cmn__wrapper.compare__wrapper
+    .compare__header
+      h2.cmn__title.cmn__title--small Сравнение
+
+      a(href="#").cmn__btn.cmn__btn--outlined Вернуться к покупкам
+    
+    .compare__selected.tabs-swiper-container
+      .swiper-wrapper
+        each item in selected
+          .compare__item.swiper-slide
+            button(type="button" class=item.isActive ? 'active' : null data-select=item.dataId).compare__selected-btn.cmn__text.cmn__text--med= item.name
+              svg(width="24" height="24")
+                use(xlink:href="#icon-close-xs")
+              span.compare__item-count= item.count
+
+    +compare_card_slider(compares)
+    

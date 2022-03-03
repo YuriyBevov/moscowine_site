@@ -36,6 +36,8 @@
 @import "./components/rate";
 @import "./components/description";
 @import "./components/reviews";
+@import "./components/compare-card-slider";
+@import "./components/compare-card";
 
 /*header*/
 @import "./layouts/components/header";
@@ -79,6 +81,9 @@
 
 /*offer-confirm*/
 @import "./sections/offer-confirm/offer-confirm";
+
+/*compare*/
+@import "./sections/compare/compare";
 
 /*common*/
 @import "./sections/common/subscribe";

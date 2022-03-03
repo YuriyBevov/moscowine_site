@@ -50,6 +50,21 @@ prodSlider.forEach(slider => {
     });
 }) : null;
 
+let compareSlider = document.querySelectorAll('.compare-card-slider');
+
+compareSlider ?
+compareSlider.forEach(slider => {
+    new Swiper(slider, {
+        slidesPerView: 'auto',
+        modules: [Pagination, Navigation],
+        
+        navigation: {
+            nextEl: ".compare-slider-button-next",
+            prevEl: ".compare-slider-button-prev",
+        }
+    });
+}) : null;
+
 const catItemSlider = document.querySelector('.thumbs-slider');
 
 if(catItemSlider) {

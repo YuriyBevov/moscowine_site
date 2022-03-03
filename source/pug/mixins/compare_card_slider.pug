@@ -1,0 +1,15 @@
+include ./compare_card
+
+mixin compare_card_slider(array)
+  .swiper.compare-card-slider
+    .swiper-wrapper
+      each item in array
+        .swiper-slide
+          +compare_card(item)
+
+    .swiper-button-next.compare-slider-button-next
+      svg(width="32" height="32")
+          use(xlink:href="#icon-arr")
+    .swiper-button-prev.compare-slider-button-prev
+      svg(width="32" height="32")
+          use(xlink:href="#icon-arr")

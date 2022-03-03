@@ -1,0 +1,67 @@
+include ./rate
+
+mixin compare_card(data)
+  .compare-card
+    .compare-card__header
+      img(src=data.img alt=data.name)
+
+      button(type="button").compare-card__chosen
+        svg(width="24" height="24")
+            use(xlink:href="#icon-heart")
+      
+      button(type="button").compare-card__remove
+        svg(width="24" height="24")
+            use(xlink:href="#icon-close")
+    
+    .compare-card__info
+      h2.cmn__text.cmn__text-semi.js-limited-string Wine Charles Pelletier Blanc de Wine Charles Pelletier Blanc de Blancs Reserve
+
+      .compare-card__rate
+        +rate(false,false,true)
+
+      a(href="#").cmn__btn.cmn__cart-add-btn
+        svg(width="24" height="24")
+          use(xlink:href="#icon-cart")
+        span.cmn__text.cmn__text--white.cmn__text--semi В корзину
+    
+    .compare-card__desc
+      ul
+        li
+          i.cmn__text.cmn__text--small.cmn__text--opacity Цена
+          span.cmn__text.cmn__text--small.js-limited-string от 1 650 ₽
+        
+        li
+          i.cmn__text.cmn__text--small.cmn__text--opacity Цвет
+          span.cmn__text.cmn__text--small.js-limited-string Красное
+        
+        li
+          i.cmn__text.cmn__text--small.cmn__text--opacity Сахар
+          span.cmn__text.cmn__text--small.js-limited-string Полусухое
+        
+        li
+          i.cmn__text.cmn__text--small.cmn__text--opacity Производитель
+          span.cmn__text.cmn__text--small.js-limited-string Casa Defra
+        
+        li
+          i.cmn__text.cmn__text--small.cmn__text--opacity Винтаж
+          span.cmn__text.cmn__text--small.js-limited-string 2017
+        
+        li
+          i.cmn__text.cmn__text--small.cmn__text--opacity Крепость
+          span.cmn__text.cmn__text--small.js-limited-string 14%
+        
+        li
+          i.cmn__text.cmn__text--small.cmn__text--opacity Особенности
+          span.cmn__text.cmn__text--small.js-limited-string — 
+        
+        li
+          i.cmn__text.cmn__text--small.cmn__text--opacity Виноград
+          span.cmn__text.cmn__text--small.js-limited-string Пино Менье, Пино Нуар, Шардоне
+        
+        li
+          i.cmn__text.cmn__text--small.cmn__text--opacity Вкус
+          span.cmn__text.cmn__text--small.js-limited-string Гармоничный, кислинка, приятный, свежий, фруктовый, цветочный, чистый
+        
+        li
+          i.cmn__text.cmn__text--small.cmn__text--opacity Гастрономия
+          span.cmn__text.cmn__text--small.js-limited-string Выпечка, десерты, морепродукты/ дары моря, ракообразные, рыбные деликатесы

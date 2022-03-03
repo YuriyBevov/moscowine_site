@@ -1,5 +1,9 @@
 function limitStr( str, n ) {
-    return str.slice(0, n) + '...';
+    if ( str.length > 50 ) {
+        return str.slice(0, n) + '...';
+    } else {
+        return str
+    }
 }
 
 function addClass(el, cl) {
