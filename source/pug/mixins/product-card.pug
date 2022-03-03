@@ -1,24 +1,26 @@
 mixin product-card(data)
   .product-card
-    if data.countryBadge
-    .product-card__badge-country
-      img(src=data.countryBadge alt=country width="34" height="24")
+    .product-card__header
+    
+      img(src=data.img alt=data.name width="248" height="248")
 
-    .product-card__badge-comparing
-      a(href="#")   
+      if data.countryBadge
+      .product-card__badge-country
+        img(src=data.countryBadge alt=country width="34" height="24")
+      
+      a(href="#").product-card__badge-comparing   
         svg(width="24" height="24")
           use(xlink:href="#icon-chart")
-    .product-card__badge-chosen
-      a(href="#")  
+      
+      a(href="#").product-card__badge-chosen
         svg(width="24" height="24")
           use(xlink:href="#icon-heart")
 
-    img(src=data.img alt=data.name width="248" height="248")
 
     .product-card__description
       each str in data.desc
-        span.cmn__text.cmn_text--small= str
-    h3.cmn__text= data.name
+        span.cmn__text.cmn_text--small.js-limited-string= str
+    h3.cmn__text.js-limited-string= data.name
 
     .product-card__price
       span.cmn__text.cmn__text--lth.product-card__price-old= data.oldPrice + ' ₽'
@@ -27,8 +29,9 @@ mixin product-card(data)
       .product-card__sale-badge
         span.cmn__text.cmn__text--small.cmn__text--bold.cmn__text--white= data.discount
 
-    a(href="#").cmn__btn.cmn__cart-add-btn
-      svg(width="24" height="24")
-          use(xlink:href="#icon-cart")
-      span.cmn__text.cmn__text--white.cmn__text--semi Выбрать
+    .product-card__footer
+      a(href="#").cmn__btn.cmn__cart-add-btn
+        svg(width="24" height="24")
+            use(xlink:href="#icon-cart")
+        span.cmn__text.cmn__text--white.cmn__text--semi Выбрать
 
