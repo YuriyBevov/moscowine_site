@@ -1,0 +1,159 @@
+include ../mixins/filter_dropdown
+include ../mixins/outlined_btn
+
+-
+  const btns = [
+      {
+        name: 'Элитное',
+        bg: './assets/img/catalog-btn_1.png'
+      },
+
+      {
+        name: 'В подарок',
+        bg: './assets/img/catalog-btn_2.png'
+      },
+
+      {
+        name: 'Для романтика',
+        bg: './assets/img/catalog-btn_3.png'
+      },
+
+      {
+        name: 'Лёгкое',
+        bg: './assets/img/catalog-btn_4.png'
+      },
+
+      {
+        name: 'Необычное',
+        bg: './assets/img/catalog-btn_5.png'
+      },
+
+      {
+        name: 'Быстрый фильтр',
+        bg: './assets/img/catalog-btn_6.png'
+      },
+  ]
+
+.catalog-filter
+  .catalog-filter__btns.tabs-swiper-container
+    .swiper-wrapper
+      each item in btns
+        .catalog-filter__btn.swiper-slide
+          button(type="button" style="background-image: url(" + item.bg + ")").compare__selected-btn.cmn__text.cmn__text--med= item.name
+  
+
+  .catalog-filter__controls
+    select(id="catalog_sort").custom-select
+      option(value="По популярности" selected) По популярности
+      option(value="По новизне") По новизне
+      option(value="Сначала дешевые") Сначала дешевые
+      option(value="Сначала дорогие") Сначала дорогие
+      
+    +filter_dropdown('catalog-filter__dropdown-btn', 'drink_vintage-', 'Винтаж', [
+      {
+        title: 'Выбрать все',
+        label: 'any'
+      },
+      {
+        title: '1900-1920',
+        label: '1900-1920'
+      },
+      {
+        title: '1920-1940',
+        label: '1920-1940'
+      },
+      {
+        title: '1940-1960',
+        label: '1940-1960'
+      },
+      {
+        title: '1960-1980',
+        label: '1960-1980'
+      },
+      {
+        title: '1901-1921',
+        label: '1901-1921'
+      },
+    ])
+    +filter_dropdown('catalog-filter__dropdown-btn', 'drink_sugar-', 'Сахар',  [
+      {
+        title: 'Выбрать все',
+        label: 'any'
+      },
+      {
+        title: 'Сухое',
+        label: 'dry'
+      },
+      {
+        title: 'Полусухое',
+        label: 'semi-dry'
+      },
+      {
+        title: 'Полусладкое',
+        label: 'semi-sweet'
+      },
+      {
+        title: 'Сладкое',
+        label: 'sweet '
+      },
+    ])
+    +filter_dropdown('catalog-filter__dropdown-btn', 'drink_volume-', 'Объем',  [
+      {
+        title: 'Выбрать все',
+        label: 'any'
+      },
+      {
+        title: '1л',
+        label: '1'
+      },
+      {
+        title: '0,7л',
+        label: '0.7'
+      },
+      {
+        title: '0,5л',
+        label: '0.5'
+      },
+      {
+        title: '0,33л',
+        label: '0.33'
+      },
+      {
+        title: '0,2л',
+        label: '0.2'
+      },
+    ])
+    +filter_dropdown('catalog-filter__dropdown-btn', 'drink_region-', 'Регион',  [
+      {
+        title: 'Выбрать все',
+        label: 'any'
+      },
+      {
+        title: 'Россия',
+        label: 'russia'
+      },
+      {
+        title: 'Франция',
+        label: 'france'
+      },
+      {
+        title: 'Испания',
+        label: 'spain'
+      }
+    ])
+
+    +outlined-btn('catalog-filter__menu-btn', 'icon-filter', 'Все фильтры')
+
+  .catalog-filter__selected
+    ul
+      li
+        button(type="button").cmn__btn Сладкое
+          svg(width="16" height="16")
+            use(xlink:href="#icon-close")
+      
+      li
+        button(type="button").cmn__btn Полусладкое
+          svg(width="16" height="16")
+            use(xlink:href="#icon-close")
+    
+    button(type="button").cmn__btn.cmn__btn--outlined.catalog-filter__selected-clear-btn Очистить

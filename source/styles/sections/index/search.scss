@@ -114,6 +114,10 @@
                 opacity: .5;
             }
         }
+
+        &__dropdown-btn {
+            margin-bottom: 0.8rem;
+        }
     }
 
     @keyframes fadeIn {

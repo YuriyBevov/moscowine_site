@@ -8,10 +8,12 @@ block variables
 
 block content
   .catalog
+    include ./sections/catalog/catalog 
+    include ./sections/catalog/description
     include ./sections/common/app
     include ./sections/common/subscribe
   
   include ./components/mobile-menu
 
 block modals
-  // include ./modals/menuModal
+  include ./modals/filterMenu

@@ -16,7 +16,7 @@
 @import "./components/apps";
 @import "./components/search-fieldset";
 @import "./components/subscribe-fieldset";
-@import "./components/search-dropdown";
+@import "./components/filter-dropdown";
 @import "./components/main-slider";
 @import "./components/reg-slider";
 @import "./components/product-card-slider";
@@ -34,10 +34,10 @@
 @import "./components/cart-count";
 @import "./components/thumbs-sm-slider";
 @import "./components/rate";
-@import "./components/description";
 @import "./components/reviews";
 @import "./components/compare-card-slider";
 @import "./components/compare-card";
+@import "./components/catalog-filter";
 
 /*header*/
 @import "./layouts/components/header";
@@ -85,6 +85,10 @@
 /*compare*/
 @import "./sections/compare/compare";
 
+/*catalog*/
+@import "./sections/catalog/catalog";
+@import "./sections/catalog/description";
+
 /*common*/
 @import "./sections/common/subscribe";
 @import "./sections/common/same-offer";
@@ -95,3 +99,4 @@
 
 @import "./modals/modal";
 @import "./modals/addReviewModal";
+@import "./modals/filterModal";

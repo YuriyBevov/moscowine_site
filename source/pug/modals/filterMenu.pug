@@ -1,0 +1,44 @@
+.modal.filter-modal
+  .modal__wrapper.filter-modal__wrapper
+    .filter-modal__header
+      span.cmn__title.cmn__title--small Фильтры
+      button(type="button").cmn__btn.cmn__btn--outlined.filter-modal__clear-btn Очистить
+
+      button(type="button").filter-modal__close-btn
+        svg(width="24" height="24")
+            use(xlink:href="#icon-close")
+
+
+    .filter-modal__content
+      form(action="")
+        fieldset
+          .fieldset__header
+            span.cmn__text Цвет
+
+            svg(width="16" height="16")
+              use(xlink:href="#icon-arr")
+          .fieldset__container
+            label(for="color-red") Красное
+            input(type="checkbox" id="color-red")
+
+            label(for="color-white") Белое
+            input(type="checkbox" id="color-white")
+
+            label(for="color-pink") Розовое
+            input(type="checkbox" id="color-pink")
+
+
+        fieldset
+          .fieldset__header
+            span.cmn__text Сахар
+            svg(width="16" height="16")
+              use(xlink:href="#icon-arr")
+          .fieldset__container
+            label(for="color-red") Брют
+            input(type="checkbox" id="color-red")
+
+            label(for="color-white") Сухое
+            input(type="checkbox" id="color-white")
+
+            label(for="color-pink") Сладкое
+            input(type="checkbox" id="color-pink")

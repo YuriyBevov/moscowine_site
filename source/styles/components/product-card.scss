@@ -1,13 +1,18 @@
 .product-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 28rem;
 
-    padding: 1.6rem;
-    border: 1px solid $grey-200;
-    border-radius: 4px;
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 28rem;
+    
+        padding: 1.6rem;
+        border: 1px solid $grey-200;
+        border-radius: 4px;
+        background-color: $white;
+    }
 
     &__header {
         display: flex;
@@ -86,11 +91,15 @@
         border-bottom: none;
         border-radius: 4px 4px 0 0;
 
+        box-shadow: 0px 10px 20px rgba(42, 52, 79, 0.1);
+
         .product-card__footer {
             position: absolute;
             bottom: -69px;
             display: flex;
             opacity: 1;
+
+            box-shadow: 0px 10px 20px rgba(42, 52, 79, 0.1);
 
             a {
                 animation: fadeIn .5s linear forwards;
@@ -101,6 +110,7 @@
     &__footer {
         display: none;
         opacity: 0;
+        z-index: 10;
 
         width: calc(100% + 2px);
         
@@ -110,6 +120,7 @@
         border: 1px solid $grey-200;
         border-top: none;
         border-radius: 0 0 4px 4px;
+        background-color: $white;
     }
 
     @keyframes fadeIn {

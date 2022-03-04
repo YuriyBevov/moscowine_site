@@ -1,0 +1,15 @@
+mixin filter_dropdown(cl, label, title, array, temp)
+  .filter-dropdown
+    button(type="button" data-id="select-btn" class=cl ? cl : null).filter-dropdown__button
+      b.cmn__text= title
+      span.cmn__text.filter-dropdown__badge
+    
+    .filter-dropdown__menu(tab-index="1").js-collapsed
+      form(action="#")
+        each item in array
+          fieldset
+            input(type="checkbox" id= label + item.label)
+            label(for= label + item.label)= item.title
+
+        input(type="submit").visually-hidden
+  

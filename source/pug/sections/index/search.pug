@@ -1,5 +1,5 @@
 include ../../mixins/search_fieldset
-include ../../mixins/search_dropdown
+include ../../mixins/filter_dropdown
 include ../../mixins/outlined_btn
 include ../../mixins/product-card_sm
 
@@ -51,7 +51,7 @@ section.search
       .search__filter
         .search__field.search__field--controls
           .search__field-content.search__field-content--filter
-            +search_dropdown(null, 'drink_type-', 'Тип напитка',  [
+            +filter_dropdown('search__dropdown-btn', 'drink_type-', 'Тип напитка',  [
               {
                 title: 'Выбрать все',
                 label: 'any'
@@ -69,7 +69,7 @@ section.search
                 label: 'beer'
               },
               {
-                title: 'Шампансвое',
+                title: 'Шампанское',
                 label: 'champagne'
               },
               {
@@ -77,7 +77,7 @@ section.search
                 label: 'vine'
               }
             ], true)
-            +search_dropdown(null, 'drink_vintage-', 'Винтаж', [
+            +filter_dropdown('search__dropdown-btn', 'drink_vintage-', 'Винтаж', [
               {
                 title: 'Выбрать все',
                 label: 'any'
@@ -103,7 +103,7 @@ section.search
                 label: '1901-1921'
               },
             ])
-            +search_dropdown(null, 'drink_color-', 'Цвет',  [
+            +filter_dropdown('search__dropdown-btn', 'drink_color-', 'Цвет',  [
               {
                 title: 'Выбрать все',
                 label: 'any'
@@ -129,7 +129,7 @@ section.search
                 label: 'light'
               }
             ])
-            +search_dropdown(null, 'drink_sugar-', 'Сахар',  [
+            +filter_dropdown('search__dropdown-btn', 'drink_sugar-', 'Сахар',  [
               {
                 title: 'Выбрать все',
                 label: 'any'
@@ -151,7 +151,7 @@ section.search
                 label: 'sweet '
               },
             ])
-            +search_dropdown(null, 'drink_volume-', 'Объем',  [
+            +filter_dropdown('search__dropdown-btn', 'drink_volume-', 'Объем',  [
               {
                 title: 'Выбрать все',
                 label: 'any'

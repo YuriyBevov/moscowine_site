@@ -35,6 +35,16 @@
 
     background-image: url("../assets/img/dropdown-arr.png");
     background-repeat: no-repeat;
+    
+    transition: transform $main-transition;
+  }
+}
+
+.is-open {
+  .custom-select-opener {
+    &::before {
+      transform: translateY(-50%) rotate(180deg);
+    }
   }
 }
 

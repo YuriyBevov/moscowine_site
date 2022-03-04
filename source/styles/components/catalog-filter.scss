@@ -1,0 +1,117 @@
+.catalog-filter {
+    margin-bottom: 1.6rem;       
+
+    &__btns {
+        width: 100%;
+        max-width: 118rem;
+        margin: 0 auto;
+        overflow: hidden;
+        margin-bottom: 3.2rem;
+    }
+
+    &__btn {
+        width: fit-content;
+        margin-right: 2rem;
+
+        button {
+            margin: 0;
+            padding: 0.5rem 2.4rem;
+            padding-right: 3rem;
+            border: 0;
+            background-color: $black-100;
+            color: $white;
+            border-radius: 4px;
+            width: 18rem;
+            text-align: left;
+            height: 7.2rem;
+
+            @media(max-width: $tablet_small) {
+                width: 13.6rem;
+                padding: 0.5rem 1.2rem;
+                height: 5.1rem;
+
+                font-size: 1.5rem;
+                line-height: 1.8rem;
+            }
+        }
+    }
+
+    &__controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 0.8rem;
+
+        
+        .custom-select-container {
+            height: 4rem;
+            min-width: 18.2rem;
+            margin-right: 0.8rem;
+            margin-bottom: 0.8rem;
+
+            .custom-select-opener {
+                border-width: 2px;
+            }
+        }
+        
+        .catalog-filter__menu-btn,
+        .filter-dropdown__button {
+            height: 4rem;
+            min-height: initial;
+            margin-bottom: 0.8rem;
+        }
+
+        @media(max-width: $tablet_medium) {
+            .filter-dropdown {
+                display: none;
+            }
+        }
+    }
+
+    &__menu-btn {
+        border-color: $purple;
+        border-width: 2px;
+        color: $purple;
+
+        svg {
+            fill: $purple;
+        }
+    }
+
+    &__selected {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        button {
+            padding: 1rem 2.4rem;
+            height: 4rem;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            button {
+                display: flex;
+                align-items: center;
+                svg {
+                    fill: $white;
+                    margin-left: 0.8rem;
+                }
+                margin-right: 0.8rem;
+            }
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        &-clear-btn {
+            color: $purple;
+            border-color: $purple;
+            margin-bottom: 0.8rem;
+        }
+    }
+}

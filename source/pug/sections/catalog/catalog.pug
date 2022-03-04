@@ -1,0 +1,88 @@
+include ../../mixins/pagination
+include ../../mixins/product-card
+
+-
+  const items = [
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            countryBadge: './assets/img/flag-fr.png',
+            country: 'Франция',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+
+        {
+            name: 'Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.',
+            desc: ['Красное', 'Полусладкое', '0.75'],
+            img: './assets/img/product-card_1.png',
+            flagBadge: './assets/img/flag-fr.png',
+            oldPrice: '1 123 456',
+            price: '229 846',
+            discount: '-15%'
+        },
+  ]
+
+section.catalog
+  .cmn__wrapper
+    .catalog__header
+      h2.cmn__title.cmn__title--small Красное вино <span class="cmn__text cmn__text--opacity">1394 товаров</span>
+
+    .catalog__filter
+      include ../../components/catalog-filter
+    
+
+    .catalog__body
+      ul.catalog__list
+        each item in items
+          li.catalog__item
+            +product-card(item)
+
+      
+      .catalog__body-more
+        button(type="button").cmn__btn.cmn__btn--outlined Показать еще
+        span.cmn__text.cmn__text--small.cmn__text--opacity Показано <span class="catalog-items-current">16</span> из <span class="catalog-items-total">139 предложений</span>
+      

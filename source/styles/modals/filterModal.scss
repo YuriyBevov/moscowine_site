@@ -1,0 +1,52 @@
+.filter-modal {
+    &__wrapper {
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        min-width: initial;
+        max-width: 38rem;
+        max-height: 100vh;
+        left: initial;
+        right: 0;
+        transform: translate(0, -50%);
+        animation: showModal 0.7s forwards;
+    }
+
+    @keyframes showModal {
+        0% {
+          transform: translate(100%, -50%) ;
+        }
+      
+        100% {
+          transform: translate(0, -50%);
+        }
+      }
+
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        border-bottom: 1px solid $grey-200;
+        padding: 1.4rem 2.4rem;
+
+        span {
+            margin-right: 1.6rem;
+            line-height: 1;
+        }
+    }
+
+    &__clear-btn {
+        color: $purple;
+        padding: 0;
+    }
+
+    &__close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+    }
+}

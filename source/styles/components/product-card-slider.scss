@@ -1,4 +1,10 @@
 .product-card-slider {
+    height: 57rem;
+    padding: 0 3rem;
+
+    @media(max-width: $mobile_medium) {
+        padding: 0 1rem;  
+    }
     .swiper-slide {
         width: 28rem;
     }

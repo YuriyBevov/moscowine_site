@@ -1,6 +1,6 @@
 import { addClass, removeClass, checkClass } from "../functions";
 
-const filterBtns = document.querySelectorAll('.search-dropdown__button');
+const filterBtns = document.querySelectorAll('.filter-dropdown__button');
 
 let activeFilterBtn = null;
 let prevFilterBtn = null;
@@ -8,11 +8,11 @@ let activeFilter = null;
 let prevFilter = null;
 let isActiveFilterOpened = false;
 
-const onClickAwayCloseActiveFilter = function(evt) {
+const onOverlayClickCloseActiveFilter = function(evt) {
 
     if(!activeFilter.contains(evt.target) && isActiveFilterOpened) {
         console.log('conta')
-        window.removeEventListener('click', onClickAwayCloseActiveFilter);
+        window.removeEventListener('click', onOverlayClickCloseActiveFilter);
         activeFilterBtn.classList.remove('active');
         activeFilter.classList.add('js-collapsed');
     }
@@ -36,6 +36,10 @@ let listResultBlock = document.querySelector('.search-result__list');
 
 let addsFields = document.querySelectorAll('.search__field--adds');
 //let catalogBtn = document.querySelector('.search__catalog-btn');
+
+const showSelected = function(fields) {
+    console.log(fields)
+}
 
 const searching = function(fields) {
     emptyResultBlock.style.display = 'none';
@@ -87,7 +91,7 @@ const showResults = function() {
 
 const onClickCheckControl = function(evt) {
         // бэджик в кнопке, с кол-м выбранных фильтров
-        let badge = activeFilter.previousElementSibling.querySelector('.search-dropdown__badge');
+        let badge = activeFilter.previousElementSibling.querySelector('.filter-dropdown__badge');
         // все чекбоксы в форме
         let controls = activeFilter.querySelectorAll('input[type="checkbox"]');
         // чекбокс выбрать все
@@ -135,12 +139,17 @@ const onClickCheckControl = function(evt) {
             removeClass(badge, 'js-filter-selected') : null;
             removeClass(activeFilter.previousElementSibling, 'js-filter-active');
         }
-        
-        // передаю выбранные чекбоксы в функцию поиска
-        let selected = [];
-        controls.forEach(ctrl => ctrl.checked === true ? selected.push(ctrl.getAttribute('id')) : null);
+    
 
+    let selected = [];
+    controls.forEach(ctrl => ctrl.checked === true ? selected.push(ctrl.getAttribute('id')) : null);
+    
+    if(filterBtns[0].classList.contains('search__dropdown-btn')) {
         searching(selected);
+    } else if(filterBtns[0].classList.contains('catalog-filter__dropdown-btn')) {
+        showSelected(selected);
+    }
+        
 }
 
 const onClickOpenDropdown = function(evt) {
@@ -154,7 +163,7 @@ const onClickOpenDropdown = function(evt) {
     if(prevFilterBtn && prevFilterBtn !== activeFilterBtn) {
         removeClass(prevFilterBtn, 'active');
         addClass(prevFilter, 'js-collapsed');
-        window.removeEventListener('click', onClickAwayCloseActiveFilter);
+        window.removeEventListener('click', onOverlayClickCloseActiveFilter);
 
         let controls = prevFilter.querySelectorAll('input[type="checkbox"]');
 
@@ -164,7 +173,7 @@ const onClickOpenDropdown = function(evt) {
     }
 
     isActiveFilterOpened = false;
-    window.addEventListener('click', onClickAwayCloseActiveFilter);
+    window.addEventListener('click', onOverlayClickCloseActiveFilter);
 
     activeFilterBtn.classList.toggle('active');
     activeFilter.classList.toggle('js-collapsed');
@@ -175,10 +184,9 @@ const onClickOpenDropdown = function(evt) {
     controls.forEach(control => {
         control.addEventListener('click', onClickCheckControl);
     })
-    //--
 
     if(!activeFilterBtn.classList.contains('active')) {
-        window.removeEventListener('click', onClickAwayCloseActiveFilter);
+        window.removeEventListener('click', onOverlayClickCloseActiveFilter);
     }
 }
 

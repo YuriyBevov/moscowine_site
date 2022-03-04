@@ -1,7 +1,16 @@
 .same-offer {
     padding-bottom: 1rem;
+
+    .cmn__wrapper {
+        padding: 0;
+    }
     
     h2 {
         margin-bottom: 2.4rem;
+        padding: 0 3rem;
+        
+        @media(max-width: $mobile_medium) {
+            padding: 0 1rem;  
+        }
     }
 }
