@@ -1,0 +1,32 @@
+.range {
+    width: calc(100% - 24px);
+    height: 4px;
+    margin: 0 auto;
+    margin-top: 2.6rem;
+    border: 0;
+    background: $grey-200;
+
+    .noUi-connect {
+        background-color: $purple;
+    }
+
+    .noUi-handle {
+        width: 24px;
+        height: 24px;
+        top: -9px;
+        right: -12px;
+        box-shadow: none;
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        
+        background-color: $white;
+
+        border: 6px solid $purple;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}

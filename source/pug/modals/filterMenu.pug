@@ -1,44 +1,171 @@
-.modal.filter-modal
+include ../mixins/range
+include ../mixins/search_field
+
+-
+  const checkboxFields = [
+    {
+      name: 'Цвет',
+
+      checkboxes: [
+        {
+          name: 'Красное',
+          id: 'color-red'
+        },
+
+        {
+          name: 'Белое',
+          id: 'color-white'
+        },
+
+        {
+          name: 'Розовое',
+          id: 'color-pink'
+        },
+      ]
+    },
+
+    {
+      name: 'Сахар',
+
+      checkboxes: [
+        {
+          name: 'Брют',
+          id: 'sugar-brut'
+        },
+
+        {
+          name: 'Сухое',
+          id: 'sugar-dry'
+        },
+
+        {
+          name: 'Сладкое',
+          id: 'sugar-sweet'
+        },
+      ]
+    },
+
+    {
+      name: 'Объем',
+
+      checkboxes: [
+        {
+          name: '0.1',
+          id: 'volume-0.1'
+        },
+        {
+          name: '0.2',
+          id: 'volume-0.2'
+        },
+        {
+          name: '0.25',
+          id: 'volume-0.25'
+        },
+        {
+          name: '0.33',
+          id: 'volume-0.33'
+        },
+        {
+          name: '0.5',
+          id: 'volume-0.5'
+        },
+        {
+          name: '0.7',
+          id: 'volume-0.7'
+        },
+      ]
+    },
+    
+    {
+      name: 'Особенности',
+
+      checkboxes: [
+        {
+          name: 'Кошерное',
+          id: 'specificity-kosher'
+        },
+
+        {
+          name: 'Органика и биодинамика',
+          id: 'specificity-organic'
+        },
+
+        {
+          name: 'Бочковое',
+          id: 'specificity-draugh'
+        },
+
+        {
+          name: 'Не бочковое',
+          id: 'specificity-not-draugh'
+        },
+      ]
+    },
+  ]
+
+.modal.filter-modal.closed
   .modal__wrapper.filter-modal__wrapper
     .filter-modal__header
       span.cmn__title.cmn__title--small Фильтры
       button(type="button").cmn__btn.cmn__btn--outlined.filter-modal__clear-btn Очистить
 
-      button(type="button").filter-modal__close-btn
+      button(type="button").filter-modal__close-btn.js-modal-closer
         svg(width="24" height="24")
             use(xlink:href="#icon-close")
 
 
     .filter-modal__content
       form(action="")
-        fieldset
-          .fieldset__header
-            span.cmn__text Цвет
+        fieldset.filter-modal__range
+          span.cmn__text.cmn__text--bold Цена
+          +range(null, 'priceFrom', 'priceTo', 900, 287600, 100)
+        
+        // поля с чекбоксами
+        each field in checkboxFields
+          .fieldset.filter-modal__checkbox-field
+            .fieldset__header.js-field-opened
+              span.cmn__text.cmn__text--bold= field.name
 
-            svg(width="16" height="16")
+              svg(width="12" height="12")
+                use(xlink:href="#icon-arr")
+            .checkbox-container.fieldset__container
+              each control in field.checkboxes
+                input(type="checkbox" id= control.id)
+                label(for= control.id)= control.name
+        
+        // поля с чекбоксами и поиском
+        fieldset.filter-modal__search-field
+          .fieldset__header.js-field-opened
+            span.cmn__text.cmn__text--bold Виноград
+            svg(width="12" height="12")
               use(xlink:href="#icon-arr")
-          .fieldset__container
-            label(for="color-red") Красное
-            input(type="checkbox" id="color-red")
+          
+          
+          
+          .checkbox-container.fieldset__container
+            +search_field('grape_search', '', true, 'right', '#icon-search', 24, 24)
+            span.cmn__text.cmn__text--bold А
 
-            label(for="color-white") Белое
-            input(type="checkbox" id="color-white")
+            input(type="checkbox" id="grape-1")
+            label(for="grape-1") Авессу
+            
+            input(type="checkbox" id="grape-2")
+            label(for="grape-2") Агиоргитико
+            
+            input(type="checkbox" id="grape-3")
+            label(for="grape-3") Азаль Бранко
 
-            label(for="color-pink") Розовое
-            input(type="checkbox" id="color-pink")
+            span.cmn__text.cmn__text--bold Б
 
-
-        fieldset
-          .fieldset__header
-            span.cmn__text Сахар
-            svg(width="16" height="16")
-              use(xlink:href="#icon-arr")
-          .fieldset__container
-            label(for="color-red") Брют
-            input(type="checkbox" id="color-red")
-
-            label(for="color-white") Сухое
-            input(type="checkbox" id="color-white")
-
-            label(for="color-pink") Сладкое
-            input(type="checkbox" id="color-pink")
+            input(type="checkbox" id="grape-4")
+            label(for="grape-4") Бичворз
+            
+            input(type="checkbox" id="grape-5")
+            label(for="grape-5") Бичворз
+            
+            input(type="checkbox" id="grape-6")
+            label(for="grape-6") Бичворз
+      
+      .filter-modal__footer
+        button(type="button").cmn__btn Показать <span>(136)</span>
+        button(type="button").cmn__btn.cmn__btn--outlined Очистить

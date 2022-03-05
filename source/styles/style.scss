@@ -8,6 +8,7 @@
 /*plugins*/
 @import "./plugins/swiper";
 @import "./plugins/custom_select";
+@import "./plugins/nouislider";
 
 /*components*/
 @import "./components/bottom-menu";
@@ -38,6 +39,9 @@
 @import "./components/compare-card-slider";
 @import "./components/compare-card";
 @import "./components/catalog-filter";
+@import "./components/range";
+@import "./components/filter-range";
+@import "./components/search-field";
 
 /*header*/
 @import "./layouts/components/header";

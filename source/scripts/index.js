@@ -1,5 +1,6 @@
 'use strict'
 import swiper from './modules/swiper.js';
+import range from './modules/range.js';
 import yandex_map from './modules/yandex_map.js';
 import limitStr from './modules/limitStr.js';
 import birthPicker from './modules/birthPicker.js';
@@ -16,3 +17,5 @@ import addReview from './modules/addReview.js';
 import copyToClipboard from './modules/copyToClipboard.js';
 import select from './modules/custom_select.js';
 import profilePageTogglers from './modules/profilePageTogglers.js';
+import filterModalFields from './modules/filterModalFields.js';
+import modalState from './modules/modalState.js'

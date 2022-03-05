@@ -1,8 +1,6 @@
 const cartCountDecs = document.querySelectorAll('.cart-content .js-count-dec');
 const cartCountIncs = document.querySelectorAll('.cart-content .js-count-inc');
-
 const cartItems = document.querySelectorAll('.cart-item');
-console.log(cartItems);
 
 const onClickDecItems = (evt) => {
     let countNode = evt.target.parentNode.querySelector('span');

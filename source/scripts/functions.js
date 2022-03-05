@@ -45,4 +45,11 @@ function tabs(btns, tabs) {
     })
 }
 
-export  { tabs, limitStr, addClass, removeClass, checkClass, toggleClass }
+function bodyLocker(bool) {
+    let body = document.querySelector('body');
+
+    bool ?
+    body.style.overflow = 'hidden' : body.style.overflow = 'auto';
+}
+
+export  { tabs, limitStr, addClass, removeClass, checkClass, toggleClass, bodyLocker }

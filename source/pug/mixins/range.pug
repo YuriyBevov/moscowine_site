@@ -1,0 +1,11 @@
+mixin range(cl, idMin, idMax, minValue, maxValue, stepValue)
+  .filter-range(class = cl ? cl : null)
+    .filter-range__controls
+      label(for=idMin) От:
+        input(type="number" placeholder= minValue min= minValue max= maxValue id= idMin step= stepValue)
+        
+      label(for=idMax) До:
+        input(type="number" placeholder= maxValue min= minValue max= maxValue id= idMax step= stepValue)
+
+    .filter__range
+      .range

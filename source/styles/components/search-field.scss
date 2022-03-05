@@ -1,0 +1,48 @@
+.search-field {
+    display: flex;
+
+    label{
+        position: relative;
+        background: $white;
+        border: 1px solid $grey-200;
+        border-radius: 5px;
+        width: 100%;
+
+        svg {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            fill: $purple;
+        }
+    }
+
+    input[type="text"] {
+        border: 0;
+        outline: 0;
+        padding: 1.2rem 1.6rem;
+        width: 100%;
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+
+        color: $black-100;
+
+        opacity: 0.5;
+
+        &::placeholder {
+            font-size: 1.5rem;
+            line-height: 2.2rem;
+
+            color: $black-100;
+
+            opacity: 0.5;
+        }
+    }
+
+    &.icon-right > label > svg {
+        right: 1.6rem;
+    }
+
+    &.icon-left > label > svg {
+        left: 1.6rem;
+    }
+}

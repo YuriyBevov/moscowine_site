@@ -297,7 +297,7 @@
                                       <input class="visually-hidden" type="submit">
                                     </form>
                                   </div>
-                                </div><a class="catalog-filter__menu-btn outlined-btn" href="#">
+                                </div><a class="catalog-filter__menu-btn js-modal-opener outlined-btn" href="#" data-modal="filter-modal">
                                   <svg width="16" height="16">
                                     <use xlink:href="#icon-filter"></use>
                                   </svg><span>Все фильтры</span></a>
@@ -656,11 +656,11 @@
         </div>
       </div>
     </footer>
-    <div class="modal filter-modal">
+    <div class="modal filter-modal closed">
       <div class="modal__wrapper filter-modal__wrapper">
         <div class="filter-modal__header"><span class="cmn__title cmn__title--small">Фильтры</span>
           <button class="cmn__btn cmn__btn--outlined filter-modal__clear-btn" type="button">Очистить</button>
-          <button class="filter-modal__close-btn" type="button">
+          <button class="filter-modal__close-btn js-modal-closer" type="button">
             <svg width="24" height="24">
               <use xlink:href="#icon-close"></use>
             </svg>
@@ -668,37 +668,125 @@
         </div>
         <div class="filter-modal__content">
           <form action="">
-            <fieldset>
-              <div class="fieldset__header"><span class="cmn__text">Цвет</span>
-                <svg width="16" height="16">
-                  <use xlink:href="#icon-arr"></use>
-                </svg>
-              </div>
-              <div class="fieldset__container">
-                <label for="color-red">Красное</label>
-                <input type="checkbox" id="color-red">
-                <label for="color-white">Белое</label>
-                <input type="checkbox" id="color-white">
-                <label for="color-pink">Розовое</label>
-                <input type="checkbox" id="color-pink">
-              </div>
+            <fieldset class="filter-modal__range"><span class="cmn__text cmn__text--bold">Цена</span>
+                  <div class="filter-range">
+                    <div class="filter-range__controls">
+                      <label for="priceFrom">От:
+                        <input type="number" placeholder="900" min="900" max="287600" id="priceFrom" step="100">
+                      </label>
+                      <label for="priceTo">До:
+                        <input type="number" placeholder="287600" min="900" max="287600" id="priceTo" step="100">
+                      </label>
+                    </div>
+                    <div class="filter__range">
+                      <div class="range"></div>
+                    </div>
+                  </div>
             </fieldset>
-            <fieldset>
-              <div class="fieldset__header"><span class="cmn__text">Сахар</span>
-                <svg width="16" height="16">
+            <!-- поля с чекбоксами-->
+            <div class="fieldset filter-modal__checkbox-field">
+              <div class="fieldset__header js-field-opened"><span class="cmn__text cmn__text--bold">Цвет</span>
+                <svg width="12" height="12">
                   <use xlink:href="#icon-arr"></use>
                 </svg>
               </div>
-              <div class="fieldset__container">
-                <label for="color-red">Брют</label>
+              <div class="checkbox-container fieldset__container">
                 <input type="checkbox" id="color-red">
-                <label for="color-white">Сухое</label>
+                <label for="color-red">Красное</label>
                 <input type="checkbox" id="color-white">
-                <label for="color-pink">Сладкое</label>
+                <label for="color-white">Белое</label>
                 <input type="checkbox" id="color-pink">
+                <label for="color-pink">Розовое</label>
+              </div>
+            </div>
+            <div class="fieldset filter-modal__checkbox-field">
+              <div class="fieldset__header js-field-opened"><span class="cmn__text cmn__text--bold">Сахар</span>
+                <svg width="12" height="12">
+                  <use xlink:href="#icon-arr"></use>
+                </svg>
+              </div>
+              <div class="checkbox-container fieldset__container">
+                <input type="checkbox" id="sugar-brut">
+                <label for="sugar-brut">Брют</label>
+                <input type="checkbox" id="sugar-dry">
+                <label for="sugar-dry">Сухое</label>
+                <input type="checkbox" id="sugar-sweet">
+                <label for="sugar-sweet">Сладкое</label>
+              </div>
+            </div>
+            <div class="fieldset filter-modal__checkbox-field">
+              <div class="fieldset__header js-field-opened"><span class="cmn__text cmn__text--bold">Объем</span>
+                <svg width="12" height="12">
+                  <use xlink:href="#icon-arr"></use>
+                </svg>
+              </div>
+              <div class="checkbox-container fieldset__container">
+                <input type="checkbox" id="volume-0.1">
+                <label for="volume-0.1">0.1</label>
+                <input type="checkbox" id="volume-0.2">
+                <label for="volume-0.2">0.2</label>
+                <input type="checkbox" id="volume-0.25">
+                <label for="volume-0.25">0.25</label>
+                <input type="checkbox" id="volume-0.33">
+                <label for="volume-0.33">0.33</label>
+                <input type="checkbox" id="volume-0.5">
+                <label for="volume-0.5">0.5</label>
+                <input type="checkbox" id="volume-0.7">
+                <label for="volume-0.7">0.7</label>
+              </div>
+            </div>
+            <div class="fieldset filter-modal__checkbox-field">
+              <div class="fieldset__header js-field-opened"><span class="cmn__text cmn__text--bold">Особенности</span>
+                <svg width="12" height="12">
+                  <use xlink:href="#icon-arr"></use>
+                </svg>
+              </div>
+              <div class="checkbox-container fieldset__container">
+                <input type="checkbox" id="specificity-kosher">
+                <label for="specificity-kosher">Кошерное</label>
+                <input type="checkbox" id="specificity-organic">
+                <label for="specificity-organic">Органика и биодинамика</label>
+                <input type="checkbox" id="specificity-draugh">
+                <label for="specificity-draugh">Бочковое</label>
+                <input type="checkbox" id="specificity-not-draugh">
+                <label for="specificity-not-draugh">Не бочковое</label>
+              </div>
+            </div>
+            <!-- поля с чекбоксами и поиском-->
+            <fieldset class="filter-modal__search-field">
+              <div class="fieldset__header js-field-opened"><span class="cmn__text cmn__text--bold">Виноград</span>
+                <svg width="12" height="12">
+                  <use xlink:href="#icon-arr"></use>
+                </svg>
+              </div>
+              <div class="checkbox-container fieldset__container">
+                    <div class="search-field icon-right">
+                      <label for="grape_search">
+                        <input type="text" placeholder="Поиск" id="grape_search">
+                        <svg width="24" height="24">
+                          <use xlink:href="#icon-search"></use>
+                        </svg>
+                      </label>
+                    </div><span class="cmn__text cmn__text--bold">А</span>
+                <input type="checkbox" id="grape-1">
+                <label for="grape-1">Авессу</label>
+                <input type="checkbox" id="grape-2">
+                <label for="grape-2">Агиоргитико</label>
+                <input type="checkbox" id="grape-3">
+                <label for="grape-3">Азаль Бранко</label><span class="cmn__text cmn__text--bold">Б</span>
+                <input type="checkbox" id="grape-4">
+                <label for="grape-4">Бичворз</label>
+                <input type="checkbox" id="grape-5">
+                <label for="grape-5">Бичворз</label>
+                <input type="checkbox" id="grape-6">
+                <label for="grape-6">Бичворз</label>
               </div>
             </fieldset>
           </form>
+          <div class="filter-modal__footer">
+            <button class="cmn__btn" type="button">Показать <span>(136)</span></button>
+            <button class="cmn__btn cmn__btn--outlined" type="button">Очистить</button>
+          </div>
         </div>
       </div>
     </div>

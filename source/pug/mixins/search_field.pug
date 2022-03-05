@@ -1,0 +1,8 @@
+mixin search_field(controlId, cl, isIconEnabled, iconPosition, iconName, iconWidth, iconHeight)
+  .search-field(class= cl ? cl : iconPosition === 'left' ? 'icon-left' : iconPosition === 'right' ? 'icon-right' : null)
+    label(for= controlId)
+      input(type="text" placeholder="Поиск" id= controlId)
+
+      if isIconEnabled
+      svg(width= iconWidth height= iconHeight)
+        use(xlink:href= iconName)
