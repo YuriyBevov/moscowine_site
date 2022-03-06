@@ -26,7 +26,10 @@ if(btns) {
         const onClickCloseModal = () => {
             modal.classList.add('closed');
             modal.removeEventListener('click', onClickOverlayCloseModal);
-            closeBtn.removeEventListener('click', onClickOverlayCloseModal);
+            
+            if(closeBtn) {
+                closeBtn.removeEventListener('click', onClickCloseModal);
+            }
             bodyLocker(false);
         }
 
@@ -34,21 +37,28 @@ if(btns) {
             if(evt.target === modal) {
                 modal.classList.add('closed');
                 modal.removeEventListener('click', onClickOverlayCloseModal);
-                closeBtn.removeEventListener('click', onClickOverlayCloseModal);
+
+                if(closeBtn) {
+                    closeBtn.removeEventListener('click', onClickCloseModal);
+                }
                 bodyLocker(false);
             }
         }
 
-        closeBtn.addEventListener('click', onClickCloseModal);
+        if(closeBtn) {
+            closeBtn.addEventListener('click', onClickCloseModal);
+        }
         modal.addEventListener('click', onClickOverlayCloseModal);
     };
 
     const onClickShowModal = (evt) => {
+        evt.preventDefault();
         let modalName = evt.currentTarget.getAttribute('data-modal');
+        console.log(modalName)
         let modal = document.querySelector('.' + modalName);
-        modal.classList.remove('closed')
+        modal.classList.remove('closed');
         bodyLocker(true);
-        closeModal(modal)
+        closeModal(modal);
     }
 
     btns.forEach(btn => {

@@ -1,3 +1,5 @@
+@use './components/yandex-map/_map-style';
+
 @import "fonts";
 @import "normalize";
 @import "variables";
@@ -11,6 +13,9 @@
 @import "./plugins/nouislider";
 
 /*components*/
+
+@import "./components/main-checkbox";
+@import "./components/main-tab";
 @import "./components/bottom-menu";
 @import "./components/mobile-menu";
 @import "./components/social";
@@ -60,6 +65,7 @@
 /*catalog-item*/
 @import "./sections/catalog-item/about";
 @import "./sections/catalog-item/info";
+@import "./sections/catalog-item/description";
 
 @import "./sections/catalog-item/relative";
 @import "./sections/catalog-item/accessories";
@@ -93,6 +99,9 @@
 @import "./sections/catalog/catalog";
 @import "./sections/catalog/description";
 
+/*shops*/
+@import "./sections/shops/shop-map";
+
 /*common*/
 @import "./sections/common/subscribe";
 @import "./sections/common/same-offer";
@@ -104,3 +113,4 @@
 @import "./modals/modal";
 @import "./modals/addReviewModal";
 @import "./modals/filterModal";
+@import "./modals/loginModal";

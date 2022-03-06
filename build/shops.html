@@ -148,262 +148,129 @@
       </div>
     </header>
     <main>
-      <div class="cart">
-        <section class="cart-content">
-          <div class="cmn__wrapper cart-content__wrapper">
-            <div class="cart-content__header">
-              <h2 class="cmn__title cmn__title--small">Корзина</h2><a class="cmn__btn cmn__btn--outlined" href="#">Вернуться к покупкам </a>
+      <div class="shops">
+        <section class="shop-map">
+          <div class="cmn__wrapper shop-map__wrapper">
+            <div class="shop-map__header"><b class="cmn__text cmn__text--small">Бутики</b>
+              <h2 class="cmn__title cmn__title--small">Пункты выдачи на карте <span class="cmn__text cmn__text--opacity">45 пунктов</span></h2>
+              <div class="shop-map__tabs">
+                <div class="shop-map__tab main-tab">
+                  <button class="cmn__btn cmn__btn--outlined active" type="button" data-tab-opener="list">Список</button>
+                </div>
+                <div class="shop-map__tab main-tab">
+                  <button class="cmn__btn cmn__btn--outlined" type="button" data-tab-opener="map">Карта</button>
+                </div>
+              </div>
             </div>
-            <div class="cart-content__body">
-              <ul class="cart-content__list">
-                <li class="cart-content__item">
-                  <div class="cart-content__item-header"><a class="cmn__text" href="#">Калужская, Новые Черемушки</a>
-                    <button class="cmn__btn cmn__btn--outlined" type="button">Каталог</button>
-                  </div>
-                  <div class="cart-content__item-content">
-                    <ul class="cart-list">
-                      <li class="cart-item"><img src="./assets/img/cart-item.png" alt="Charles Pelletier" width="114" height="114">
-                        <div class="cart-item__content">
-                          <div class="cart-item__content-desc">
-                            <h2 class="cmn__text cmn__text--med">Wine Charles Pelletier Blanc de Blancs Reserve Brut</h2>
-                            <div class="cart-item__content-chars"><span class="cmn__text cmn__text--small">0.75</span><span class="cmn__text cmn__text--small">2018 </span><span class="cmn__text cmn__text--small">Красное</span><span class="cmn__text cmn__text--small">Полусладкое</span><span class="cmn__text cmn__text--small">Австралия</span></div>
-                          </div>
-                          <div class="cart-item__content-price"><span class="cmn__text cmn__text--med">7 650 ₽</span><span class="cmn__text cmn__text--opacity cmn__text--lth">9 650 ₽</span></div>
-                          <div class="cart-item__content-bottom">
-                            <button class="cmn__btn cmn__btn--outlined" type="button">В избранное </button>
-                            <button class="cmn__btn cmn__btn--outlined" type="button">Удалить</button>
-                                    <div class="cart-count">
-                                      <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">7</span>
-                                      <button class="cart-add-btn js-count-inc" type="button"></button>
-                                    </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                    <!-- если не валидно, добавляется is-invalid и is-active-->
-                    <div class="cart-content__item-footer is-invalid">
-                      <div class="cart-alert cart-validate is-active"><img src="./assets/img/alert.png" alt="Информация" width="24" height="24">
-                        <div class="cart-alert__msg">
-                          <p class="cmn__text cmn__text--small cmn__text--warning cmn__text--bold">Не достигнута минимальная сумма заказа</p><span class="cmn__text cmn__text--small cmn__text--warning">У магазина имеется ограничение по минимальной сумме закупки. Чтобы оформить заказ, выберите товаров на сумму 24 000 ₽.</span>
-                        </div>
-                      </div>
-                      <div class="cart-content__item-footer-price"><span class="cmn__text cmn__text--med">1 155 300 ₽</span><span class="cmn__text cmn__text--warning cart-validate is-active">из 1 155 300 ₽</span></div>
-                    </div>
-                  </div>
-                </li>
-                <li class="cart-content__item">
-                  <div class="cart-content__item-header"><a class="cmn__text" href="#">Калужская, Новые Черемушки</a>
-                    <button class="cmn__btn cmn__btn--outlined" type="button">Каталог</button>
-                  </div>
-                  <div class="cart-content__item-content">
-                    <ul class="cart-list">
-                      <li class="cart-item"><img src="./assets/img/cart-item.png" alt="Charles Pelletier" width="114" height="114">
-                        <div class="cart-item__content">
-                          <div class="cart-item__content-desc">
-                            <h2 class="cmn__text cmn__text--med">Wine Charles Pelletier Blanc de Blancs Reserve Brut</h2>
-                            <div class="cart-item__content-chars"><span class="cmn__text cmn__text--small">0.75</span><span class="cmn__text cmn__text--small">2018 </span><span class="cmn__text cmn__text--small">Красное</span><span class="cmn__text cmn__text--small">Полусладкое</span><span class="cmn__text cmn__text--small">Австралия</span></div>
-                          </div>
-                          <div class="cart-item__content-price"><span class="cmn__text cmn__text--med">7 650 ₽</span><span class="cmn__text cmn__text--opacity cmn__text--lth">9 650 ₽</span></div>
-                          <div class="cart-item__content-bottom">
-                            <button class="cmn__btn cmn__btn--outlined" type="button">В избранное </button>
-                            <button class="cmn__btn cmn__btn--outlined" type="button">Удалить</button>
-                                    <div class="cart-count">
-                                      <button class="cart-remove-btn js-count-dec" type="button"></button><span class="cmn__text">3</span>
-                                      <button class="cart-add-btn js-count-inc" type="button"></button>
-                                    </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                    <!-- если не валидно, добавляется is-invalid и is-active-->
-                    <div class="cart-content__item-footer">
-                      <div class="cart-alert cart-validate"><img src="./assets/img/alert.png" alt="Информация" width="24" height="24">
-                        <div class="cart-alert__msg">
-                          <p class="cmn__text cmn__text--small cmn__text--warning cmn__text--bold">Не достигнута минимальная сумма заказа</p><span class="cmn__text cmn__text--small cmn__text--warning">У магазина имеется ограничение по минимальной сумме закупки. Чтобы оформить заказ, выберите товаров на сумму 24 000 ₽.</span>
-                        </div>
-                      </div>
-                      <div class="cart-content__item-footer-price"><span class="cmn__text cmn__text--med">1 155 300 ₽</span><span class="cmn__text cmn__text--warning cart-validate">из 1 155 300 ₽</span></div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <aside class="cart-content__aside">
-                <!-- невалидно .js-invalid, промокод применен .js-valid-->
-                <div class="cart-content__aside-section cart-content__promo js-invalid"><span class="cmn__text cmn__text--small cmn__text--bold">Промокод</span>
-                  <form action="#">
-                            <input class="cmn__input" id="null" placeholder="Промокод">
-                    <button type="submit" aria-label="Подтвердить">
-                      <svg width="24" height="24">
+          </div>
+          <div class="shop-map__content">
+            <div class="shop-map__content-map shop-map__tab-content" data-tab="map">
+              <div id="yandex-map"></div>
+            </div>
+            <div class="shop-map__content-list shop-map__tab-content active" data-tab="list">
+              <div class="shop-map__list-container">
+                <ul class="shop-map__list">
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--opacity">Открыто до 22:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
                         <use xlink:href="#icon-arr"></use>
-                      </svg>
-                    </button>
-                  </form>
-                  <!-- сообщение пок-ся .is-active-->
-                  <div class="span cart-content__promo-msg cmn__text cmn__text--small is-active">Истёк срок действия промокода.</div>
-                </div>
-                <div class="cart-content__aside-section cart-content__items">
-                  <ul>
-                    <li><span class="cmn__text cmm__text--semi">7 товаров</span><span class="cmn__text cmm__text--semi">12 650 ₽</span></li>
-                    <li><span class="cmn__text cmm__text--semi">Скидка</span><span class="cmn__text cmm__text--semi">- 650 ₽</span></li>
-                    <li><span class="cmn__text cmm__text--semi">К оплате</span><span class="cmn__text cmn__text--large cmm__text--semi">12 000 ₽</span></li>
-                  </ul>
-                </div>
-                <div class="cart-content__aside-section cart-content__buyer"><b class="cmn__title cmn__title--small">Покупатель</b>
-                  <form action="#">
-                    <fieldset>
-                      <label class="cmn__text cmn__text--small cmn__text--bold" for="buyer_name">Имя<span>*</span></label>
-                              <input class="cmn__input" id="buyer_name" placeholder="Имя">
-                    </fieldset>
-                    <fieldset>
-                      <label class="cmn__text cmn__text--small cmn__text--bold" for="buyer_mail">Электронная почта<span>*</span>   </label>
-                              <input class="cmn__input" id="buyer_mail" placeholder="email@example.ru">
-                    </fieldset>
-                    <fieldset>
-                      <label class="cmn__text cmn__text--small cmn__text--bold" for="buyer_phone">Телефон<span>*</span>  </label>
-                              <input class="cmn__input" id="buyer_phone" placeholder="+7 900 900 90 90">
-                    </fieldset>
-                    <p class="cmn__text cmn__text--small">Отправляя заказ, вы принимаете <a href="#">пользовательское соглашение</a>, даёте согласие на обработку персональных данных и соглашаетесь с <a href="#">условиями приобретения</a>.</p>
-                    <button class="cmn__btn" type="submit">Оформить заказ</button>
-                  </form>
-                </div>
-                <div class="cart-content__aside-section cart-content__badge"><img src="./assets/img/icon-cart-badge-info.png" alt="Иконка" width="32" height="32">
-                  <p class="cmn__text cmn__text--white">Для быстрого заказа и сохранения истории покупок — <a href="#">авторизуйтесь.</a> </p>
-                </div>
-              </aside>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--opacity">Открыто до 22:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--opacity">Открыто до 22:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--opacity">Открыто до 22:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--opacity">Открыто до 22:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--opacity">Открыто до 22:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--opacity">Открыто до 22:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--opacity">Открыто до 22:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span><i class="cmn__text cmn__text--small cmn__text--opacity">Покупка от 12 000₽</i>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                  <li class="shop-map__item"><a href="#"><span class="cmn__text cmn__text--small cmn__txt--bold">Альто-Адидже</span><span class="cmn__text cmn__text--small cmn__text--opacity">Павелецкая</span><span class="cmn__text cmn__text--small cmn__text--warning">Закрыто до 10:00</span>
+                      <svg width="8" height="14">
+                        <use xlink:href="#icon-arr"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
-        <section class="steps">
-          <div class="cmn__wrapper steps__wrapper">
-            <ul class="steps__list">
-              <li class="steps__item"><img src="./assets/img/adv_1.png" alt="Преимущество" width="80" height="80">
-                <p class="steps__title cmn__text cmn__text--bold">Заполните форму</p>
-                <p class="steps__text cmn__text cmn__text--opacity">Оставьте свои данные для размещения заказа</p>
-              </li>
-              <li class="steps__item"><img src="./assets/img/adv_2.png" alt="Преимущество" width="80" height="80">
-                <p class="steps__title cmn__text cmn__text--bold">Подтвердите заказ</p>
-                <p class="steps__text cmn__text cmn__text--opacity">Мы перезвоним в ближайшее время с 10:00 до 20:00 </p>
-              </li>
-              <li class="steps__item"><img src="./assets/img/adv_3.png" alt="Преимущество" width="80" height="80">
-                <p class="steps__title cmn__text cmn__text--bold">Получите заказ</p>
-                <p class="steps__text cmn__text cmn__text--opacity">В выбранных пунктах выдачи вашего города</p>
-              </li>
-              <li class="steps__item"><img src="./assets/img/adv_4.png" alt="Преимущество" width="80" height="80">
-                <p class="steps__title cmn__text cmn__text--bold">Оплатите при получении</p>
-                <p class="steps__text cmn__text cmn__text--opacity">Наличными или картой</p>
-              </li>
-            </ul>
-          </div>
-        </section>
-                <section class="same-offer">
-                  <div class="cmn__wrapper">
-                    <h2 class="cmn__title cmn__title--small">Может понравиться</h2>
-                            <div class="swiper product-card-slider">
-                              <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                          <div class="product-card">
-                                            <div class="product-card__wrapper">
-                                              <div class="product-card__header"><img src="./assets/img/product-card_1.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="248" height="248">
-                                                <div class="product-card__badge-country"><img src="./assets/img/flag-fr.png" width="34" height="24"></div><a class="product-card__badge-comparing" href="#">  
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-chart"></use>
-                                                  </svg></a><a class="product-card__badge-chosen" href="#">
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-heart"></use>
-                                                  </svg></a>
-                                              </div>
-                                              <div class="product-card__description"><span class="cmn__text cmn_text--small js-limited-string">Красное</span><span class="cmn__text cmn_text--small js-limited-string">Полусладкое</span><span class="cmn__text cmn_text--small js-limited-string">0.75</span>
-                                              </div>
-                                              <h3 class="cmn__text js-limited-string">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
-                                              <div class="product-card__price"><span class="cmn__text cmn__text--lth product-card__price-old">1 123 456 ₽</span><span class="cmn__text product-card__price-current">229 846 ₽</span>
-                                                <div class="product-card__sale-badge"><span class="cmn__text cmn__text--small cmn__text--bold cmn__text--white">-15%</span></div>
-                                              </div>
-                                              <div class="product-card__footer"><a class="cmn__btn cmn__cart-add-btn" href="#">
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-cart"></use>
-                                                  </svg><span class="cmn__text cmn__text--white cmn__text--semi">Выбрать</span></a></div>
-                                            </div>
-                                          </div>
-                                </div>
-                                <div class="swiper-slide">
-                                          <div class="product-card">
-                                            <div class="product-card__wrapper">
-                                              <div class="product-card__header"><img src="./assets/img/product-card_1.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="248" height="248">
-                                                <div class="product-card__badge-country"><img width="34" height="24"></div><a class="product-card__badge-comparing" href="#">  
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-chart"></use>
-                                                  </svg></a><a class="product-card__badge-chosen" href="#">
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-heart"></use>
-                                                  </svg></a>
-                                              </div>
-                                              <div class="product-card__description"><span class="cmn__text cmn_text--small js-limited-string">Красное</span><span class="cmn__text cmn_text--small js-limited-string">Полусладкое</span><span class="cmn__text cmn_text--small js-limited-string">0.75</span>
-                                              </div>
-                                              <h3 class="cmn__text js-limited-string">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
-                                              <div class="product-card__price"><span class="cmn__text cmn__text--lth product-card__price-old">1 123 456 ₽</span><span class="cmn__text product-card__price-current">229 846 ₽</span>
-                                                <div class="product-card__sale-badge"><span class="cmn__text cmn__text--small cmn__text--bold cmn__text--white">-15%</span></div>
-                                              </div>
-                                              <div class="product-card__footer"><a class="cmn__btn cmn__cart-add-btn" href="#">
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-cart"></use>
-                                                  </svg><span class="cmn__text cmn__text--white cmn__text--semi">Выбрать</span></a></div>
-                                            </div>
-                                          </div>
-                                </div>
-                                <div class="swiper-slide">
-                                          <div class="product-card">
-                                            <div class="product-card__wrapper">
-                                              <div class="product-card__header"><img src="./assets/img/product-card_1.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="248" height="248">
-                                                <div class="product-card__badge-country"><img width="34" height="24"></div><a class="product-card__badge-comparing" href="#">  
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-chart"></use>
-                                                  </svg></a><a class="product-card__badge-chosen" href="#">
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-heart"></use>
-                                                  </svg></a>
-                                              </div>
-                                              <div class="product-card__description"><span class="cmn__text cmn_text--small js-limited-string">Красное</span><span class="cmn__text cmn_text--small js-limited-string">Полусладкое</span><span class="cmn__text cmn_text--small js-limited-string">0.75</span>
-                                              </div>
-                                              <h3 class="cmn__text js-limited-string">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
-                                              <div class="product-card__price"><span class="cmn__text cmn__text--lth product-card__price-old">1 123 456 ₽</span><span class="cmn__text product-card__price-current">229 846 ₽</span>
-                                                <div class="product-card__sale-badge"><span class="cmn__text cmn__text--small cmn__text--bold cmn__text--white">-15%</span></div>
-                                              </div>
-                                              <div class="product-card__footer"><a class="cmn__btn cmn__cart-add-btn" href="#">
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-cart"></use>
-                                                  </svg><span class="cmn__text cmn__text--white cmn__text--semi">Выбрать</span></a></div>
-                                            </div>
-                                          </div>
-                                </div>
-                                <div class="swiper-slide">
-                                          <div class="product-card">
-                                            <div class="product-card__wrapper">
-                                              <div class="product-card__header"><img src="./assets/img/product-card_1.png" alt="Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г." width="248" height="248">
-                                                <div class="product-card__badge-country"><img width="34" height="24"></div><a class="product-card__badge-comparing" href="#">  
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-chart"></use>
-                                                  </svg></a><a class="product-card__badge-chosen" href="#">
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-heart"></use>
-                                                  </svg></a>
-                                              </div>
-                                              <div class="product-card__description"><span class="cmn__text cmn_text--small js-limited-string">Красное</span><span class="cmn__text cmn_text--small js-limited-string">Полусладкое</span><span class="cmn__text cmn_text--small js-limited-string">0.75</span>
-                                              </div>
-                                              <h3 class="cmn__text js-limited-string">Clarendelle inspired by Haut-Brion Medoc Haut Brion Medoc, 2018 г.</h3>
-                                              <div class="product-card__price"><span class="cmn__text cmn__text--lth product-card__price-old">1 123 456 ₽</span><span class="cmn__text product-card__price-current">229 846 ₽</span>
-                                                <div class="product-card__sale-badge"><span class="cmn__text cmn__text--small cmn__text--bold cmn__text--white">-15%</span></div>
-                                              </div>
-                                              <div class="product-card__footer"><a class="cmn__btn cmn__cart-add-btn" href="#">
-                                                  <svg width="24" height="24">
-                                                    <use xlink:href="#icon-cart"></use>
-                                                  </svg><span class="cmn__text cmn__text--white cmn__text--semi">Выбрать</span></a></div>
-                                            </div>
-                                          </div>
-                                </div>
-                              </div>
-                            </div>
-                  </div>
-                </section>
         <section class="advantages">
           <div class="cmn__wrapper">
             <ul class="advantages__list">

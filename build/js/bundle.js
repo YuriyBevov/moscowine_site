@@ -15472,7 +15472,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "removeClass": function() { return /* binding */ removeClass; },
 /* harmony export */   "checkClass": function() { return /* binding */ checkClass; },
 /* harmony export */   "toggleClass": function() { return /* binding */ toggleClass; },
-/* harmony export */   "bodyLocker": function() { return /* binding */ bodyLocker; }
+/* harmony export */   "bodyLocker": function() { return /* binding */ bodyLocker; },
+/* harmony export */   "changeTabs": function() { return /* binding */ changeTabs; }
 /* harmony export */ });
 function limitStr( str, n ) {
     if ( str.length > 50 ) {
@@ -15499,7 +15500,7 @@ function toggleClass(el, cl) {
 }
 
 function tabs(btns, tabs) {
-    const onClickChangeTab = function(evt) {
+    const onClickChangeTab = function(evt) { 
         let btn = evt.currentTarget;
 
         btns.forEach(btn => {
@@ -15528,6 +15529,39 @@ function bodyLocker(bool) {
     body.style.overflow = 'hidden' : body.style.overflow = 'auto';
 }
 
+function changeTabs(el, contentList) {
+    let tabs = document.querySelectorAll(el);
+    let content = document.querySelectorAll(contentList);
+
+    if(tabs) {
+        const onClickChangeTab = (evt) => {
+            let data = evt.target.getAttribute('data-tab-opener');
+
+            content.forEach(c => {
+                c.classList.contains('active') ?
+                c.classList.remove('active') : null;
+
+                c.getAttribute('data-tab') === data ?
+                c.classList.add('active') : null;
+            });
+
+            tabs.forEach(tab => {
+                tab.classList.contains('active') ?
+                tab.classList.remove('active') : null;
+            });
+
+            
+
+            evt.target.classList.add('active');
+
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', onClickChangeTab);
+        });
+    }
+}
+
 
 
 /***/ }),
@@ -15545,9 +15579,6 @@ let body = document.querySelector('body');
 let resetBtn = document.querySelector('.js-modal-review-reset-btn');
 let submitBtn = document.querySelector('.js-modal-review-submit-btn');
 let form = document.querySelector('.modal-review form');
-
-
-
 
 if(reviewBtn) {
     let controls = form.querySelectorAll('.js-validation-control');
@@ -16161,6 +16192,21 @@ limited.forEach(str => {
 
 /***/ }),
 
+/***/ "./source/scripts/modules/main-tabs.js":
+/*!*********************************************!*\
+  !*** ./source/scripts/modules/main-tabs.js ***!
+  \*********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+
+
+(0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.changeTabs)('.main-tab button', '.shop-map__tab-content');
+
+/***/ }),
+
 /***/ "./source/scripts/modules/modalState.js":
 /*!**********************************************!*\
   !*** ./source/scripts/modules/modalState.js ***!
@@ -16198,7 +16244,10 @@ if(btns) {
         const onClickCloseModal = () => {
             modal.classList.add('closed');
             modal.removeEventListener('click', onClickOverlayCloseModal);
-            closeBtn.removeEventListener('click', onClickOverlayCloseModal);
+            
+            if(closeBtn) {
+                closeBtn.removeEventListener('click', onClickCloseModal);
+            }
             (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLocker)(false);
         }
 
@@ -16206,21 +16255,28 @@ if(btns) {
             if(evt.target === modal) {
                 modal.classList.add('closed');
                 modal.removeEventListener('click', onClickOverlayCloseModal);
-                closeBtn.removeEventListener('click', onClickOverlayCloseModal);
+
+                if(closeBtn) {
+                    closeBtn.removeEventListener('click', onClickCloseModal);
+                }
                 (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLocker)(false);
             }
         }
 
-        closeBtn.addEventListener('click', onClickCloseModal);
+        if(closeBtn) {
+            closeBtn.addEventListener('click', onClickCloseModal);
+        }
         modal.addEventListener('click', onClickOverlayCloseModal);
     };
 
     const onClickShowModal = (evt) => {
+        evt.preventDefault();
         let modalName = evt.currentTarget.getAttribute('data-modal');
+        console.log(modalName)
         let modal = document.querySelector('.' + modalName);
-        modal.classList.remove('closed')
-        ;(0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLocker)(true);
-        closeModal(modal)
+        modal.classList.remove('closed');
+        (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLocker)(true);
+        closeModal(modal);
     }
 
     btns.forEach(btn => {
@@ -16320,21 +16376,6 @@ if(items) {
 
     historyTogglers.forEach(toggler => {
         toggler.addEventListener('click', onClickToggleContent);
-    });
-
-    let historyTabs = document.querySelectorAll('.offers__tab button');
-
-    const onClickChangeTab = (evt) => {
-        historyTabs.forEach(tab => {
-            tab.classList.contains('active') ?
-            tab.classList.remove('active') : null;
-        });
-
-        evt.target.classList.add('active');
-    }
-
-    historyTabs.forEach(tab => {
-        tab.addEventListener('click', onClickChangeTab);
     });
 }
 
@@ -16756,7 +16797,8 @@ function init(){
         zoom: 10,
         controls: [],
         behaviors: ['drag'],
-    }),    
+    }),
+    
     // оптимизация меток
     objectManager = new ymaps.ObjectManager({
         // Чтобы метки начали кластеризоваться
@@ -16765,7 +16807,7 @@ function init(){
         gridSize: 64,
         // clusterDisableClickZoom: false,
         zoomMargin: 100,
-    });  
+    });
 
     // html-шаблон метки
     let customPlacemarkLayout = ymaps.templateLayoutFactory.createClass(
@@ -16931,7 +16973,7 @@ function init(){
             let map = this.getData().control.getMap();
             map.setZoom(map.getZoom() - 1, {checkZoomRange: true});
         }
-    }),
+    });
 
     zoomControl = new ymaps.control.ZoomControl({options: {layout: ZoomLayout, position: {right: '30px', bottom: '50px'} } });
     myMap.controls.add(zoomControl);
@@ -17048,8 +17090,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_filterModalFields_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/filterModalFields.js */ "./source/scripts/modules/filterModalFields.js");
 /* harmony import */ var _modules_filterModalFields_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_modules_filterModalFields_js__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _modules_modalState_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/modalState.js */ "./source/scripts/modules/modalState.js");
+/* harmony import */ var _modules_main_tabs_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/main-tabs.js */ "./source/scripts/modules/main-tabs.js");
 
 ;
+
 
 
 

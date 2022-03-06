@@ -5,6 +5,16 @@
 
         &__header {
             margin-bottom: 2.4rem;
+
+            b {
+                display: inline-block;
+                margin-bottom: 0.8rem;
+                color: $purple;
+            }
+
+            span {
+                padding-left: 1.6rem;  
+            }
         }
 
         &__body {

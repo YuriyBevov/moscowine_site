@@ -79,7 +79,7 @@
   .offers__tabs.tabs-swiper-container
     .swiper-wrapper
       each tab in tabs
-        .offers__tab.swiper-slide
+        .offers__tab.main-tab.swiper-slide
           button(type="button" class=tab.isActive ? 'active' : null data-tab=tab.dataTab).cmn__btn.cmn__btn--outlined= tab.name 
   
   .offers__data

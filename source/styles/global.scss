@@ -107,3 +107,8 @@ svg {
   fill: rgba(0,0,0,0.5);
   transition: fill $main-transition;
 }
+
+.ymaps-2-1-79-listbox__list-item_selected_yes {
+  color: red;
+  background-color: yellow;
+}

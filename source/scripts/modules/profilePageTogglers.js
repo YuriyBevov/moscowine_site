@@ -32,19 +32,4 @@ if(items) {
     historyTogglers.forEach(toggler => {
         toggler.addEventListener('click', onClickToggleContent);
     });
-
-    let historyTabs = document.querySelectorAll('.offers__tab button');
-
-    const onClickChangeTab = (evt) => {
-        historyTabs.forEach(tab => {
-            tab.classList.contains('active') ?
-            tab.classList.remove('active') : null;
-        });
-
-        evt.target.classList.add('active');
-    }
-
-    historyTabs.forEach(tab => {
-        tab.addEventListener('click', onClickChangeTab);
-    });
 }

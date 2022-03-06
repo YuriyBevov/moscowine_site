@@ -6,9 +6,6 @@ let resetBtn = document.querySelector('.js-modal-review-reset-btn');
 let submitBtn = document.querySelector('.js-modal-review-submit-btn');
 let form = document.querySelector('.modal-review form');
 
-
-
-
 if(reviewBtn) {
     let controls = form.querySelectorAll('.js-validation-control');
     

@@ -1,0 +1,19 @@
+extends layouts/main-layout.pug
+
+block variables
+  -
+    const title = "Moscowine_site-layout"
+    const desc = ""
+    const keywords = ""
+
+block content
+  .shops
+    include ./sections/shops/shop-map
+    include ./sections/common/advantages
+    include ./sections/common/app
+    include ./sections/common/subscribe
+  
+  include ./components/mobile-menu
+
+block modals
+  // include ./modals/menuModal

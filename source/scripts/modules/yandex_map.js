@@ -110,7 +110,8 @@ function init(){
         zoom: 10,
         controls: [],
         behaviors: ['drag'],
-    }),    
+    }),
+    
     // оптимизация меток
     objectManager = new ymaps.ObjectManager({
         // Чтобы метки начали кластеризоваться
@@ -119,7 +120,7 @@ function init(){
         gridSize: 64,
         // clusterDisableClickZoom: false,
         zoomMargin: 100,
-    });  
+    });
 
     // html-шаблон метки
     let customPlacemarkLayout = ymaps.templateLayoutFactory.createClass(
@@ -285,7 +286,7 @@ function init(){
             let map = this.getData().control.getMap();
             map.setZoom(map.getZoom() - 1, {checkZoomRange: true});
         }
-    }),
+    });
 
     zoomControl = new ymaps.control.ZoomControl({options: {layout: ZoomLayout, position: {right: '30px', bottom: '50px'} } });
     myMap.controls.add(zoomControl);

@@ -23,7 +23,7 @@ function toggleClass(el, cl) {
 }
 
 function tabs(btns, tabs) {
-    const onClickChangeTab = function(evt) {
+    const onClickChangeTab = function(evt) { 
         let btn = evt.currentTarget;
 
         btns.forEach(btn => {
@@ -52,4 +52,37 @@ function bodyLocker(bool) {
     body.style.overflow = 'hidden' : body.style.overflow = 'auto';
 }
 
-export  { tabs, limitStr, addClass, removeClass, checkClass, toggleClass, bodyLocker }
+function changeTabs(el, contentList) {
+    let tabs = document.querySelectorAll(el);
+    let content = document.querySelectorAll(contentList);
+
+    if(tabs) {
+        const onClickChangeTab = (evt) => {
+            let data = evt.target.getAttribute('data-tab-opener');
+
+            content.forEach(c => {
+                c.classList.contains('active') ?
+                c.classList.remove('active') : null;
+
+                c.getAttribute('data-tab') === data ?
+                c.classList.add('active') : null;
+            });
+
+            tabs.forEach(tab => {
+                tab.classList.contains('active') ?
+                tab.classList.remove('active') : null;
+            });
+
+            
+
+            evt.target.classList.add('active');
+
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', onClickChangeTab);
+        });
+    }
+}
+
+export  { tabs, limitStr, addClass, removeClass, checkClass, toggleClass, bodyLocker, changeTabs }
