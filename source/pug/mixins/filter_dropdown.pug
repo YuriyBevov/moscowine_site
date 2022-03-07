@@ -4,7 +4,7 @@ mixin filter_dropdown(cl, label, title, array, temp)
       b.cmn__text= title
       span.cmn__text.filter-dropdown__badge
     
-    .filter-dropdown__menu(tab-index="1").js-collapsed
+    .filter-dropdown__menu.js-collapsed
       form(action="#")
         each item in array
           fieldset

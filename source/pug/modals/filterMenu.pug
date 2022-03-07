@@ -115,8 +115,8 @@ include ../mixins/search_field
 
 
     .filter-modal__content
-      form(action="")
-        fieldset.filter-modal__range
+      form(action="#")
+        fieldset.filter-modal__range.filter
           span.cmn__text.cmn__text--bold Цена
           +range(null, 'priceFrom', 'priceTo', 900, 287600, 100)
         
@@ -134,7 +134,7 @@ include ../mixins/search_field
                 label(for= control.id)= control.name
         
         // поля с чекбоксами и поиском
-        fieldset.filter-modal__search-field
+        fieldset.filter-modal__search-field.fieldset
           .fieldset__header.js-field-opened
             span.cmn__text.cmn__text--bold Виноград
             svg(width="12" height="12")

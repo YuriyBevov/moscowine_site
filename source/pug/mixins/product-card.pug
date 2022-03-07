@@ -6,8 +6,8 @@ mixin product-card(data)
         img(src=data.img alt=data.name width="248" height="248")
 
         if data.countryBadge
-        .product-card__badge-country
-          img(src=data.countryBadge alt=country width="34" height="24")
+          .product-card__badge-country
+            img(src=data.countryBadge alt="флаг страны" width="34" height="24")
         
         a(href="#").product-card__badge-comparing   
           svg(width="24" height="24")
@@ -20,7 +20,7 @@ mixin product-card(data)
 
       .product-card__description
         each str in data.desc
-          span.cmn__text.cmn_text--small.js-limited-string= str
+          span.cmn__text.cmn__text--small.js-limited-string= str
       h3.cmn__text.js-limited-string= data.name
 
       .product-card__price

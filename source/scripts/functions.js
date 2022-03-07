@@ -58,24 +58,24 @@ function changeTabs(el, contentList) {
 
     if(tabs) {
         const onClickChangeTab = (evt) => {
-            let data = evt.target.getAttribute('data-tab-opener');
+            let data = evt.currentTarget.getAttribute('data-tab-opener');
+            
+            if(content) {
+                content.forEach(c => {
+                    c.classList.contains('active') ?
+                    c.classList.remove('active') : null;
 
-            content.forEach(c => {
-                c.classList.contains('active') ?
-                c.classList.remove('active') : null;
-
-                c.getAttribute('data-tab') === data ?
-                c.classList.add('active') : null;
-            });
+                    c.getAttribute('data-tab') === data ?
+                    c.classList.add('active') : null;
+                });
+            }
 
             tabs.forEach(tab => {
                 tab.classList.contains('active') ?
                 tab.classList.remove('active') : null;
             });
 
-            
-
-            evt.target.classList.add('active');
+            evt.currentTarget.classList.add('active');
 
         }
 

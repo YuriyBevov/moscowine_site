@@ -1,3 +1,80 @@
+include ../mixins/input
+
 .modal.login-modal.closed
   .modal__wrapper.login-modal__wrapper
-    p modal
+    img(src="./assets/img/login_bg.png" alt="Авторизация" width="180" height="527")
+    .login-modal__container
+      .login-modal__content
+        .login-modal__header
+          .login-modal__header-tabs.active
+            a(href="#" data-tab="login").cmn__btn.cmn__btn--outlined.active Войти
+
+            a(href="#" data-tab="registration").cmn__btn.cmn__btn--outlined Регистрация
+
+          .login-modal__header-recovery
+            h2.cmn__title.cmn__title--small Восстановление пароля 
+
+            p.cmn__text Введите адрес электронной почты аккаунта и мы вышлем на него ссылку для сброса пароля. 
+        
+        .login-modal__form(data-content="login").active
+          form(action="#")
+            fieldset
+              label(for="login_mail").cmn__text.cmn__text Email
+              +input('text', 'login_mail', 'Email')
+
+            fieldset
+              label(for="login_pswd").cmn__text.cmn__text Пароль
+              .login-modal__form-psw-container
+                +input('password', 'login_pswd', 'Пароль')
+                button(type="button")
+                  svg(width="16" height="16")
+                    use(xlink:href="#icon-eye-off")
+            // для показа добавить класс active
+            span.login-modal__form-invalid-msg.cmn__text.cmn__text--small.cmn__text--warning Почта или пароль указаны неверно!
+
+            a(href="#" data-tab="recovery").cmn__btn.cmn__btn--outlined Забыли пароль?
+            button(type="submit").cmn__btn.login-modal__form-submit Войти
+
+        
+        .login-modal__form(data-content="registration")
+          form(action="#")
+            fieldset
+              label(for="reg_mail").cmn__text.cmn__text Email
+              +input('text', 'reg_mail', 'Email')
+
+            fieldset
+              label(for="reg_pswd").cmn__text.cmn__text Пароль
+              .login-modal__form-psw-container
+                +input('password', 'reg_pswd', 'Пароль')
+                button(type="button")
+                  svg(width="16" height="16")
+                    use(xlink:href="#icon-eye-off")
+            
+            fieldset.login-modal__form-accept
+              input(type="checkbox" id="reg_rules")
+              label(for="reg_rules").cmn__text.cmn__text--small
+                | Согласен на обработку персональных данных в соответствии с <a href="#">пользовательским соглашением.</a>
+
+            button(type="submit").cmn__btn.login-modal__form-submit Зарегистрироваться
+        
+
+        .login-modal__form(data-content="recovery")
+          form(action="#")
+            fieldset
+              label(for="recovery_mail").cmn__text.cmn__text Email
+              +input('text', 'recovery_mail', 'Email')
+
+            // для показа добавить класс active
+            .login-modal__form-validation-container
+              span.login-modal__form-invalid-msg.cmn__text.cmn__text--small.cmn__text--warning.active Данный адрес электронной почты не зарегистрирован в системе
+
+              a(href="#" data-tab="registration").cmn__btn.cmn__btn--outlined Зарегистрироваться
+
+            button(type="submit").cmn__btn.login-modal__form-submit Восстановить пароль
+            button(type="button" data-tab="login").cmn__btn.cmn__btn--outlined.login-modal__form-submit Отмена
+
+
+        .login-modal__footer.active
+          span.cmn__text.cmn__text--small.cmn__text--opacity Войти с помощью
+
+          include ../components/socials

@@ -1,0 +1,26 @@
+
+.socials {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem;
+            margin: 0 0.8rem;
+
+            @media(max-width: $tablet_small) {
+                margin: 0 0.4rem;
+            }
+            
+            border: 1px solid #B7B3C2;
+            border-radius: 4px;
+
+            svg {
+                fill: $black-200;
+            }
+        }
+    }
+}

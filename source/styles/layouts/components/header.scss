@@ -21,6 +21,11 @@
 
     &__logo {
         margin-right: 2.7rem;
+        height: 4.4rem;
+
+        svg {
+            fill: $purple;
+        }
 
         @media(max-width: $tablet_large) {
             margin-right: 1.5rem;

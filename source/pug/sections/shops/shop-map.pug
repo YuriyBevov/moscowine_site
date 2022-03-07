@@ -230,7 +230,7 @@ section.shop-map
           each place in places
             li.shop-map__item
               a(href="#")
-                span.cmn__text.cmn__text--small.cmn__txt--bold= place.shopName
+                span.cmn__text.cmn__text--small.cmn__text--bold= place.shopName
                 span.cmn__text.cmn__text--small.cmn__text--opacity= place.metro
                 span.cmn__text.cmn__text--small(class=!place.isOpen ? 'cmn__text--warning' : 'cmn__text--opacity')= place.isOpen ? 'Открыто до ' + place.openTo : 'Закрыто до ' + place.closeTo
                 if place.purchaseFrom

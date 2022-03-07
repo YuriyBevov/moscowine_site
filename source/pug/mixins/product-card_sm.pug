@@ -2,6 +2,6 @@ mixin product-card-sm(array)
   each item in array
     a(href="#").product-card-sm
       img(src=item.img alt=item.name width="108" height="108")
-      .priduct-card-sm__description
+      .product-card-sm__description
         h3.cmn__text.js-limited-string= item.name
         p.cmn__text.cmn__text--med.cmn__text--bold='от ' + item.minPrice + ' ₽'

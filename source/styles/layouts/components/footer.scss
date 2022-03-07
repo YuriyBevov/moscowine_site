@@ -9,6 +9,12 @@
     &__top {
         margin-bottom: 4rem;
 
+        .logo {
+            svg {
+                fill: #4B5158;
+            }
+        }
+
         @media(max-width: $mobile_medium) {
             margin-bottom: 2.4rem;
         }

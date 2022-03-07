@@ -15535,24 +15535,24 @@ function changeTabs(el, contentList) {
 
     if(tabs) {
         const onClickChangeTab = (evt) => {
-            let data = evt.target.getAttribute('data-tab-opener');
+            let data = evt.currentTarget.getAttribute('data-tab-opener');
+            
+            if(content) {
+                content.forEach(c => {
+                    c.classList.contains('active') ?
+                    c.classList.remove('active') : null;
 
-            content.forEach(c => {
-                c.classList.contains('active') ?
-                c.classList.remove('active') : null;
-
-                c.getAttribute('data-tab') === data ?
-                c.classList.add('active') : null;
-            });
+                    c.getAttribute('data-tab') === data ?
+                    c.classList.add('active') : null;
+                });
+            }
 
             tabs.forEach(tab => {
                 tab.classList.contains('active') ?
                 tab.classList.remove('active') : null;
             });
 
-            
-
-            evt.target.classList.add('active');
+            evt.currentTarget.classList.add('active');
 
         }
 
@@ -15840,6 +15840,21 @@ cartCountIncs.forEach(btn => {
     btn.addEventListener('click', onClickIncItems);
 })
 
+
+/***/ }),
+
+/***/ "./source/scripts/modules/compareTabs.js":
+/*!***********************************************!*\
+  !*** ./source/scripts/modules/compareTabs.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions.js */ "./source/scripts/functions.js");
+
+
+(0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.changeTabs)('.compare__item button');
 
 /***/ }),
 
@@ -16189,6 +16204,48 @@ limited.forEach(str => {
     str.innerHTML = (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.limitStr)(str.innerHTML, 50);
 })
 
+
+/***/ }),
+
+/***/ "./source/scripts/modules/loginModal.js":
+/*!**********************************************!*\
+  !*** ./source/scripts/modules/loginModal.js ***!
+  \**********************************************/
+/***/ (function() {
+
+let btns = document.querySelectorAll('[data-tab]');
+let views = document.querySelectorAll('.login-modal__form');
+let modalFooter = document.querySelector('.login-modal__footer');
+
+const onClickChangeView = (evt) => {
+    let currentView = evt.currentTarget.getAttribute('data-tab');
+
+    views.forEach(view => {
+        view.classList.contains('active') ?
+        view.classList.remove('active') : null;
+
+        view.getAttribute('data-content') === currentView ?
+        view.classList.add('active') : null;
+    })
+
+    if(currentView === 'recovery') {
+        modalFooter.classList.contains('active') ?
+        modalFooter.classList.remove('active') : null;
+
+        document.querySelector('.login-modal__header-tabs').classList.remove('active');
+        document.querySelector('.login-modal__header-recovery').classList.add('active');
+    } else {
+        !modalFooter.classList.contains('active') ?
+        modalFooter.classList.add('active') : null;
+
+        document.querySelector('.login-modal__header-tabs').classList.add('active');
+        document.querySelector('.login-modal__header-recovery').classList.remove('active');
+    }
+}
+
+btns.forEach(btn => {
+    btn.addEventListener('click', onClickChangeView);
+})
 
 /***/ }),
 
@@ -17091,8 +17148,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_filterModalFields_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_modules_filterModalFields_js__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _modules_modalState_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/modalState.js */ "./source/scripts/modules/modalState.js");
 /* harmony import */ var _modules_main_tabs_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/main-tabs.js */ "./source/scripts/modules/main-tabs.js");
+/* harmony import */ var _modules_compareTabs_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/compareTabs.js */ "./source/scripts/modules/compareTabs.js");
+/* harmony import */ var _modules_loginModal_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/loginModal.js */ "./source/scripts/modules/loginModal.js");
+/* harmony import */ var _modules_loginModal_js__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_modules_loginModal_js__WEBPACK_IMPORTED_MODULE_22__);
 
 ;
+
+
 
 
 

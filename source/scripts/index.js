@@ -20,3 +20,5 @@ import profilePageTogglers from './modules/profilePageTogglers.js';
 import filterModalFields from './modules/filterModalFields.js';
 import modalState from './modules/modalState.js'
 import mainTabs from './modules/main-tabs.js';
+import compareTabs from './modules/compareTabs.js';
+import loginModal from './modules/loginModal.js';

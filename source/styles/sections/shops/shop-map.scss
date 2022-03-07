@@ -50,23 +50,31 @@
         width: 100%;
         max-width: 192rem;
         height: 100%;
+        min-height: 40rem;
         margin: 0 auto;
 
         &-map {
             height: 72rem;
             
             @media(max-width: $tablet_small) {
+                position: absolute;
+                width: 100%;
                 height: 40rem;
+                top: 0;
+                left: 0;
+                z-index: 1;
             }
         }
 
-        &-map,
         &-list {
             @media(max-width: $tablet_small) {
                 display: none;
 
+
                 &.active {
+                    position: relative;
                     display: flex;
+                    z-index: 2;
                 }
             }
         }
