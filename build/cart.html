@@ -500,9 +500,9 @@
           </div>
         </section>
       </div>
-      <div class="mobile-menu">
-        <div class="cmn__wrapper mobile-menu__wrapper">
-          <ul class="mobile-menu__list">
+      <div class="bottom-nav">
+        <div class="cmn__wrapper bottom-nav__wrapper">
+          <ul class="bottom-nav__list">
             <li><a href="catalog.html">
                 <svg width="24" height="24">
                   <use xlink:href="#icon-catalog"></use>
@@ -519,11 +519,61 @@
                 <svg width="24" height="24">
                   <use xlink:href="#icon-user"></use>
                 </svg><span>Войти</span></a></li>
-            <li><a href="#">
-                <svg width="24" height="24">
+            <li><a class="js-mobile-menu-opener" href="#">
+                <svg width="16" height="16">
                   <use xlink:href="#icon-mobile-menu"></use>
                 </svg><span>Меню</span></a></li>
           </ul>
+        </div>
+      </div>
+      <div class="mobile-menu">
+        <div class="mobile-menu__wrapper">
+          <div class="mobile-menu__header">
+            <button class="js-mobile-menu-closer" type="button" aria-label="закрыть">
+              <svg width="24" height="24">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </button><span>Меню</span>
+          </div>
+          <div class="mobile-menu__callback"><a href="tel:+74955870422">+7 495 587-04-22</a><span class="cmn__text">c 10:00 до 20:00</span>
+            <button class="cmn__btn cmn__btn--outlined" type="button">Заказать звонок</button>
+          </div><a class="mobile-menu__compare" href="compare.html">
+            <svg width="16" height="16">
+              <use xlink:href="#icon-chart"></use>
+            </svg><span class="cmn__text">Сравнение</span><span class="mobile-menu__compare-count">3</span></a>
+          <div class="mobile-menu__field">
+            <ul>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Пункты выдачи</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Как это работает</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Зарабатывать с нами</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Подключиться</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Онлайн сервисы</a></li>
+            </ul>
+          </div>
+          <div class="mobile-menu__field"><span class="mobile-menu__field-title cmn__text--bold">О компании</span>
+            <ul>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">О компании</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">О сервисе</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Пресс-центр</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Отзывы</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="mobile-menu__field"><span class="mobile-menu__field-title cmn__text--bold">Партнёрам</span>
+            <ul>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Как подключиться</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Виды сотрудничества</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Тарифы</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Правила работы</a></li>
+            </ul>
+          </div>
+          <div class="mobile-menu__field"><span class="mobile-menu__field-title cmn__text--bold">Инвесторам</span>
+            <ul>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Информация</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Скачать презентацию</a></li>
+              <li><a class="mobile-menu__field-link cmn__text" href="#">Лендинг инвесторам</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>

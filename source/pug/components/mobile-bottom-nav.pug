@@ -1,0 +1,32 @@
+.bottom-nav
+  .cmn__wrapper.bottom-nav__wrapper
+    ul.bottom-nav__list
+      li
+        a(href="catalog.html")
+          svg(width="24" height="24")
+            use(xlink:href="#icon-catalog")
+          span Каталог
+
+      li
+        a(href="#")
+          svg(width="24" height="24")
+            use(xlink:href="#icon-heart")
+          span Избранное
+
+      li
+        a(href="cart.html")
+          svg(width="24" height="24")
+            use(xlink:href="#icon-cart")
+          span Корзина
+
+      li
+        a(href="#"  data-modal="login-modal").js-modal-opener
+          svg(width="24" height="24")
+            use(xlink:href="#icon-user")
+          span Войти
+
+      li
+        a(href="#").js-mobile-menu-opener
+          svg(width="16" height="16")
+            use(xlink:href="#icon-mobile-menu")
+          span Меню

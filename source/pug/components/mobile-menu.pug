@@ -1,32 +1,61 @@
+-
+  menu = [
+      {
+        links: [
+            { url: '#', title: 'Пункты выдачи' },{ url: '#', title: 'Как это работает' },{ url: '#', title: 'Зарабатывать с нами' },
+            { url: '#', title: 'Подключиться' },{ url: '#', title: 'Онлайн сервисы' },
+        ]
+      },
+      {
+        title: 'О компании',
+        links: [
+            {url: '#', title: 'О компании'},{url: '#', title: 'О сервисе'},{url: '#', title: 'Пресс-центр'},
+            {url: '#', title: 'Отзывы'},{url: '#', title: 'Контакты'},
+        ]
+      },
+      {
+        title: 'Партнёрам',
+        links: [
+            {url: '#', title: 'Как подключиться'},{url: '#', title: 'Виды сотрудничества'},
+            {url: '#', title: 'Тарифы'},{url: '#', title: 'Правила работы'},
+        ]
+      },
+      {
+        title: 'Инвесторам',
+        links: [
+            {url: '#', title: 'Информация'},{url: '#', title: 'Скачать презентацию'},{url: '#', title: 'Лендинг инвесторам'},
+        ]
+      },
+  ]
+
 .mobile-menu
-  .cmn__wrapper.mobile-menu__wrapper
-    ul.mobile-menu__list
-      li
-        a(href="catalog.html")
-          svg(width="24" height="24")
-            use(xlink:href="#icon-catalog")
-          span Каталог
+  .mobile-menu__wrapper
+    .mobile-menu__header
 
-      li
-        a(href="#")
-          svg(width="24" height="24")
-            use(xlink:href="#icon-heart")
-          span Избранное
+      button(type="button" aria-label="закрыть").js-mobile-menu-closer
+        svg(width="24" height="24")
+          use(xlink:href="#icon-close")
+      span Меню
+    
+    .mobile-menu__callback
+      a(href="tel:+74955870422") +7 495 587-04-22
+      span.cmn__text c 10:00 до 20:00
 
-      li
-        a(href="cart.html")
-          svg(width="24" height="24")
-            use(xlink:href="#icon-cart")
-          span Корзина
+      button(type="button").cmn__btn.cmn__btn--outlined Заказать звонок
+    
+    a(href="compare.html").mobile-menu__compare
+      svg(width="16" height="16")
+          use(xlink:href="#icon-chart")
+      span.cmn__text Сравнение
 
-      li
-        a(href="#"  data-modal="login-modal").js-modal-opener
-          svg(width="24" height="24")
-            use(xlink:href="#icon-user")
-          span Войти
+      span.mobile-menu__compare-count 3
+    
+    each item in menu
+      .mobile-menu__field
+        if item.title
+          span.mobile-menu__field-title.cmn__text--bold=item.title
 
-      li
-        a(href="#")
-          svg(width="24" height="24")
-            use(xlink:href="#icon-mobile-menu")
-          span Меню
+        ul
+          each link in item.links
+            li
+              a(href=link.url).mobile-menu__field-link.cmn__text= link.title

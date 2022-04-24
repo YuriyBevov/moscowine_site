@@ -16264,6 +16264,45 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./source/scripts/modules/mobile-menu.js":
+/*!***********************************************!*\
+  !*** ./source/scripts/modules/mobile-menu.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions */ "./source/scripts/functions.js");
+
+
+const menu = document.querySelector('.mobile-menu');
+const menuOpener = document.querySelector('.js-mobile-menu-opener');
+const menuCloser = document.querySelector('.js-mobile-menu-closer');
+
+if(menu) {
+    const onClickCloseMobileMenu = () => {
+        menu.classList.remove('is-active');
+        (0,_functions__WEBPACK_IMPORTED_MODULE_0__.bodyLocker)(false);
+    }
+
+    const onClickOpenMobileMenu = (evt) => {
+        evt.preventDefault();
+        menu.classList.toggle('is-active');
+
+        if(menu.classList.contains('is-active')) {
+            (0,_functions__WEBPACK_IMPORTED_MODULE_0__.bodyLocker)(true);
+            menuCloser.addEventListener('click', onClickCloseMobileMenu);
+        } else {
+            (0,_functions__WEBPACK_IMPORTED_MODULE_0__.bodyLocker)(false);
+            menuCloser.removeEventListener('click', onClickCloseMobileMenu);
+        }
+    }
+
+    menuOpener.addEventListener('click', onClickOpenMobileMenu);
+}
+
+/***/ }),
+
 /***/ "./source/scripts/modules/modalState.js":
 /*!**********************************************!*\
   !*** ./source/scripts/modules/modalState.js ***!
@@ -17151,8 +17190,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_compareTabs_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/compareTabs.js */ "./source/scripts/modules/compareTabs.js");
 /* harmony import */ var _modules_loginModal_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/loginModal.js */ "./source/scripts/modules/loginModal.js");
 /* harmony import */ var _modules_loginModal_js__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_modules_loginModal_js__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var _modules_mobile_menu_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/mobile-menu.js */ "./source/scripts/modules/mobile-menu.js");
 
 ;
+
 
 
 

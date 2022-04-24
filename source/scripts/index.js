@@ -1,24 +1,25 @@
 'use strict'
-import swiper from './modules/swiper.js';
-import range from './modules/range.js';
-import yandex_map from './modules/yandex_map.js';
-import limitStr from './modules/limitStr.js';
-import birthPicker from './modules/birthPicker.js';
-import cardAddCount from './modules/cartAddCount.js';
-import cartCountBtn from './modules/cartCountBtn.js';
-import openSearchFilter from './modules/openSearchFilter.js';
-import infoTabs from './modules/infoTabs.js';
-import filter from './modules/filter.js'
-import searchResultMore from './modules/searchResultMore.js';
-import filterObserver from './modules/filterObserver.js';
-import showMorePlaces from './modules/showMorePlaces.js';
-import reviewStarControl from './modules/reviewStarControl.js';
-import addReview from './modules/addReview.js';
-import copyToClipboard from './modules/copyToClipboard.js';
-import select from './modules/custom_select.js';
-import profilePageTogglers from './modules/profilePageTogglers.js';
-import filterModalFields from './modules/filterModalFields.js';
-import modalState from './modules/modalState.js'
-import mainTabs from './modules/main-tabs.js';
-import compareTabs from './modules/compareTabs.js';
-import loginModal from './modules/loginModal.js';
+import './modules/swiper.js';
+import './modules/range.js';
+import './modules/yandex_map.js';
+import './modules/limitStr.js';
+import './modules/birthPicker.js';
+import './modules/cartAddCount.js';
+import './modules/cartCountBtn.js';
+import './modules/openSearchFilter.js';
+import './modules/infoTabs.js';
+import './modules/filter.js'
+import './modules/searchResultMore.js';
+import './modules/filterObserver.js';
+import './modules/showMorePlaces.js';
+import './modules/reviewStarControl.js';
+import './modules/addReview.js';
+import './modules/copyToClipboard.js';
+import './modules/custom_select.js';
+import './modules/profilePageTogglers.js';
+import './modules/filterModalFields.js';
+import './modules/modalState.js'
+import './modules/main-tabs.js';
+import './modules/compareTabs.js';
+import './modules/loginModal.js';
+import './modules/mobile-menu.js';
