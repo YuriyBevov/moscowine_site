@@ -23,3 +23,5 @@ import './modules/main-tabs.js';
 import './modules/compareTabs.js';
 import './modules/loginModal.js';
 import './modules/mobile-menu.js';
+import './modules/catalog-menu.js';
+import './modules/change-catalog-menu-content.js';

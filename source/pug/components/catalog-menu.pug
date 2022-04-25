@@ -1,29 +1,211 @@
+
+-
+  innerLists = [
+    {
+      title: 'Виноград',
+
+      items: [
+        {
+          url: '#', linkText: 'Каберне Совиньон'
+        },
+        {
+          url: '#', linkText: 'Совиньон Блан'
+        },
+        {
+          url: '#', linkText: 'Шардоне'
+        },
+        {
+          url: '#', linkText: 'Саперави'
+        },
+        {
+          url: '#', linkText: 'Мерло'
+        },
+        {
+          url: '#', linkText: 'Сира'
+        },
+        {
+          url: '#', linkText: 'Пино Нуар'
+        },
+        {
+          url: '#', linkText: 'Гренаш/Гарнача'
+        },
+        {
+          url: '#', linkText: 'Темпранильо'
+        },
+
+      ],
+
+      isShowBtnEnabled: true
+    },
+    {
+      title: 'Цвет',
+
+      items: [
+        {
+          url: '#', linkText: 'Красное'
+        },
+        {
+          url: '#', linkText: 'Белое'
+        },
+        {
+          url: '#', linkText: 'Розовое'
+        },
+      ]
+    },
+
+    {
+      title: 'Страна',
+
+      items: [
+        {
+          url: '#', linkText: 'Италия'
+        },
+        {
+          url: '#', linkText: 'Грузия'
+        },
+        {
+          url: '#', linkText: 'Франция'
+        },
+        {
+          url: '#', linkText: 'Португалия'
+        },
+        {
+          url: '#', linkText: 'Испания'
+        },
+        {
+          url: '#', linkText: 'Чили'
+        },
+        {
+          url: '#', linkText: 'Ливан'
+        },
+        {
+          url: '#', linkText: 'Германия'
+        },
+        {
+          url: '#', linkText: 'США'
+        },
+      ],
+      isShowBtnEnabled: true
+    },
+    {
+      title: 'Сахар',
+
+      items: [
+        {
+          url: '#', linkText: 'Брют'
+        },
+        {
+          url: '#', linkText: 'Сухое'
+        },
+        {
+          url: '#', linkText: 'Полусухое'
+        },
+        {
+          url: '#', linkText: 'Полусладкое'
+        },
+        {
+          url: '#', linkText: 'Сладкое'
+        },
+      ]
+    },
+
+    {
+      title: 'Цена',
+
+      items: [
+        {
+          url: '#', linkText: 'До 1 000 ₽'
+        },
+        {
+          url: '#', linkText: 'От 1 000 до 1 500 ₽'
+        },
+        {
+          url: '#', linkText: 'От 1 500 до 3 000 ₽'
+        },
+        {
+          url: '#', linkText: 'От 3 000 до 5 000 ₽'
+        },
+        {
+          url: '#', linkText: 'От 10 000 ₽'
+        },
+      ]
+    },
+  ]
+
 .catalog-menu
   .catalog-menu__wrapper
-    .catalog-menu__header
-      button(type="button" aria-label="закрыть").js-catalog-menu-closer
-        svg(width="24" height="24")
-          use(xlink:href="#icon-close")
-      span Каталог
-    
-    ul.catalog-menu__list
-      li
-        a(href="#").catalog-menu__sales Акции
-      li
-        a(href="#") Вино 
-      li
-        a(href="#") Вина России 
-      li
-        a(href="#") Кошерное 
-      li
-        a(href="#") Органика и биодинамика 
-      li
-        a(href="#") Шампанское 
-      li
-        a(href="#") Подарочные наборы 
-      li
-        a(href="#") Самовывоз сегодня 
-      li
-        a(href="#") Крепкий алкоголь
-      li
-        a(href="#") Винный погреб
+    .catalog-menu__content.is-active
+      .catalog-menu__header
+        button(type="button" aria-label="закрыть").js-catalog-menu-closer
+          svg(width="24" height="24")
+            use(xlink:href="#icon-close")
+        span Каталог
+      
+      ul.catalog-menu__categories
+        li
+          a(href="#" data-label="0").js-catalog-menu-switcher.cmn__text.cmn__text--med Акции
+        li
+          a(href="#" data-label="1").js-catalog-menu-switcher.cmn__text.cmn__text--med.active Вино     
+        li
+          a(href="#" data-label="2").js-catalog-menu-switcher.cmn__text.cmn__text--med Вина России 
+        //li
+            a(href="#" data-label="3").js-catalog-menu-switcher.cmn__text.cmn__text--med Кошерное 
+          li
+            a(href="#" data-label="4").js-catalog-menu-switcher.cmn__text.cmn__text--med Органика и биодинамика 
+          li
+            a(href="#" data-label="5").js-catalog-menu-switcher.cmn__text.cmn__text--med Шампанское 
+          li
+            a(href="#" data-label="6").js-catalog-menu-switcher.cmn__text.cmn__text--med Подарочные наборы 
+          li
+            a(href="#" data-label="7").js-catalog-menu-switcher.cmn__text.cmn__text--med Самовывоз сегодня 
+          li
+            a(href="#" data-label="8").js-catalog-menu-switcher.cmn__text.cmn__text--med Крепкий алкоголь
+          li
+            a(href="#" data-label="9").js-catalog-menu-switcher.cmn__text.cmn__text--med Винный погреб
+      
+    .catalog-menu__container
+      .catalog-menu__active(data-id="0")
+        a(href="#").cmn__title.cmn__title--small.catalog-menu__active-title Акции
+        a(href="catalog.html").catalog-menu__btn.cmn__btn.cmn__btn--outlined Все товары категории
+        .catalog-menu__active-content
+          each list in innerLists
+            .catalog-menu__inner
+              span.cmn__text.cmn__text--bold.cmn__text--med= list.title
+              ul
+                each item in list.items
+                  li
+                    a(href=item.url).cmn__text.cmn__text--med= item.linkText
+              
+              if list.isShowBtnEnabled
+                a(href="#").cmn__text.cmn__text--purple Показать все
+
+                
+      .catalog-menu__active(data-id="1").is-active
+        a(href="#").cmn__title.cmn__title--small.catalog-menu__active-title Вино
+        a(href="catalog.html").catalog-menu__btn.cmn__btn.cmn__btn--outlined Все товары категории
+        .catalog-menu__active-content
+          each list in innerLists
+            .catalog-menu__inner
+              span.cmn__text.cmn__text--bold.cmn__text--med= list.title
+              ul
+                each item in list.items
+                  li
+                    a(href=item.url).cmn__text.cmn__text--med= item.linkText
+              
+              if list.isShowBtnEnabled
+                a(href="#").cmn__text.cmn__text--purple Показать все
+
+      .catalog-menu__active(data-id="2")
+        a(href="#").cmn__title.cmn__title--small.catalog-menu__active-title Вина России
+        a(href="catalog.html").catalog-menu__btn.cmn__btn.cmn__btn--outlined Все товары категории
+        .catalog-menu__active-content
+          each list in innerLists
+            .catalog-menu__inner
+              span.cmn__text.cmn__text--bold.cmn__text--med= list.title
+              ul
+                each item in list.items
+                  li
+                    a(href=item.url).cmn__text.cmn__text--med= item.linkText
+              
+              if list.isShowBtnEnabled
+                a(href="#").cmn__text.cmn__text--purple Показать все

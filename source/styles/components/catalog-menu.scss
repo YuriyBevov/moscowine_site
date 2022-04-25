@@ -1,16 +1,13 @@
 .catalog-menu {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -110vw;
     width: 100%;
     height: 100%;
     min-height: 100vh;
     background-color: $white;
     z-index: 101;
-    overflow-y: auto;
-    padding: 2.5rem 0 8rem;
-    transition: top $main-transition;
-    // outline: 1px solid red;
+    background-color: rgba(0, 0, 0, 0.2);
 
     a {
         transition: color $main-transition;
@@ -19,11 +16,38 @@
         &:focus {
             color: $purple;
         }
-    }   
+    }
+    &__btn { display: none; }
+    @media(max-width: $w_xs) {
+        &__btn {
+            display: block;
+            color: $purple;
+            border-color: $purple;
+            margin-bottom: 3.2rem;
+        }
+    }
 
     &__wrapper {
-        width: 100%;
-        padding-left: 6rem;
+        position: relative;
+        display: flex;
+        width: 80vw;
+        max-width: 130rem;
+        height: 100%;
+        left: -110%;
+        transition: left $main-transition;
+
+        @media(max-width: $w_sm) {
+            width: 100vw;
+            max-width: 100vw;
+        }
+    }
+
+    &.is-active {
+        left: 0;
+
+        .catalog-menu__wrapper {
+            left: 0;
+        }
     }
 
     &__header {
@@ -41,6 +65,136 @@
             padding: 0;
             margin: 0;
             background-color: transparent;
+        }
+    }
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        min-width: 28rem;
+        max-width: 32rem;
+        overflow: hidden;
+        overflow-y: auto;
+        
+        padding: 2.5rem 2.5rem 8rem 6rem;
+        background-color: $grey-100;
+
+        @media(max-width: $w_xs) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            max-width: 100%;
+
+            &.is-active {
+                z-index: 2;
+            }
+        }
+    }
+    
+    &__categories {
+        li {
+            margin-bottom: 2.4rem;
+        }
+
+        li > a.active {
+            @media(min-width: $w_xs) {
+            position: relative;
+            font-family: $f1_bold;
+            font-weight: 700;
+            padding-right: 20px;
+            
+            &::after {
+                position: absolute;
+                top: 4px;
+                right: 0;
+                content: '';
+                width: 1.8rem;
+                height: 1.8rem;
+
+                background-image: url("../assets/img/arrow-right.svg"); 
+                background-size: contain;
+                background-repeat: no-repeat;
+
+                @media(max-width: $w_sm) {
+                    top: 2px;
+                }
+            }
+            }
+        }
+    }
+
+    &__container {
+        width: 100%;
+        padding: 2.5rem;
+        padding-bottom: 6rem;
+        overflow: hidden;
+        overflow-y: auto;
+        background-color: $white;
+        z-index: 1;
+    }
+
+    &__active {
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+
+        &-wrapper {
+            position: absolute;
+            top: 2.5rem;
+            left: -150%;
+
+            &.is-active {
+                position: static;
+                left: 0;
+            }
+        }
+
+        &-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &-title {
+            display: inline-block;
+            
+            margin-bottom: 3.2rem;
+
+            @media(max-width: $w_xs) {
+                position: relative;
+                padding-left: 35px;
+
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: '';
+                    width: 2.4rem;
+                    height: 2.4rem;
+
+                    background-image: url("../assets/img/arrow-right.svg"); 
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
+
+    &__inner {
+        margin-bottom: 4rem;
+        padding-right: 3rem;
+        min-width: 28rem;
+
+        span {
+            display: inline-block;
+            margin-bottom: 1.6rem;
+        }
+
+        li {
+            margin-bottom: 1.6rem;
         }
     }
 }
