@@ -110,8 +110,16 @@
             height: 81rem;
             min-height: 27rem;
 
+            @media(max-width: $desktop_small) {
+                height: 60rem;
+            }
+
             @media(max-width: $tablet_medium) {
-                margin-bottom: 1rem;
+                height: 40rem;
+            }
+
+            @media(max-width: $tablet_small) {
+                height: 27rem;
             }
 
             &-button-next::after,
