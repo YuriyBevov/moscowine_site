@@ -5,6 +5,7 @@
 @import "variables";
 @import "mixins";
 @import "global";
+@import "extends";
 @import "cmn";
 
 /*plugins*/
@@ -28,6 +29,7 @@
 @import "./components/filter-dropdown";
 @import "./components/main-slider";
 @import "./components/reg-slider";
+@import "./components/blog-slider";
 @import "./components/product-card-slider";
 @import "./components/worktime";
 @import "./components/item-count-badge";
@@ -59,11 +61,17 @@
 @import "./layouts/components/logo";
 
 /*index*/
-@import "./sections/index/intro";
-@import "./sections/index/search";
-@import "./sections/index/features";
-@import "./sections/index/map";
+//@import "./sections/index/intro";
+//@import "./sections/index/search";
+//@import "./sections/index/features";
+//@import "./sections/index/map";
 @import "./sections/index/app";
+
+@import "./sections/index/hero";
+@import "./sections/index/proposal";
+@import "./sections/index/about";
+@import "./sections/index/article";
+@import "./sections/index/blog";
 
 /*catalog-item*/
 @import "./sections/catalog-item/about";

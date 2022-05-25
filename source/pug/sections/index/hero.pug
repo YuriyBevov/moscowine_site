@@ -1,0 +1,61 @@
+-
+  const heroSlides = [
+      {
+          imgUrl: './assets/img/hero_1.png',
+          title: 'Начнём с игристого',
+          desc: 'Лучшее для Вашего романтического вечера',
+          linkUrl: 'catalog.html',
+          linkText: 'Выбрать напиток'
+      },
+      {
+          imgUrl: './assets/img/hero_1.png',
+          title: 'Начнём с игристого',
+          desc: 'Лучшее для Вашего романтического вечера',
+          linkUrl: 'catalog.html',
+          linkText: 'Выбрать напиток'
+      },
+      {
+          imgUrl: './assets/img/hero_1.png',
+          title: 'Начнём с игристого',
+          desc: 'Лучшее для Вашего романтического вечера',
+          linkUrl: 'catalog.html',
+          linkText: 'Выбрать напиток'
+      },
+
+      {
+          imgUrl: './assets/img/hero_1.png',
+          title: 'Начнём с игристого',
+          desc: 'Лучшее для Вашего романтического вечера',
+          linkUrl: 'catalog.html',
+          linkText: 'Выбрать напиток'
+      },
+      {
+          imgUrl: './assets/img/hero_1.png',
+          title: 'Начнём с игристого',
+          desc: 'Лучшее для Вашего романтического вечера',
+          linkUrl: 'catalog.html',
+          linkText: 'Выбрать напиток'
+      },
+  ]
+
+section.hero
+  .hero__wrapper
+    .swiper.hero-slider
+      .swiper-wrapper.hero-slide__wrapper
+        each item in heroSlides
+          .swiper-slide.hero-slide
+            img(src=item.imgUrl alt=item.title)
+
+            .hero-slide__content
+              h2.hero-slide__title!= item.title
+              p= item.desc
+              a(href=item.linkUrl)= item.linkText
+
+      .swiper-button-next.hero-slider-button-next
+        svg(width="40" height="40")
+          use(xlink:href="#icon-blog-slider-arrow-next")
+      .swiper-button-prev.hero-slider-button-prev
+        svg(width="40" height="40")
+          use(xlink:href="#icon-blog-slider-arrow-prev")
+
+      .swiper-pagination.hero-slider-pagination

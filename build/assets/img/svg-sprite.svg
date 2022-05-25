@@ -8,6 +8,10 @@
 </clipPath>
 </defs><symbol id="icon-arr" viewBox="0 0 8 14">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 13.7071C-0.0976311 13.3166 -0.0976312 12.6834 0.292893 12.2929L5.58579 7L0.292893 1.70711C-0.0976317 1.31658 -0.0976317 0.683417 0.292893 0.292893C0.683417 -0.0976315 1.31658 -0.0976315 1.70711 0.292893L7.70711 6.29289C8.09763 6.68342 8.09763 7.31658 7.70711 7.70711L1.70711 13.7071C1.31658 14.0976 0.683418 14.0976 0.292893 13.7071Z"/>
+</symbol><symbol id="icon-blog-slider-arrow-next" viewBox="0 0 23 42">
+<path d="M1.27783 40.4443L20.7223 20.9999L1.27783 1.55545" stroke="#841DA4" stroke-width="2"/>
+</symbol><symbol id="icon-blog-slider-arrow-prev" viewBox="0 0 23 42">
+<path d="M21.7222 40.4443L2.27773 20.9999L21.7222 1.55545" stroke="#841DA4" stroke-width="2"/>
 </symbol><symbol id="icon-burger" viewBox="0 0 16 16">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M1 8C1 7.44772 1.44772 7 2 7H14C14.5523 7 15 7.44772 15 8C15 8.55228 14.5523 9 14 9H2C1.44772 9 1 8.55228 1 8Z"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4C1 3.44772 1.44772 3 2 3H14C14.5523 3 15 3.44772 15 4C15 4.55228 14.5523 5 14 5H2C1.44772 5 1 4.55228 1 4Z"/>

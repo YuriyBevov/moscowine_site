@@ -1,0 +1,39 @@
+-
+  const proposalItems = [
+      {
+        title: 'Определиться с выбором',
+        imgUrl: './assets/img/prop_1.png'
+      },
+      {
+        title: 'Сделать подарок',
+        imgUrl: './assets/img/prop_2.png'
+      },
+      {
+        title: 'Найти редкие экземпляры',
+        imgUrl: './assets/img/prop_3.png'
+      },
+      {
+        title: 'Консультация сомелье',
+        imgUrl: './assets/img/prop_4.png'
+      },
+      {
+        title: 'Винные туры',
+        imgUrl: './assets/img/prop_5.png'
+      },
+      {
+        title: 'Винные туры',
+        imgUrl: './assets/img/prop_6.png'
+      },
+  ]
+
+section.proposal
+  .proposal__wrapper
+    .swiper.proposal-slider
+      .swiper-wrapper.proposal__wrapper
+        each item in proposalItems
+          .swiper-slide.proposal-slide
+            a(href="#" aria-label=item.title)
+              img(src= item.imgUrl alt= item.title width="640" height="480")
+              h3= item.title
+
+            

@@ -1,0 +1,98 @@
+.index {
+    .about {
+        margin-bottom: 15rem;
+
+        @media (max-width: $desktop_small) {
+            margin-bottom: 12rem;
+        }
+
+        @media (max-width: $tablet_medium) {
+            margin-bottom: 10rem;
+        }
+
+        @media (max-width: $tablet_small) {
+            margin-bottom: 8rem;
+        }
+
+        &__wrapper {
+            width: 100%;
+            max-width: 192rem;
+            padding-left: 12rem;
+            margin: 0 auto;
+
+            @media (max-width: $desktop_small) {
+                padding-left: 3rem;
+            }
+
+            @media (max-width: $tablet_medium) {
+                padding-left: 0;
+            }
+        }
+
+        &__container {
+            display: flex;
+
+            @media (max-width: $tablet_medium) {
+                flex-direction: column;
+
+                @include container();
+            }
+        }
+
+        &__side {
+            width: 50%;
+            max-width: 39rem;
+            margin-right: 2rem;
+            padding-right: 2rem;
+
+            @media (max-width: $tablet_medium) {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            h2 {
+                font-size: 3.2rem;
+                line-height: 1.2;
+                font-weight: 600;
+                padding-right: 2rem;
+
+                @media (max-width: $desktop_small) {
+                    font-size: 2.8rem;
+                    margin-bottom: 2rem;
+                }
+
+                @media (max-width: $tablet_medium) {
+                    font-size: 2.4rem;
+                    margin-bottom: 1.8rem;
+                }
+
+                @media (max-width: $tablet_small) {
+                    font-size: 2.2rem;
+                }
+            }
+        }
+
+        &__content {
+            width: 100%;
+
+            p {
+                font-size: 1.5rem;
+                line-height: 1.2;
+                font-weight: 300;
+                color: $black-100;
+                opacity: 0.8;
+                margin-bottom: 1.5rem;
+            }
+
+            @media (max-width: $tablet_medium) {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 3rem;
+            }
+
+            @media (max-width: $tablet_small) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

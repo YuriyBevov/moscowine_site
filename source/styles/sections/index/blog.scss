@@ -1,0 +1,97 @@
+.index {
+    .blog {
+        @extend .block-margin-bottom;
+
+        &__header {
+            margin-bottom: 3rem;
+
+            &-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            &-title {
+                padding-right: 3rem;
+            }
+        }
+
+        h2 {
+            @extend .purple-title;
+        }
+
+        h3 {
+            @extend .subtitle;
+            margin-bottom: 0;
+        }
+
+        &__slider-container {
+            position: relative;
+        }
+
+        &-slide {
+            width: 32.5rem;
+
+            @media (max-width: $tablet_medium) {
+                width: 30rem;
+            }
+            
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                max-width: 32.5rem;
+                max-height: 37.5rem;
+                margin-bottom: 2rem;
+
+                @media (max-width: $tablet_medium) {
+                    max-width: 30rem;
+                    max-height: 30rem;
+                }
+            }
+
+            h3 {
+                font-weight: 300;
+                font-size: 24px;
+                margin-bottom: 5px;
+
+                @media (max-width: $tablet_medium) {
+                    font-size: 1.5rem;
+                }
+            }
+
+            &-info {
+                display: flex;
+                align-items: center;
+                opacity: 0.8;
+
+                span {
+                    font-weight: 300;
+                    font-size: 15px;
+                    color: $black-100;
+
+                    @media (max-width: $tablet_medium) {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                span:last-child {
+                    position: relative;
+                    padding-left: 2.3rem;
+
+                    &::before {
+                        position: absolute;
+                        top: 7px;
+                        left: 10px;
+                        content: '';
+                        width: 4px;
+                        height: 4px;
+                        background-color: $black-100;
+                        border-radius: 50%;
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}

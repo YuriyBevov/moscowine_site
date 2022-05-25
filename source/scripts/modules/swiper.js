@@ -22,6 +22,37 @@ new Swiper(mainSlider, {
     }
 }) : null
 
+/* index-page/hero */
+let heroSlider = document.querySelector('.hero-slider');
+
+heroSlider ?
+new Swiper(heroSlider, {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    speed: 500,
+    loop: true,
+    modules: [Pagination, Navigation],
+    pagination: {
+        el: ".hero-slider-pagination",
+    },
+    navigation: {
+        nextEl: ".hero-slider-button-next",
+        prevEl: ".hero-slider-button-prev",
+    }
+}) : null
+
+let header = document.querySelector('header');
+let headerHeight = header.getBoundingClientRect().height;
+
+heroSlider.style.maxHeight = `calc(100vh - ${headerHeight}px`;
+
+window.addEventListener('resize', () => {
+    if(header.getBoundingClientRect().height !== headerHeight) {
+        headerHeight = header.getBoundingClientRect().height;
+        heroSlider.style.maxHeight = `calc(100vh - ${headerHeight}px`;
+    }
+})
+
 /*index-page/features*/
 
 let regSlider = document.querySelector('.reg-slider');
@@ -31,12 +62,28 @@ new Swiper(regSlider, {
     slidesPerView: 'auto',
     spaceBetween: 20,
     freeMode: true,
-    //loop: true, 
     modules: [Navigation],
 
     navigation: {
         nextEl: ".reg-slider-button-next",
         prevEl: ".reg-slider-button-prev",
+    }
+}) : null
+
+/*index-page/blog*/
+
+let blogSlider = document.querySelector('.blog-slider');
+
+blogSlider ?
+new Swiper(blogSlider, {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    freeMode: true,
+    modules: [Navigation],
+
+    navigation: {
+        nextEl: ".blog-slider-button-next",
+        prevEl: ".blog-slider-button-prev",
     }
 }) : null
 
@@ -102,8 +149,40 @@ tabSlider ?
 tabSlider.forEach(slider => {
     new Swiper(slider, {
         slidesPerView: 'auto',
-        //spaceBetween: 48,
         slideToClickedSlide: true,
     });
 }) : null;
 
+
+// proposal page
+
+let propSlider = document.querySelector('.proposal-slider');
+let windowWidth = window.innerWidth;
+let isPropSliderEnabled = false;
+
+let proposalSliderInstance = new Swiper(propSlider, {
+    slidesPerView: 'auto',
+    freeMode: true,
+});
+
+if(propSlider && windowWidth < 769) {
+    isPropSliderEnabled = true;
+    proposalSliderInstance.enable();
+} else {
+    proposalSliderInstance.disable();
+}
+
+const onResizeHandler = () => {
+    if(window.innerWidth < 769 && !isPropSliderEnabled) {
+        isPropSliderEnabled = true;
+        proposalSliderInstance = new Swiper(propSlider, {
+            slidesPerView: 'auto',
+            freeMode: true,
+        });
+    } else if (window.innerWidth >= 769 && isPropSliderEnabled) {
+        isPropSliderEnabled = false;
+        proposalSliderInstance.destroy(true, true);
+    }
+}
+
+window.addEventListener('resize', onResizeHandler);

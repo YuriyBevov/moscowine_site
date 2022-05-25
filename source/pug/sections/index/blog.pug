@@ -1,0 +1,97 @@
+
+-
+  const blogItems = [
+      {
+          title: 'Гренаш',
+          imgUrl: './assets/img/blog-slider-1.png'
+      },
+      {
+          title: 'Роберт Паркер — винный критик',
+          imgUrl: './assets/img/blog-slider-2.png'
+      },
+
+      {
+          title: 'Роскошные путешествия: идеи американского винного тура',
+          imgUrl: './assets/img/blog-slider-5.png'
+      },
+      {
+          title: 'Три мифа о кошерном вине',
+          imgUrl: './assets/img/blog-slider-3.png'
+      },
+      {
+          title: 'Сидр - сыр: идеальные сочетания',
+          imgUrl: './assets/img/blog-slider-4.png'
+      },
+      {
+          title: 'Гренаш',
+          imgUrl: './assets/img/blog-slider-1.png'
+      },
+      {
+          title: 'Роберт Паркер — винный критик',
+          imgUrl: './assets/img/blog-slider-2.png'
+      },
+
+      {
+          title: 'Роскошные путешествия: идеи американского винного тура',
+          imgUrl: './assets/img/blog-slider-5.png'
+      },
+      {
+          title: 'Три мифа о кошерном вине',
+          imgUrl: './assets/img/blog-slider-3.png'
+      },
+      {
+          title: 'Сидр - сыр: идеальные сочетания',
+          imgUrl: './assets/img/blog-slider-4.png'
+      },
+      {
+          title: 'Гренаш',
+          imgUrl: './assets/img/blog-slider-1.png'
+      },
+      {
+          title: 'Роберт Паркер — винный критик',
+          imgUrl: './assets/img/blog-slider-2.png'
+      },
+
+      {
+          title: 'Роскошные путешествия: идеи американского винного тура',
+          imgUrl: './assets/img/blog-slider-5.png'
+      },
+      {
+          title: 'Три мифа о кошерном вине',
+          imgUrl: './assets/img/blog-slider-3.png'
+      },
+      {
+          title: 'Сидр - сыр: идеальные сочетания',
+          imgUrl: './assets/img/blog-slider-4.png'
+      },
+  ]
+
+section.blog
+  .blog__wrapper
+    .blog__header
+      .cmn__wrapper.blog__header-wrapper
+        .blog__header-title
+          h2 Блог
+
+          h3 Свежие статьи
+
+        .blog-slider-controls
+          .swiper-button-next.blog-slider-button-next
+            svg(width="40" height="40")
+                use(xlink:href="#icon-blog-slider-arrow-next")
+          .swiper-button-prev.blog-slider-button-prev
+            svg(width="40" height="40")
+                use(xlink:href="#icon-blog-slider-arrow-prev")
+    
+    .blog__slider-container
+      .swiper.blog-slider
+        .swiper-wrapper
+          each item in blogItems
+            .swiper-slide.blog-slide
+              a(href="#" aria-label=item.title) 
+                img(src= item.imgUrl alt= item.title width="325" height="375")
+                h3.cmn__text.cmn__text--med= item.title
+
+                .blog-slide-info
+                  span 16.10.2019
+                  span 12 минут на прочтение

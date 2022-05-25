@@ -1,0 +1,163 @@
+.index {
+    .hero {
+        &__wrapper {
+            width: 100vw;
+            max-width: 250rem;
+            margin: 0 auto;
+        }
+
+        &-slide {
+            width: 100%;
+            height: 100%;
+            
+
+            &__wrapper {
+                position: relative;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                min-height: 27rem;
+                object-fit: cover;
+            }
+    
+            &__content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 0 12rem;
+                text-align: center;
+                color: $white;
+
+                @media (max-width: $tablet_small) {
+                    padding: 0 2rem;
+                }
+
+                .hero-slide__title {
+                    font-weight: 600;
+                    font-size: 6.4rem;
+                    margin-bottom: 2rem;
+
+                    @media(max-width: $desktop_small) {
+                        font-size: 4.8rem;
+                    }
+
+                    @media(max-width: $tablet_large) {
+                        font-size: 3.6rem;
+                    }
+
+                    @media(max-width: $tablet_medium) {
+                        font-size: 3.2rem;
+                    }
+
+                    @media(max-width: $tablet_small) {
+                        font-size: 2.8rem;
+                    }
+                }
+
+                p {
+                    font-weight: 300;
+                    font-size: 2.4rem;
+                    margin-bottom: 3rem;
+
+                    @media(max-width: $desktop_small) {
+                        font-size: 2rem;
+                    }
+
+                    @media(max-width: $tablet_large) {
+                        font-size: 1.8rem;
+                    }
+
+                    @media(max-width: $tablet_medium) {
+                        font-size: 1.6rem;
+                    }
+                }
+
+                a {
+                    @extend .flex-centered-content;
+                    width: fit-content;
+                    min-width: 30rem;
+
+                    border: 1px solid $white;
+                    font-size: 1.6rem;
+                    padding: 1.5rem;
+                    color: $white;
+
+                    @media(max-width: $tablet_medium) {
+                        min-width: 20rem;
+                        font-size: 1.4rem;
+                    }
+
+                    transition: all $main-transition;
+
+                    &:hover,
+                    &:focus {
+                        border-color: $purple;
+                        color: $purple;
+                    }
+                }
+            }
+        }
+
+        &-slider {
+            height: 81rem;
+            min-height: 27rem;
+
+            @media(max-width: $tablet_medium) {
+                margin-bottom: 1rem;
+            }
+
+            &-button-next::after,
+            &-button-prev::after {
+                display: none;
+            }
+
+            &-button-next,
+            &-button-prev {
+                width: 40px;
+                height: 40px;
+                svg {
+                    fill: none;
+                }
+
+                @media(max-width: $tablet_small) {
+                    display: none;
+                }
+            }
+
+            &-button-next {
+                right: 5rem;
+            }
+
+            &-button-prev {
+                left: 5rem;
+            }
+
+            &-pagination {
+                width: fit-content;
+                max-width: 95vw;
+                left: 50%;
+                transform: translateX(-50%);
+
+                .swiper-pagination-bullet {
+                    display: inline-block;
+                    width: 5rem;
+                    height: 3px;
+                    border-radius: 0;
+                    background-color: $white;
+
+                    &-active {
+                        background-color: $purple;
+                    }
+                }
+            }
+        }
+    }
+}
