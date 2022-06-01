@@ -33,7 +33,7 @@ header.header
         form(action="#") 
           input(type="text" placeholder="Поиск среди 12 100 предложений " id= controlId)
 
-          button(type="submit")
+          button(type="submit" aria-label="Поиск")
             svg(width="24" height="24")
               use(xlink:href="#icon-search")
       
@@ -44,24 +44,24 @@ header.header
         span.cmn__text.cmn__text--small.cmn__text--opacity c 10:00 до 19:00
       
       .header__action
-        a(href="compare.html")
+        a(href="compare.html" aria-label="Сравнить")
           include ../../components/item-count-badge
           svg(width="24" height="24")
             use(xlink:href="#icon-header-filter")
 
-        a(href="#")
+        a(href="#" aria-label="Избранное")
           include ../../components/item-count-badge
 
           svg(width="24" height="24")
             use(xlink:href="#icon-heart")
 
-        a(href="cart.html")
+        a(href="cart.html" aria-label="Корзина")
           include ../../components/item-count-badge
 
           svg(width="24" height="24")
             use(xlink:href="#icon-cart")
 
-        a(href="#" data-modal="login-modal").js-modal-opener 
+        a(href="#" data-modal="login-modal" aria-label="Личный кабинет").js-modal-opener 
           svg(width="24" height="24")
             use(xlink:href="#icon-user")
 

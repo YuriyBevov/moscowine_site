@@ -184,6 +184,7 @@
 
             svg {
                 fill: $purple;
+                transition: fill $main-transition;
             }
 
             @media(max-width: $mobile_medium) {
@@ -197,16 +198,20 @@
                     margin-right: 1rem;
                 }
             }
+
+            
+            &:hover,
+            &:focus {
+               svg {
+                   fill: $black-100;
+               }
+            }
         }
 
         .item-count-badge {
             position: absolute;
             top: -0.5rem;
             right: -0.8rem;
-
-            &.js-active ~ svg {
-                //fill: $black-100;
-            }
         }
     }
 }
@@ -222,7 +227,13 @@
 
             a {
                 @extend .flex-centered-content;
-                padding: 1rem; 
+                padding: 1rem;
+
+                transition: color $main-transition;
+                &:hover,
+                &:focus {
+                    color: $purple;
+                }
             }
         }
 
