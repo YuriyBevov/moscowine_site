@@ -2,16 +2,16 @@
   .cmn__wrapper.bottom-nav__wrapper
     ul.bottom-nav__list
       li
+        a(href="index.html")
+          svg(width="24" height="24")
+            use(xlink:href="#icon-home")
+          span Главная
+
+      li
         a(href="catalog.html").js-catalog-menu-opener
           svg(width="24" height="24")
             use(xlink:href="#icon-catalog")
           span Каталог
-
-      li
-        a(href="#")
-          svg(width="24" height="24")
-            use(xlink:href="#icon-heart")
-          span Избранное
 
       li
         a(href="cart.html")

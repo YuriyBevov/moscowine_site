@@ -79,8 +79,8 @@
    }
 
    &__text {
-      font-family: $f1_med;
-      font-weight: 500;
+      font-family: $f1_reg;
+      font-weight: 400;
       font-size: 1.5rem;
       line-height: 2.2rem;
 
@@ -152,7 +152,7 @@
          color: $red-600;
       }
 
-      &-semi {
+      &--semi {
          font-family: $f1_semi;
          font-weight: 600;
       }
@@ -160,7 +160,6 @@
       &--opacity {
          opacity: 0.5;
       }
-
       
       &--green {
          font-family: $f1_reg;
@@ -235,8 +234,8 @@
       width: 100%;
 
       svg {
-          fill: $white;
-          margin-right: 1.2rem;
+         fill: $white;
+         margin-right: 1.2rem;
       }
    }
 
@@ -252,7 +251,7 @@
       
       background-color: $grey-100;
       backdrop-filter: blur(20px);
-      border: 1px solid #B7B3C2;
+      border: 1px solid #b7b3c2;
       border-radius: 4px;
 
       padding: 1.2rem 1.6rem;

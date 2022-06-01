@@ -31,6 +31,8 @@ body {
   overflow-x: hidden !important;
   background-color: $main-bg;
   line-height: 1.2;
+  
+  transition: height 0.3s linear;
 }
 
 ::-webkit-scrollbar {

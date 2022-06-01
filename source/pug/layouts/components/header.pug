@@ -1,47 +1,75 @@
+-
+  const navList = [
+    { title: 'Акции', link: '#', cls: 'cmn__text--purple' },{ title: 'Вино', link: '#' },
+    { title: 'Вина России', link: '#' },{ title: 'Кошерное', link: '#' },
+    { title: 'Органика и биодинамика', link: '#' },{ title: 'Шампанское', link: '#' },
+    { title: 'Подарочные наборы', link: '#' },{ title: 'Самовывоз сегодня', link: '#' },
+    { title: 'Крепкий алкоголь', link: '#' },{ title: 'Винный погреб', link: '#' },
+  ]
+
 header.header
-  .cmn__wrapper
-    .header__top
-      .header__logo
-        include ./logo
-      .header__top-content
-        .header__info
-          include ../../components/worktime
-        .header__nav
-          include ./nav
-    
-    .header__bottom
-      a(href="#").cmn__btn.header__btn.js-catalog-menu-opener
-        svg(width="16" height="16")
-            use(xlink:href="#icon-burger")
-        span Каталог
+  .header__top
+    .cmn__wrapper.header__top-wrapper
+      a(href="#").cmn__text.cmn__text--small.cmn__text--white 45 пунктов выдачи
+      a(href="#").cmn__text.cmn__text--small.cmn__text--white 14 300 предложений в одном месте
+      a(href="#").cmn__text.cmn__text--small.cmn__text--white Как это работает
+      a(href="#").cmn__text.cmn__text--small.cmn__text--white English version
 
-      .header__search.js-hidden
-        label(for="header_search" aria-label="Поиск")
+  .header__middle
+    .cmn__wrapper.header__middle-wrapper
+      include ./logo
+
+      .header__info
+        a(href="#")
           svg(width="24" height="24")
-            use(xlink:href="#icon-search")
-        input(type="text" id="header_search" placeholder="Поиск...")
+              use(xlink:href="#icon-map")
+          span.cmn__text Точки выдачи
+        a(href="#")
+          svg(width="24" height="24")
+              use(xlink:href="#icon-blog")
+          span.cmn__text Блог
+    
+      .header__search
+        form(action="#") 
+          input(type="text" placeholder="Поиск среди 12 100 предложений " id= controlId)
 
-      .header__menu
+          button(type="submit")
+            svg(width="24" height="24")
+              use(xlink:href="#icon-search")
+      
+      .header__phone
+        svg(width="24" height="24")
+          use(xlink:href="#icon-phone")
+        a(href="tel:88007077534").cmn__text.cmn__text--semi.cmn__text--purple.cmn__text--med 8 800 707-75-34
+        span.cmn__text.cmn__text--small.cmn__text--opacity c 10:00 до 19:00
+      
+      .header__action
         a(href="compare.html")
-          svg(width="32" height="32")
-            use(xlink:href="#icon-chart")
-          span.cmn__text.cmn__text--small Сравнение
-        
+          include ../../components/item-count-badge
+          svg(width="24" height="24")
+            use(xlink:href="#icon-header-filter")
+
         a(href="#")
           include ../../components/item-count-badge
 
-          svg(width="32" height="32")
+          svg(width="24" height="24")
             use(xlink:href="#icon-heart")
-          span.cmn__text.cmn__text--small Избранное
 
         a(href="cart.html")
           include ../../components/item-count-badge
 
-          svg(width="32" height="32")
+          svg(width="24" height="24")
             use(xlink:href="#icon-cart")
-          span.cmn__text.cmn__text--small Корзина
 
         a(href="#" data-modal="login-modal").js-modal-opener 
-          svg(width="32" height="32")
+          svg(width="24" height="24")
             use(xlink:href="#icon-user")
-          span.cmn__text.cmn__text--small Войти
+
+
+  .header__bottom
+    .cmn__wrapper
+      .nav
+        ul.nav__list
+          each item in navList
+            li
+              a(href=item.link class=item.cls ? item.cls : null).cmn__text= item.title 

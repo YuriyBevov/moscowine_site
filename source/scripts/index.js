@@ -10,7 +10,7 @@ import './modules/openSearchFilter.js';
 import './modules/infoTabs.js';
 import './modules/filter.js'
 import './modules/searchResultMore.js';
-import './modules/filterObserver.js';
+//import './modules/filterObserver.js';
 import './modules/showMorePlaces.js';
 import './modules/reviewStarControl.js';
 import './modules/addReview.js';

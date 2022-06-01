@@ -1,0 +1,48 @@
+header.header
+  .cmn__wrapper
+    .header__top
+      .header__logo
+        include ./logo
+      .header__top-content
+        .header__info
+          include ../../components/worktime
+        .header__nav
+          include ./nav
+    
+    .header__bottom
+      a(href="#").cmn__btn.header__btn.js-catalog-menu-opener
+        svg(width="16" height="16")
+            use(xlink:href="#icon-burger")
+        span Каталог
+
+      .header__search.js-hidden
+        label(for="header_search" aria-label="Поиск")
+          svg(width="24" height="24")
+            use(xlink:href="#icon-search")
+        input(type="text" id="header_search" placeholder="Поиск...")
+
+      .header__menu
+        a(href="compare.html")
+          include ../../components/item-count-badge
+          svg(width="32" height="32")
+            use(xlink:href="#icon-chart")
+          span.cmn__text.cmn__text--small Сравнение
+        
+        a(href="#")
+          include ../../components/item-count-badge
+
+          svg(width="32" height="32")
+            use(xlink:href="#icon-heart")
+          span.cmn__text.cmn__text--small Избранное
+
+        a(href="cart.html")
+          include ../../components/item-count-badge
+
+          svg(width="32" height="32")
+            use(xlink:href="#icon-cart")
+          span.cmn__text.cmn__text--small Корзина
+
+        a(href="#" data-modal="login-modal").js-modal-opener 
+          svg(width="32" height="32")
+            use(xlink:href="#icon-user")
+          span.cmn__text.cmn__text--small Войти
