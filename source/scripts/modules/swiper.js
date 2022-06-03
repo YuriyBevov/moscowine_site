@@ -25,33 +25,34 @@ new Swiper(mainSlider, {
 /* index-page/hero */
 let heroSlider = document.querySelector('.hero-slider');
 
-heroSlider ?
-new Swiper(heroSlider, {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    speed: 500,
-    loop: true,
-    modules: [Pagination, Navigation],
-    pagination: {
-        el: ".hero-slider-pagination",
-    },
-    navigation: {
-        nextEl: ".hero-slider-button-next",
-        prevEl: ".hero-slider-button-prev",
-    }
-}) : null
+if(heroSlider) {
+    new Swiper(heroSlider, {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        speed: 500,
+        loop: true,
+        modules: [Pagination, Navigation],
+        pagination: {
+            el: ".hero-slider-pagination",
+        },
+        navigation: {
+            nextEl: ".hero-slider-button-next",
+            prevEl: ".hero-slider-button-prev",
+        }
+    });
 
-let header = document.querySelector('header');
-let headerHeight = header.getBoundingClientRect().height;
-
-heroSlider.style.maxHeight = `calc(100vh - ${headerHeight}px`;
-
-window.addEventListener('resize', () => {
-    if(header.getBoundingClientRect().height !== headerHeight) {
-        headerHeight = header.getBoundingClientRect().height;
-        heroSlider.style.maxHeight = `calc(100vh - ${headerHeight}px`;
-    }
-})
+    let header = document.querySelector('header');
+    let headerHeight = header.getBoundingClientRect().height;
+    
+    heroSlider.style.maxHeight = `calc(100vh - ${headerHeight}px`;
+    
+    window.addEventListener('resize', () => {
+        if(header.getBoundingClientRect().height !== headerHeight) {
+            headerHeight = header.getBoundingClientRect().height;
+            heroSlider.style.maxHeight = `calc(100vh - ${headerHeight}px`;
+        }
+    })
+}
 
 /*index-page/features*/
 
