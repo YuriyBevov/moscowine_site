@@ -3,6 +3,9 @@ include ../../mixins/apps
 section.app
   .cmn__wrapper.app__wrapper
     .app__container
-      h2.cmn__title.app__title Мобильное приложение с&nbsp;лучшим ассортиментом напитоков
+      img(src="./assets/img/app-phones.png" alt="Мобильное приложение" width="565" height="487" aria-hidden="true").app-background
+      .app__content
+        h2.cmn__title.app__title Лучшие напитки мира в одном приложении
+        p.cmn__text Быстрый сервис для простого выбора алкогольных напитков из широчайшего ассортимента партнеров в удобном для вас месте города. Достоверная информация о наличии товара и возможность резерва.
 
-      +apps('black')
+      +apps('black') 
