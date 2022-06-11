@@ -215,30 +215,3 @@
         }
     }
 }
-
-.nav {
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-
-        li {
-            flex-grow: 1;
-
-            a {
-                @extend .flex-centered-content;
-                padding: 1rem;
-
-                transition: color $main-transition;
-                &:hover,
-                &:focus {
-                    color: $purple;
-                }
-            }
-        }
-
-        @media(max-width: $desktop_small) {
-            display: none;
-        }
-    }
-}

@@ -1,10 +1,16 @@
 -
   const navList = [
-    { title: 'Акции', link: '#', cls: 'cmn__text--purple' },{ title: 'Вино', link: '#' },
-    { title: 'Вина России', link: '#' },{ title: 'Кошерное', link: '#' },
-    { title: 'Органика и биодинамика', link: '#' },{ title: 'Шампанское', link: '#' },
-    { title: 'Подарочные наборы', link: '#' },{ title: 'Самовывоз сегодня', link: '#' },
-    { title: 'Крепкий алкоголь', link: '#' },{ title: 'Винный погреб', link: '#' },
+    { title: 'Акции', link: '#', cls: 'cmn__text--purple' },
+    { title: 'Тихие вина', link: '#', innerMenu: [ {title: 'Красное', link: '#'}, {title: 'Белое', link: '#'}, {title: 'б/а', link: '#'}, {title: 'Винные сеты', link: '#'}] },
+    { title: 'Игристые вина', link: '#', innerMenu: [ {title: 'Шампанское', link: '#'}, {title: 'Игристое', link: '#'}, {title: 'Просекко', link: '#'}, {title: 'Ламбруско', link: '#'},{title: 'Креман', link: '#'},{title: 'Кава', link: '#'},{title: 'Другое', link: '#'}] },
+    { title: 'Коньяк', link: '#', innerMenu: [ {title: 'VSOP', link: '#'}, {title: 'XO', link: '#'}, {title: 'VS', link: '#'}] },
+    { title: 'Виски', link: '#', innerMenu: [ {title: 'Односолодовый', link: '#'}, {title: 'Солодовый', link: '#'}, {title: 'Купажированный', link: '#'}, {title: 'Бурбон', link: '#'}, {title: 'Зерновой', link: '#'}] },
+    { title: 'Водка', link: '#', innerMenu: [ {title: 'Классическая', link: '#'}, {title: 'Солодовая', link: '#'}, {title: 'Тутовая', link: '#'}, {title: 'Органическая', link: '#'}, {title: 'Фруктовая', link: '#'}, {title: 'Ароматизированная', link: '#'}, {title: 'Односортовая', link: '#'}] },
+    { title: 'Ром', link: '#', innerMenu: [ {title: 'Темный', link: '#'}, {title: 'Светлый', link: '#'}, {title: 'Золотой', link: '#'}] },
+
+    { title: 'Другое', link: '#' },
+    { title: 'Вода', link: '#' },
+    { title: 'Сыры', link: '#' },
   ]
 
 header.header
@@ -72,4 +78,9 @@ header.header
         ul.nav__list
           each item in navList
             li
-              a(href=item.link class=item.cls ? item.cls : null).cmn__text= item.title 
+              a(href=item.link class=item.cls ? item.cls : null).cmn__text= item.title
+              if item.innerMenu
+                ul.innerNav
+                  each inner in item.innerMenu
+                    li
+                      a(href=inner.title).cmn__text= inner.title 
